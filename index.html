@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Perfil Presidencial | Líder para Transformar un País con IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- SOLO LOS DOS SMART LINKS DE ADSTERRA -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f6f9fc 0%, #eef2f5 100%);
+      color: #1a2c3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* header / hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      border-radius: 2.5rem;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .hero-text {
+      flex: 2;
+    }
+
+    .hero-badge {
+      background: #1e4a6e;
+      color: white;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #0b2b3b, #1c6e8f);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #2c4b66;
+      margin-bottom: 1.5rem;
+      max-width: 90%;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .stat i {
+      font-size: 1.8rem;
+      color: #2c7da0;
+    }
+
+    .stat span {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .hero-image {
+      flex: 1;
+      background: linear-gradient(125deg, #cbdde6, #eef3f7);
+      border-radius: 2rem;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+    }
+
+    .avatar-icon {
+      font-size: 8rem;
+      color: #2c7da0;
+      background: white;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero-image h3 {
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    .hero-image p {
+      color: #2c5a74;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin: 2.5rem 0 1.2rem 0;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #2c7da0;
+      border-radius: 4px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      border: 1px solid #e2edf2;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+      border-color: #cbdde6;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      background: #e5f3f9;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      margin-bottom: 1.2rem;
+      color: #1e6f8f;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: #2e4a66;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .pill {
+      background: #eef3fc;
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #1e6f8f;
+      display: inline-block;
+    }
+
+    /* Chat IA */
+    .chat-container {
+      background: white;
+      border-radius: 1.5rem;
+      margin: 2rem 0;
+      border: 1px solid #cde3ec;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .chat-header {
+      background: linear-gradient(135deg, #1e4a6e, #2c7da0);
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .chat-header i {
+      font-size: 1.5rem;
+    }
+    .chat-header h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+    .chat-header span {
+      font-size: 0.7rem;
+      opacity: 0.8;
+      margin-left: auto;
+    }
+    .chat-messages {
+      height: 250px;
+      overflow-y: auto;
+      padding: 1rem;
+      background: #f8fafc;
+    }
+    .message {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .user-message {
+      align-items: flex-end;
+    }
+    .ai-message {
+      align-items: flex-start;
+    }
+    .message-bubble {
+      max-width: 80%;
+      padding: 0.6rem 1rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    .user-message .message-bubble {
+      background: #2c7da0;
+      color: white;
+      border-bottom-right-radius: 0.2rem;
+    }
+    .ai-message .message-bubble {
+      background: white;
+      border: 1px solid #cbdde6;
+      color: #1a2c3e;
+      border-bottom-left-radius: 0.2rem;
+    }
+    .chat-input-area {
+      display: flex;
+      padding: 1rem;
+      background: white;
+      border-top: 1px solid #e2edf2;
+      gap: 0.5rem;
+    }
+    .chat-input-area input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1px solid #cbdde6;
+      border-radius: 2rem;
+      font-family: inherit;
+      outline: none;
+    }
+    .chat-input-area input:focus {
+      border-color: #2c7da0;
+    }
+    .chat-input-area button {
+      background: linear-gradient(135deg, #1e4a6e, #2c7da0);
+      border: none;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .chat-input-area button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .ia-badge {
+      background: #8b5cf6;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.6rem;
+      margin-left: 8px;
+    }
+    .typing {
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .transform-plan {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #cde3ec;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .grid-2cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .milestone {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .milestone i {
+      font-size: 1.8rem;
+      color: #2c7da0;
+      background: #e0f0f7;
+      padding: 0.6rem;
+      border-radius: 1rem;
+    }
+
+    .milestone h4 {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .virtues {
+      background: linear-gradient(120deg, #eef2f5, #ffffff);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .virtue-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .virtue-item {
+      background: white;
+      border-radius: 60px;
+      padding: 0.6rem 1.3rem;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #d4e2ea;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .virtue-item i {
+      color: #1e6f8f;
+    }
+
+    /* Ad containers */
+    .ad-container {
+      margin: 2rem 0;
+      text-align: center;
+      background: rgba(255,255,255,0.5);
+      border-radius: 1.5rem;
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    
+    .ad-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6c8ea0;
+      margin-bottom: 0.5rem;
+    }
+    
+    .inline-ad {
+      margin: 1.5rem 0;
+      text-align: center;
+      clear: both;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid #cbdde6;
+      color: #3f627c;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text p {
+        max-width: 100%;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .section-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .section-title {
+        text-align: center;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Perfil principal -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>  Perfil presidencial transformador <span class="ia-badge">GROQ IA</span></div>
+      <h1>El liderazgo que un país necesita</h1>
+      <p>No basta con promesas: se requieren cualidades demostrables, visión de estado y una hoja de ruta real para transformar la economía, la educación, la seguridad y la justicia social. Aquí el perfil de la persona que puede lograrlo.</p>
+      <div class="hero-stats">
+        <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
+        <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
+        <div class="stat"><i class="fas fa-chart-line"></i><span>Ejecución real</span></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="avatar-icon">
+        <i class="fas fa-user-tie"></i>
+      </div>
+      <h3>Perfil: Lídera / Líder Transformador</h3>
+      <p><i class="fas fa-check-circle" style="color:#2c7da0"></i>  Capacidad demostrada de gestión</p>
+      <p><i class="fas fa-balance-scale"></i>  Compromiso anticorrupción</p>
+    </div>
+  </div>
+
+  <!-- CHAT CON IA -->
+  <div class="chat-container">
+    <div class="chat-header">
+      <i class="fas fa-robot"></i>
+      <h3>Asesor Político IA</h3>
+      <span>Groq Llama 3.3</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message ai-message">
+        <div class="message-bubble">🇺🇸 Hola, soy tu asesor político con IA. Pregúntame sobre el perfil de liderazgo, las cualidades necesarias, el plan de transformación o cualquier aspecto del gobierno ideal. ¿Qué quieres saber?</div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidad es más importante en un líder?" autocomplete="off">
+      <button id="chatSendBtn">Enviar</button>
+    </div>
+  </div>
+
+  <!-- CUALIDADES ESENCIALES -->
+  <div>
+    <h2 class="section-title">⚡ Cualidades indispensables</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-eye"></i></div>
+        <h3>Visión de país a 20 años</h3>
+        <p>Pensamiento estratégico que trasciende ciclos electorales. Define metas claras en desarrollo humano, infraestructura y sostenibilidad.</p>
+        <span class="pill">Planificación de largo plazo</span>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Integridad y transparencia radical</h3>
+        <p>Declaración de bienes en tiempo real, auditorías ciudadanas y cero tolerancia a la corrupción. Ejemplo ético desde el primer día.</p>
+        <span class="pill">Lucha anticorrupción</span>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-brain"></i></div>
+        <h3>Capacidad técnica + empatía</h3>
+        <p>Conocimiento profundo de economía, políticas públicas, pero también escucha activa y conexión con las necesidades populares.</p>
+        <span class="pill">Gobernanza inclusiva</span>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-chalkboard"></i></div>
+        <h3>Liderazgo educativo</h3>
+        <p>Prioriza la educación de calidad, ciencia y tecnología como motores de movilidad social y desarrollo productivo.</p>
+        <span class="pill">Revolución educativa</span>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Seguridad con justicia social</h3>
+        <p>Enfoque integral: profesionalización policial, atacar causas estructurales (desigualdad) y reinserción efectiva.</p>
+        <span class="pill">Paz sostenible</span>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Sostenibilidad y transición energética</h3>
+        <p>Compromiso con energías renovables, protección de recursos naturales y economía circular para el futuro del planeta.</p>
+        <span class="pill">Nuevo pacto verde</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ANUNCIO 1: SMART LINK ADSTERRA -->
+  <div class="ad-container">
+    <div class="ad-label">- Patrocinador -</div>
+    <script src="https://www.profitablecpmratenetwork.com/hfbcqgkv?key=c318b34c55ad7f3a70c974fce455fb18"></script>
+  </div>
+
+  <!-- PLAN DE TRANSFORMACIÓN REAL -->
+  <div class="transform-plan">
+    <h2 class="section-title" style="margin-top: 0;">🌱 Plan que transformará el país</h2>
+    <p style="margin-bottom: 1.5rem;">Estas no son promesas abstractas: son políticas públicas ejecutables con métricas y plazos. Una persona con el perfil adecuado implementaría este programa durante su mandato.</p>
+    <div class="grid-2cols">
+      <div>
+        <div class="milestone">
+          <i class="fas fa-graduation-cap"></i>
+          <div><h4>Reforma educativa profunda</h4>
+          <p>Duplicar inversión en primera infancia, formación docente y escuelas de tiempo completo. Alfabetización digital en zonas rurales.</p></div>
+        </div>
+        <div class="milestone">
+          <i class="fas fa-hospital-user"></i>
+          <div><h4>Sistema sanitario universal</h4>
+          <p>Descentralización, fortalecimiento de atención primaria y compra centralizada de medicamentos para abaratar costos.</p></div>
+        </div>
+        <div class="milestone">
+          <i class="fas fa-industry"></i>
+          <div><h4>Reindustrialización sostenible</h4>
+          <p>Incentivos a tecnologías limpias, agroindustria tecnificada y apoyo a PYMES con créditos blandos.</p></div>
+        </div>
+        <div class="milestone">
+          <i class="fas fa-hand-holding-usd"></i>
+          <div><h4>Reforma fiscal progresiva</h4>
+          <p>Impuestos justos a grandes fortunas, fin de exenciones a paraísos fiscales y lucha frontal contra evasión.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="milestone">
+          <i class="fas fa-gavel"></i>
+          <div><h4>Independencia judicial + anticorrupción</h4>
+          <p>Nombramientos por méritos, creación de fiscalía anticorrupción autónoma y protección a denunciantes.</p></div>
+        </div>
+        <div class="milestone">
+          <i class="fas fa-tree"></i>
+          <div><h4>Transición energética justa</h4>
+          <p>50% energías renovables en 7 años, eliminación de subsidios a combustibles fósiles y empleos verdes.</p></div>
+        </div>
+        <div class="milestone">
+          <i class="fas fa-mobile-alt"></i>
+          <div><h4>Digitalización del estado</h4>
+          <p>Trámites 100% digitales, datos abiertos, simplificación burocrática y gobierno ágil.</p></div>
+        </div>
+        <div class="milestone">
+          <i class="fas fa-home"></i>
+          <div><h4>Vivienda y urbanismo social</h4>
+          <p>Plan nacional de vivienda digna, regularización de barrios populares y transporte público masivo.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUALIDADES HUMANAS Y ÉTICAS -->
+  <div class="virtues">
+    <h2 class="section-title" style="margin-top: 0;">🧭 El pilar ético y humano</h2>
+    <p>La transformación genuina no es sólo técnica; requiere una persona con atributos morales sólidos que inspire a la nación.</p>
+    <div class="virtue-list">
+      <div class="virtue-item"><i class="fas fa-dove"></i> Humildad política</div>
+      <div class="virtue-item"><i class="fas fa-comments"></i> Diálogo y concertación</div>
+      <div class="virtue-item"><i class="fas fa-tachometer-alt"></i> Rendición de cuentas</div>
+      <div class="virtue-item"><i class="fas fa-users"></i> Enfoque en grupos vulnerables</div>
+      <div class="virtue-item"><i class="fas fa-chart-simple"></i> Data-driven decisions</div>
+      <div class="virtue-item"><i class="fas fa-hand-sparkles"></i> Coherencia vida pública/privada</div>
+      <div class="virtue-item"><i class="fas fa-clock"></i> Gestión del tiempo y urgencias</div>
+      <div class="virtue-item"><i class="fas fa-globe"></i> Visión geopolítica autónoma</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE COMPROMISOS -->
+  <div style="margin: 2rem 0;">
+    <h2 class="section-title">📋 Compromisos verificables (primeros 100 días)</h2>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-file-signature card-icon" style="background: #eaf4e8;"></i>
+        <h3>Declaración de conflicto de interés</h3>
+        <p>Registro público de reuniones con grupos de interés y publicación de agenda detallada.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-coins card-icon" style="background: #eaf4e8;"></i>
+        <h3>Auditoría ciudadana del gasto</h3>
+        <p>Plataforma en línea para seguir cada peso del presupuesto, con alertas tempranas.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-school card-icon" style="background: #eaf4e8;"></i>
+        <h3>Emergencia educativa</h3>
+        <p>Decreto para mejorar infraestructura escolar en zonas marginadas en 90 días.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-handcuffs card-icon" style="background: #eaf4e8;"></i>
+        <h3>Plan nacional de seguridad</h3>
+        <p>Depuración de cuerpos policiales, creación de bases de datos unificadas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANUNCIO 2: SEGUNDO SMART LINK ADSTERRA -->
+  <div class="inline-ad">
+    <div class="ad-label">- Enlaces patrocinados -</div>
+    <script src="https://www.profitablecpmratenetwork.com/sy5uvbav4x?key=c29e1fd554f321e910c2944fc5395589"></script>
+  </div>
+
+  <!-- Razones por las que SÍ transformaría -->
+  <div style="background: #ffffffc9; border-radius: 1.8rem; padding: 1.8rem; margin-top: 1rem;">
+    <h2 class="section-title">🔍 ¿Por qué esta persona SÍ transformaría?</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1rem;">
+      <div style="flex: 1; min-width: 200px;">
+        <i class="fas fa-chart-line" style="font-size: 1.8rem; color:#2c7da0;"></i>
+        <p style="font-weight: 600; margin-top: 0.5rem;">Experiencia comprobada gestionando equipos complejos y presupuestos públicos.</p>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <i class="fas fa-people-arrows" style="font-size: 1.8rem; color:#2c7da0;"></i>
+        <p style="font-weight: 600; margin-top: 0.5rem;">Capacidad de construir consensos sin sacrificar principios transformadores.</p>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <i class="fas fa-chart-pie" style="font-size: 1.8rem; color:#2c7da0;"></i>
+        <p style="font-weight: 600; margin-top: 0.5rem;">Equipo técnico de primer nivel y apertura a la innovación social.</p>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <i class="fas fa-history" style="font-size: 1.8rem; color:#2c7da0;"></i>
+        <p style="font-weight: 600; margin-top: 0.5rem;">No tiene condenas ni vínculos con corrupción; trayectoria intachable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonios simbólicos -->
+  <div style="margin: 2rem 0;">
+    <h2 class="section-title">🗣️ Lo que la ciudadanía exige</h2>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-quote-left" style="color: #2c7da0; margin-bottom: 0.7rem; display: block;"></i>
+        <p>"Necesitamos a alguien que no mienta, que tenga coherencia y que convoque a los mejores, no a sus amigos."</p>
+        <p style="margin-top: 0.8rem;"><strong>— Colectivo de vigilancia democrática</strong></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-quote-left" style="color: #2c7da0; margin-bottom: 0.7rem; display: block;"></i>
+        <p>"Una presidenta o presidente que termine con los privilegios y ponga la economía al servicio de la mayoría."</p>
+        <p style="margin-top: 0.8rem;"><strong>— Red de economías transformadoras</strong></p>
+      </div>
+      <div class="card">
+        <i class="fas fa-quote-left" style="color: #2c7da0; margin-bottom: 0.7rem; display: block;"></i>
+        <p>"Que gobierne con datos, no con ocurrencias. Que recupere la esperanza y la fe en las instituciones."</p>
+        <p style="margin-top: 0.8rem;"><strong>— Jóvenes por el futuro</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <i class="fas fa-globe-americas"></i>  Perfil basado en evidencia global de liderazgos transformadores (desarrollo humano, innovación pública y ética). <br />
+    Una persona que cumpla estos criterios puede iniciar una verdadera refundación del país. El cambio es posible.
+  </div>
+</div>
+
+<script>
+  // ============================================
+  // CONFIGURACIÓN GROQ
+  // ============================================
+  const GROQ_API_KEY = "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";
+  const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
+  const MODEL = "llama-3.3-70b-versatile";
+  
+  // Límite de 100 consultas/día por navegador
+  const limite = {
+    get hoy() { return new Date().toDateString(); },
+    get usadas() { 
+      if(localStorage.getItem('dia_presidencial') !== this.hoy) return 0;
+      return parseInt(localStorage.getItem('consultas_presidencial') || 0);
+    },
+    puede() { return this.usadas < 100; },
+    registrar() { 
+      localStorage.setItem('dia_presidencial', this.hoy);
+      localStorage.setItem('consultas_presidencial', this.usadas + 1);
+    }
+  };
+  
+  // Elementos del chat
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  const chatSendBtn = document.getElementById('chatSendBtn');
+  
+  function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+    bubble.textContent = text;
+    messageDiv.appendChild(bubble);
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  
+  function showTyping() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message ai-message';
+    typingDiv.id = 'typing-indicator';
+    typingDiv.innerHTML = '<div class="message-bubble typing">🤔 Analizando tu consulta...</div>';
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  
+  function removeTyping() {
+    const typing = document.getElementById('typing-indicator');
+    if (typing) typing.remove();
+  }
+  
+  async function consultarIA(pregunta) {
+    if (!limite.puede()) {
+      return "🛡️ Límite de IA alcanzado (100 consultas/día). Vuelve mañana para seguir aprendiendo sobre liderazgo.";
+    }
+    
+    try {
+      const response = await fetch(GROQ_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${GROQ_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: MODEL,
+          messages: [
+            { 
+              role: "system", 
+              content: "Eres un asesor político experto en liderazgo, políticas públicas y transformación de países. Hablas español, eres objetivo, informativo y das respuestas concisas (máximo 100 palabras). Te basas en el perfil presidencial transformador descrito en la página." 
+            },
+            { role: "user", content: pregunta }
+          ],
+          max_tokens: 200,
+          temperature: 0.7
+        })
+      });
+      
+      if (!response.ok) return null;
+      const data = await response.json();
+      const respuesta = data.choices?.[0]?.message?.content || null;
+      
+      if (respuesta) {
+        limite.registrar();
+      }
+      
+      return respuesta;
+    } catch (error) {
+      console.error("Error en Groq:", error);
+      return null;
+    }
+  }
+  
+  async function handleSend() {
+    const question = chatInput.value.trim();
+    if (!question) return;
+    
+    addMessage(question, true);
+    chatInput.value = '';
+    chatSendBtn.disabled = true;
+    showTyping();
+    
+    let respuesta = await consultarIA(question);
+    removeTyping();
+    
+    if (!respuesta) {
+      respuesta = "Lo siento, no pude procesar tu consulta en este momento. Por favor, intenta de nuevo más tarde.";
+    }
+    
+    addMessage(respuesta, false);
+    chatSendBtn.disabled = false;
+    chatInput.focus();
+  }
+  
+  chatSendBtn.addEventListener('click', handleSend);
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+  
+  console.log("🤖 Asesor Político IA - Límite diario:", limite.usadas, "/100 usadas");
+</script>
+</body>
+</html>
