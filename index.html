@@ -29,7 +29,6 @@
       padding: 2rem 1.5rem;
     }
 
-    /* header / hero */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -381,7 +380,6 @@
       color: #1e6f8f;
     }
 
-    /* Ad containers */
     .ad-container {
       margin: 2rem 0;
       text-align: center;
@@ -433,7 +431,6 @@
     }
     .vr-button:hover { transform: scale(1.05); }
     
-    /* Modo VR */
     .vr-mode {
       position: fixed;
       top: 0;
@@ -486,8 +483,8 @@
   </style>
 </head>
 <body>
-<div class="container">
-  <!-- Perfil principal -->
+
+<div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
       <div class="hero-badge"><i class="fas fa-star-of-life"></i>  Perfil presidencial transformador <span class="ia-badge">GROQ IA</span></div>
@@ -500,16 +497,13 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="avatar-icon">
-        <i class="fas fa-user-tie"></i>
-      </div>
+      <div class="avatar-icon"><i class="fas fa-user-tie"></i></div>
       <h3>Perfil: Lídera / Líder Transformador</h3>
       <p><i class="fas fa-check-circle" style="color:#2c7da0"></i>  Capacidad demostrada de gestión</p>
       <p><i class="fas fa-balance-scale"></i>  Compromiso anticorrupción</p>
     </div>
   </div>
 
-  <!-- CHAT CON IA -->
   <div class="chat-container">
     <div class="chat-header">
       <i class="fas fa-robot"></i>
@@ -518,7 +512,7 @@
     </div>
     <div class="chat-messages" id="chatMessages">
       <div class="message ai-message">
-        <div class="message-bubble">🇺🇸 Hola, soy tu asesor político con IA. Pregúntame sobre el perfil de liderazgo, las cualidades necesarias, el plan de transformación o cualquier aspecto del gobierno ideal. ¿Qué quieres saber?</div>
+        <div class="message-bubble">🇺🇸 Hola, soy tu asesor político con IA. Pregúntame sobre el perfil de liderazgo, las cualidades necesarias, el plan de transformación o cualquier aspecto del gobierno ideal.</div>
       </div>
     </div>
     <div class="chat-input-area">
@@ -527,121 +521,35 @@
     </div>
   </div>
 
-  <!-- CUALIDADES ESENCIALES -->
   <div>
     <h2 class="section-title">⚡ Cualidades indispensables</h2>
     <div class="card-grid">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-eye"></i></div>
-        <h3>Visión de país a 20 años</h3>
-        <p>Pensamiento estratégico que trasciende ciclos electorales. Define metas claras en desarrollo humano, infraestructura y sostenibilidad.</p>
-        <span class="pill">Planificación de largo plazo</span>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-handshake"></i></div>
-        <h3>Integridad y transparencia radical</h3>
-        <p>Declaración de bienes en tiempo real, auditorías ciudadanas y cero tolerancia a la corrupción. Ejemplo ético desde el primer día.</p>
-        <span class="pill">Lucha anticorrupción</span>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-brain"></i></div>
-        <h3>Capacidad técnica + empatía</h3>
-        <p>Conocimiento profundo de economía, políticas públicas, pero también escucha activa y conexión con las necesidades populares.</p>
-        <span class="pill">Gobernanza inclusiva</span>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-chalkboard"></i></div>
-        <h3>Liderazgo educativo</h3>
-        <p>Prioriza la educación de calidad, ciencia y tecnología como motores de movilidad social y desarrollo productivo.</p>
-        <span class="pill">Revolución educativa</span>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Seguridad con justicia social</h3>
-        <p>Enfoque integral: profesionalización policial, atacar causas estructurales (desigualdad) y reinserción efectiva.</p>
-        <span class="pill">Paz sostenible</span>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-leaf"></i></div>
-        <h3>Sostenibilidad y transición energética</h3>
-        <p>Compromiso con energías renovables, protección de recursos naturales y economía circular para el futuro del planeta.</p>
-        <span class="pill">Nuevo pacto verde</span>
-      </div>
+      <div class="card"><div class="card-icon"><i class="fas fa-eye"></i></div><h3>Visión de país a 20 años</h3><p>Pensamiento estratégico que trasciende ciclos electorales.</p><span class="pill">Planificación de largo plazo</span></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-handshake"></i></div><h3>Integridad y transparencia radical</h3><p>Declaración de bienes en tiempo real, auditorías ciudadanas.</p><span class="pill">Lucha anticorrupción</span></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-brain"></i></div><h3>Capacidad técnica + empatía</h3><p>Conocimiento profundo de economía y políticas públicas.</p><span class="pill">Gobernanza inclusiva</span></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-chalkboard"></i></div><h3>Liderazgo educativo</h3><p>Prioriza la educación de calidad, ciencia y tecnología.</p><span class="pill">Revolución educativa</span></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Seguridad con justicia social</h3><p>Enfoque integral: profesionalización policial.</p><span class="pill">Paz sostenible</span></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-leaf"></i></div><h3>Sostenibilidad y transición energética</h3><p>Compromiso con energías renovables y economía circular.</p><span class="pill">Nuevo pacto verde</span></div>
     </div>
   </div>
   
-  <!-- ANUNCIO 1: PopAds -->
-  <div class="ad-container">
-    <div class="ad-label">- Patrocinador -</div>
-    <script type="text/javascript" data-cfasync="false">
-    /*<![CDATA[/* */
-    (function(){var y=window,j="fd00ec802f889d01aba4b20343501917",o=[["siteId",230+597-856*111+5387265],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmJsb2NrYWRzbm90LmNvbS9IZFZaWi9uanN4Z3JhcGhjb3JlLmpz","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9OTVRISS9oL3Jwb3BwZXIubWluLmNzcw=="],n=-1,l,k,z=function(){clearTimeout(k);n++;if(q[n]&&!(1802736393000<(new Date).getTime()&&1<n)){l=y.document.createElement("script");l.type="text/javascript";l.async=!0;var f=y.document.getElementsByTagName("script")[0];l.src="https://"+atob(q[n]);l.crossOrigin="anonymous";l.onerror=z;l.onload=function(){clearTimeout(k);y[j.slice(0,16)+j.slice(0,16)]||z()};k=setTimeout(z,5E3);f.parentNode.insertBefore(l,f)}};if(!y[j]){try{Object.freeze(y[j]=o)}catch(e){}z()}})();
-    /*]]>/* */
-    </script>
-  </div>
-
-  <!-- PLAN DE TRANSFORMACIÓN REAL -->
   <div class="transform-plan">
     <h2 class="section-title" style="margin-top: 0;">🌱 Plan que transformará el país</h2>
-    <p style="margin-bottom: 1.5rem;">Estas no son promesas abstractas: son políticas públicas ejecutables con métricas y plazos. Una persona con el perfil adecuado implementaría este programa durante su mandato.</p>
+    <p style="margin-bottom: 1.5rem;">Políticas públicas ejecutables con métricas y plazos.</p>
     <div class="grid-2cols">
-      <div>
-        <div class="milestone">
-          <i class="fas fa-graduation-cap"></i>
-          <div><h4>Reforma educativa profunda</h4>
-          <p>Duplicar inversión en primera infancia, formación docente y escuelas de tiempo completo. Alfabetización digital en zonas rurales.</p></div>
-        </div>
-        <div class="milestone">
-          <i class="fas fa-hospital-user"></i>
-          <div><h4>Sistema sanitario universal</h4>
-          <p>Descentralización, fortalecimiento de atención primaria y compra centralizada de medicamentos para abaratar costos.</p></div>
-        </div>
-        <div class="milestone">
-          <i class="fas fa-industry"></i>
-          <div><h4>Reindustrialización sostenible</h4>
-          <p>Incentivos a tecnologías limpias, agroindustria tecnificada y apoyo a PYMES con créditos blandos.</p></div>
-        </div>
-        <div class="milestone">
-          <i class="fas fa-hand-holding-usd"></i>
-          <div><h4>Reforma fiscal progresiva</h4>
-          <p>Impuestos justos a grandes fortunas, fin de exenciones a paraísos fiscales y lucha frontal contra evasión.</p></div>
-        </div>
-      </div>
-      <div>
-        <div class="milestone">
-          <i class="fas fa-gavel"></i>
-          <div><h4>Independencia judicial + anticorrupción</h4>
-          <p>Nombramientos por méritos, creación de fiscalía anticorrupción autónoma y protección a denunciantes.</p></div>
-        </div>
-        <div class="milestone">
-          <i class="fas fa-tree"></i>
-          <div><h4>Transición energética justa</h4>
-          <p>50% energías renovables en 7 años, eliminación de subsidios a combustibles fósiles y empleos verdes.</p></div>
-        </div>
-        <div class="milestone">
-          <i class="fas fa-mobile-alt"></i>
-          <div><h4>Digitalización del estado</h4>
-          <p>Trámites 100% digitales, datos abiertos, simplificación burocrática y gobierno ágil.</p></div>
-        </div>
-        <div class="milestone">
-          <i class="fas fa-home"></i>
-          <div><h4>Vivienda y urbanismo social</h4>
-          <p>Plan nacional de vivienda digna, regularización de barrios populares y transporte público masivo.</p></div>
-        </div>
-      </div>
+      <div><div class="milestone"><i class="fas fa-graduation-cap"></i><div><h4>Reforma educativa profunda</h4><p>Duplicar inversión en primera infancia y escuelas de tiempo completo.</p></div></div>
+      <div class="milestone"><i class="fas fa-hospital-user"></i><div><h4>Sistema sanitario universal</h4><p>Descentralización y fortalecimiento de atención primaria.</p></div></div>
+      <div class="milestone"><i class="fas fa-industry"></i><div><h4>Reindustrialización sostenible</h4><p>Incentivos a tecnologías limpias y apoyo a PYMES.</p></div></div>
+      <div class="milestone"><i class="fas fa-hand-holding-usd"></i><div><h4>Reforma fiscal progresiva</h4><p>Impuestos justos a grandes fortunas y lucha contra evasión.</p></div></div></div>
+      <div><div class="milestone"><i class="fas fa-gavel"></i><div><h4>Independencia judicial + anticorrupción</h4><p>Nombramientos por méritos y fiscalía anticorrupción autónoma.</p></div></div>
+      <div class="milestone"><i class="fas fa-tree"></i><div><h4>Transición energética justa</h4><p>50% energías renovables en 7 años, empleos verdes.</p></div></div>
+      <div class="milestone"><i class="fas fa-mobile-alt"></i><div><h4>Digitalización del estado</h4><p>Trámites 100% digitales y gobierno ágil.</p></div></div>
+      <div class="milestone"><i class="fas fa-home"></i><div><h4>Vivienda y urbanismo social</h4><p>Plan nacional de vivienda digna y transporte público masivo.</p></div></div></div>
     </div>
   </div>
 
-  <!-- ANUNCIO 2: Adsterra Smart Link (NUEVO) -->
-  <div class="ad-container">
-    <div class="ad-label">- Contenido patrocinado -</div>
-    <script src="https://pl29137063.profitablecpmratenetwork.com/61/2f/c0/612fc0895a4d18ef5b58ae13c6940b8d.js"></script>
-  </div>
-
-  <!-- CUALIDADES HUMANAS Y ÉTICAS -->
   <div class="virtues">
     <h2 class="section-title" style="margin-top: 0;">🧭 El pilar ético y humano</h2>
-    <p>La transformación genuina no es sólo técnica; requiere una persona con atributos morales sólidos que inspire a la nación.</p>
     <div class="virtue-list">
       <div class="virtue-item"><i class="fas fa-dove"></i> Humildad política</div>
       <div class="virtue-item"><i class="fas fa-comments"></i> Diálogo y concertación</div>
@@ -649,124 +557,46 @@
       <div class="virtue-item"><i class="fas fa-users"></i> Enfoque en grupos vulnerables</div>
       <div class="virtue-item"><i class="fas fa-chart-simple"></i> Data-driven decisions</div>
       <div class="virtue-item"><i class="fas fa-hand-sparkles"></i> Coherencia vida pública/privada</div>
-      <div class="virtue-item"><i class="fas fa-clock"></i> Gestión del tiempo y urgencias</div>
-      <div class="virtue-item"><i class="fas fa-globe"></i> Visión geopolítica autónoma</div>
     </div>
   </div>
 
-  <!-- SECCIÓN DE COMPROMISOS -->
   <div style="margin: 2rem 0;">
     <h2 class="section-title">📋 Compromisos verificables (primeros 100 días)</h2>
     <div class="card-grid">
-      <div class="card">
-        <i class="fas fa-file-signature card-icon" style="background: #eaf4e8;"></i>
-        <h3>Declaración de conflicto de interés</h3>
-        <p>Registro público de reuniones con grupos de interés y publicación de agenda detallada.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-coins card-icon" style="background: #eaf4e8;"></i>
-        <h3>Auditoría ciudadana del gasto</h3>
-        <p>Plataforma en línea para seguir cada peso del presupuesto, con alertas tempranas.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-school card-icon" style="background: #eaf4e8;"></i>
-        <h3>Emergencia educativa</h3>
-        <p>Decreto para mejorar infraestructura escolar en zonas marginadas en 90 días.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-handcuffs card-icon" style="background: #eaf4e8;"></i>
-        <h3>Plan nacional de seguridad</h3>
-        <p>Depuración de cuerpos policiales, creación de bases de datos unificadas.</p>
-      </div>
+      <div class="card"><i class="fas fa-file-signature card-icon" style="background:#eaf4e8"></i><h3>Declaración de conflicto de interés</h3><p>Registro público de reuniones.</p></div>
+      <div class="card"><i class="fas fa-coins card-icon" style="background:#eaf4e8"></i><h3>Auditoría ciudadana del gasto</h3><p>Plataforma en línea del presupuesto.</p></div>
+      <div class="card"><i class="fas fa-school card-icon" style="background:#eaf4e8"></i><h3>Emergencia educativa</h3><p>Mejorar infraestructura escolar en 90 días.</p></div>
+      <div class="card"><i class="fas fa-handcuffs card-icon" style="background:#eaf4e8"></i><h3>Plan nacional de seguridad</h3><p>Depuración de cuerpos policiales.</p></div>
     </div>
   </div>
 
-  <!-- ANUNCIO 3: HilltopAds -->
-  <div class="inline-ad">
-    <div class="ad-label">- Enlaces patrocinados -</div>
-    <script>
-    (function(lba){
-    var d = document,
-        s = d.createElement('script'),
-        l = d.scripts[d.scripts.length - 1];
-    s.settings = lba || {};
-    s.src = "\/\/webbedtrash.com\/bVXUV\/s.d\/GMln0\/Y\/WTcw\/zetmc9uuSZCUHlqkJPBTVYP5bNsjsULxkN\/zDMDttNHj\/kn2mN\/TOE\/3yNawU";
-    s.async = true;
-    s.referrerPolicy = 'no-referrer-when-downgrade';
-    l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-  </div>
-
-  <!-- Razones por las que SÍ transformaría -->
-  <div style="background: #ffffffc9; border-radius: 1.8rem; padding: 1.8rem; margin-top: 1rem;">
+  <div style="background:#ffffffc9; border-radius:1.8rem; padding:1.8rem; margin-top:1rem;">
     <h2 class="section-title">🔍 ¿Por qué esta persona SÍ transformaría?</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1rem;">
-      <div style="flex: 1; min-width: 200px;">
-        <i class="fas fa-chart-line" style="font-size: 1.8rem; color:#2c7da0;"></i>
-        <p style="font-weight: 600; margin-top: 0.5rem;">Experiencia comprobada gestionando equipos complejos y presupuestos públicos.</p>
-      </div>
-      <div style="flex: 1; min-width: 200px;">
-        <i class="fas fa-people-arrows" style="font-size: 1.8rem; color:#2c7da0;"></i>
-        <p style="font-weight: 600; margin-top: 0.5rem;">Capacidad de construir consensos sin sacrificar principios transformadores.</p>
-      </div>
-      <div style="flex: 1; min-width: 200px;">
-        <i class="fas fa-chart-pie" style="font-size: 1.8rem; color:#2c7da0;"></i>
-        <p style="font-weight: 600; margin-top: 0.5rem;">Equipo técnico de primer nivel y apertura a la innovación social.</p>
-      </div>
-      <div style="flex: 1; min-width: 200px;">
-        <i class="fas fa-history" style="font-size: 1.8rem; color:#2c7da0;"></i>
-        <p style="font-weight: 600; margin-top: 0.5rem;">No tiene condenas ni vínculos con corrupción; trayectoria intachable.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Testimonios simbólicos -->
-  <div style="margin: 2rem 0;">
-    <h2 class="section-title">🗣️ Lo que la ciudadanía exige</h2>
-    <div class="card-grid">
-      <div class="card">
-        <i class="fas fa-quote-left" style="color: #2c7da0; margin-bottom: 0.7rem; display: block;"></i>
-        <p>"Necesitamos a alguien que no mienta, que tenga coherencia y que convoque a los mejores, no a sus amigos."</p>
-        <p style="margin-top: 0.8rem;"><strong>— Colectivo de vigilancia democrática</strong></p>
-      </div>
-      <div class="card">
-        <i class="fas fa-quote-left" style="color: #2c7da0; margin-bottom: 0.7rem; display: block;"></i>
-        <p>"Una presidenta o presidente que termine con los privilegios y ponga la economía al servicio de la mayoría."</p>
-        <p style="margin-top: 0.8rem;"><strong>— Red de economías transformadoras</strong></p>
-      </div>
-      <div class="card">
-        <i class="fas fa-quote-left" style="color: #2c7da0; margin-bottom: 0.7rem; display: block;"></i>
-        <p>"Que gobierne con datos, no con ocurrencias. Que recupere la esperanza y la fe en las instituciones."</p>
-        <p style="margin-top: 0.8rem;"><strong>— Jóvenes por el futuro</strong></p>
-      </div>
+    <div style="display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:1rem;">
+      <div style="flex:1"><i class="fas fa-chart-line" style="font-size:1.8rem; color:#2c7da0"></i><p style="font-weight:600">Experiencia comprobada gestionando equipos complejos.</p></div>
+      <div style="flex:1"><i class="fas fa-people-arrows" style="font-size:1.8rem; color:#2c7da0"></i><p style="font-weight:600">Capacidad de construir consensos.</p></div>
+      <div style="flex:1"><i class="fas fa-chart-pie" style="font-size:1.8rem; color:#2c7da0"></i><p style="font-weight:600">Equipo técnico de primer nivel.</p></div>
+      <div style="flex:1"><i class="fas fa-history" style="font-size:1.8rem; color:#2c7da0"></i><p style="font-weight:600">Trayectoria intachable sin corrupción.</p></div>
     </div>
   </div>
 
   <div class="footer-note">
-    <i class="fas fa-globe-americas"></i>  Perfil basado en evidencia global de liderazgos transformadores (desarrollo humano, innovación pública y ética). <br />
-    Una persona que cumpla estos criterios puede iniciar una verdadera refundación del país. El cambio es posible.
+    <i class="fas fa-globe-americas"></i>  Perfil basado en evidencia global de liderazgos transformadores. El cambio es posible.
   </div>
 </div>
 
-<!-- Botón VR -->
-<button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
+<button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR (DESPACHO)</button>
 
-<!-- Modo VR (Despacho Ovalado) -->
 <div class="vr-mode" id="vrMode">
   <button class="close-vr" id="closeVrBtn">✕ SALIR DE VR</button>
   <div id="vrContainer" style="width:100%;height:100%"></div>
 </div>
 
 <script>
-  // ============================================
-  // CONFIGURACIÓN GROQ
-  // ============================================
   const GROQ_API_KEY = "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";
   const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
   const MODEL = "llama-3.3-70b-versatile";
   
-  // Límite de 100 consultas/día por navegador
   const limite = {
     get hoy() { return new Date().toDateString(); },
     get usadas() { 
@@ -780,7 +610,6 @@
     }
   };
   
-  // Elementos del chat
   const chatMessages = document.getElementById('chatMessages');
   const chatInput = document.getElementById('chatInput');
   const chatSendBtn = document.getElementById('chatSendBtn');
@@ -812,41 +641,28 @@
   
   async function consultarIA(pregunta) {
     if (!limite.puede()) {
-      return "🛡️ Límite de IA alcanzado (100 consultas/día). Vuelve mañana para seguir aprendiendo sobre liderazgo.";
+      return "🛡️ Límite de IA alcanzado (100 consultas/día). Vuelve mañana.";
     }
-    
     try {
       const response = await fetch(GROQ_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${GROQ_API_KEY}`
-        },
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${GROQ_API_KEY}` },
         body: JSON.stringify({
           model: MODEL,
           messages: [
-            { 
-              role: "system", 
-              content: "Eres un asesor político experto en liderazgo, políticas públicas y transformación de países. Hablas español, eres objetivo, informativo y das respuestas concisas (máximo 100 palabras). Te basas en el perfil presidencial transformador descrito en la página." 
-            },
+            { role: "system", content: "Eres un asesor político experto en liderazgo. Hablas español, das respuestas concisas (máximo 80 palabras)." },
             { role: "user", content: pregunta }
           ],
           max_tokens: 200,
           temperature: 0.7
         })
       });
-      
       if (!response.ok) return null;
       const data = await response.json();
       const respuesta = data.choices?.[0]?.message?.content || null;
-      
-      if (respuesta) {
-        limite.registrar();
-      }
-      
+      if (respuesta) limite.registrar();
       return respuesta;
     } catch (error) {
-      console.error("Error en Groq:", error);
       return null;
     }
   }
@@ -854,198 +670,201 @@
   async function handleSend() {
     const question = chatInput.value.trim();
     if (!question) return;
-    
     addMessage(question, true);
     chatInput.value = '';
     chatSendBtn.disabled = true;
     showTyping();
-    
     let respuesta = await consultarIA(question);
     removeTyping();
-    
-    if (!respuesta) {
-      respuesta = "Lo siento, no pude procesar tu consulta en este momento. Por favor, intenta de nuevo más tarde.";
-    }
-    
+    if (!respuesta) respuesta = "Lo siento, no pude procesar tu consulta. Intenta de nuevo.";
     addMessage(respuesta, false);
     chatSendBtn.disabled = false;
     chatInput.focus();
   }
   
   chatSendBtn.addEventListener('click', handleSend);
-  chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') handleSend();
-  });
-  
-  console.log("🤖 Asesor Político IA - Límite diario:", limite.usadas, "/100 usadas");
+  chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
 </script>
 
 <!-- Script para el MODO VR (Three.js + WebXR) -->
 <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
-    }
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
   }
+}
 </script>
 
 <script type="module">
-  import * as THREE from 'three';
-  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-  import { VRButton } from 'three/addons/webxr/VRButton.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { VRButton } from 'three/addons/webxr/VRButton.js';
+
+let vrScene, vrCamera, vrRenderer, vrControls;
+let vrActive = false;
+
+function initVR() {
+  const container = document.getElementById('vrContainer');
+  if (!container) return;
+  container.innerHTML = '';
   
-  let vrScene, vrCamera, vrRenderer, vrControls;
-  let vrActive = false;
+  vrScene = new THREE.Scene();
+  vrScene.background = new THREE.Color(0x1a1a2e);
+  vrScene.fog = new THREE.FogExp2(0x1a1a2e, 0.006);
   
-  function initVR() {
-    const container = document.getElementById('vrContainer');
-    if (!container) return;
-    container.innerHTML = '';
-    
-    vrScene = new THREE.Scene();
-    vrScene.background = new THREE.Color(0x1a1a2e);
-    vrScene.fog = new THREE.FogExp2(0x1a1a2e, 0.006);
-    
-    vrCamera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-    vrCamera.position.set(3, 1.6, 4);
-    vrCamera.lookAt(0, 1, 0);
-    
-    vrRenderer = new THREE.WebGLRenderer({ antialias: true });
-    vrRenderer.setSize(container.clientWidth, container.clientHeight);
-    vrRenderer.setPixelRatio(window.devicePixelRatio);
-    vrRenderer.xr.enabled = true;
-    container.appendChild(vrRenderer.domElement);
-    
-    const vrBtn = VRButton.createButton(vrRenderer);
-    vrBtn.style.position = 'absolute';
-    vrBtn.style.bottom = '20px';
-    vrBtn.style.right = '20px';
-    vrBtn.style.zIndex = '1000';
-    container.appendChild(vrBtn);
-    
-    vrControls = new OrbitControls(vrCamera, vrRenderer.domElement);
-    vrControls.enableDamping = true;
-    vrControls.target.set(0, 1.2, 0);
-    
-    // Luces
-    const ambientLight = new THREE.AmbientLight(0x404060);
-    vrScene.add(ambientLight);
-    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-    dirLight.position.set(5, 10, 7);
-    vrScene.add(dirLight);
-    const fillLight = new THREE.PointLight(0x8b5cf6, 0.3);
-    fillLight.position.set(0, 2, 2);
-    vrScene.add(fillLight);
-    
-    // Suelo (madera)
-    const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x5a3a2a, roughness: 0.4, metalness: 0.1 });
-    const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), floorMaterial);
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.y = -0.1;
-    floor.receiveShadow = true;
-    vrScene.add(floor);
-    
-    // Alfombra (roja)
-    const carpetMaterial = new THREE.MeshStandardMaterial({ color: 0x8b0000, roughness: 0.6 });
-    const carpet = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), carpetMaterial);
-    carpet.rotation.x = -Math.PI / 2;
-    carpet.position.y = -0.08;
-    vrScene.add(carpet);
-    
-    // Escritorio presidencial
-    const deskMaterial = new THREE.MeshStandardMaterial({ color: 0x4a2a1a, roughness: 0.3 });
-    const deskTop = new THREE.Mesh(new THREE.BoxGeometry(2, 0.1, 1.2), deskMaterial);
-    deskTop.position.set(0, 0.5, -1.2);
-    deskTop.castShadow = true;
-    vrScene.add(deskTop);
-    
-    const deskLeg1 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.5, 0.1), deskMaterial);
-    deskLeg1.position.set(-0.8, 0.25, -1.7);
-    vrScene.add(deskLeg1);
-    
-    const deskLeg2 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.5, 0.1), deskMaterial);
-    deskLeg2.position.set(0.8, 0.25, -1.7);
-    vrScene.add(deskLeg2);
-    
-    // Banderas (derecha e izquierda)
-    const flagPole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
-    flagPole.position.set(-1.5, 0.9, -1.5);
-    vrScene.add(flagPole);
-    
-    const flagPole2 = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
-    flagPole2.position.set(1.5, 0.9, -1.5);
-    vrScene.add(flagPole2);
-    
-    // Sillón presidencial
-    const chairMaterial = new THREE.MeshStandardMaterial({ color: 0x2a1a0a, roughness: 0.5 });
-    const chairBase = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.1, 0.8), chairMaterial);
-    chairBase.position.set(0, 0.1, -0.5);
-    vrScene.add(chairBase);
-    
-    const chairBack = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 0.1), chairMaterial);
-    chairBack.position.set(0, 0.5, -0.85);
-    vrScene.add(chairBack);
-    
-    // Cuadro en la pared
-    const frameMaterial = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, emissive: 0x2a0a4a, emissiveIntensity: 0.2 });
-    const frame = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 0.05), frameMaterial);
-    frame.position.set(0, 1.8, -2.5);
-    vrScene.add(frame);
-    
-    // Partículas (polvo de luz)
-    const particleCount = 400;
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesPositions = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount; i++) {
-      particlesPositions[i * 3] = (Math.random() - 0.5) * 6;
-      particlesPositions[i * 3 + 1] = Math.random() * 3;
-      particlesPositions[i * 3 + 2] = (Math.random() - 0.5) * 5 - 1;
-    }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
-    const particlesMaterial = new THREE.PointsMaterial({ color: 0x60a5fa, size: 0.03, transparent: true, opacity: 0.4 });
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-    vrScene.add(particles);
-    
-    let time = 0;
-    function animate() {
-      requestAnimationFrame(animate);
-      time += 0.005;
-      particles.rotation.y += 0.0005;
-      if (vrControls) vrControls.update();
-      if (vrRenderer) vrRenderer.render(vrScene, vrCamera);
-    }
-    animate();
-    
-    window.addEventListener('resize', () => {
-      if (vrRenderer && vrCamera) {
-        const width = container.clientWidth;
-        const height = container.clientHeight;
-        vrCamera.aspect = width / height;
-        vrCamera.updateProjectionMatrix();
-        vrRenderer.setSize(width, height);
-      }
-    });
+  vrCamera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  vrCamera.position.set(3, 1.6, 4);
+  
+  vrRenderer = new THREE.WebGLRenderer({ antialias: true });
+  vrRenderer.setSize(container.clientWidth, container.clientHeight);
+  vrRenderer.xr.enabled = true;
+  container.appendChild(vrRenderer.domElement);
+  
+  const vrBtn = VRButton.createButton(vrRenderer);
+  vrBtn.style.position = 'absolute';
+  vrBtn.style.bottom = '20px';
+  vrBtn.style.right = '20px';
+  vrBtn.style.zIndex = '1000';
+  container.appendChild(vrBtn);
+  
+  vrControls = new OrbitControls(vrCamera, vrRenderer.domElement);
+  vrControls.enableDamping = true;
+  vrControls.target.set(0, 1.2, 0);
+  
+  // Luces
+  const ambientLight = new THREE.AmbientLight(0x404060);
+  vrScene.add(ambientLight);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(5, 10, 7);
+  vrScene.add(dirLight);
+  const fillLight = new THREE.PointLight(0x8b5cf6, 0.3);
+  fillLight.position.set(0, 2, 2);
+  vrScene.add(fillLight);
+  
+  // Suelo
+  const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x5a3a2a, roughness: 0.4 });
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), floorMaterial);
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -0.1;
+  vrScene.add(floor);
+  
+  // Alfombra
+  const carpetMaterial = new THREE.MeshStandardMaterial({ color: 0x8b0000, roughness: 0.6 });
+  const carpet = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), carpetMaterial);
+  carpet.rotation.x = -Math.PI / 2;
+  carpet.position.y = -0.08;
+  vrScene.add(carpet);
+  
+  // Escritorio
+  const deskMaterial = new THREE.MeshStandardMaterial({ color: 0x4a2a1a, roughness: 0.3 });
+  const deskTop = new THREE.Mesh(new THREE.BoxGeometry(2, 0.1, 1.2), deskMaterial);
+  deskTop.position.set(0, 0.5, -1.2);
+  vrScene.add(deskTop);
+  
+  const deskLeg1 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.5, 0.1), deskMaterial);
+  deskLeg1.position.set(-0.8, 0.25, -1.7);
+  vrScene.add(deskLeg1);
+  
+  const deskLeg2 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.5, 0.1), deskMaterial);
+  deskLeg2.position.set(0.8, 0.25, -1.7);
+  vrScene.add(deskLeg2);
+  
+  // Banderas
+  const flagPole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
+  flagPole.position.set(-1.5, 0.9, -1.5);
+  vrScene.add(flagPole);
+  
+  const flagPole2 = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
+  flagPole2.position.set(1.5, 0.9, -1.5);
+  vrScene.add(flagPole2);
+  
+  // Sillón
+  const chairMaterial = new THREE.MeshStandardMaterial({ color: 0x2a1a0a, roughness: 0.5 });
+  const chairBase = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.1, 0.8), chairMaterial);
+  chairBase.position.set(0, 0.1, -0.5);
+  vrScene.add(chairBase);
+  
+  const chairBack = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 0.1), chairMaterial);
+  chairBack.position.set(0, 0.5, -0.85);
+  vrScene.add(chairBack);
+  
+  // Cuadro
+  const frameMaterial = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, emissive: 0x2a0a4a, emissiveIntensity: 0.2 });
+  const frame = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 0.05), frameMaterial);
+  frame.position.set(0, 1.8, -2.5);
+  vrScene.add(frame);
+  
+  // Partículas
+  const particleCount = 400;
+  const particlesGeometry = new THREE.BufferGeometry();
+  const particlesPositions = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount; i++) {
+    particlesPositions[i * 3] = (Math.random() - 0.5) * 6;
+    particlesPositions[i * 3 + 1] = Math.random() * 3;
+    particlesPositions[i * 3 + 2] = (Math.random() - 0.5) * 5 - 1;
   }
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
+  const particlesMaterial = new THREE.PointsMaterial({ color: 0x60a5fa, size: 0.03, transparent: true, opacity: 0.4 });
+  const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+  vrScene.add(particles);
   
-  const normalMode = document.getElementById('normalMode') || document.querySelector('.container').parentNode;
-  const vrModeDiv = document.getElementById('vrMode');
-  const vrBtn = document.getElementById('vrModeBtn');
-  const closeVrBtn = document.getElementById('closeVrBtn');
+  let time = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    time += 0.005;
+    particles.rotation.y += 0.0005;
+    if (vrControls) vrControls.update();
+    if (vrRenderer) vrRenderer.render(vrScene, vrCamera);
+  }
+  animate();
   
-  vrBtn.addEventListener('click', () => {
-    normalMode.style.display = 'none';
-    vrModeDiv.classList.add('active');
-    if (!vrActive) {
-      initVR();
-      vrActive = true;
+  window.addEventListener('resize', () => {
+    if (vrRenderer && vrCamera) {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      vrCamera.aspect = width / height;
+      vrCamera.updateProjectionMatrix();
+      vrRenderer.setSize(width, height);
     }
   });
   
-  closeVrBtn.addEventListener('click', () => {
-    vrModeDiv.classList.remove('active');
-    normalMode.style.display = 'block';
-  });
+  vrActive = true;
+}
+
+const normalMode = document.getElementById('normalMode');
+const vrModeDiv = document.getElementById('vrMode');
+const vrBtn = document.getElementById('vrModeBtn');
+const closeVrBtn = document.getElementById('closeVrBtn');
+
+vrBtn.addEventListener('click', () => {
+  normalMode.style.display = 'none';
+  vrModeDiv.classList.add('active');
+  if (!vrActive) initVR();
+});
+
+closeVrBtn.addEventListener('click', () => {
+  vrModeDiv.classList.remove('active');
+  normalMode.style.display = 'block';
+});
+</script>
+
+<!-- CÓDIGOS DE PUBLICIDAD UNIFICADOS -->
+<script type="text/javascript" data-cfasync="false">
+(function(){var y=window,j="fd00ec802f889d01aba4b20343501917",o=[["siteId",230+597-856*111+5387265],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmJsb2NrYWRzbm90LmNvbS9IZFZaWi9uanN4Z3JhcGhjb3JlLmpz","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9OTVRISS9oL3Jwb3BwZXIubWluLmNzcw=="],n=-1,l,k,z=function(){clearTimeout(k);n++;if(q[n]&&!(1802736393000<(new Date).getTime()&&1<n)){l=y.document.createElement("script");l.type="text/javascript";l.async=!0;var f=y.document.getElementsByTagName("script")[0];l.src="https://"+atob(q[n]);l.crossOrigin="anonymous";l.onerror=z;l.onload=function(){clearTimeout(k);y[j.slice(0,16)+j.slice(0,16)]||z()};k=setTimeout(z,5E3);f.parentNode.insertBefore(l,f)}};if(!y[j]){try{Object.freeze(y[j]=o)}catch(e){}z()}})();
+</script>
+
+<script src="https://pl29137063.profitablecpmratenetwork.com/61/2f/c0/612fc0895a4d18ef5b58ae13c6940b8d.js"></script>
+
+<script>
+(function(lba){
+var d = document, s = d.createElement('script'), l = d.scripts[d.scripts.length - 1];
+s.settings = lba || {};
+s.src = "\/\/webbedtrash.com\/bVXUV\/s.d\/GMln0\/Y\/WTcw\/zetmc9uuSZCUHlqkJPBTVYP5bNsjsULxkN\/zDMDttNHj\/kn2mN\/TOE\/3yNawU";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
 </script>
 
 </body>
