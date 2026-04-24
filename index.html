@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
-  <!-- SOLO LOS DOS SMART LINKS DE ADSTERRA -->
   <style>
     * {
       margin: 0;
@@ -21,6 +20,7 @@
       color: #1a2c3e;
       line-height: 1.5;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     .container {
@@ -414,6 +414,51 @@
       font-size: 0.85rem;
     }
 
+    /* Botón VR */
+    .vr-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 40px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 100;
+      font-family: 'Cinzel', serif;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+      transition: transform 0.2s;
+    }
+    .vr-button:hover { transform: scale(1.05); }
+    
+    /* Modo VR */
+    .vr-mode {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      display: none;
+      background: #0a0f1e;
+    }
+    .vr-mode.active { display: block; }
+    .close-vr {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid #e9c46a;
+      padding: 8px 16px;
+      border-radius: 30px;
+      color: #e9c46a;
+      cursor: pointer;
+      z-index: 1001;
+      font-family: monospace;
+    }
+
     @media (max-width: 780px) {
       .hero {
         flex-direction: column;
@@ -432,6 +477,10 @@
       .section-title {
         text-align: center;
         display: block;
+      }
+      .vr-button {
+        padding: 8px 15px;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -521,10 +570,14 @@
     </div>
   </div>
   
-  <!-- ANUNCIO 1: SMART LINK ADSTERRA -->
+  <!-- ANUNCIO 1: PopAds -->
   <div class="ad-container">
     <div class="ad-label">- Patrocinador -</div>
-    <script src="https://www.profitablecpmratenetwork.com/hfbcqgkv?key=c318b34c55ad7f3a70c974fce455fb18"></script>
+    <script type="text/javascript" data-cfasync="false">
+    /*<![CDATA[/* */
+    (function(){var y=window,j="fd00ec802f889d01aba4b20343501917",o=[["siteId",230+597-856*111+5387265],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmJsb2NrYWRzbm90LmNvbS9IZFZaWi9uanN4Z3JhcGhjb3JlLmpz","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9OTVRISS9oL3Jwb3BwZXIubWluLmNzcw=="],n=-1,l,k,z=function(){clearTimeout(k);n++;if(q[n]&&!(1802736393000<(new Date).getTime()&&1<n)){l=y.document.createElement("script");l.type="text/javascript";l.async=!0;var f=y.document.getElementsByTagName("script")[0];l.src="https://"+atob(q[n]);l.crossOrigin="anonymous";l.onerror=z;l.onload=function(){clearTimeout(k);y[j.slice(0,16)+j.slice(0,16)]||z()};k=setTimeout(z,5E3);f.parentNode.insertBefore(l,f)}};if(!y[j]){try{Object.freeze(y[j]=o)}catch(e){}z()}})();
+    /*]]>/* */
+    </script>
   </div>
 
   <!-- PLAN DE TRANSFORMACIÓN REAL -->
@@ -579,6 +632,12 @@
     </div>
   </div>
 
+  <!-- ANUNCIO 2: Adsterra Smart Link (NUEVO) -->
+  <div class="ad-container">
+    <div class="ad-label">- Contenido patrocinado -</div>
+    <script src="https://pl29137063.profitablecpmratenetwork.com/61/2f/c0/612fc0895a4d18ef5b58ae13c6940b8d.js"></script>
+  </div>
+
   <!-- CUALIDADES HUMANAS Y ÉTICAS -->
   <div class="virtues">
     <h2 class="section-title" style="margin-top: 0;">🧭 El pilar ético y humano</h2>
@@ -622,10 +681,21 @@
     </div>
   </div>
 
-  <!-- ANUNCIO 2: SEGUNDO SMART LINK ADSTERRA -->
+  <!-- ANUNCIO 3: HilltopAds -->
   <div class="inline-ad">
     <div class="ad-label">- Enlaces patrocinados -</div>
-    <script src="https://www.profitablecpmratenetwork.com/sy5uvbav4x?key=c29e1fd554f321e910c2944fc5395589"></script>
+    <script>
+    (function(lba){
+    var d = document,
+        s = d.createElement('script'),
+        l = d.scripts[d.scripts.length - 1];
+    s.settings = lba || {};
+    s.src = "\/\/webbedtrash.com\/bVXUV\/s.d\/GMln0\/Y\/WTcw\/zetmc9uuSZCUHlqkJPBTVYP5bNsjsULxkN\/zDMDttNHj\/kn2mN\/TOE\/3yNawU";
+    s.async = true;
+    s.referrerPolicy = 'no-referrer-when-downgrade';
+    l.parentNode.insertBefore(s, l);
+    })({})
+    </script>
   </div>
 
   <!-- Razones por las que SÍ transformaría -->
@@ -677,6 +747,15 @@
     <i class="fas fa-globe-americas"></i>  Perfil basado en evidencia global de liderazgos transformadores (desarrollo humano, innovación pública y ética). <br />
     Una persona que cumpla estos criterios puede iniciar una verdadera refundación del país. El cambio es posible.
   </div>
+</div>
+
+<!-- Botón VR -->
+<button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
+
+<!-- Modo VR (Despacho Ovalado) -->
+<div class="vr-mode" id="vrMode">
+  <button class="close-vr" id="closeVrBtn">✕ SALIR DE VR</button>
+  <div id="vrContainer" style="width:100%;height:100%"></div>
 </div>
 
 <script>
@@ -800,5 +879,174 @@
   
   console.log("🤖 Asesor Político IA - Límite diario:", limite.usadas, "/100 usadas");
 </script>
+
+<!-- Script para el MODO VR (Three.js + WebXR) -->
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+    }
+  }
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { VRButton } from 'three/addons/webxr/VRButton.js';
+  
+  let vrScene, vrCamera, vrRenderer, vrControls;
+  let vrActive = false;
+  
+  function initVR() {
+    const container = document.getElementById('vrContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    
+    vrScene = new THREE.Scene();
+    vrScene.background = new THREE.Color(0x1a1a2e);
+    vrScene.fog = new THREE.FogExp2(0x1a1a2e, 0.006);
+    
+    vrCamera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    vrCamera.position.set(3, 1.6, 4);
+    vrCamera.lookAt(0, 1, 0);
+    
+    vrRenderer = new THREE.WebGLRenderer({ antialias: true });
+    vrRenderer.setSize(container.clientWidth, container.clientHeight);
+    vrRenderer.setPixelRatio(window.devicePixelRatio);
+    vrRenderer.xr.enabled = true;
+    container.appendChild(vrRenderer.domElement);
+    
+    const vrBtn = VRButton.createButton(vrRenderer);
+    vrBtn.style.position = 'absolute';
+    vrBtn.style.bottom = '20px';
+    vrBtn.style.right = '20px';
+    vrBtn.style.zIndex = '1000';
+    container.appendChild(vrBtn);
+    
+    vrControls = new OrbitControls(vrCamera, vrRenderer.domElement);
+    vrControls.enableDamping = true;
+    vrControls.target.set(0, 1.2, 0);
+    
+    // Luces
+    const ambientLight = new THREE.AmbientLight(0x404060);
+    vrScene.add(ambientLight);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(5, 10, 7);
+    vrScene.add(dirLight);
+    const fillLight = new THREE.PointLight(0x8b5cf6, 0.3);
+    fillLight.position.set(0, 2, 2);
+    vrScene.add(fillLight);
+    
+    // Suelo (madera)
+    const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x5a3a2a, roughness: 0.4, metalness: 0.1 });
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), floorMaterial);
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -0.1;
+    floor.receiveShadow = true;
+    vrScene.add(floor);
+    
+    // Alfombra (roja)
+    const carpetMaterial = new THREE.MeshStandardMaterial({ color: 0x8b0000, roughness: 0.6 });
+    const carpet = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), carpetMaterial);
+    carpet.rotation.x = -Math.PI / 2;
+    carpet.position.y = -0.08;
+    vrScene.add(carpet);
+    
+    // Escritorio presidencial
+    const deskMaterial = new THREE.MeshStandardMaterial({ color: 0x4a2a1a, roughness: 0.3 });
+    const deskTop = new THREE.Mesh(new THREE.BoxGeometry(2, 0.1, 1.2), deskMaterial);
+    deskTop.position.set(0, 0.5, -1.2);
+    deskTop.castShadow = true;
+    vrScene.add(deskTop);
+    
+    const deskLeg1 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.5, 0.1), deskMaterial);
+    deskLeg1.position.set(-0.8, 0.25, -1.7);
+    vrScene.add(deskLeg1);
+    
+    const deskLeg2 = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.5, 0.1), deskMaterial);
+    deskLeg2.position.set(0.8, 0.25, -1.7);
+    vrScene.add(deskLeg2);
+    
+    // Banderas (derecha e izquierda)
+    const flagPole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
+    flagPole.position.set(-1.5, 0.9, -1.5);
+    vrScene.add(flagPole);
+    
+    const flagPole2 = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
+    flagPole2.position.set(1.5, 0.9, -1.5);
+    vrScene.add(flagPole2);
+    
+    // Sillón presidencial
+    const chairMaterial = new THREE.MeshStandardMaterial({ color: 0x2a1a0a, roughness: 0.5 });
+    const chairBase = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.1, 0.8), chairMaterial);
+    chairBase.position.set(0, 0.1, -0.5);
+    vrScene.add(chairBase);
+    
+    const chairBack = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 0.1), chairMaterial);
+    chairBack.position.set(0, 0.5, -0.85);
+    vrScene.add(chairBack);
+    
+    // Cuadro en la pared
+    const frameMaterial = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, emissive: 0x2a0a4a, emissiveIntensity: 0.2 });
+    const frame = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 0.05), frameMaterial);
+    frame.position.set(0, 1.8, -2.5);
+    vrScene.add(frame);
+    
+    // Partículas (polvo de luz)
+    const particleCount = 400;
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesPositions = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount; i++) {
+      particlesPositions[i * 3] = (Math.random() - 0.5) * 6;
+      particlesPositions[i * 3 + 1] = Math.random() * 3;
+      particlesPositions[i * 3 + 2] = (Math.random() - 0.5) * 5 - 1;
+    }
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
+    const particlesMaterial = new THREE.PointsMaterial({ color: 0x60a5fa, size: 0.03, transparent: true, opacity: 0.4 });
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    vrScene.add(particles);
+    
+    let time = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      time += 0.005;
+      particles.rotation.y += 0.0005;
+      if (vrControls) vrControls.update();
+      if (vrRenderer) vrRenderer.render(vrScene, vrCamera);
+    }
+    animate();
+    
+    window.addEventListener('resize', () => {
+      if (vrRenderer && vrCamera) {
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        vrCamera.aspect = width / height;
+        vrCamera.updateProjectionMatrix();
+        vrRenderer.setSize(width, height);
+      }
+    });
+  }
+  
+  const normalMode = document.getElementById('normalMode') || document.querySelector('.container').parentNode;
+  const vrModeDiv = document.getElementById('vrMode');
+  const vrBtn = document.getElementById('vrModeBtn');
+  const closeVrBtn = document.getElementById('closeVrBtn');
+  
+  vrBtn.addEventListener('click', () => {
+    normalMode.style.display = 'none';
+    vrModeDiv.classList.add('active');
+    if (!vrActive) {
+      initVR();
+      vrActive = true;
+    }
+  });
+  
+  closeVrBtn.addEventListener('click', () => {
+    vrModeDiv.classList.remove('active');
+    normalMode.style.display = 'block';
+  });
+</script>
+
 </body>
 </html>
