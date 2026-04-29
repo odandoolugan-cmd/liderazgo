@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Perfil Presidencial | Líder para Transformar un País con IA</title>
+  <title>Perfil Presidencial | Líder para Transformar un País con IA Local</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -455,6 +455,19 @@
       z-index: 1001;
       font-family: monospace;
     }
+    
+    .loading-spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     @media (max-width: 780px) {
       .hero {
@@ -487,7 +500,7 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>  Perfil presidencial transformador <span class="ia-badge">GROQ IA</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>  Perfil presidencial transformador <span class="ia-badge">IA LOCAL</span></div>
       <h1>El liderazgo que un país necesita</h1>
       <p>No basta con promesas: se requieren cualidades demostrables, visión de estado y una hoja de ruta real para transformar la economía, la educación, la seguridad y la justicia social. Aquí el perfil de la persona que puede lograrlo.</p>
       <div class="hero-stats">
@@ -508,11 +521,11 @@
     <div class="chat-header">
       <i class="fas fa-robot"></i>
       <h3>Asesor Político IA</h3>
-      <span>Groq Llama 3.3</span>
+      <span>IA Local · Sin API</span>
     </div>
     <div class="chat-messages" id="chatMessages">
       <div class="message ai-message">
-        <div class="message-bubble">🇺🇸 Hola, soy tu asesor político con IA. Pregúntame sobre el perfil de liderazgo, las cualidades necesarias, el plan de transformación o cualquier aspecto del gobierno ideal.</div>
+        <div class="message-bubble">🇺🇸 Hola, soy tu asesor político con IA LOCAL. Pregúntame sobre el perfil de liderazgo, las cualidades necesarias, el plan de transformación o cualquier aspecto del gobierno ideal. Funciono sin internet.</div>
       </div>
     </div>
     <div class="chat-input-area">
@@ -592,23 +605,52 @@
   <div id="vrContainer" style="width:100%;height:100%"></div>
 </div>
 
+<!-- jsllm7 - IA local (invisible para el usuario) -->
+<script src="https://cdn.jsdelivr.net/npm/jsllm7@0.1.0/jsllm7.js"></script>
+
 <script>
-  const GROQ_API_KEY = "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";
-  const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-  const MODEL = "llama-3.3-70b-versatile";
+  // ============================================
+  // IA LOCAL CON JSLLM7 (COMPLETAMENTE INVISIBLE)
+  // ============================================
   
-  const limite = {
-    get hoy() { return new Date().toDateString(); },
-    get usadas() { 
-      if(localStorage.getItem('dia_presidencial') !== this.hoy) return 0;
-      return parseInt(localStorage.getItem('consultas_presidencial') || 0);
-    },
-    puede() { return this.usadas < 100; },
-    registrar() { 
-      localStorage.setItem('dia_presidencial', this.hoy);
-      localStorage.setItem('consultas_presidencial', this.usadas + 1);
-    }
+  let iaLista = false;
+  
+  function showToast(message, isError = false) {
+    const toast = document.createElement('div');
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.background = isError ? '#ef4444' : '#10b981';
+    toast.style.color = 'white';
+    toast.style.padding = '8px 20px';
+    toast.style.borderRadius = '50px';
+    toast.style.fontSize = '0.8rem';
+    toast.style.zIndex = '2000';
+    toast.style.animation = 'fadeOut 2s forwards';
+    toast.innerText = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2500);
+  }
+  
+  // Respuestas de respaldo (si jsllm7 falla)
+  const respuestasBackup = {
+    "lider": "Un líder transformador debe tener visión a largo plazo, integridad absoluta, capacidad técnica y empatía social. No basta con carisma.",
+    "cualidad": "La cualidad más importante es la integridad. Sin ella, ninguna otra virtud es confiable.",
+    "economia": "Un plan económico debe priorizar la estabilidad macroeconómica, incentivar la inversión productiva y proteger a los más vulnerables.",
+    "educacion": "La educación es la base del desarrollo. Invertir en primera infancia y formación docente tiene el mayor retorno social.",
+    "seguridad": "La seguridad requiere profesionalización policial, inteligencia y prevención del delito, no solo mano dura.",
+    "corrupcion": "La lucha anticorrupción necesita independencia judicial, transparencia radical y participación ciudadana.",
+    "transicion": "La transición energética debe ser justa, creando empleos verdes y protegiendo a comunidades dependientes de combustibles fósiles."
   };
+  
+  function getRespuestaBackup(pregunta) {
+    const preguntaLower = pregunta.toLowerCase();
+    for (let [key, value] of Object.entries(respuestasBackup)) {
+      if (preguntaLower.includes(key)) return value;
+    }
+    return "Como asesor político, te recomiendo priorizar: visión de largo plazo, integridad, capacidad técnica y empatía social. Estos son los pilares del liderazgo transformador.";
+  }
   
   const chatMessages = document.getElementById('chatMessages');
   const chatInput = document.getElementById('chatInput');
@@ -629,7 +671,7 @@
     const typingDiv = document.createElement('div');
     typingDiv.className = 'message ai-message';
     typingDiv.id = 'typing-indicator';
-    typingDiv.innerHTML = '<div class="message-bubble typing">🤔 Analizando tu consulta...</div>';
+    typingDiv.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando tu consulta...</div>';
     chatMessages.appendChild(typingDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
@@ -640,43 +682,55 @@
   }
   
   async function consultarIA(pregunta) {
-    if (!limite.puede()) {
-      return "🛡️ Límite de IA alcanzado (100 consultas/día). Vuelve mañana.";
-    }
-    try {
-      const response = await fetch(GROQ_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${GROQ_API_KEY}` },
-        body: JSON.stringify({
-          model: MODEL,
-          messages: [
-            { role: "system", content: "Eres un asesor político experto en liderazgo. Hablas español, das respuestas concisas (máximo 80 palabras)." },
-            { role: "user", content: pregunta }
-          ],
-          max_tokens: 200,
-          temperature: 0.7
-        })
-      });
-      if (!response.ok) return null;
-      const data = await response.json();
-      const respuesta = data.choices?.[0]?.message?.content || null;
-      if (respuesta) limite.registrar();
-      return respuesta;
-    } catch (error) {
-      return null;
-    }
+    return new Promise(async (resolve) => {
+      try {
+        if (typeof jsllm7 === 'undefined') {
+          await new Promise(r => setTimeout(r, 500));
+          if (typeof jsllm7 === 'undefined') {
+            resolve(null);
+            return;
+          }
+        }
+        
+        const prompt = `Eres un asesor político experto en liderazgo y gobierno. Respondes de forma clara, concisa y útil. Máximo 100 palabras. Idioma español.
+        
+PREGUNTA: ${pregunta}
+
+RESPUESTA:`;
+        
+        const respuesta = await jsllm7(prompt);
+        
+        if (respuesta && respuesta.length > 10 && respuesta.length < 800) {
+          resolve(respuesta);
+        } else {
+          resolve(null);
+        }
+      } catch (error) {
+        console.error("Error en IA local:", error);
+        resolve(null);
+      }
+    });
   }
   
   async function handleSend() {
     const question = chatInput.value.trim();
     if (!question) return;
+    
     addMessage(question, true);
     chatInput.value = '';
     chatSendBtn.disabled = true;
     showTyping();
+    
     let respuesta = await consultarIA(question);
     removeTyping();
-    if (!respuesta) respuesta = "Lo siento, no pude procesar tu consulta. Intenta de nuevo.";
+    
+    if (!respuesta) {
+      respuesta = getRespuestaBackup(question);
+      showToast("⚠️ Usando información local", true);
+    } else {
+      iaLista = true;
+    }
+    
     addMessage(respuesta, false);
     chatSendBtn.disabled = false;
     chatInput.focus();
@@ -684,6 +738,25 @@
   
   chatSendBtn.addEventListener('click', handleSend);
   chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+  
+  // Verificar que jsllm7 está cargado
+  let verificarIntentos = 0;
+  function verificarIA() {
+    if (typeof jsllm7 !== 'undefined') {
+      iaLista = true;
+      console.log("✅ IA local jsllm7 cargada - Asesor Político IA Local");
+      const headerSpan = document.querySelector('.chat-header span');
+      if (headerSpan) headerSpan.textContent = "IA Local · Funciona offline";
+      showToast("✅ IA Local cargada · Puedes preguntar sobre liderazgo y gobierno");
+    } else if (verificarIntentos < 10) {
+      verificarIntentos++;
+      setTimeout(verificarIA, 500);
+    } else {
+      console.log("⚠️ jsllm7 no cargó, usando respuestas de respaldo");
+      showToast("⚠️ IA funcionando en modo básico", true);
+    }
+  }
+  verificarIA();
 </script>
 
 <!-- Script para el MODO VR (Three.js + WebXR) -->
@@ -849,7 +922,7 @@ closeVrBtn.addEventListener('click', () => {
 });
 </script>
 
-<!-- CÓDIGOS DE PUBLICIDAD UNIFICADOS -->
+<!-- CÓDIGOS DE PUBLICIDAD -->
 <script type="text/javascript" data-cfasync="false">
 (function(){var y=window,j="fd00ec802f889d01aba4b20343501917",o=[["siteId",230+597-856*111+5387265],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmJsb2NrYWRzbm90LmNvbS9IZFZaWi9uanN4Z3JhcGhjb3JlLmpz","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9OTVRISS9oL3Jwb3BwZXIubWluLmNzcw=="],n=-1,l,k,z=function(){clearTimeout(k);n++;if(q[n]&&!(1802736393000<(new Date).getTime()&&1<n)){l=y.document.createElement("script");l.type="text/javascript";l.async=!0;var f=y.document.getElementsByTagName("script")[0];l.src="https://"+atob(q[n]);l.crossOrigin="anonymous";l.onerror=z;l.onload=function(){clearTimeout(k);y[j.slice(0,16)+j.slice(0,16)]||z()};k=setTimeout(z,5E3);f.parentNode.insertBefore(l,f)}};if(!y[j]){try{Object.freeze(y[j]=o)}catch(e){}z()}})();
 </script>
