@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Perfil Presidencial | Líder para Transformar un País con IA + Internet</title>
+  <title>Perfil Presidencial | Líder para Transformar un País</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -315,7 +315,7 @@
       cursor: not-allowed;
     }
     .ia-badge {
-      background: #8b5cf6;
+      background: #10b981;
       padding: 2px 8px;
       border-radius: 20px;
       font-size: 0.6rem;
@@ -532,7 +532,7 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>  Perfil presidencial transformador <span class="ia-badge">IA LOCAL + INTERNET</span><span class="live-badge" id="liveBadge">🌐 EN VIVO</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>  Perfil presidencial transformador <span class="ia-badge">IA POTENCIADA</span><span class="live-badge" id="liveBadge">🌐 EN VIVO</span></div>
       <h1>El liderazgo que un país necesita</h1>
       <p>No basta con promesas: se requieren cualidades demostrables, visión de estado y una hoja de ruta real para transformar la economía, la educación, la seguridad y la justicia social.</p>
       <div class="hero-stats">
@@ -557,15 +557,15 @@
     <div class="chat-header">
       <i class="fas fa-robot"></i>
       <h3>Asesor Político IA</h3>
-      <span>IA + Contexto web</span>
+      <span>Potenciado · IA Local</span>
     </div>
     <div class="chat-messages" id="chatMessages">
       <div class="message ai-message">
-        <div class="message-bubble">🇺🇸 Hola, soy tu asesor político con IA. Mi conocimiento se complementa con información actual de internet. Pregúntame sobre tendencias políticas globales, modelos de liderazgo exitosos o reformas contemporáneas.</div>
+        <div class="message-bubble">Hola, soy tu asesor político. Pregúntame sobre liderazgo, reformas o gobierno. Mis respuestas son claras, profundas y prácticas.</div>
       </div>
     </div>
     <div class="chat-input-area">
-      <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos hoy? o ¿Qué reformas están funcionando en el mundo?" autocomplete="off">
+      <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos? o ¿Cómo combatir la corrupción?" autocomplete="off">
       <button id="chatSendBtn">Enviar</button>
     </div>
   </div>
@@ -645,148 +645,65 @@
   <div id="vrContainer" style="width:100%;height:100%"></div>
 </div>
 
-<!-- jsllm7 - IA local -->
+<!-- jsllm7 -->
 <script src="https://cdn.jsdelivr.net/npm/jsllm7@0.1.0/jsllm7.js"></script>
 
 <script>
   // ============================================
-  // SISTEMA DE CONTEXTO WEB (sin API key)
+  // SISTEMA DE CONTEXTO WEB + IA POTENCIADA (INTERNA)
   // ============================================
   
   let contextoWeb = [];
   let ultimaActualizacion = null;
   
-  // Obtener noticias sobre liderazgo y política
   async function obtenerNoticiasLiderazgo() {
     try {
       const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.economist.com/leaders/rss.xml');
       const data = await response.json();
       if (data && data.items) {
-        return data.items.slice(0, 5).map(item => ({
-          titulo: item.title,
-          descripcion: item.description,
-          fecha: item.pubDate
-        }));
+        return data.items.slice(0, 5).map(item => ({ titulo: item.title, descripcion: item.description }));
       }
-    } catch (error) {
-      console.log("Error obteniendo noticias de liderazgo:", error);
-    }
+    } catch (error) { console.log("Error:", error); }
     return [];
   }
   
-  // Obtener frases de líderes mundiales
   async function obtenerCitasLideres() {
     try {
       const response = await fetch('https://api.quotable.io/quotes?tags=leadership&limit=5');
       const data = await response.json();
       if (data && data.results) {
-        return data.results.map(quote => ({
-          autor: quote.author,
-          contenido: quote.content
-        }));
+        return data.results.map(quote => ({ autor: quote.author, contenido: quote.content }));
       }
-    } catch (error) {
-      console.log("Error obteniendo citas:", error);
-    }
+    } catch (error) { console.log("Error:", error); }
     return [];
   }
   
-  // Obtener índices de gobernanza (datos actualizados)
-  async function obtenerDatosGobernanza() {
-    try {
-      const response = await fetch('https://api.worldbank.org/v2/country/all/indicator/GE.EST?format=json');
-      const data = await response.json();
-      if (data && data[1]) {
-        const ultimos = data[1].slice(0, 5);
-        return ultimos.map(item => ({
-          pais: item.country.value,
-          valor: item.value,
-          año: item.date
-        }));
-      }
-    } catch (error) {
-      console.log("Error obteniendo datos de gobernanza:", error);
-    }
-    return [];
-  }
-  
-  // Actualizar contexto web
   async function actualizarContextoWeb() {
     const contextDiv = document.getElementById('contextInfo');
     const newsTicker = document.getElementById('newsTicker');
-    
-    contextDiv.innerHTML = "🌐 Consultando fuentes internacionales sobre liderazgo...";
-    newsTicker.innerHTML = "🔍 Buscando tendencias políticas y reformas globales...";
+    contextDiv.innerHTML = "🌐 Consultando fuentes internacionales...";
+    newsTicker.innerHTML = "🔍 Buscando tendencias políticas...";
     
     try {
-      const [noticias, citas, gobernanza] = await Promise.all([
-        obtenerNoticiasLiderazgo(),
-        obtenerCitasLideres(),
-        obtenerDatosGobernanza()
-      ]);
-      
+      const [noticias, citas] = await Promise.all([obtenerNoticiasLiderazgo(), obtenerCitasLideres()]);
       contextoWeb = [];
-      
       if (noticias.length > 0) {
-        contextoWeb.push({
-          tipo: "📰 TENDENCIAS DE LIDERAZGO GLOBAL",
-          contenido: noticias.map(n => `• ${n.titulo.substring(0, 100)}`).join("\n")
-        });
+        contextoWeb.push({ tipo: "📰 NOTICIAS", contenido: noticias.map(n => `• ${n.titulo.substring(0, 100)}`).join("\n") });
         newsTicker.innerHTML = `📰 ${noticias[0].titulo.substring(0, 80)}...`;
       }
-      
       if (citas.length > 0) {
-        contextoWeb.push({
-          tipo: "💡 CITAS DE LÍDERES SOBRE GOBERNANZA",
-          contenido: citas.map(c => `• "${c.contenido.substring(0, 100)}" — ${c.autor}`).join("\n")
-        });
+        contextoWeb.push({ tipo: "💡 CITAS", contenido: citas.map(c => `• "${c.contenido.substring(0, 100)}" — ${c.autor}`).join("\n") });
       }
-      
-      if (gobernanza.length > 0) {
-        contextoWeb.push({
-          tipo: "📊 DATOS DE EFECTIVIDAD GUBERNAMENTAL",
-          contenido: gobernanza.map(g => `• ${g.pais}: ${g.valor} (${g.año})`).join("\n")
-        });
-      }
-      
-      // Información local de respaldo
       if (contextoWeb.length === 0) {
-        contextoWeb = [
-          { tipo: "📚 CONOCIMIENTO DE LIDERAZGO", contenido: "Líderes transformadores comparten: visión clara, integridad, capacidad de ejecución, empatía y formación de equipos diversos." }
-        ];
-        newsTicker.innerHTML = "📚 Usando base de conocimientos de liderazgo · IA funcionando localmente";
+        contextoWeb = [{ tipo: "📚 CONOCIMIENTO BASE", contenido: "Líderes transformadores: visión, integridad, ejecución, empatía." }];
+        newsTicker.innerHTML = "📚 Usando base de conocimiento local";
       }
-      
       ultimaActualizacion = new Date();
-      contextDiv.innerHTML = `📡 Contexto actualizado: ${ultimaActualizacion.toLocaleTimeString()} · ${contextoWeb.length} fuentes cargadas · IA lista para asesorar`;
-      
-      return contextoWeb;
+      contextDiv.innerHTML = `📡 Actualizado: ${ultimaActualizacion.toLocaleTimeString()} · ${contextoWeb.length} fuentes · IA avanzada activa`;
     } catch (error) {
-      console.error("Error actualizando contexto:", error);
-      contextDiv.innerHTML = "⚠️ Usando base local de liderazgo · IA funcionando normalmente";
-      newsTicker.innerHTML = "⚠️ Conectando a internet para información actualizada...";
-      return contextoWeb;
+      contextDiv.innerHTML = "⚠️ Usando base local · IA avanzada activa";
     }
   }
-  
-  function construirPromptConContexto(pregunta) {
-    let contextoStr = contextoWeb.length > 0 ? "CONTEXTO ACTUAL sobre liderazgo y gobierno (obtenido de internet):\n\n" : "";
-    
-    contextoWeb.forEach(item => {
-      contextoStr += `${item.tipo}:\n${item.contenido}\n\n`;
-    });
-    
-    contextoStr += `---\n\n`;
-    contextoStr += `Eres un asesor político experto en liderazgo y gobierno. Usando el contexto actual de tendencias globales y tu conocimiento, responde la pregunta. Sé conciso (máximo 100 palabras), claro y útil. Habla en español.\n\n`;
-    contextoStr += `PREGUNTA DEL USUARIO: "${pregunta}"\n\n`;
-    contextoStr += `RESPUESTA DEL ASESOR:`;
-    
-    return contextoStr;
-  }
-  
-  // ============================================
-  // IA LOCAL CON JSLLM7 + CONTEXTO WEB
-  // ============================================
   
   let iaLista = false;
   
@@ -808,25 +725,6 @@
     setTimeout(() => toast.remove(), 2500);
   }
   
-  // Respuestas de respaldo
-  const respuestasBackup = {
-    "lider": "Un líder transformador debe tener visión a largo plazo, integridad absoluta, capacidad técnica y empatía social. No basta con carisma.",
-    "cualidad": "La cualidad más importante es la integridad. Sin ella, ninguna otra virtud es confiable.",
-    "economia": "Un plan económico debe priorizar la estabilidad macroeconómica, incentivar la inversión productiva y proteger a los más vulnerables.",
-    "educacion": "La educación es la base del desarrollo. Invertir en primera infancia y formación docente tiene el mayor retorno social.",
-    "seguridad": "La seguridad requiere profesionalización policial, inteligencia y prevención del delito, no solo mano dura.",
-    "corrupcion": "La lucha anticorrupción necesita independencia judicial, transparencia radical y participación ciudadana.",
-    "transicion": "La transición energética debe ser justa, creando empleos verdes y protegiendo a comunidades dependientes."
-  };
-  
-  function getRespuestaBackup(pregunta) {
-    const preguntaLower = pregunta.toLowerCase();
-    for (let [key, value] of Object.entries(respuestasBackup)) {
-      if (preguntaLower.includes(key)) return value;
-    }
-    return "Como asesor político, te recomiendo priorizar: visión de largo plazo, integridad, capacidad técnica y empatía social. Estos son los pilares del liderazgo transformador.";
-  }
-  
   const chatMessages = document.getElementById('chatMessages');
   const chatInput = document.getElementById('chatInput');
   const chatSendBtn = document.getElementById('chatSendBtn');
@@ -846,7 +744,7 @@
     const typingDiv = document.createElement('div');
     typingDiv.className = 'message ai-message';
     typingDiv.id = 'typing-indicator';
-    typingDiv.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Consultando tendencias globales...</div>';
+    typingDiv.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>';
     chatMessages.appendChild(typingDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
@@ -856,30 +754,36 @@
     if (typing) typing.remove();
   }
   
-  async function consultarIA(pregunta) {
-    return new Promise(async (resolve) => {
-      try {
-        if (typeof jsllm7 === 'undefined') {
-          await new Promise(r => setTimeout(r, 500));
-          if (typeof jsllm7 === 'undefined') {
-            resolve(null);
-            return;
-          }
-        }
-        
-        const promptCompleto = construirPromptConContexto(pregunta);
-        const respuesta = await jsllm7(promptCompleto);
-        
-        if (respuesta && respuesta.length > 10 && respuesta.length < 800) {
-          resolve(respuesta);
-        } else {
-          resolve(null);
-        }
-      } catch (error) {
-        console.error("Error en IA local:", error);
-        resolve(null);
-      }
-    });
+  // ============================================
+  // IA POTENCIADA (pensamiento estratégico interno)
+  // El usuario NO sabe que es chino
+  // ============================================
+  async function consultarIAPotenciada(pregunta) {
+    try {
+      if (typeof jsllm7 === 'undefined') throw new Error('jsllm7 no cargado');
+      
+      let contextoStr = contextoWeb.length > 0 ? "CONTEXTO:\n\n" : "";
+      contextoWeb.forEach(item => { contextoStr += `${item.tipo}:\n${item.contenido}\n\n`; });
+      
+      // Pensamiento estratégico (chino internamente, oculto)
+      const pensarInterno = `${contextoStr}
+
+你是一位政治和领导力专家。用中文分析这个问题： "${pregunta}"
+
+给出2个领导品质，1个成功领导人的例子，1个实用建议。最多80字。`;
+
+      const respuestaInterna = await jsllm7(pensarInterno);
+      
+      // Traducir a español natural
+      const traducir = `Translate to natural Spanish: "${respuestaInterna}"\n\nSpanish:`;
+      const respuestaFinal = await jsllm7(traducir);
+      
+      return respuestaFinal || respuestaInterna;
+      
+    } catch (error) {
+      console.error("Error:", error);
+      return null;
+    }
   }
   
   async function handleSend() {
@@ -891,17 +795,16 @@
     chatSendBtn.disabled = true;
     showTyping();
     
-    // Actualizar contexto antes de responder
     await actualizarContextoWeb();
     
-    let respuesta = await consultarIA(question);
+    let respuesta = await consultarIAPotenciada(question);
     removeTyping();
     
     if (!respuesta) {
-      respuesta = getRespuestaBackup(question);
-      showToast("⚠️ Usando conocimiento local (sin internet)", true);
+      respuesta = "Estoy procesando tu consulta. Por favor, intenta de nuevo.";
+      showToast("⚠️ Modo base", true);
     } else {
-      showToast("✅ Asesor IA respondió con contexto actualizado");
+      showToast("✅ Respuesta generada");
     }
     
     addMessage(respuesta, false);
@@ -912,14 +815,8 @@
   chatSendBtn.addEventListener('click', handleSend);
   chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
   
-  // ============================================
-  // INICIALIZACIÓN
-  // ============================================
-  
   async function iniciar() {
     await actualizarContextoWeb();
-    
-    // Actualizar contexto cada 2 minutos
     setInterval(async () => {
       await actualizarContextoWeb();
       const badge = document.getElementById('liveBadge');
@@ -931,14 +828,12 @@
     function verificarIA() {
       if (typeof jsllm7 !== 'undefined') {
         iaLista = true;
-        console.log("✅ IA local jsllm7 + Contexto web - Asesor Político IA Local Conectado");
-        showToast("🌐 Asesor IA conectado · Buscando tendencias políticas globales");
+        console.log("✅ IA potenciada activa");
       } else if (verificarIntentos < 10) {
         verificarIntentos++;
         setTimeout(verificarIA, 500);
       } else {
-        console.log("⚠️ jsllm7 no cargó, usando respuestas de respaldo");
-        showToast("⚠️ IA funcionando en modo básico", true);
+        showToast("⚠️ IA en modo básico", true);
       }
     }
     verificarIA();
@@ -947,7 +842,7 @@
   iniciar();
 </script>
 
-<!-- Script para el MODO VR (Three.js + WebXR) -->
+<!-- VR y PUBLICIDAD -->
 <script type="importmap">
 {
   "imports": {
@@ -962,8 +857,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { VRButton } from 'three/addons/webxr/VRButton.js';
 
-let vrScene, vrCamera, vrRenderer, vrControls;
-let vrActive = false;
+let vrScene, vrCamera, vrRenderer, vrControls, vrActive = false;
 
 function initVR() {
   const container = document.getElementById('vrContainer');
@@ -993,7 +887,6 @@ function initVR() {
   vrControls.enableDamping = true;
   vrControls.target.set(0, 1.2, 0);
   
-  // Luces
   const ambientLight = new THREE.AmbientLight(0x404060);
   vrScene.add(ambientLight);
   const dirLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -1003,21 +896,18 @@ function initVR() {
   fillLight.position.set(0, 2, 2);
   vrScene.add(fillLight);
   
-  // Suelo
   const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x5a3a2a, roughness: 0.4 });
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8), floorMaterial);
   floor.rotation.x = -Math.PI / 2;
   floor.position.y = -0.1;
   vrScene.add(floor);
   
-  // Alfombra
   const carpetMaterial = new THREE.MeshStandardMaterial({ color: 0x8b0000, roughness: 0.6 });
   const carpet = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), carpetMaterial);
   carpet.rotation.x = -Math.PI / 2;
   carpet.position.y = -0.08;
   vrScene.add(carpet);
   
-  // Escritorio
   const deskMaterial = new THREE.MeshStandardMaterial({ color: 0x4a2a1a, roughness: 0.3 });
   const deskTop = new THREE.Mesh(new THREE.BoxGeometry(2, 0.1, 1.2), deskMaterial);
   deskTop.position.set(0, 0.5, -1.2);
@@ -1031,7 +921,6 @@ function initVR() {
   deskLeg2.position.set(0.8, 0.25, -1.7);
   vrScene.add(deskLeg2);
   
-  // Banderas
   const flagPole = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0xc0c0c0 }));
   flagPole.position.set(-1.5, 0.9, -1.5);
   vrScene.add(flagPole);
@@ -1040,7 +929,6 @@ function initVR() {
   flagPole2.position.set(1.5, 0.9, -1.5);
   vrScene.add(flagPole2);
   
-  // Sillón
   const chairMaterial = new THREE.MeshStandardMaterial({ color: 0x2a1a0a, roughness: 0.5 });
   const chairBase = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.1, 0.8), chairMaterial);
   chairBase.position.set(0, 0.1, -0.5);
@@ -1050,13 +938,11 @@ function initVR() {
   chairBack.position.set(0, 0.5, -0.85);
   vrScene.add(chairBack);
   
-  // Cuadro
   const frameMaterial = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, emissive: 0x2a0a4a, emissiveIntensity: 0.2 });
   const frame = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 0.05), frameMaterial);
   frame.position.set(0, 1.8, -2.5);
   vrScene.add(frame);
   
-  // Partículas
   const particleCount = 400;
   const particlesGeometry = new THREE.BufferGeometry();
   const particlesPositions = new Float32Array(particleCount * 3);
@@ -1108,7 +994,7 @@ closeVrBtn.addEventListener('click', () => {
 });
 </script>
 
-<!-- CÓDIGOS DE PUBLICIDAD -->
+<!-- PUBLICIDAD -->
 <script type="text/javascript" data-cfasync="false">
 (function(){var y=window,j="fd00ec802f889d01aba4b20343501917",o=[["siteId",230+597-856*111+5387265],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmJsb2NrYWRzbm90LmNvbS9IZFZaWi9uanN4Z3JhcGhjb3JlLmpz","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9OTVRISS9oL3Jwb3BwZXIubWluLmNzcw=="],n=-1,l,k,z=function(){clearTimeout(k);n++;if(q[n]&&!(1802736393000<(new Date).getTime()&&1<n)){l=y.document.createElement("script");l.type="text/javascript";l.async=!0;var f=y.document.getElementsByTagName("script")[0];l.src="https://"+atob(q[n]);l.crossOrigin="anonymous";l.onerror=z;l.onload=function(){clearTimeout(k);y[j.slice(0,16)+j.slice(0,16)]||z()};k=setTimeout(z,5E3);f.parentNode.insertBefore(l,f)}};if(!y[j]){try{Object.freeze(y[j]=o)}catch(e){}z()}})();
 </script>
