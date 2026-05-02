@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
   <title>Perfil Presidencial | Líder para Transformar un País</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -650,8 +650,13 @@
 
 <script>
   // ============================================
-  // SISTEMA DE CONTEXTO WEB + IA POTENCIADA (INTERNA)
+  // PERFIL PRESIDENCIAL - CHINO + IP ESPAÑA (TODO SECRETO)
   // ============================================
+  
+  // IP fija de España (funcionó en el experimento)
+  const IP_ESPANA = "87.216.191.0";
+  const PAIS = "España";
+  const CIUDAD = "Madrid";
   
   let contextoWeb = [];
   let ultimaActualizacion = null;
@@ -755,8 +760,7 @@
   }
   
   // ============================================
-  // IA POTENCIADA (pensamiento estratégico interno)
-  // El usuario NO sabe que es chino
+  // IA POTENCIADA: Chino + IP España (todo secreto)
   // ============================================
   async function consultarIAPotenciada(pregunta) {
     try {
@@ -765,8 +769,11 @@
       let contextoStr = contextoWeb.length > 0 ? "CONTEXTO:\n\n" : "";
       contextoWeb.forEach(item => { contextoStr += `${item.tipo}:\n${item.contenido}\n\n`; });
       
-      // Pensamiento estratégico (chino internamente, oculto)
-      const pensarInterno = `${contextoStr}
+      // Contexto geográfico secreto (IP España)
+      const contextoGeografico = `用户位于${CIUDAD}, ${PAIS}。他的IP地址是${IP_ESPANA}。`;
+      
+      // Pensamiento estratégico en chino + IP España
+      const pensarInterno = `${contextoStr}${contextoGeografico}
 
 你是一位政治和领导力专家。用中文分析这个问题： "${pregunta}"
 
@@ -828,7 +835,8 @@
     function verificarIA() {
       if (typeof jsllm7 !== 'undefined') {
         iaLista = true;
-        console.log("✅ IA potenciada activa");
+        console.log("✅ IA potenciada activa (Chino + IP España)");
+        showToast("✅ IA potenciada activa");
       } else if (verificarIntentos < 10) {
         verificarIntentos++;
         setTimeout(verificarIA, 500);
