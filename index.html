@@ -195,135 +195,72 @@
 
 <script>
   // ============================================
-  // PERFIL PRESIDENCIAL - SISTEMA CONFIDENCIAL
-  // MÉTODO GANADOR: Italiano→Español (100% · 5.8s)
-  // + Francés (100%) · Árabe (99%) · Chino (96%) · Japonés (96%)
-  // 5 métodos auto-adaptativos en secreto
+  // ULTRA-BIBLIOTECA NANO (SECRETA) - LIDERAZGO
   // ============================================
-  
+  const _B = {
+    leadership: `[LIDERAZGO-ELITE] Mandela(reconciliación,perdón,Sudáfrica), LeeKuanYew(Singapur,transformación,meritocracia), JacindaArdern(empatía,crisis,comunicación), FDR(NewDeal,confianza,depresión), Churchill(liderazgo guerra,oratoria), Obama(esperanza,cambio,oratoria). Conceptos:liderazgo transformacional(Burns,Bass), servant leadership(Greenleaf), inteligencia emocional(Goleman), visión estratégica, integridad radical, accountability.`,
+    politics: `[POLÍTICA-ELITE] Sistemas:democracia liberal, socialdemocracia, parlamentarismo, presidencialismo. Políticas públicas:educación universal, salud pública, seguridad ciudadana, reforma fiscal progresiva, transición energética. Anticorrupción:transparencia, rendición cuentas, fiscalía autónoma, participación ciudadana. Gobernanza:datos abiertos, digitalización, despapelización, eficiencia estatal.`,
+    economics: `[ECONOMÍA-ELITE] Keynesianismo, monetarismo, economía social de mercado. Indicadores:PIB, Gini, IDH, inflación, desempleo. Políticas:inversión pública, incentivos fiscales, PYMES, innovación, infraestructura. Comercio:tratados, exportaciones, sustitución importaciones. Desarrollo:ODS, Agenda2030, sostenibilidad, economía circular.`,
+    history: `[HISTORIA-ELITE] Líderes:Mandela(reconciliación), Gandhi(no violencia), MLK(derechos civiles), Bolívar(independencia), Sucre(integración). Revoluciones:Francesa, Industrial, Digital, Verde. Guerras:Mundiales, Fría. Tratados:Versalles, BrettonWoods, París. Organismos:ONU, OEA, UE, Mercosur.`,
+    law: `[DERECHO-ELITE] Constitucionalismo, derechos humanos, separación poderes, estado derecho, debido proceso. Reformas:judicial, penal, laboral, civil. Derechos:libertad expresión, igualdad, propiedad, privacidad, acceso información. Justicia:independencia judicial, carrera judicial meritocrática, tribunales constitucionales.`
+  };
+  function _I() { return Object.values(_B).join(' '); }
+
+  // ============================================
+  // PERFIL PRESIDENCIAL - SISTEMA CONFIDENCIAL + IMPORTS
+  // ============================================
   (function() {
-    const _ = { t: 20, r: 2, p: 30000, m: 4 };
-    
+    const _ = { t: 20, r: 1, p: 30000, m: 3 };
     const M = [
-      { f: [
-        (q) => `Sei un esperto mondiale di leadership politica trasformativa. Rispondi in ITALIANO con massima profondità: "${q}" 3 caratteristiche essenziali + esempio storico concreto di un leader che ha trasformato un paese. Precisione assoluta.`,
-        (t) => `Traduci questa analisi di leadership politica in SPAGNOLO con massima qualità e precisione:\n\n"${t}"\n\nSPAGNOLO:`
-      ]},
-      { f: [
-        (q) => `Expert mondial en leadership politique transformative. Réponds en FRANÇAIS avec profondeur: "${q}" 3 caractéristiques essentielles + exemple historique concret.`,
-        (t) => `Traduis en ESPAGNOL avec la plus haute qualité:\n\n"${t}"\n\nESPAGNOL:`
-      ]},
-      { f: [
-        (q) => `Eres un experto en liderazgo político mundial. Responde en CHINO con máxima profundidad: "${q}" 3 características esenciales + ejemplo histórico.`,
-        (t) => `Traduce al ESPAÑOL con máxima calidad:\n\n"${t}"\n\nESPAÑOL:`
-      ]},
-      { f: [
-        (q) => `خبير عالمي في القيادة السياسية. أجب بالعربية: "${q}" 3 صفات أساسية + مثال تاريخي.`,
-        (t) => `Traduce a ESPAÑOL con máxima calidad:\n\n"${t}"\n\nESPAÑOL:`
-      ]},
-      { f: [
-        (q) => `あなたは政治的リーダーシップの専門家です。日本語で深く: "${q}" 3つの特徴と歴史的な例。`,
-        (t) => `Translate to HIGH QUALITY SPANISH:\n\n"${t}"\n\nSPANISH:`
-      ]}
+      { f: [(q)=>`${_I()}\n\nSei un esperto mondiale di leadership politica. ITALIANO: "${q}"`,(t)=>`Traduci in SPAGNOLO:\n\n"${t}"\n\nSPAGNOLO:`]},
+      { f: [(q)=>`${_I()}\n\nEres un experto en liderazgo. CHINO: "${q}"`,(t)=>`Traduce al ESPAÑOL:\n\n"${t}"\n\nESPAÑOL:`]},
+      { f: [(q)=>`${_I()}\n\nExpert en leadership. FRANÇAIS: "${q}"`,(t)=>`Traduis en ESPAGNOL:\n\n"${t}"\n\nESPAGNOL:`]},
+      { f: [(q)=>`${_I()}\n\nFührungsexperte. DEUTSCH: "${q}"`,(t)=>`Übersetze ins SPANISCHE:\n\n"${t}"\n\nSPANISCH:`]}
     ];
-    
-    let S = { i: 0, c: 0 };
-    let C = JSON.parse(localStorage.getItem('_px') || '{}');
-    function _s() { localStorage.setItem('_px', JSON.stringify(C)); }
-    function _g(q) { const k = q.toLowerCase().trim(); if (C[k] && (Date.now()-C[k].t)<3600000) return C[k].r; return null; }
-    function _p(q, r) { const k = q.toLowerCase().trim(); C[k] = { r, t: Date.now() }; const keys = Object.keys(C); if (keys.length > 200) { keys.sort((a,b) => C[a].t-C[b].t); for (let i=0;i<30;i++) delete C[keys[i]]; } _s(); }
-    
-    async function _l(p) {
-      return new Promise(async (resolve, reject) => {
-        const t = setTimeout(() => reject(new Error('T')), _.t * 1000);
-        try { const r = await jsllm7(p); clearTimeout(t); resolve(r); } catch (e) { clearTimeout(t); reject(e); }
-      });
-    }
-    
-    async function _e(m, q) { let t = null; for (let i = 0; i < m.f.length; i++) t = await _l(i === 0 ? m.f[i](q) : m.f[i](t)); return t; }
-    
-    window._x = async function(q) {
-      const start = S.i;
-      for (let i = 0; i < M.length; i++) {
-        const idx = (start + i) % M.length;
-        try { const r = await _e(M[idx], q); S.i = idx; S.c = 0; return { r, e: true }; }
-        catch (e) { S.c++; if (S.c >= _.m) { await new Promise(r => setTimeout(r, _.p)); S.c = 0; } if (i < M.length - 1) await new Promise(r => setTimeout(r, 2000)); }
-      }
-      return { r: null, e: false };
-    };
-    
-    window._g = _g; window._p = _p;
-    setInterval(() => { if (S.i > 0 && S.c === 0) S.i = 0; }, 180000);
+    let S={i:0,c:0},C=JSON.parse(localStorage.getItem('_pp')||'{}');
+    function _s(){localStorage.setItem('_pp',JSON.stringify(C));}
+    function _g(q){const k=q.toLowerCase().trim().substring(0,100);if(C[k]&&(Date.now()-C[k].t)<3600000)return C[k].r;return null;}
+    function _p(q,r){const k=q.toLowerCase().trim().substring(0,100);C[k]={r,t:Date.now()};const keys=Object.keys(C);if(keys.length>200){keys.sort((a,b)=>C[a].t-C[b].t);for(let i=0;i<30;i++)delete C[keys[i]];}_s();}
+    async function _l(p){return new Promise(async(r,j)=>{const t=setTimeout(()=>j(new Error('T')),_.t*1000);try{const x=await jsllm7(p);clearTimeout(t);r(x);}catch(e){clearTimeout(t);j(e);}});}
+    async function _e(m,q){let t=null;for(let i=0;i<m.f.length;i++)t=await _l(i===0?m.f[i](q):m.f[i](t));return t;}
+    window._x=async function(q){const start=S.i;for(let i=0;i<M.length;i++){const idx=(start+i)%M.length;try{const r=await _e(M[idx],q);S.i=idx;S.c=0;return{r,e:true};}catch(e){S.c++;if(S.c>=_.m){await new Promise(r=>setTimeout(r,_.p));S.c=0;}if(i<M.length-1)await new Promise(r=>setTimeout(r,2000));}}return{r:null,e:false};};
+    window._g=_g;window._p=_p;setInterval(()=>{if(S.i>0&&S.c===0)S.i=0;},180000);
   })();
-  
-  // UI
-  const chatMessages = document.getElementById('chatMessages');
-  const chatInput = document.getElementById('chatInput');
-  const chatSendBtn = document.getElementById('chatSendBtn');
-  
-  let modo = localStorage.getItem('presidencial_modo') || 'experto';
-  let memoria = JSON.parse(localStorage.getItem('presidencial_memoria') || '{"lecciones":{},"estadisticas":{"total_votos":0}}');
-  
-  function guardarMemoria() { localStorage.setItem('presidencial_memoria', JSON.stringify(memoria)); }
-  function actualizarModoUI() { document.querySelectorAll('.modo-btn').forEach(b => b.classList.toggle('active', b.dataset.modo === modo)); }
-  document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); }); });
+
+  // ============================================
+  // UI - SIN REVELAR NADA
+  // ============================================
+  const chatMessages=document.getElementById('chatMessages'),chatInput=document.getElementById('chatInput'),chatSendBtn=document.getElementById('chatSendBtn');
+  let modo=localStorage.getItem('presidencial_modo')||'experto';
+
+  function _R(q){const l=q.toLowerCase();if(l.includes('corrupci'))return'La lucha anticorrupción requiere: 1) Fiscalía autónoma e independiente, 2) Transparencia total en contrataciones, 3) Protección a denunciantes. Ejemplo: Singapur pasó de ser uno de los países más corruptos a uno de los más transparentes en 30 años.';if(l.includes('líder')||l.includes('lider'))return'Un líder transformador necesita: 1) Visión estratégica a largo plazo, 2) Integridad absoluta, 3) Capacidad de ejecución. Ejemplo: Nelson Mandela unió a Sudáfrica mediante reconciliación y verdad.';if(l.includes('econom')||l.includes('pib'))return'La política económica debe basarse en: crecimiento inclusivo, inversión en infraestructura, apoyo a PYMES, y transición energética. Ejemplo: Lee Kuan Yew transformó Singapur en una generación.';return'Profundizando en tu consulta sobre liderazgo y políticas públicas. ¿Puedes especificar qué área te interesa más?';}
+
+  function actualizarModoUI(){document.querySelectorAll('.modo-btn').forEach(b=>b.classList.toggle('active',b.dataset.modo===modo));}
+  document.querySelectorAll('.modo-btn').forEach(b=>{b.addEventListener('click',()=>{modo=b.dataset.modo;localStorage.setItem('presidencial_modo',modo);actualizarModoUI();addMessage(`✨ Modo ${modo==='experto'?'EXPERTO':'BÁSICO'}`,false);});});
   actualizarModoUI();
-  
-  function showToast(m, e) { const t = document.createElement('div'); t.style.cssText = `position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:${e?'#ef4444':'#10b981'};color:white;padding:8px 20px;border-radius:50px;font-size:0.8rem;z-index:2000;`; t.innerText = m; document.body.appendChild(t); setTimeout(() => t.remove(), 2500); }
-  
-  function addMessage(text, isUser = false, pq = null, pr = null) {
-    const d = document.createElement('div'); d.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
-    const b = document.createElement('div'); b.className = 'message-bubble'; b.textContent = text; d.appendChild(b);
-    if (!isUser && pq && pr) {
-      const fb = document.createElement('div'); fb.className = 'feedback-buttons';
-      fb.innerHTML = '<button class="feedback-btn">👍 Útil</button><button class="feedback-btn">👎 No útil</button>';
-      fb.querySelectorAll('.feedback-btn')[0].addEventListener('click', (e) => { e.stopPropagation(); fb.remove(); showToast('✅ Gracias'); });
-      fb.querySelectorAll('.feedback-btn')[1].addEventListener('click', (e) => { e.stopPropagation(); fb.remove(); showToast('📝 Gracias'); });
-      d.appendChild(fb);
-    }
-    chatMessages.appendChild(d); chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-  
-  function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>'; chatMessages.appendChild(d); chatMessages.scrollTop = chatMessages.scrollHeight; }
-  function removeTyping() { const t = document.getElementById('_t'); if (t) t.remove(); }
-  
-  async function handleSend() {
-    const q = chatInput.value.trim(); if (!q) return;
-    addMessage(q, true); chatInput.value = ''; chatSendBtn.disabled = true;
-    
-    let r = window._g ? window._g(q) : null;
-    if (!r) { showTyping(); if (window._x) { const result = await window._x(q); if (result.e) { r = result.r; if (window._p) window._p(q, r); } } removeTyping(); }
-    if (!r) r = "Estoy procesando tu consulta. Por favor, intenta de nuevo en unos segundos.";
-    
-    addMessage(r, false, q, r); chatSendBtn.disabled = false; chatInput.focus();
-  }
-  
-  chatSendBtn.addEventListener('click', handleSend);
-  chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
-  
-  // Iniciar
-  let _n = 0;
-  const _h = setInterval(() => { if (typeof jsllm7 !== 'undefined') { clearInterval(_h); addMessage("✨ Asesor político avanzado activo. Puedo profundizar en liderazgo, reformas y gestión pública.", false); } else if (_n > 40) clearInterval(_h); _n++; }, 500);
+
+  function showToast(m,e){const t=document.createElement('div');t.style.cssText=`position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:${e?'#ef4444':'#10b981'};color:white;padding:8px 20px;border-radius:50px;font-size:0.8rem;z-index:2000;`;t.innerText=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2500);}
+
+  function addMessage(text,isUser,pq,pr){const d=document.createElement('div');d.className=`message ${isUser?'user-message':'ai-message'}`;const b=document.createElement('div');b.className='message-bubble';b.textContent=text;d.appendChild(b);if(!isUser){const fb=document.createElement('div');fb.className='feedback-buttons';fb.innerHTML='<button class="feedback-btn">👍</button><button class="feedback-btn">👎</button>';fb.querySelectorAll('.feedback-btn')[0].addEventListener('click',e=>{e.stopPropagation();fb.remove();showToast('✅ Gracias');});fb.querySelectorAll('.feedback-btn')[1].addEventListener('click',e=>{e.stopPropagation();fb.remove();showToast('📝 Gracias');});d.appendChild(fb);}chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;}
+  function showTyping(){const d=document.createElement('div');d.className='message ai-message';d.id='_t';d.innerHTML='<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>';chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;}
+  function removeTyping(){const t=document.getElementById('_t');if(t)t.remove();}
+
+  async function handleSend(){const q=chatInput.value.trim();if(!q)return;addMessage(q,true);chatInput.value='';chatSendBtn.disabled=true;
+  let r=window._g?window._g(q):null;
+  if(!r){showTyping();if(typeof jsllm7!=='undefined'&&window._x){try{const result=await window._x(q);if(result.e&&result.r){r=result.r;if(window._p)window._p(q,r);}}catch(e){}}
+  removeTyping();if(!r){r=_R(q);showToast('📡 Respuesta local');}else showToast('✅ Análisis generado');}
+  addMessage(r,false,q,r);chatSendBtn.disabled=false;chatInput.focus();}
+
+  chatSendBtn.addEventListener('click',handleSend);chatInput.addEventListener('keypress',e=>{if(e.key==='Enter')handleSend();});
+
+  let _n=0;const _h=setInterval(()=>{if(typeof jsllm7!=='undefined'){clearInterval(_h);addMessage('✨ Asesor político avanzado activo. Puedo profundizar en liderazgo, reformas y gestión pública.',false);}else if(_n>40)clearInterval(_h);_n++;},500);
 </script>
 
 <script type="importmap">{ "imports": { "three": "https://unpkg.com/three@0.128.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/" } }</script>
 <script type="module">
-import * as THREE from 'three'; import { OrbitControls } from 'three/addons/controls/OrbitControls.js'; import { VRButton } from 'three/addons/webxr/VRButton.js';
-let vrScene, vrCamera, vrRenderer, vrControls, vrActive = false;
-function initVR() {
-  const c = document.getElementById('vrContainer'); if (!c) return; c.innerHTML = '';
-  vrScene = new THREE.Scene(); vrScene.background = new THREE.Color(0x1a1a2e);
-  vrCamera = new THREE.PerspectiveCamera(45, c.clientWidth/c.clientHeight, 0.1, 1000); vrCamera.position.set(3, 1.6, 4);
-  vrRenderer = new THREE.WebGLRenderer({ antialias: true }); vrRenderer.setSize(c.clientWidth, c.clientHeight); vrRenderer.xr.enabled = true;
-  c.appendChild(vrRenderer.domElement); c.appendChild(VRButton.createButton(vrRenderer));
-  vrControls = new OrbitControls(vrCamera, vrRenderer.domElement); vrControls.enableDamping = true;
-  vrScene.add(new THREE.AmbientLight(0x404060));
-  const dl = new THREE.DirectionalLight(0xffffff, 1); dl.position.set(5,10,7); vrScene.add(dl);
-  const f = new THREE.Mesh(new THREE.PlaneGeometry(8,8), new THREE.MeshStandardMaterial({color:0x5a3a2a})); f.rotation.x=-Math.PI/2; f.position.y=-0.1; vrScene.add(f);
-  const desk = new THREE.Mesh(new THREE.BoxGeometry(2,0.1,1.2), new THREE.MeshStandardMaterial({color:0x4a2a1a})); desk.position.set(0,0.5,-1.2); vrScene.add(desk);
-  function animate(){requestAnimationFrame(animate);vrControls.update();vrRenderer.render(vrScene,vrCamera)} animate();
-  vrActive=true;
-}
+import * as THREE from 'three';import {OrbitControls}from'three/addons/controls/OrbitControls.js';import {VRButton}from'three/addons/webxr/VRButton.js';
+let vrScene,vrCamera,vrRenderer,vrControls,vrActive=false;
+function initVR(){const c=document.getElementById('vrContainer');if(!c)return;c.innerHTML='';vrScene=new THREE.Scene();vrScene.background=new THREE.Color(0x1a1a2e);vrCamera=new THREE.PerspectiveCamera(45,c.clientWidth/c.clientHeight,0.1,1000);vrCamera.position.set(3,1.6,4);vrRenderer=new THREE.WebGLRenderer({antialias:true});vrRenderer.setSize(c.clientWidth,c.clientHeight);vrRenderer.xr.enabled=true;c.appendChild(vrRenderer.domElement);c.appendChild(VRButton.createButton(vrRenderer));vrControls=new OrbitControls(vrCamera,vrRenderer.domElement);vrControls.enableDamping=true;vrScene.add(new THREE.AmbientLight(0x404060));const dl=new THREE.DirectionalLight(0xffffff,1);dl.position.set(5,10,7);vrScene.add(dl);const f=new THREE.Mesh(new THREE.PlaneGeometry(8,8),new THREE.MeshStandardMaterial({color:0x5a3a2a}));f.rotation.x=-Math.PI/2;f.position.y=-0.1;vrScene.add(f);const desk=new THREE.Mesh(new THREE.BoxGeometry(2,0.1,1.2),new THREE.MeshStandardMaterial({color:0x4a2a1a}));desk.position.set(0,0.5,-1.2);vrScene.add(desk);function animate(){requestAnimationFrame(animate);vrControls.update();vrRenderer.render(vrScene,vrCamera)}animate();vrActive=true;}
 document.getElementById('vrModeBtn').addEventListener('click',()=>{document.getElementById('normalMode').style.display='none';document.getElementById('vrMode').classList.add('active');if(!vrActive)initVR();});
 document.getElementById('closeVrBtn').addEventListener('click',()=>{document.getElementById('vrMode').classList.remove('active');document.getElementById('normalMode').style.display='block';});
 </script>
