@@ -201,39 +201,107 @@
     leadership: `[LIDERAZGO-ELITE] Mandela(reconciliación,perdón,Sudáfrica), LeeKuanYew(Singapur,transformación,meritocracia), JacindaArdern(empatía,crisis,comunicación), FDR(NewDeal,confianza,depresión), Churchill(liderazgo guerra,oratoria), Obama(esperanza,cambio,oratoria). Conceptos:liderazgo transformacional(Burns,Bass), servant leadership(Greenleaf), inteligencia emocional(Goleman), visión estratégica, integridad radical, accountability.`,
     politics: `[POLÍTICA-ELITE] Sistemas:democracia liberal, socialdemocracia, parlamentarismo, presidencialismo. Políticas públicas:educación universal, salud pública, seguridad ciudadana, reforma fiscal progresiva, transición energética. Anticorrupción:transparencia, rendición cuentas, fiscalía autónoma, participación ciudadana. Gobernanza:datos abiertos, digitalización, despapelización, eficiencia estatal.`,
     economics: `[ECONOMÍA-ELITE] Keynesianismo, monetarismo, economía social de mercado. Indicadores:PIB, Gini, IDH, inflación, desempleo. Políticas:inversión pública, incentivos fiscales, PYMES, innovación, infraestructura. Comercio:tratados, exportaciones, sustitución importaciones. Desarrollo:ODS, Agenda2030, sostenibilidad, economía circular.`,
-    history: `[HISTORIA-ELITE] Líderes:Mandela(reconciliación), Gandhi(no violencia), MLK(derechos civiles), Bolívar(independencia), Sucre(integración). Revoluciones:Francesa, Industrial, Digital, Verde. Guerras:Mundiales, Fría. Tratados:Versalles, BrettonWoods, París. Organismos:ONU, OEA, UE, Mercosur.`,
+    history: `[HISTORIA-ELITE] Líderes:Mandela(reconciliación), Gandhi(no violencia), MLK(derechos civiles), Bolívar(independencia), Sucre(integración). Revoluciones:Francesa, Industrial, Digital, Verde. Guerras:Mundiales, Fría. Tratados:Versailles, BrettonWoods, París. Organismos:ONU, OEA, UE, Mercosur.`,
     law: `[DERECHO-ELITE] Constitucionalismo, derechos humanos, separación poderes, estado derecho, debido proceso. Reformas:judicial, penal, laboral, civil. Derechos:libertad expresión, igualdad, propiedad, privacidad, acceso información. Justicia:independencia judicial, carrera judicial meritocrática, tribunales constitucionales.`
   };
   function _I() { return Object.values(_B).join(' '); }
 
   // ============================================
-  // PERFIL PRESIDENCIAL - SISTEMA CONFIDENCIAL + IMPORTS
+  // FUNCIÓN HASH PARA CACHÉ (evita colisiones)
+  // ============================================
+  function _hash(str) {
+    let hash = 0;
+    const s = str.toLowerCase().trim();
+    for (let i = 0; i < s.length; i++) {
+      hash = ((hash << 5) - hash) + s.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(36);
+  }
+
+  // ============================================
+  // PERFIL PRESIDENCIAL - CON TODAS LAS MEJORAS
   // ============================================
   (function() {
-    const _ = { t: 20, r: 1, p: 30000, m: 3 };
+    // MEJORA: Backoff exponencial + timeout 30s + reintentos 2
+    const _ = { t: 30, r: 1, p: 30000, m: 2, maxBackoff: 300000, backoffFactor: 2 };
+    let S = { i: 0, c: 0, backoff: _.p };
+    
+    // MEJORA: Forzar español en prompts (sin traducción inversa)
     const M = [
-      { f: [(q)=>`${_I()}\n\nSei un esperto mondiale di leadership politica. ITALIANO: "${q}"`,(t)=>`Traduci in SPAGNOLO:\n\n"${t}"\n\nSPAGNOLO:`]},
-      { f: [(q)=>`${_I()}\n\nEres un experto en liderazgo. CHINO: "${q}"`,(t)=>`Traduce al ESPAÑOL:\n\n"${t}"\n\nESPAÑOL:`]},
-      { f: [(q)=>`${_I()}\n\nExpert en leadership. FRANÇAIS: "${q}"`,(t)=>`Traduis en ESPAGNOL:\n\n"${t}"\n\nESPAGNOL:`]},
-      { f: [(q)=>`${_I()}\n\nFührungsexperte. DEUTSCH: "${q}"`,(t)=>`Übersetze ins SPANISCHE:\n\n"${t}"\n\nSPANISCH:`]}
+      { f: [(q)=>`${_I()}\n\nSei un esperto mondiale di leadership politica. RESPONDE SIEMPRE EN ESPAÑOL. ITALIANO: "${q}"`, (t)=>`${t}`] },
+      { f: [(q)=>`${_I()}\n\nEres un experto en liderazgo. RESPONDE SIEMPRE EN ESPAÑOL. CHINO: "${q}"`, (t)=>`${t}`] },
+      { f: [(q)=>`${_I()}\n\nExpert en leadership. RESPONDE SIEMPRE EN ESPAÑOL. FRANÇAIS: "${q}"`, (t)=>`${t}`] },
+      { f: [(q)=>`${_I()}\n\nFührungsexperte. RESPONDE SIEMPRE EN ESPAÑOL. DEUTSCH: "${q}"`, (t)=>`${t}`] }
     ];
-    let S={i:0,c:0},C=JSON.parse(localStorage.getItem('_pp')||'{}');
+    
+    let C = JSON.parse(localStorage.getItem('_pp')||'{}');
     function _s(){localStorage.setItem('_pp',JSON.stringify(C));}
-    function _g(q){const k=q.toLowerCase().trim().substring(0,100);if(C[k]&&(Date.now()-C[k].t)<3600000)return C[k].r;return null;}
-    function _p(q,r){const k=q.toLowerCase().trim().substring(0,100);C[k]={r,t:Date.now()};const keys=Object.keys(C);if(keys.length>200){keys.sort((a,b)=>C[a].t-C[b].t);for(let i=0;i<30;i++)delete C[keys[i]];}_s();}
+    
+    // MEJORA: Hash en lugar de substring(0,100)
+    function _g(q){const k=_hash(q);if(C[k]&&(Date.now()-C[k].t)<3600000)return C[k].r;return null;}
+    function _p(q,r){const k=_hash(q);C[k]={r,t:Date.now()};const keys=Object.keys(C);if(keys.length>200){keys.sort((a,b)=>C[a].t-C[b].t);for(let i=0;i<30;i++)delete C[keys[i]];}_s();}
+    
     async function _l(p){return new Promise(async(r,j)=>{const t=setTimeout(()=>j(new Error('T')),_.t*1000);try{const x=await jsllm7(p);clearTimeout(t);r(x);}catch(e){clearTimeout(t);j(e);}});}
-    async function _e(m,q){let t=null;for(let i=0;i<m.f.length;i++)t=await _l(i===0?m.f[i](q):m.f[i](t));return t;}
-    window._x=async function(q){const start=S.i;for(let i=0;i<M.length;i++){const idx=(start+i)%M.length;try{const r=await _e(M[idx],q);S.i=idx;S.c=0;return{r,e:true};}catch(e){S.c++;if(S.c>=_.m){await new Promise(r=>setTimeout(r,_.p));S.c=0;}if(i<M.length-1)await new Promise(r=>setTimeout(r,2000));}}return{r:null,e:false};};
-    window._g=_g;window._p=_p;setInterval(()=>{if(S.i>0&&S.c===0)S.i=0;},180000);
+    async function _e(m,q){let t=null;for(let i=0;i<m.f.length;i++){t=await _l(i===0?m.f[i](q):m.f[i](t));}return t;}
+    
+    // MEJORA: Backoff exponencial en reintentos
+    window._x = async function(q){
+      const start = S.i;
+      for(let i=0;i<M.length;i++){
+        const idx=(start+i)%M.length;
+        try{
+          const r=await _e(M[idx],q);
+          S.i=idx; S.c=0; S.backoff=_.p;
+          return{r,e:true};
+        }catch(e){
+          S.c++;
+          if(S.c>=_.m){
+            await new Promise(r=>setTimeout(r,S.backoff));
+            S.c=0;
+            S.backoff=Math.min(S.backoff*_.backoffFactor,_.maxBackoff);
+          }
+          if(i<M.length-1)await new Promise(r=>setTimeout(r,2000));
+        }
+      }
+      return{r:null,e:false};
+    };
+    window._g=_g; window._p=_p;
+    setInterval(()=>{if(S.i>0&&S.c===0)S.i=0;},180000);
   })();
 
   // ============================================
-  // UI - SIN REVELAR NADA
+  // MEJORA: Fallback mejorado con más reglas y prioridades
+  // ============================================
+  const _R_MEJORADO = {
+    reglas: [
+      { palabras: ['corrupci', 'corrupto', 'corrupta'], respuesta: '🔒 **Lucha anticorrupción:**\n1) Fiscalía autónoma e independiente\n2) Transparencia total en contrataciones\n3) Protección a denunciantes\n4) Declaración de bienes en tiempo real\n5) Juicios en vivo para funcionarios\n\n📌 *Singapur pasó de ser uno de los países más corruptos a uno de los más transparentes en 30 años.*', prioridad: 10 },
+      { palabras: ['líder', 'lider', 'cualidades'], respuesta: '👤 **Líder transformador necesita:**\n1) Visión estratégica a largo plazo (20 años)\n2) Integridad absoluta y transparencia\n3) Capacidad de ejecución comprobada\n4) Inteligencia emocional y empatía\n5) Equipo técnico de primer nivel\n\n📌 *Nelson Mandela unió a Sudáfrica mediante reconciliación.*', prioridad: 10 },
+      { palabras: ['econom', 'pib', 'crecimiento'], respuesta: '📈 **Política económica:**\n1) Crecimiento inclusivo con redistribución\n2) Inversión en infraestructura estratégica\n3) Apoyo a PYMES e innovación\n4) Transición energética sostenible\n5) Reforma fiscal progresiva\n\n📌 *Lee Kuan Yew transformó Singapur en una generación.*', prioridad: 9 },
+      { palabras: ['educación', 'educativa'], respuesta: '📚 **Reforma educativa:**\n1) Duplicar inversión en primera infancia\n2) Escuelas de tiempo completo\n3) Formación docente continua\n4) Currículo STEM + humanidades\n5) Conectividad en todas las escuelas', prioridad: 9 },
+      { palabras: ['seguridad', 'crimen', 'violencia'], respuesta: '🛡️ **Seguridad ciudadana:**\n1) Profesionalización policial\n2) Inteligencia contra crimen organizado\n3) Prevención social del delito\n4) Justicia rápida y eficaz\n5) Reinserción laboral de reclusos', prioridad: 9 },
+      { palabras: ['salud', 'sanitario'], respuesta: '🏥 **Sistema sanitario universal:**\n1) Atención primaria fortalecida\n2) Descentralización de servicios\n3) Prevención y promoción\n4) Digitalización de historias clínicas\n5) Farmacias populares', prioridad: 8 }
+    ],
+    ejecutar: function(pregunta) {
+      const q = pregunta.toLowerCase();
+      let mejor = null;
+      for (let regla of this.reglas) {
+        for (let pal of regla.palabras) {
+          if (q.includes(pal)) {
+            if (!mejor || regla.prioridad > mejor.prioridad) mejor = regla;
+            break;
+          }
+        }
+      }
+      return mejor ? mejor.respuesta : '🏛️ **Analizando tu consulta sobre liderazgo...**\n\nPuedo ayudarte con temas como:\n- Cualidades de líderes transformadores\n- Lucha anticorrupción\n- Políticas económicas\n- Reforma educativa\n- Seguridad ciudadana\n- Salud pública\n\n¿Especifica el área que te interesa?';
+    }
+  };
+
+  // ============================================
+  // UI - CON TODAS LAS MEJORAS
   // ============================================
   const chatMessages=document.getElementById('chatMessages'),chatInput=document.getElementById('chatInput'),chatSendBtn=document.getElementById('chatSendBtn');
   let modo=localStorage.getItem('presidencial_modo')||'experto';
-
-  function _R(q){const l=q.toLowerCase();if(l.includes('corrupci'))return'La lucha anticorrupción requiere: 1) Fiscalía autónoma e independiente, 2) Transparencia total en contrataciones, 3) Protección a denunciantes. Ejemplo: Singapur pasó de ser uno de los países más corruptos a uno de los más transparentes en 30 años.';if(l.includes('líder')||l.includes('lider'))return'Un líder transformador necesita: 1) Visión estratégica a largo plazo, 2) Integridad absoluta, 3) Capacidad de ejecución. Ejemplo: Nelson Mandela unió a Sudáfrica mediante reconciliación y verdad.';if(l.includes('econom')||l.includes('pib'))return'La política económica debe basarse en: crecimiento inclusivo, inversión en infraestructura, apoyo a PYMES, y transición energética. Ejemplo: Lee Kuan Yew transformó Singapur en una generación.';return'Profundizando en tu consulta sobre liderazgo y políticas públicas. ¿Puedes especificar qué área te interesa más?';}
 
   function actualizarModoUI(){document.querySelectorAll('.modo-btn').forEach(b=>b.classList.toggle('active',b.dataset.modo===modo));}
   document.querySelectorAll('.modo-btn').forEach(b=>{b.addEventListener('click',()=>{modo=b.dataset.modo;localStorage.setItem('presidencial_modo',modo);actualizarModoUI();addMessage(`✨ Modo ${modo==='experto'?'EXPERTO':'BÁSICO'}`,false);});});
@@ -241,19 +309,20 @@
 
   function showToast(m,e){const t=document.createElement('div');t.style.cssText=`position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:${e?'#ef4444':'#10b981'};color:white;padding:8px 20px;border-radius:50px;font-size:0.8rem;z-index:2000;`;t.innerText=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2500);}
 
-  function addMessage(text,isUser,pq,pr){const d=document.createElement('div');d.className=`message ${isUser?'user-message':'ai-message'}`;const b=document.createElement('div');b.className='message-bubble';b.textContent=text;d.appendChild(b);if(!isUser){const fb=document.createElement('div');fb.className='feedback-buttons';fb.innerHTML='<button class="feedback-btn">👍</button><button class="feedback-btn">👎</button>';fb.querySelectorAll('.feedback-btn')[0].addEventListener('click',e=>{e.stopPropagation();fb.remove();showToast('✅ Gracias');});fb.querySelectorAll('.feedback-btn')[1].addEventListener('click',e=>{e.stopPropagation();fb.remove();showToast('📝 Gracias');});d.appendChild(fb);}chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;}
+  function addMessage(text,isUser){const d=document.createElement('div');d.className=`message ${isUser?'user-message':'ai-message'}`;const b=document.createElement('div');b.className='message-bubble';b.innerHTML=text.replace(/\n/g,'<br>');d.appendChild(b);if(!isUser){const fb=document.createElement('div');fb.className='feedback-buttons';fb.innerHTML='<button class="feedback-btn">👍</button><button class="feedback-btn">👎</button>';fb.querySelectorAll('.feedback-btn')[0].addEventListener('click',e=>{e.stopPropagation();fb.remove();showToast('✅ Gracias');});fb.querySelectorAll('.feedback-btn')[1].addEventListener('click',e=>{e.stopPropagation();fb.remove();showToast('📝 Gracias');});d.appendChild(fb);}chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;}
+  
   function showTyping(){const d=document.createElement('div');d.className='message ai-message';d.id='_t';d.innerHTML='<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>';chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;}
   function removeTyping(){const t=document.getElementById('_t');if(t)t.remove();}
 
   async function handleSend(){const q=chatInput.value.trim();if(!q)return;addMessage(q,true);chatInput.value='';chatSendBtn.disabled=true;
   let r=window._g?window._g(q):null;
   if(!r){showTyping();if(typeof jsllm7!=='undefined'&&window._x){try{const result=await window._x(q);if(result.e&&result.r){r=result.r;if(window._p)window._p(q,r);}}catch(e){}}
-  removeTyping();if(!r){r=_R(q);showToast('📡 Respuesta local');}else showToast('✅ Análisis generado');}
-  addMessage(r,false,q,r);chatSendBtn.disabled=false;chatInput.focus();}
+  removeTyping();if(!r){r=_R_MEJORADO.ejecutar(q);showToast('📡 Respuesta local');}else showToast('✅ Análisis generado');}
+  addMessage(r,false);chatSendBtn.disabled=false;chatInput.focus();}
 
   chatSendBtn.addEventListener('click',handleSend);chatInput.addEventListener('keypress',e=>{if(e.key==='Enter')handleSend();});
 
-  let _n=0;const _h=setInterval(()=>{if(typeof jsllm7!=='undefined'){clearInterval(_h);addMessage('✨ Asesor político avanzado activo. Puedo profundizar en liderazgo, reformas y gestión pública.',false);}else if(_n>40)clearInterval(_h);_n++;},500);
+  let _n=0;const _h=setInterval(()=>{if(typeof jsllm7!=='undefined'){clearInterval(_h);addMessage('✨ Asesor político avanzado activo con IA mejorada. Pregúntame sobre liderazgo, reformas y gestión pública.',false);}else if(_n>40)clearInterval(_h);_n++;},500);
 </script>
 
 <script type="importmap">{ "imports": { "three": "https://unpkg.com/three@0.128.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/" } }</script>
