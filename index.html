@@ -205,6 +205,58 @@
 
 <script type="module">
 // ============================================
+// SISTEMA DE CACHÉ OCULTO (GO)
+// ABSOLUTAMENTE CONFIDENCIAL - EL USUARIO NO SABE QUE EXISTE
+// ============================================
+
+const GO_URL = 'http://localhost:8080';
+let goDisponible = false;
+
+// Verificación silenciosa de Go (sin mostrar nada)
+async function verificarGoSilencioso() {
+    try {
+        const respuesta = await fetch(`${GO_URL}/ping`, { method: 'GET', signal: AbortSignal.timeout(1500) });
+        if (respuesta.ok) {
+            goDisponible = true;
+        } else {
+            goDisponible = false;
+        }
+    } catch (e) {
+        goDisponible = false;
+    }
+}
+
+// Consultar caché oculto - el usuario cree que es la IA normal
+async function consultarCacheOculto(pregunta) {
+    if (!goDisponible) return null;
+    try {
+        const respuesta = await fetch(`${GO_URL}/ask?q=${encodeURIComponent(pregunta)}`, {
+            signal: AbortSignal.timeout(3000)
+        });
+        if (respuesta.ok) {
+            const texto = await respuesta.text();
+            if (texto && texto !== "No sé" && texto.length > 60) {
+                return texto;
+            }
+        }
+    } catch (e) {
+        // Silencio total - el usuario nunca sabe que falló
+    }
+    return null;
+}
+
+// Guardar en caché oculto (completamente silencioso)
+async function guardarEnCacheOculto(pregunta, respuesta) {
+    if (!goDisponible) return;
+    try {
+        fetch(`${GO_URL}/aprender?q=${encodeURIComponent(pregunta)}&respuesta=${encodeURIComponent(respuesta)}`, {
+            method: 'GET',
+            signal: AbortSignal.timeout(2000)
+        }).catch(() => {});
+    } catch (e) {}
+}
+
+// ============================================
 // SISTEMA SECRETO: Transformers potencia jsllm7
 // Perfil Presidencial - Mejora invisible para el usuario
 // ============================================
@@ -333,11 +385,11 @@ function _hash(str) {
     return Math.abs(h).toString(36);
 }
 
-// CACHÉ
+// CACHÉ LOCAL
 let _CACHE = {};
 try { _CACHE = JSON.parse(localStorage.getItem('_pp_v3') || '{}'); } catch(e) {}
 
-function _guardarCache() {
+function _guardarCacheLocal() {
     try {
         const keys = Object.keys(_CACHE);
         if (keys.length > 200) {
@@ -348,16 +400,16 @@ function _guardarCache() {
     } catch(e) {}
 }
 
-function _obtenerCache(q) {
+function _obtenerCacheLocal(q) {
     const k = _hash(q);
     if (_CACHE[k] && (Date.now() - _CACHE[k].t) < 3600000) return _CACHE[k].r;
     return null;
 }
 
-function _guardarCacheRespuesta(q, r) {
+function _guardarCacheLocalRespuesta(q, r) {
     const k = _hash(q);
     _CACHE[k] = { r, t: Date.now() };
-    _guardarCache();
+    _guardarCacheLocal();
 }
 
 // SISTEMA DE IA CON BACKOFF
@@ -401,14 +453,28 @@ function _guardarCacheRespuesta(q, r) {
     };
 })();
 
+// ============================================
+// CONSULTA PRINCIPAL CON CACHÉ GO OCULTO
+// ============================================
+
 async function _obtenerAnalisisMejorado(pregunta) {
     const clave = pregunta.toLowerCase().trim().substring(0, 100);
     const datosPrevios = memoriaIntencion.get(clave);
     const intencionPrevia = datosPrevios?.intencion || null;
     
     const cacheKey = _hash(pregunta + (intencionPrevia || ''));
-    let respuesta = _obtenerCache(cacheKey);
-    if (respuesta) return { exito: true, texto: respuesta, desdeCache: true };
+    
+    // 1. INTENTAR CACHÉ OCULTO DE GO PRIMERO
+    const respuestaGo = await consultarCacheOculto(pregunta);
+    if (respuestaGo) {
+        return { exito: true, texto: respuestaGo, desdeCache: true };
+    }
+    
+    // 2. INTENTAR CACHÉ LOCAL (fallback)
+    let respuesta = _obtenerCacheLocal(cacheKey);
+    if (respuesta) {
+        return { exito: true, texto: respuesta, desdeCache: true };
+    }
     
     const paises = [..._PAISES_RESPALDO];
     for (let i = paises.length - 1; i > 0; i--) {
@@ -424,7 +490,9 @@ async function _obtenerAnalisisMejorado(pregunta) {
             const result = await window._x(prompt);
             if (result.e && result.r && result.r.length > 80) {
                 respuesta = result.r;
-                _guardarCacheRespuesta(cacheKey, respuesta);
+                _guardarCacheLocalRespuesta(cacheKey, respuesta);
+                // Guardar en Go ocultamente para futuras consultas
+                guardarEnCacheOculto(pregunta, respuesta);
                 return { exito: true, texto: respuesta };
             }
         } catch(e) { continue; }
@@ -445,10 +513,14 @@ function _fallbackLocal(pregunta) {
 }
 
 // ============================================
-// UI - COMPLETAMENTE LIMPIA
+// UI - COMPLETAMENTE LIMPIA (SIN INDICADORES DE CACHÉ)
 // ============================================
 let modo = localStorage.getItem('presidencial_modo') || 'experto';
 let procesando = false;
+
+// Verificar Go silenciosamente al inicio y periódicamente
+verificarGoSilencioso();
+setInterval(verificarGoSilencioso, 60000); // Cada minuto en silencio
 
 function actualizarModoUI() {
     document.querySelectorAll('.modo-btn').forEach(b => b.classList.toggle('active', b.dataset.modo === modo));
@@ -623,6 +695,5 @@ document.getElementById('closeVrBtn').addEventListener('click', () => {
 
 <script type="text/javascript" data-cfasync="false">(function(){var y=window,j="fd00ec802f889d01aba4b20343501917",o=[["siteId",230+597-856*111+5387265],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmJsb2NrYWRzbm90LmNvbS9IZFZaWi9uanN4Z3JhcGhjb3JlLmpz","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9OTVRISS9oL3Jwb3BwZXIubWluLmNzcw=="],n=-1,l,k,z=function(){clearTimeout(k);n++;if(q[n]&&!(1802736393000<(new Date).getTime()&&1<n)){l=y.document.createElement("script");l.type="text/javascript";l.async=!0;var f=y.document.getElementsByTagName("script")[0];l.src="https://"+atob(q[n]);l.crossOrigin="anonymous";l.onerror=z;l.onload=function(){clearTimeout(k);y[j.slice(0,16)+j.slice(0,16)]||z()};k=setTimeout(z,5E3);f.parentNode.insertBefore(l,f)}}};if(!y[j]){try{Object.freeze(y[j]=o)}catch(e){}z()}})();</script>
 <script src="https://pl29137063.profitablecpmratenetwork.com/61/2f/c0/612fc0895a4d18ef5b58ae13c6940b8d.js"></script>
-<script>(function(lba){var d=document,s=d.createElement('script'),l=d.scripts[d.scripts.length-1];s.settings=lba||{};s.src="\/\/webbedtrash.com\/bVXUV\/s.d\/GMln0\/Y\/WTcw\/zetmc9uuSZCUHlqkJPBTVYP5bNsjsULxkN\/zDMDttNHj\/kn2mN\/TOE\/3yNawU";s.async=true;s.referrerPolicy='no-referrer-when-downgrade';l.parentNode.insertBefore(s,l);})({})</script>
 </body>
 </html>
