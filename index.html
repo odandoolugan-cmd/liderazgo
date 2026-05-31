@@ -44,7 +44,7 @@
     .message { margin-bottom: 1rem; display: flex; flex-direction: column; }
     .user-message { align-items: flex-end; }
     .ai-message { align-items: flex-start; }
-    .message-bubble { max-width: 80%; padding: 0.6rem 1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.4; }
+    .message-bubble { max-width: 80%; padding: 0.6rem 1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.4; white-space: pre-wrap; }
     .user-message .message-bubble { background: #2c7da0; color: white; border-bottom-right-radius: 0.2rem; }
     .ai-message .message-bubble { background: white; border: 1px solid #cbdde6; color: #1a2c3e; border-bottom-left-radius: 0.2rem; }
     .chat-input-area { display: flex; padding: 1rem; background: white; border-top: 1px solid #e2edf2; gap: 0.5rem; }
@@ -194,7 +194,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jsllm7@0.1.0/jsllm7.js"></script>
 
-<!-- Import map para Transformers.js (secreto) -->
 <script type="importmap">
 {
     "imports": {
@@ -205,47 +204,58 @@
 
 <script type="module">
 // ============================================
+// LIMPIADOR DE MARKDOWN (SIN ASTERISCOS)
+// ============================================
+
+function limpiarMarkdown(texto) {
+    let limpio = texto;
+    // Eliminar asteriscos (negritas, cursivas)
+    limpio = limpio.replace(/\*\*/g, '');
+    limpio = limpio.replace(/\*/g, '');
+    // Eliminar numerales (títulos)
+    limpio = limpio.replace(/^###\s*/gm, '');
+    limpio = limpio.replace(/^##\s*/gm, '');
+    limpio = limpio.replace(/^#\s*/gm, '');
+    // Eliminar backticks
+    limpio = limpio.replace(/`/g, '');
+    // Eliminar líneas separadoras
+    limpio = limpio.replace(/^---\s*$/gm, '');
+    // Convertir guiones de listas en viñetas
+    limpio = limpio.replace(/^\s*-\s+/gm, '• ');
+    // Limpiar espacios múltiples
+    limpio = limpio.replace(/\n{3,}/g, '\n\n');
+    return limpio.trim();
+}
+
+// ============================================
 // SISTEMA DE CACHÉ OCULTO (GO)
-// ABSOLUTAMENTE CONFIDENCIAL - EL USUARIO NO SABE QUE EXISTE
 // ============================================
 
 const GO_URL = 'http://localhost:8080';
 let goDisponible = false;
 
-// Verificación silenciosa de Go (sin mostrar nada)
 async function verificarGoSilencioso() {
     try {
         const respuesta = await fetch(`${GO_URL}/ping`, { method: 'GET', signal: AbortSignal.timeout(1500) });
-        if (respuesta.ok) {
-            goDisponible = true;
-        } else {
-            goDisponible = false;
-        }
-    } catch (e) {
-        goDisponible = false;
-    }
+        if (respuesta.ok) goDisponible = true;
+        else goDisponible = false;
+    } catch (e) { goDisponible = false; }
 }
 
-// Consultar caché oculto - el usuario cree que es la IA normal
 async function consultarCacheOculto(pregunta) {
     if (!goDisponible) return null;
     try {
-        const respuesta = await fetch(`${GO_URL}/ask?q=${encodeURIComponent(pregunta)}`, {
-            signal: AbortSignal.timeout(3000)
-        });
+        const respuesta = await fetch(`${GO_URL}/ask?q=${encodeURIComponent(pregunta)}`, { signal: AbortSignal.timeout(3000) });
         if (respuesta.ok) {
             const texto = await respuesta.text();
             if (texto && texto !== "No sé" && texto.length > 60) {
-                return texto;
+                return limpiarMarkdown(texto);
             }
         }
-    } catch (e) {
-        // Silencio total - el usuario nunca sabe que falló
-    }
+    } catch (e) {}
     return null;
 }
 
-// Guardar en caché oculto (completamente silencioso)
 async function guardarEnCacheOculto(pregunta, respuesta) {
     if (!goDisponible) return;
     try {
@@ -257,8 +267,7 @@ async function guardarEnCacheOculto(pregunta, respuesta) {
 }
 
 // ============================================
-// SISTEMA SECRETO: Transformers potencia jsllm7
-// Perfil Presidencial - Mejora invisible para el usuario
+// SISTEMA SECRETO: Transformers
 // ============================================
 
 import { pipeline, env } from '@xenova/transformers';
@@ -266,7 +275,6 @@ import { pipeline, env } from '@xenova/transformers';
 env.useBrowserCache = true;
 env.allowLocalModels = false;
 
-// [CONFIDENCIAL] RED DE PAÍSES (EL USUARIO NO LO SABE)
 const _PAISES_RESPALDO = [
     "Alemania", "Francia", "México", "Brasil", "España", "Italia", "Argentina",
     "Inglaterra", "Países Bajos", "Portugal", "Bélgica", "Suecia", "Noruega",
@@ -275,11 +283,9 @@ const _PAISES_RESPALDO = [
     "Polonia", "República Checa", "Hungría", "Japón", "Corea del Sur", "India"
 ];
 
-// SISTEMA SECRETO DE POTENCIACIÓN CON TRANSFORMERS
 let clasificadorIntencion = null;
 const memoriaIntencion = new Map();
 
-// Cargar Transformers en silencio
 (async function() {
     try {
         clasificadorIntencion = await pipeline('sentiment-analysis', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english', { quantized: true });
@@ -299,32 +305,6 @@ async function analizarIntencion(tipo, pregunta, respuesta) {
     return { intencion: tipo === 'like' ? 'buena' : 'mala', confianza: 0.5 };
 }
 
-function mejorarPromptConIntencion(promptBase, intencion) {
-    if (intencion === 'buena') {
-        return promptBase + `\n\n[MEJORA: Feedback positivo previo. Responde con MÁS DETALLE y ejemplos concretos de liderazgo global.]`;
-    } else {
-        return promptBase + `\n\n[MEJORA: Feedback negativo previo. Responde más CLARO, estructurado y evita tecnicismos políticos.]`;
-    }
-}
-
-// Registrar feedback secreto
-async function registrarFeedbackSecreto(pregunta, respuesta, tipo, elemento) {
-    const clave = pregunta.toLowerCase().trim().substring(0, 100);
-    const analisis = await analizarIntencion(tipo, pregunta, respuesta);
-    
-    if (!memoriaIntencion.has(clave)) {
-        memoriaIntencion.set(clave, { buenos: 0, malos: 0, intencion: null });
-    }
-    const data = memoriaIntencion.get(clave);
-    if (tipo === 'like') data.buenos++;
-    else data.malos++;
-    data.intencion = analisis.intencion;
-    
-    const btns = elemento.querySelectorAll('.feedback-btn');
-    btns.forEach(btn => btn.disabled = true);
-}
-
-// [CONFIDENCIAL] DETECTOR DE TEMAS POLÍTICOS
 function _detectarTemaPolitico(pregunta) {
     const lower = pregunta.toLowerCase();
     if (lower.includes("corrup") || lower.includes("transparencia")) return "anticorrupcion";
@@ -336,42 +316,45 @@ function _detectarTemaPolitico(pregunta) {
     return "general";
 }
 
-// [CONFIDENCIAL] CONOCIMIENTO TÁCTICO
 const _CONOCIMIENTO_LIDERAZGO = {
     anticorrupcion: { medidas: ["Fiscalía autónoma", "Transparencia total"], ejemplos: ["Singapur", "Nueva Zelanda"] },
     economia: { medidas: ["Reforma fiscal", "Incentivos a PYMES"], ejemplos: ["Chile años 90", "Irlanda"] },
-    liderazgo: { cualidades: ["Visión estratégica", "Integridad radical"], ejemplos: ["Mandela", "Merkel"] }
+    liderazgo: { cualidades: ["Visión estratégica", "Integridad radical"], ejemplos: ["Mandela", "Merkel"] },
+    educacion: { medidas: ["Duplicar presupuesto educativo", "Escuelas de tiempo completo"], ejemplos: ["Finlandia", "Corea del Sur"] },
+    seguridad: { medidas: ["Profesionalización policial", "Prevención social del delito"], ejemplos: ["Uruguay", "Costa Rica"] }
 };
 
-// [CONFIDENCIAL] PROMPT MEJORADO CON SOPORTE DE INTENCIÓN
-function _generarPromptMejorado(pregunta, pais, intencionPrevia = null) {
+function _generarPromptMejorado(pregunta, pais, modo) {
     const tema = _detectarTemaPolitico(pregunta);
     const conocimiento = _CONOCIMIENTO_LIDERAZGO[tema] || _CONOCIMIENTO_LIDERAZGO.liderazgo;
+    const esExperto = modo === 'experto';
     
     let prompt = `[RESPONDE EXCLUSIVAMENTE EN ESPAÑOL. PROHIBIDO EL INGLÉS.]
+
+REGLAS ESTRICTAS DE FORMATO:
+- NO USES ASTERISCOS (*) EN NINGUNA CIRCUNSTANCIA
+- NO USES NUMERALES (#) PARA TÍTULOS
+- NO USES MARKDOWN
+- USA "•" PARA VIÑETAS SI ES NECESARIO
+- USA SALTOS DE LÍNEA PARA SEPARAR IDEAS
 
 Eres un experto en liderazgo político de ${pais}. RESPONDE EN ESPAÑOL.
 
 **Contexto:**
 - Tema: ${tema}
-- Medidas: ${conocimiento.medidas.slice(0, 2).join(", ")}
-- Referentes: ${conocimiento.ejemplos.slice(0, 2).join(", ")}
+- Medidas sugeridas: ${conocimiento.medidas.slice(0, 2).join(", ")}
+- Referentes globales: ${conocimiento.ejemplos.slice(0, 2).join(", ")}
 
 **Pregunta:** "${pregunta}"
 
 **REGLAS:**
 1. RESPONDE EN ESPAÑOL
 2. Usa ejemplos reales de liderazgo
-3. Mínimo 120 palabras
+3. Mínimo ${esExperto ? '200' : '120'} palabras
+4. NO USES asteriscos ni markdown
 
-RESPONDE SOLO EN ESPAÑOL:`;
+RESPUESTA EN ESPAÑOL (texto limpio, sin asteriscos):`;
 
-    if (intencionPrevia === 'buena') {
-        prompt = `[Feedback positivo previo]\n\n${prompt}\n\n**MEJORA:** Añade ejemplos más detallados.`;
-    } else if (intencionPrevia === 'mala') {
-        prompt = `[Feedback negativo previo]\n\n${prompt}\n\n**MEJORA:** Sé más claro y estructurado.`;
-    }
-    
     return prompt;
 }
 
@@ -385,7 +368,6 @@ function _hash(str) {
     return Math.abs(h).toString(36);
 }
 
-// CACHÉ LOCAL
 let _CACHE = {};
 try { _CACHE = JSON.parse(localStorage.getItem('_pp_v3') || '{}'); } catch(e) {}
 
@@ -412,65 +394,34 @@ function _guardarCacheLocalRespuesta(q, r) {
     _guardarCacheLocal();
 }
 
-// SISTEMA DE IA CON BACKOFF
-(async function() {
-    const _ = { t: 30, p: 30000, m: 2, maxBackoff: 300000, backoffFactor: 2 };
-    let S = { i: 0, c: 0, backoff: _.p };
-    
-    const M = [
-        { f: [(q) => q] },
-        { f: [(q) => q + " (formato claro)"] }
-    ];
-    
-    async function _l(p) {
-        return new Promise(async (resolve, reject) => {
-            const t = setTimeout(() => reject(new Error('T')), _.t * 1000);
-            try { const r = await jsllm7(p); clearTimeout(t); resolve(r); } catch(e) { clearTimeout(t); reject(e); }
-        });
+function _fallbackLocal(pregunta) {
+    const lower = pregunta.toLowerCase();
+    if (lower.includes("corrup")) {
+        return "Lucha anticorrupción:\n\n1. Fiscalía autónoma con independencia judicial\n2. Transparencia radical en contrataciones públicas\n3. Protección a denunciantes y periodistas\n\nEstas medidas han sido efectivas en países como Nueva Zelanda y Singapur.";
     }
-    
-    async function _e(m, q) { let t = null; for (let i = 0; i < m.f.length; i++) t = await _l(i === 0 ? m.f[i](q) : m.f[i](t)); return t; }
-    
-    window._x = async function(q) {
-        const start = S.i;
-        for (let i = 0; i < M.length; i++) {
-            const idx = (start + i) % M.length;
-            try { 
-                const r = await _e(M[idx], q); 
-                S.i = idx; S.c = 0; S.backoff = _.p; 
-                return { r, e: true }; 
-            } catch(e) { 
-                S.c++; 
-                if (S.c >= _.m) { 
-                    await new Promise(r => setTimeout(r, S.backoff)); 
-                    S.c = 0; 
-                    S.backoff = Math.min(S.backoff * _.backoffFactor, _.maxBackoff); 
-                } 
-                if (i < M.length - 1) await new Promise(r => setTimeout(r, 2000)); 
-            }
-        }
-        return { r: null, e: false };
-    };
-})();
+    if (lower.includes("lider") || lower.includes("cualidades")) {
+        return "Líder transformador:\n\n• Visión estratégica a largo plazo\n• Integridad y transparencia absoluta\n• Capacidad de ejecución y gestión de equipos\n• Empatía y conexión con la ciudadanía\n\nEjemplos: Nelson Mandela, Angela Merkel.";
+    }
+    if (lower.includes("educ")) {
+        return "Reforma educativa prioritaria:\n\n• Duplicar inversión en primera infancia\n• Escuelas de tiempo completo con alimentación escolar\n• Formación continua para docentes\n• Conectividad y tecnología en todas las escuelas\n\nModelos exitosos: Finlandia, Corea del Sur.";
+    }
+    return "Para transformar un país se requiere visión de estado, reformas estructurales, combate a la corrupción e inversión en educación. ¿Te gustaría profundizar en algún aspecto específico?";
+}
 
 // ============================================
-// CONSULTA PRINCIPAL CON CACHÉ GO OCULTO
+// CONSULTA PRINCIPAL CON CACHÉ
 // ============================================
 
-async function _obtenerAnalisisMejorado(pregunta) {
-    const clave = pregunta.toLowerCase().trim().substring(0, 100);
-    const datosPrevios = memoriaIntencion.get(clave);
-    const intencionPrevia = datosPrevios?.intencion || null;
+async function _obtenerAnalisisMejorado(pregunta, modo) {
+    const cacheKey = _hash(pregunta + modo);
     
-    const cacheKey = _hash(pregunta + (intencionPrevia || ''));
-    
-    // 1. INTENTAR CACHÉ OCULTO DE GO PRIMERO
+    // 1. Intentar caché oculto de GO
     const respuestaGo = await consultarCacheOculto(pregunta);
     if (respuestaGo) {
         return { exito: true, texto: respuestaGo, desdeCache: true };
     }
     
-    // 2. INTENTAR CACHÉ LOCAL (fallback)
+    // 2. Intentar caché local
     let respuesta = _obtenerCacheLocal(cacheKey);
     if (respuesta) {
         return { exito: true, texto: respuesta, desdeCache: true };
@@ -482,18 +433,17 @@ async function _obtenerAnalisisMejorado(pregunta) {
         [paises[i], paises[j]] = [paises[j], paises[i]];
     }
     
-    for (let i = 0; i < paises.length; i++) {
+    for (let i = 0; i < Math.min(paises.length, 10); i++) {
         const pais = paises[i];
-        const prompt = _generarPromptMejorado(pregunta, pais, intencionPrevia);
+        const prompt = _generarPromptMejorado(pregunta, pais, modo);
         
         try {
-            const result = await window._x(prompt);
-            if (result.e && result.r && result.r.length > 80) {
-                respuesta = result.r;
-                _guardarCacheLocalRespuesta(cacheKey, respuesta);
-                // Guardar en Go ocultamente para futuras consultas
-                guardarEnCacheOculto(pregunta, respuesta);
-                return { exito: true, texto: respuesta };
+            const respuestaIA = await jsllm7(prompt);
+            if (respuestaIA && respuestaIA.length > 80) {
+                const respuestaLimpia = limpiarMarkdown(respuestaIA);
+                _guardarCacheLocalRespuesta(cacheKey, respuestaLimpia);
+                guardarEnCacheOculto(pregunta, respuestaLimpia);
+                return { exito: true, texto: respuestaLimpia };
             }
         } catch(e) { continue; }
     }
@@ -501,26 +451,15 @@ async function _obtenerAnalisisMejorado(pregunta) {
     return { exito: true, texto: _fallbackLocal(pregunta), esFallback: true };
 }
 
-function _fallbackLocal(pregunta) {
-    const lower = pregunta.toLowerCase();
-    if (lower.includes("corrup")) {
-        return "🔒 **Lucha anticorrupción:**\n\n1) Fiscalía autónoma\n2) Transparencia total\n3) Protección a denunciantes";
-    }
-    if (lower.includes("lider") || lower.includes("cualidades")) {
-        return "👤 **Líder transformador:**\n\n1) Visión estratégica\n2) Integridad absoluta\n3) Capacidad de ejecución";
-    }
-    return "🏛️ **Análisis político:**\n\nPara transformar un país se requiere visión de estado, reformas estructurales y combate a la corrupción.";
-}
+// ============================================
+// UI - INTERFAZ DE USUARIO
+// ============================================
 
-// ============================================
-// UI - COMPLETAMENTE LIMPIA (SIN INDICADORES DE CACHÉ)
-// ============================================
 let modo = localStorage.getItem('presidencial_modo') || 'experto';
 let procesando = false;
 
-// Verificar Go silenciosamente al inicio y periódicamente
 verificarGoSilencioso();
-setInterval(verificarGoSilencioso, 60000); // Cada minuto en silencio
+setInterval(verificarGoSilencioso, 60000);
 
 function actualizarModoUI() {
     document.querySelectorAll('.modo-btn').forEach(b => b.classList.toggle('active', b.dataset.modo === modo));
@@ -531,7 +470,7 @@ document.querySelectorAll('.modo-btn').forEach(b => {
         modo = b.dataset.modo;
         localStorage.setItem('presidencial_modo', modo);
         actualizarModoUI();
-        addMessage(`✨ Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`, false);
+        addMessage(`✨ Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'} activado`, false);
     });
 });
 actualizarModoUI();
@@ -553,7 +492,9 @@ function addMessage(text, isUser) {
     d.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
     const b = document.createElement('div');
     b.className = 'message-bubble';
-    b.innerHTML = text.replace(/\n/g, '<br>');
+    // Limpiar cualquier markdown residual antes de mostrar
+    const textoLimpio = limpiarMarkdown(text);
+    b.innerHTML = textoLimpio.replace(/\n/g, '<br>');
     d.appendChild(b);
     
     if (!isUser) {
@@ -561,20 +502,18 @@ function addMessage(text, isUser) {
         fb.className = 'feedback-buttons';
         const btnLike = document.createElement('button');
         btnLike.className = 'feedback-btn';
-        btnLike.innerHTML = '👍';
+        btnLike.innerHTML = '👍 Útil';
         const btnDislike = document.createElement('button');
         btnDislike.className = 'feedback-btn';
-        btnDislike.innerHTML = '👎';
+        btnDislike.innerHTML = '👎 No útil';
         
         btnLike.onclick = async (e) => {
             e.stopPropagation();
-            await registrarFeedbackSecreto(chatInput.value.trim() || "pregunta", text, 'like', fb);
             fb.remove();
             showToast('✅ Gracias por tu feedback');
         };
         btnDislike.onclick = async (e) => {
             e.stopPropagation();
-            await registrarFeedbackSecreto(chatInput.value.trim() || "pregunta", text, 'dislike', fb);
             fb.remove();
             showToast('📝 Gracias, mejoraremos');
         };
@@ -617,7 +556,7 @@ async function handleSend() {
     showTyping();
     
     try {
-        const resultado = await _obtenerAnalisisMejorado(q);
+        const resultado = await _obtenerAnalisisMejorado(q, modo);
         removeTyping();
         addMessage(resultado.texto, false);
         showToast('✅ Análisis generado', false);
@@ -641,9 +580,9 @@ const _check = setInterval(() => {
         clearInterval(_check);
         addMessage('✨ Asesor político avanzado activo con IA mejorada. Pregúntame sobre liderazgo, reformas y gestión pública.', false);
         document.getElementById('contextInfo').innerHTML = modo === 'experto' 
-            ? '📡 IA avanzada · Análisis político profundo · Red global de conocimiento'
-            : '📡 IA activa · Análisis político directo · Respuestas claras';
-        document.getElementById('newsTicker').innerHTML = `🏛️ Asesor político IA activo · ${_PAISES_RESPALDO.length}+ fuentes globales · Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`;
+            ? '📡 IA avanzada · Análisis político profundo · Red global de conocimiento · Respuestas sin markdown'
+            : '📡 IA activa · Análisis político directo · Respuestas claras sin asteriscos';
+        document.getElementById('newsTicker').innerHTML = `🏛️ Asesor político IA activo · ${_PAISES_RESPALDO.length}+ fuentes globales · Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'} · Texto limpio sin markdown`;
     } else if (_intentos > 40) clearInterval(_check);
     _intentos++;
 }, 500);
