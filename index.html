@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes">
-  <title>Perfil Presidencial | Líder para Transformar un País · IA Avanzada + Conectores</title>
+  <title>Perfil Presidencial | Líder para Transformar un País · IA Avanzada + Conectores + jsllm7 404M</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -15,6 +15,7 @@
     .hero-text { flex: 2; }
     .hero-badge { background: #1e4a6e; color: white; display: inline-block; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 1rem; }
     .live-badge { background: #dc2626; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; animation: pulse 1.5s infinite; display: inline-block; vertical-align: middle; }
+    .badge-termux { background: #8b5cf6; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
     .hero-text h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; background: linear-gradient(135deg, #0b2b3b, #1c6e8f); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; color: #2c4b66; margin-bottom: 1.5rem; max-width: 90%; }
@@ -32,6 +33,8 @@
     .tools-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; justify-content: center; }
     .tool-btn { background: #e2edf2; border: none; padding: 8px 14px; border-radius: 30px; font-size: 0.7rem; cursor: pointer; font-weight: 600; color: #1e4a6e; transition: 0.2s; }
     .tool-btn:hover { background: #1e4a6e; color: white; transform: scale(1.02); }
+    .tool-btn.jsllm7 { border-color: #8b5cf6; color: #a78bfa; background: #1e293b; }
+    .tool-btn.jsllm7:hover { background: #8b5cf6; color: white; }
     
     .widget-container {
       display: grid;
@@ -127,7 +130,6 @@
       color: #2c4b66;
     }
     
-    /* Métricas de conectores */
     .connector-metrics {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -237,6 +239,8 @@
     .historial-item { background: none; border: none; color: #94a3b8; cursor: pointer; display: block; margin: 5px 0; text-align: left; width: 100%; font-size: 0.65rem; padding: 4px; border-radius: 8px; }
     .historial-item:hover { background: #334155; color: #2c7da0; }
     
+    #jsllm7WidgetStatus { font-size: 0.65rem; color: #2c4b66; margin-top: 8px; }
+    
     @media (max-width: 780px) { 
       .hero { flex-direction: column; text-align: center; } 
       .hero-text p { max-width: 100%; } 
@@ -257,7 +261,7 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">CONECTORES</span><span class="live-badge" id="liveBadge">🌐 EN VIVO</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">jsllm7 404M</span><span class="badge-termux">🔌 TERMUX</span><span class="live-badge" id="liveBadge">🌐 EN VIVO</span></div>
       <h1>El liderazgo que un país necesita</h1>
       <p>No basta con promesas: se requieren cualidades demostrables, visión de estado y una hoja de ruta real para transformar la economía, la educación, la seguridad y la justicia social.</p>
       <div class="hero-stats">
@@ -292,12 +296,13 @@
     <button class="tool-btn" id="btnDebate">🎯 Preguntas Debate</button>
     <button class="tool-btn" id="btnEvaluarGestion">📈 Evaluar Gestión</button>
     <button class="tool-btn" id="btnLegado">🏛️ Legado Presidencial</button>
+    <button class="tool-btn jsllm7" id="btnTermuxStatus">🔌 Estado jsllm7</button>
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA</h3><span>Conectores: Memoria · Semántico · APIs</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA</h3><span>Conectores: Memoria · Semántico · APIs · jsllm7 404M</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble">Hola, soy tu asesor político con IA avanzada y conectores inteligentes. Pregúntame sobre liderazgo, reformas o gobierno. Uso <strong>Memoria</strong>, <strong>Búsqueda Semántica</strong> y <strong>APIs</strong> para enriquecer mis respuestas.</div></div>
+      <div class="message ai-message"><div class="message-bubble">Hola, soy tu asesor político con IA avanzada y conectores inteligentes. Pregúntame sobre liderazgo, reformas o gobierno. Uso <strong>Memoria</strong>, <strong>Búsqueda Semántica</strong>, <strong>APIs</strong> y <strong>jsllm7 404M</strong> para enriquecer mis respuestas.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos? o ¿Cómo combatir la corrupción?" autocomplete="off">
@@ -305,7 +310,7 @@
     </div>
   </div>
 
-  <div class="context-info" id="contextInfo">📡 Conectores activos · Buscando tendencias de liderazgo y reformas globales...</div>
+  <div class="context-info" id="contextInfo">📡 Conectores activos · jsllm7 404M · Buscando tendencias de liderazgo y reformas globales...</div>
 
   <!-- WIDGETS CON MÉTRICAS DE CONECTORES -->
   <div class="widget-container" id="widgetContainer">
@@ -353,6 +358,7 @@
             <div class="label">Contexto</div>
           </div>
         </div>
+        <div id="jsllm7WidgetStatus">🧠 jsllm7: 🔍 Conectando a Termux...</div>
       </div>
     </div>
     <div class="widget" id="widgetConfianza">
@@ -444,7 +450,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;Perfil basado en evidencia global de liderazgos transformadores · Conectores activos</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;Perfil basado en evidencia global de liderazgos transformadores · jsllm7 404M · Conectores activos</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR (DESPACHO)</button>
@@ -462,6 +468,74 @@
 </script>
 
 <script>
+// ============================================
+// CONFIGURACIÓN - API DE TERMUX (PUERTO 8081)
+// ============================================
+    
+const JSLLM7_API_URL = 'http://localhost:8081';
+let jsllm7TermuxConectado = false;
+
+// ============================================
+// FUNCIÓN PARA LLAMAR A IA (PRIORIZA TERMUX)
+// ============================================
+
+async function llamarIA(prompt) {
+    console.log('🔍 Intentando llamar a IA...');
+    
+    // 1. INTENTAR CON TERMUX (API local)
+    try {
+        const preguntaCodificada = encodeURIComponent(prompt);
+        const url = `${JSLLM7_API_URL}/ask?q=${preguntaCodificada}`;
+        
+        console.log('📤 Enviando a Termux (8081):', prompt.substring(0, 80) + '...');
+        
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            console.error('❌ Error HTTP:', response.status);
+            throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const text = await response.text();
+        console.log('📥 Respuesta recibida (primeros 100 chars):', text.substring(0, 100));
+        
+        // USAR SIEMPRE la respuesta de Termux si tiene contenido
+        if (text && text.length > 20) {
+            jsllm7TermuxConectado = true;
+            document.getElementById('jsllm7WidgetStatus').textContent = '🧠 jsllm7: ✅ Activo (404M en Termux:8081)';
+            document.getElementById('jsllm7WidgetStatus').style.color = '#10b981';
+            console.log('✅ Usando respuesta de Termux');
+            return limpiarMarkdown(text);
+        } else {
+            console.warn('⚠️ Respuesta de Termux vacía, intentando CDN...');
+            throw new Error('Respuesta vacía');
+        }
+    } catch (error) {
+        console.warn('⚠️ Error conectando a Termux:', error.message);
+        jsllm7TermuxConectado = false;
+        document.getElementById('jsllm7WidgetStatus').textContent = '🧠 jsllm7: ⚠️ Usando CDN';
+        document.getElementById('jsllm7WidgetStatus').style.color = '#f59e0b';
+    }
+    
+    // 2. FALLBACK: Usar jsllm7 del CDN
+    console.log('⚠️ Termux no disponible, usando CDN...');
+    if (typeof window.jsllm7 !== 'undefined' && window.jsllm7) {
+        try {
+            const response = await window.jsllm7(prompt);
+            if (response && response.length > 50) {
+                console.log('✅ Respuesta de CDN obtenida');
+                return limpiarMarkdown(response);
+            }
+        } catch (e) {
+            console.warn('Error con jsllm7 CDN:', e);
+        }
+    }
+    
+    // 3. FALLBACK FINAL
+    console.log('⚠️ Usando fallback genérico');
+    return null;
+}
+
 // ============================================
 // CONECTOR DE MEMORIA
 // ============================================
@@ -1001,7 +1075,7 @@ async function consultarIA(pregunta, modo) {
         if (contextoAPI) prompt += `\n${contextoAPI}`;
         
         try {
-            const respuestaIA = await jsllm7(prompt);
+            const respuestaIA = await llamarIA(prompt);
             if (respuestaIA && respuestaIA.length > 80) {
                 const respuestaLimpia = limpiarMarkdown(respuestaIA);
                 _guardarCacheLocal(cacheKey, respuestaLimpia);
@@ -1142,7 +1216,7 @@ async function handleSend() {
         removeTyping();
         addMessage(respuesta, false);
         actualizarWidgets(q, respuesta);
-        showToast('✅ Análisis generado · Conectores activos');
+        showToast('✅ Análisis generado · jsllm7 404M · Conectores activos');
     } catch(e) {
         removeTyping();
         const fallback = _fallbackLocal(q);
@@ -1175,13 +1249,13 @@ function cargarDesdeURL() {
 cargarDesdeURL();
 
 // ============================================
-// 10 HERRAMIENTAS POLÍTICAS
+// 10 HERRAMIENTAS POLÍTICAS (USAN TERMUX)
 // ============================================
 
 async function generico(promptText, titulo) {
     showToast(`⏳ ${titulo}...`);
-    const respuesta = await jsllm7(promptText);
-    const respuestaLimpia = limpiarMarkdown(respuesta);
+    const respuesta = await llamarIA(promptText);
+    const respuestaLimpia = limpiarMarkdown(respuesta) || `No se pudo generar ${titulo.toLowerCase()}. Intenta de nuevo.`;
     mostrarModal(titulo, respuestaLimpia);
     actualizarWidgets(titulo, respuestaLimpia);
 }
@@ -1262,6 +1336,29 @@ async function legadoPresidencial() {
     await generico(prompt, `🏛️ LEGADO: ${nombre}`);
 }
 
+function verEstadoTermux() {
+    const estado = jsllm7TermuxConectado ? '✅ Conectado' : '❌ Desconectado';
+    const mensaje = `
+=== ESTADO DE jsllm7 ===
+
+🔌 Puerto: 8081
+📊 Registros: 404,356,967
+📡 Estado: ${estado}
+📍 Fuente: ${jsllm7TermuxConectado ? 'Termux (local)' : 'CDN (fallback)'}
+
+${jsllm7TermuxConectado ? 
+'✅ jsllm7 está funcionando correctamente con 404M registros' : 
+'⚠️ jsllm7 no está conectado a Termux. Usando CDN como respaldo.'}
+
+Para conectar:
+1. Abre Termux
+2. Ejecuta: cd ~/experimento
+3. Ejecuta: python3 servidor.py &
+4. Recarga esta página
+`;
+    mostrarModal('🔌 ESTADO DE jsllm7', mensaje);
+}
+
 document.getElementById('btnDiscurso').onclick = generarDiscurso;
 document.getElementById('btnAnalisisLider').onclick = analisisLider;
 document.getElementById('btnCompararPropuestas').onclick = compararPropuestas;
@@ -1272,6 +1369,29 @@ document.getElementById('btnCrisis').onclick = gestionCrisis;
 document.getElementById('btnDebate').onclick = preguntasDebate;
 document.getElementById('btnEvaluarGestion').onclick = evaluarGestion;
 document.getElementById('btnLegado').onclick = legadoPresidencial;
+document.getElementById('btnTermuxStatus').onclick = verEstadoTermux;
+
+// ============================================
+// VERIFICAR CONEXIÓN CON TERMUX
+// ============================================
+
+async function verificarConexionTermux() {
+    try {
+        const response = await fetch(`${JSLLM7_API_URL}/stats`);
+        if (response.ok) {
+            const stats = await response.json();
+            jsllm7TermuxConectado = true;
+            document.getElementById('jsllm7WidgetStatus').textContent = `🧠 jsllm7: ✅ Activo (${stats.total?.toLocaleString() || '404M'} en Termux:8081)`;
+            document.getElementById('jsllm7WidgetStatus').style.color = '#10b981';
+            console.log('✅ jsllm7 conectado a Termux:', stats);
+        }
+    } catch(e) {
+        jsllm7TermuxConectado = false;
+        document.getElementById('jsllm7WidgetStatus').textContent = '🧠 jsllm7: ⚠️ Usando CDN';
+        document.getElementById('jsllm7WidgetStatus').style.color = '#f59e0b';
+        console.warn('⚠️ Termux no disponible en puerto 8081');
+    }
+}
 
 // ============================================
 // INICIALIZACIÓN
@@ -1281,13 +1401,15 @@ let _intentos = 0;
 const _check = setInterval(() => {
     if (typeof jsllm7 !== 'undefined') {
         clearInterval(_check);
-        addMessage('✨ Asesor político avanzado con conectores activos. Pregúntame sobre liderazgo, reformas y gestión pública.', false);
-        document.getElementById('contextInfo').innerHTML = `📡 Conectores: Memoria · Semántico · APIs · ${_PAISES_RESPALDO.length}+ fuentes globales · 10 herramientas disponibles · Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`;
-        document.getElementById('newsTicker').innerHTML = `🏛️ Asesor político IA · Conectores activos · ${_PAISES_RESPALDO.length}+ países de respaldo · 10 herramientas tácticas`;
+        addMessage('✨ Asesor político avanzado con conectores activos y jsllm7 404M. Pregúntame sobre liderazgo, reformas y gestión pública.', false);
+        document.getElementById('contextInfo').innerHTML = `📡 Conectores: Memoria · Semántico · APIs · jsllm7 404M · ${_PAISES_RESPALDO.length}+ fuentes globales · 10 herramientas disponibles · Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`;
+        document.getElementById('newsTicker').innerHTML = `🏛️ Asesor político IA · Conectores activos · jsllm7 404M · ${_PAISES_RESPALDO.length}+ países de respaldo · 10 herramientas tácticas`;
         actualizarSidebarHistorial();
         actualizarMetricasConectores();
-        showToast('✅ Conectores activos · 10 herramientas políticas disponibles', false);
-        actualizarWidgets('Bienvenida', 'Asesor político activo con análisis de liderazgo global y conectores inteligentes');
+        verificarConexionTermux();
+        setInterval(verificarConexionTermux, 30000);
+        showToast('✅ jsllm7 404M · Conectores activos · 10 herramientas políticas disponibles', false);
+        actualizarWidgets('Bienvenida', 'Asesor político activo con análisis de liderazgo global, conectores inteligentes y jsllm7 404M');
     } else if (_intentos > 40) clearInterval(_check);
     _intentos++;
 }, 500);
