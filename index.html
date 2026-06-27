@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes">
-  <title>Perfil Presidencial | Líder para Transformar un País · IA Avanzada + Conectores + jsllm7 404M</title>
+  <title>Perfil Presidencial · 403M DECIDE · Líder para Transformar un País</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -14,10 +14,12 @@
     .hero { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; margin-bottom: 3rem; background: #ffffffcc; backdrop-filter: blur(4px); border-radius: 2.5rem; padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05); }
     .hero-text { flex: 2; }
     .hero-badge { background: #1e4a6e; color: white; display: inline-block; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 1rem; }
+    .badge-decision { background: linear-gradient(90deg, #8b5cf6, #ec4899); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
+    @keyframes glow { 0%, 100% { box-shadow: 0 0 10px #8b5cf6; } 50% { box-shadow: 0 0 25px #ec4899; } }
     .live-badge { background: #dc2626; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; animation: pulse 1.5s infinite; display: inline-block; vertical-align: middle; }
     .badge-termux { background: #8b5cf6; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-    .hero-text h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; background: linear-gradient(135deg, #0b2b3b, #1c6e8f); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 1rem; }
+    .hero-text h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; background: linear-gradient(135deg, #0b2b3b, #1c6e8f, #8b5cf6); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; color: #2c4b66; margin-bottom: 1.5rem; max-width: 90%; }
     .hero-stats { display: flex; gap: 1.8rem; flex-wrap: wrap; }
     .stat { display: flex; align-items: center; gap: 0.6rem; }
@@ -35,6 +37,8 @@
     .tool-btn:hover { background: #1e4a6e; color: white; transform: scale(1.02); }
     .tool-btn.jsllm7 { border-color: #8b5cf6; color: #a78bfa; background: #1e293b; }
     .tool-btn.jsllm7:hover { background: #8b5cf6; color: white; }
+    .tool-btn.decision { border-color: #ec4899; color: #f472b6; background: #1e293b; }
+    .tool-btn.decision:hover { background: linear-gradient(135deg, #8b5cf6, #ec4899); color: white; border-color: #8b5cf6; }
     
     .widget-container {
       display: grid;
@@ -53,8 +57,8 @@
     }
     
     .widget:hover {
-      border-color: #1e4a6e;
-      box-shadow: 0 8px 20px rgba(44, 125, 160, 0.1);
+      border-color: #8b5cf6;
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.1);
       transform: translateY(-2px);
     }
     
@@ -152,24 +156,7 @@
       color: #2c4b66;
     }
     
-    .sources-list {
-      margin-top: 10px;
-      padding: 10px;
-      background: rgba(0,0,0,0.02);
-      border-radius: 8px;
-      font-size: 0.7rem;
-    }
-    
-    .source-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .source-item:last-child { border-bottom: none; }
-    .source-icon { font-size: 0.8rem; }
+    #decisionStatus { font-size: 0.65rem; color: #ec4899; text-align: center; margin-bottom: 10px; }
     
     .metadata-container { display: none; }
     
@@ -182,7 +169,7 @@
     .pill { background: #eef3fc; padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; color: #1e6f8f; display: inline-block; }
     
     .chat-container { background: white; border-radius: 1.5rem; margin: 2rem 0; border: 1px solid #cde3ec; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .chat-header { background: linear-gradient(135deg, #1e4a6e, #2c7da0); color: white; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .chat-header { background: linear-gradient(135deg, #1e4a6e, #2c7da0, #8b5cf6); color: white; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
     .chat-header i { font-size: 1.5rem; }
     .chat-header h3 { margin: 0; font-weight: 600; }
     .chat-header span { font-size: 0.7rem; opacity: 0.8; margin-left: auto; }
@@ -193,6 +180,7 @@
     .message-bubble { max-width: 80%; padding: 0.6rem 1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.4; white-space: pre-wrap; }
     .user-message .message-bubble { background: #2c7da0; color: white; border-bottom-right-radius: 0.2rem; }
     .ai-message .message-bubble { background: white; border: 1px solid #cbdde6; color: #1a2c3e; border-bottom-left-radius: 0.2rem; }
+    .message-bubble.decision { border-color: #ec4899; border-left: 3px solid #ec4899; }
     .chat-input-area { display: flex; padding: 1rem; background: white; border-top: 1px solid #e2edf2; gap: 0.5rem; }
     .chat-input-area input { flex: 1; padding: 0.7rem 1rem; border: 1px solid #cbdde6; border-radius: 2rem; font-family: inherit; outline: none; }
     .chat-input-area input:focus { border-color: #2c7da0; }
@@ -261,9 +249,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">jsllm7 404M</span><span class="badge-termux">🔌 TERMUX</span><span class="live-badge" id="liveBadge">🌐 EN VIVO</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">jsllm7 404M</span><span class="badge-termux">🔌 TERMUX</span><span class="badge-decision">🧠 403M DECIDE</span><span class="live-badge" id="liveBadge">🌐 EN VIVO</span></div>
       <h1>El liderazgo que un país necesita</h1>
-      <p>No basta con promesas: se requieren cualidades demostrables, visión de estado y una hoja de ruta real para transformar la economía, la educación, la seguridad y la justicia social.</p>
+      <p>403M DECIDE qué BIG TECH usar · No basta con promesas: se requieren cualidades demostrables, visión de estado y una hoja de ruta real para transformar la economía, la educación, la seguridad y la justicia social.</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
         <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
@@ -278,7 +266,9 @@
     </div>
   </div>
 
-  <div class="news-ticker" id="newsTicker">🌐 Conectando a fuentes de información política y económica...</div>
+  <div class="news-ticker" id="newsTicker">🧠 403M DECIDE · Conectando a fuentes de información política y económica...</div>
+
+  <div id="decisionStatus" style="font-size:0.65rem;color:#ec4899;text-align:center;margin-bottom:10px;">🧠 403M DECIDE: Listo para analizar liderazgo político</div>
 
   <div class="modo-selector">
     <button class="modo-btn active" data-modo="experto">🧠 MODO EXPERTO</button>
@@ -296,13 +286,14 @@
     <button class="tool-btn" id="btnDebate">🎯 Preguntas Debate</button>
     <button class="tool-btn" id="btnEvaluarGestion">📈 Evaluar Gestión</button>
     <button class="tool-btn" id="btnLegado">🏛️ Legado Presidencial</button>
+    <button class="tool-btn decision" id="btnDecisionStatus">🧠 403M Decide</button>
     <button class="tool-btn jsllm7" id="btnTermuxStatus">🔌 Estado jsllm7</button>
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA</h3><span>Conectores: Memoria · Semántico · APIs · jsllm7 404M</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA con 403M DECIDE</h3><span>Conectores: Memoria · Semántico · APIs · jsllm7 404M</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble">Hola, soy tu asesor político con IA avanzada y conectores inteligentes. Pregúntame sobre liderazgo, reformas o gobierno. Uso <strong>Memoria</strong>, <strong>Búsqueda Semántica</strong>, <strong>APIs</strong> y <strong>jsllm7 404M</strong> para enriquecer mis respuestas.</div></div>
+      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M DECIDE</strong> y conectores inteligentes. El núcleo 403M decide qué BIG TECH activar para cada consulta. Pregúntame sobre liderazgo, reformas o gobierno.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos? o ¿Cómo combatir la corrupción?" autocomplete="off">
@@ -310,7 +301,7 @@
     </div>
   </div>
 
-  <div class="context-info" id="contextInfo">📡 Conectores activos · jsllm7 404M · Buscando tendencias de liderazgo y reformas globales...</div>
+  <div class="context-info" id="contextInfo">🧠 403M DECIDE · Conectores activos · jsllm7 404M · Buscando tendencias de liderazgo y reformas globales...</div>
 
   <!-- WIDGETS CON MÉTRICAS DE CONECTORES -->
   <div class="widget-container" id="widgetContainer">
@@ -355,7 +346,7 @@
           </div>
           <div class="connector-metric">
             <div class="value" id="metricContexto">0%</div>
-            <div class="label">Contexto</div>
+            <div class="label">Contexto 403M</div>
           </div>
         </div>
         <div id="jsllm7WidgetStatus">🧠 jsllm7: 🔍 Conectando a Termux...</div>
@@ -372,7 +363,7 @@
           <span class="confidence-label" id="confidenceLabel">0%</span>
         </div>
         <div id="widgetConfianzaDetalle" style="font-size:0.75rem;color:#2c4b66;margin-top:8px;">
-          Basado en análisis de liderazgo global
+          Basado en análisis de liderazgo global + 403M DECIDE
         </div>
       </div>
     </div>
@@ -450,7 +441,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;Perfil basado en evidencia global de liderazgos transformadores · jsllm7 404M · Conectores activos</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M DECIDE · Perfil basado en evidencia global de liderazgos transformadores · jsllm7 404M · Conectores activos</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR (DESPACHO)</button>
@@ -476,13 +467,133 @@ const JSLLM7_API_URL = 'http://localhost:8081';
 let jsllm7TermuxConectado = false;
 
 // ============================================
+// NÚCLEO 403M DECIDE
+// ============================================
+
+class Nucleo403MDecisor {
+    constructor() {
+        this.nucleo = { activo: true, parametros: 403000000, decisiones: 0 };
+        this.bigTech = {
+            nvidia: { activo: false, usos: 0, nombre: 'NVIDIA (Visualización)' },
+            google: { activo: false, usos: 0, nombre: 'Google (Búsqueda)' },
+            meta: { activo: false, usos: 0, nombre: 'Meta (Comunidad)' },
+            amazon: { activo: false, usos: 0, nombre: 'Amazon (Recursos)' },
+            microsoft: { activo: false, usos: 0, nombre: 'Microsoft (Análisis)' },
+            apple: { activo: false, usos: 0, nombre: 'Apple (Experiencia)' }
+        };
+        this.historialDecisiones = [];
+        console.log('🧠 NÚCLEO 403M DECIDE inicializado para Perfil Presidencial');
+    }
+    
+    async analizarYDecidir(pregunta, tema, modo) {
+        this.nucleo.decisiones++;
+        console.log(`🧠 403M analizando consulta política: "${pregunta.substring(0, 50)}..."`);
+        document.getElementById('decisionStatus').textContent = '🧠 403M DECIDE: Analizando consulta política...';
+        
+        const promptDecision = `[DECISIÓN AUTÓNOMA 403M - POLÍTICA]
+Analiza la siguiente consulta política y decide qué BIG TECH activar:
+
+CONSULTA: "${pregunta}"
+TEMA: "${tema}"
+MODO: ${modo}
+
+BIG TECH DISPONIBLES:
+1. NVIDIA - Para visualización de datos políticos, gráficos
+2. Google - Para búsqueda de información, datos históricos
+3. Meta - Para conectar con comunidades políticas
+4. Amazon - Para acceso a recursos políticos
+5. Microsoft - Para análisis de datos políticos
+6. Apple - Para diseño de experiencia de usuario
+
+DECIDE:
+- Si es sobre visualización de datos → NVIDIA
+- Si es sobre búsqueda de información → Google
+- Si es sobre comunidad → Meta
+- Si es sobre recursos → Amazon
+- Si es sobre análisis de datos → Microsoft
+- Si es sobre experiencia de usuario → Apple
+
+Responde SOLO con los nombres separados por comas.
+Ejemplo: "Google, Microsoft" o "NVIDIA"
+
+DECISIÓN:`;
+
+        const decision = await llamarIA(promptDecision);
+        console.log(`🧠 Decisión 403M: ${decision}`);
+        
+        const techsActivar = this.procesarDecision(decision);
+        
+        if (techsActivar.length > 0) {
+            document.getElementById('decisionStatus').textContent = `🧠 403M DECIDE: Activando ${techsActivar.join(', ')} para política`;
+        }
+        
+        for (const tech of techsActivar) {
+            if (this.bigTech[tech] && !this.bigTech[tech].activo) {
+                this.bigTech[tech].activo = true;
+                this.bigTech[tech].usos++;
+                console.log(`🚀 403M activó: ${tech.toUpperCase()} para política`);
+            }
+        }
+        
+        this.historialDecisiones.push({
+            tema: tema,
+            pregunta: pregunta.substring(0, 50),
+            decision: techsActivar,
+            timestamp: new Date().toISOString()
+        });
+        
+        return techsActivar;
+    }
+    
+    procesarDecision(decision) {
+        if (!decision) return ['google'];
+        const techs = [];
+        const d = decision.toLowerCase();
+        const mapeo = { 'nvidia': 'nvidia', 'google': 'google', 'meta': 'meta', 'amazon': 'amazon', 'microsoft': 'microsoft', 'apple': 'apple' };
+        for (const [key, value] of Object.entries(mapeo)) {
+            if (d.includes(key) || d.includes(value)) techs.push(value);
+        }
+        return techs.length > 0 ? techs : ['google'];
+    }
+    
+    getEstado() {
+        const activos = Object.entries(this.bigTech).filter(([k, v]) => v.activo).map(([k]) => k);
+        return {
+            decisiones: this.nucleo.decisiones,
+            bigTechActivos: activos,
+            usos: Object.fromEntries(Object.entries(this.bigTech).map(([k, v]) => [k, v.usos])),
+            historial: this.historialDecisiones.slice(-5)
+        };
+    }
+    
+    mostrarEstado() {
+        const e = this.getEstado();
+        let mensaje = `
+=== 🧠 403M DECIDE (POLÍTICA) ===
+
+📊 Decisiones tomadas: ${e.decisiones}
+
+🏢 BIG TECH ACTIVADOS POR 403M:
+${Object.entries(e.usos).map(([k, v]) => `   • ${k}: ${v} usos`).join('\n')}
+
+📜 ÚLTIMAS DECISIONES:
+${e.historial.map(h => `   • "${h.tema}": "${h.pregunta}..." → ${h.decision.join(', ')}`).join('\n')}
+
+${e.bigTechActivos.length > 0 ? '✅ 403M está activando BIG TECH automáticamente' : '⚠️ 403M aún no ha activado BIG TECH'}
+`;
+        return mensaje;
+    }
+}
+
+const nucleoDecisor = new Nucleo403MDecisor();
+
+// ============================================
 // FUNCIÓN PARA LLAMAR A IA (PRIORIZA TERMUX)
 // ============================================
 
 async function llamarIA(prompt) {
     console.log('🔍 Intentando llamar a IA...');
     
-    // 1. INTENTAR CON TERMUX (API local)
     try {
         const preguntaCodificada = encodeURIComponent(prompt);
         const url = `${JSLLM7_API_URL}/ask?q=${preguntaCodificada}`;
@@ -499,7 +610,6 @@ async function llamarIA(prompt) {
         const text = await response.text();
         console.log('📥 Respuesta recibida (primeros 100 chars):', text.substring(0, 100));
         
-        // USAR SIEMPRE la respuesta de Termux si tiene contenido
         if (text && text.length > 20) {
             jsllm7TermuxConectado = true;
             document.getElementById('jsllm7WidgetStatus').textContent = '🧠 jsllm7: ✅ Activo (404M en Termux:8081)';
@@ -507,7 +617,6 @@ async function llamarIA(prompt) {
             console.log('✅ Usando respuesta de Termux');
             return limpiarMarkdown(text);
         } else {
-            console.warn('⚠️ Respuesta de Termux vacía, intentando CDN...');
             throw new Error('Respuesta vacía');
         }
     } catch (error) {
@@ -517,7 +626,6 @@ async function llamarIA(prompt) {
         document.getElementById('jsllm7WidgetStatus').style.color = '#f59e0b';
     }
     
-    // 2. FALLBACK: Usar jsllm7 del CDN
     console.log('⚠️ Termux no disponible, usando CDN...');
     if (typeof window.jsllm7 !== 'undefined' && window.jsllm7) {
         try {
@@ -531,7 +639,6 @@ async function llamarIA(prompt) {
         }
     }
     
-    // 3. FALLBACK FINAL
     console.log('⚠️ Usando fallback genérico');
     return null;
 }
@@ -859,7 +966,7 @@ function generarMetadatos(pregunta, respuesta, confianza, metricas) {
         },
         "author": {
             "@type": "Organization",
-            "name": "Perfil Presidencial IA"
+            "name": "Perfil Presidencial IA · 403M DECIDE"
         },
         "dateCreated": new Date().toISOString(),
         "wordCount": metricas?.palabras || 0
@@ -919,7 +1026,7 @@ function actualizarWidgets(pregunta, respuesta) {
     }
     
     estructuraContent.innerHTML = `
-        <div style="color:#2c4b66;font-size:0.75rem;margin-bottom:8px;">Áreas de gobierno detectadas</div>
+        <div style="color:#2c4b66;font-size:0.75rem;margin-bottom:8px;">Áreas de gobierno detectadas con 403M</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
             ${areas.map(a => `<span style="background:#e2edf2;padding:4px 10px;border-radius:15px;font-size:0.7rem;border:1px solid #2c7da0;">${a}</span>`).join('')}
         </div>
@@ -984,10 +1091,12 @@ function _detectarTemaPolitico(pregunta) {
     return "general";
 }
 
-function _generarPromptMejorado(pregunta, pais, modo) {
+function _generarPromptMejorado(pregunta, pais, modo, bigTechDecididos) {
     const tema = _detectarTemaPolitico(pregunta);
     const esExperto = modo === 'experto';
     let prompt = `[RESPONDE EXCLUSIVAMENTE EN ESPAÑOL. PROHIBIDO EL INGLÉS.]
+
+403M DECIDIÓ ACTIVAR: ${bigTechDecididos.join(', ') || 'Ninguno'}
 
 REGLAS ESTRICTAS:
 - NO USES ASTERISCOS (*) EN NINGUNA CIRCUNSTANCIA
@@ -1023,7 +1132,9 @@ function _fallbackLocal(pregunta) {
 async function consultarIA(pregunta, modo) {
     const semanticKey = getSemanticKey(pregunta);
     
-    // 1. Verificar caché semántico
+    // 403M DECIDE qué BIG TECH usar
+    const bigTechDecididos = await nucleoDecisor.analizarYDecidir(pregunta, 'Política', modo);
+    
     if (semanticCache.has(semanticKey)) {
         const cached = semanticCache.get(semanticKey);
         if (Date.now() - cached.timestamp < 3600000) {
@@ -1031,7 +1142,6 @@ async function consultarIA(pregunta, modo) {
         }
     }
     
-    // 2. Buscar en memoria
     const memoriaSimilar = memoryConnector.recall(pregunta, 2);
     let contextoMemoria = '';
     if (memoriaSimilar.length > 0) {
@@ -1040,7 +1150,6 @@ async function consultarIA(pregunta, modo) {
         ).join(' ');
     }
     
-    // 3. Consultar API para datos políticos
     const apiData = await apiConnector.call('politicalData');
     let contextoAPI = '';
     if (!apiData.error) {
@@ -1068,9 +1177,7 @@ async function consultarIA(pregunta, modo) {
     
     for (let i = 0; i < Math.min(paises.length, 8); i++) {
         const pais = paises[i];
-        let prompt = _generarPromptMejorado(pregunta, pais, modo);
-        
-        // Añadir contexto de conectores
+        let prompt = _generarPromptMejorado(pregunta, pais, modo, bigTechDecididos);
         if (contextoMemoria) prompt += `\n${contextoMemoria}`;
         if (contextoAPI) prompt += `\n${contextoAPI}`;
         
@@ -1082,11 +1189,11 @@ async function consultarIA(pregunta, modo) {
                 guardarEnCacheOculto(pregunta, respuestaLimpia);
                 semanticCache.set(semanticKey, { data: respuestaLimpia, timestamp: Date.now() });
                 
-                // Guardar en memoria
                 memoryConnector.remember({
                     query: pregunta,
                     response: respuestaLimpia,
-                    pais: pais
+                    pais: pais,
+                    bigTech: bigTechDecididos
                 });
                 actualizarMetricasConectores();
                 return respuestaLimpia;
@@ -1153,6 +1260,7 @@ function addMessage(text, isUser) {
     d.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
     const b = document.createElement('div');
     b.className = 'message-bubble';
+    if (!isUser) b.classList.add('decision');
     b.innerHTML = text.replace(/\n/g, '<br>');
     d.appendChild(b);
     chatMessages.appendChild(d);
@@ -1163,7 +1271,7 @@ function showTyping() {
     const d = document.createElement('div');
     d.className = 'message ai-message';
     d.id = '_t';
-    d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>';
+    d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> 403M DECIDE analizando...</div>';
     chatMessages.appendChild(d);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
@@ -1216,7 +1324,7 @@ async function handleSend() {
         removeTyping();
         addMessage(respuesta, false);
         actualizarWidgets(q, respuesta);
-        showToast('✅ Análisis generado · jsllm7 404M · Conectores activos');
+        showToast('✅ 403M DECIDE · Análisis generado · jsllm7 404M · Conectores activos');
     } catch(e) {
         removeTyping();
         const fallback = _fallbackLocal(q);
@@ -1234,6 +1342,15 @@ chatSendBtn.addEventListener('click', handleSend);
 chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
 
 // ============================================
+// BOTÓN 403M DECIDE
+// ============================================
+
+document.getElementById('btnDecisionStatus').onclick = () => {
+    const estado = nucleoDecisor.mostrarEstado();
+    mostrarModal('🧠 403M DECIDE (POLÍTICA)', estado);
+};
+
+// ============================================
 // DEEP LINKING - CARGAR CONSULTA DESDE URL
 // ============================================
 
@@ -1249,11 +1366,12 @@ function cargarDesdeURL() {
 cargarDesdeURL();
 
 // ============================================
-// 10 HERRAMIENTAS POLÍTICAS (USAN TERMUX)
+// 10 HERRAMIENTAS POLÍTICAS (CON 403M DECIDE)
 // ============================================
 
-async function generico(promptText, titulo) {
-    showToast(`⏳ ${titulo}...`);
+async function generico(promptText, titulo, tema) {
+    await nucleoDecisor.analizarYDecidir(titulo, tema || 'Política', modo);
+    showToast(`⏳ ${titulo} con 403M...`);
     const respuesta = await llamarIA(promptText);
     const respuestaLimpia = limpiarMarkdown(respuesta) || `No se pudo generar ${titulo.toLowerCase()}. Intenta de nuevo.`;
     mostrarModal(titulo, respuestaLimpia);
@@ -1264,35 +1382,35 @@ async function generarDiscurso() {
     const tema = prompt("¿Tema del discurso? (economía, educación, seguridad, unidad nacional):", "unidad nacional");
     if (!tema) return;
     const prompt = `Escribe un discurso presidencial de 300-400 palabras sobre "${tema}". Tono: inspirador y propositivo. Incluye llamado a la acción. Sin asteriscos ni markdown.`;
-    await generico(prompt, "🎤 DISCURSO PRESIDENCIAL");
+    await generico(prompt, "🎤 DISCURSO PRESIDENCIAL", tema);
 }
 
 async function analisisLider() {
     const lider = prompt("¿Qué líder político quieres analizar? (Ej: Mandela, Merkel, Lula, Boric):", "Mandela");
     if (!lider) return;
     const prompt = `Analiza el liderazgo de ${lider}. Incluye: estilo, logros clave, desafíos superados, y lecciones para líderes actuales. Sin asteriscos.`;
-    await generico(prompt, `📊 ANÁLISIS: ${lider}`);
+    await generico(prompt, `📊 ANÁLISIS: ${lider}`, lider);
 }
 
 async function compararPropuestas() {
     const area = prompt("Área de política pública (educación, salud, economía, seguridad):", "educación");
     if (!area) return;
     const prompt = `Compara dos modelos de reforma en ${area}: uno de enfoque más social y otro más de mercado. Ventajas y desventajas de cada uno. Sin asteriscos.`;
-    await generico(prompt, `🔄 COMPARACIÓN: ${area.toUpperCase()}`);
+    await generico(prompt, `🔄 COMPARACIÓN: ${area.toUpperCase()}`, area);
 }
 
 async function rankingPaises() {
     const area = prompt("Área para ranking (educación, salud, lucha anticorrupción, competitividad):", "educación");
     if (!area) return;
     const prompt = `Crea un ranking de los 5 países con mejor desempeño en ${area}. Para cada uno: puntuación imaginaria (0-100) y razón principal de su éxito. Sin asteriscos.`;
-    await generico(prompt, `🌍 RANKING GLOBAL: ${area.toUpperCase()}`);
+    await generico(prompt, `🌍 RANKING GLOBAL: ${area.toUpperCase()}`, area);
 }
 
 async function reformaClave() {
     const area = prompt("¿Qué área quieres reformar? (educación, salud, justicia, economía):", "educación");
     if (!area) return;
     const prompt = `Propón una reforma estructural en ${area} con 5 puntos clave, plazos estimados y métricas de éxito. Incluye ejemplos internacionales. Sin asteriscos.`;
-    await generico(prompt, `📜 REFORMA EN ${area.toUpperCase()}`);
+    await generico(prompt, `📜 REFORMA EN ${area.toUpperCase()}`, area);
 }
 
 async function simularMinistro() {
@@ -1301,21 +1419,21 @@ async function simularMinistro() {
     const problema = prompt("¿Problema específico a resolver?", "falta de infraestructura escolar");
     if (!problema) return;
     const prompt = `Eres ministro de ${ministerio}. Responde: ¿Cómo solucionarías "${problema}"? Da 3 medidas concretas, plazos y presupuesto estimado. Sin asteriscos.`;
-    await generico(prompt, `👥 MINISTRO DE ${ministerio.toUpperCase()}`);
+    await generico(prompt, `👥 MINISTRO DE ${ministerio.toUpperCase()}`, ministerio);
 }
 
 async function gestionCrisis() {
     const crisis = prompt("Tipo de crisis (económica, desastre natural, escándalo político, sanitaria):", "crisis económica");
     if (!crisis) return;
     const prompt = `Diseña un plan de gestión para una ${crisis}. Incluye: primeros 3 pasos, comunicación pública, medidas de mitigación y recuperación. Sin asteriscos.`;
-    await generico(prompt, `⚠️ PLAN DE CRISIS: ${crisis.toUpperCase()}`);
+    await generico(prompt, `⚠️ PLAN DE CRISIS: ${crisis.toUpperCase()}`, crisis);
 }
 
 async function preguntasDebate() {
     const tema = prompt("¿Tema para preguntas de debate? (economía, educación, medio ambiente, corrupción):", "corrupción");
     if (!tema) return;
     const prompt = `Genera 5 preguntas difíciles para un debate presidencial sobre ${tema}. Incluye posibles respuestas modelo para cada una. Sin asteriscos.`;
-    await generico(prompt, `🎯 PREGUNTAS DE DEBATE: ${tema.toUpperCase()}`);
+    await generico(prompt, `🎯 PREGUNTAS DE DEBATE: ${tema.toUpperCase()}`, tema);
 }
 
 async function evaluarGestion() {
@@ -1324,7 +1442,7 @@ async function evaluarGestion() {
     const años = prompt("¿Período a evaluar? (ej: 4 años):", "4 años");
     if (!años) return;
     const prompt = `Crea un sistema de evaluación de gestión en ${area} para un gobierno de ${años}. Define 5 indicadores clave y cómo medirlos. Sin asteriscos.`;
-    await generico(prompt, `📈 EVALUACIÓN DE GESTIÓN: ${area.toUpperCase()}`);
+    await generico(prompt, `📈 EVALUACIÓN DE GESTIÓN: ${area.toUpperCase()}`, area);
 }
 
 async function legadoPresidencial() {
@@ -1333,7 +1451,7 @@ async function legadoPresidencial() {
     const logros = prompt("¿Principales logros? (separados por coma):", "reforma educativa, reducción pobreza, lucha corrupción");
     if (!logros) return;
     const prompt = `Escribe un análisis del legado de ${nombre}. Logros destacados: ${logros}. Incluye: impacto histórico, lecciones aprendidas, y cómo lo recordará la historia. Sin asteriscos.`;
-    await generico(prompt, `🏛️ LEGADO: ${nombre}`);
+    await generico(prompt, `🏛️ LEGADO: ${nombre}`, nombre);
 }
 
 function verEstadoTermux() {
@@ -1346,9 +1464,7 @@ function verEstadoTermux() {
 📡 Estado: ${estado}
 📍 Fuente: ${jsllm7TermuxConectado ? 'Termux (local)' : 'CDN (fallback)'}
 
-${jsllm7TermuxConectado ? 
-'✅ jsllm7 está funcionando correctamente con 404M registros' : 
-'⚠️ jsllm7 no está conectado a Termux. Usando CDN como respaldo.'}
+${jsllm7TermuxConectado ? '✅ jsllm7 funcionando correctamente' : '⚠️ jsllm7 no conectado a Termux.'}
 
 Para conectar:
 1. Abre Termux
@@ -1401,15 +1517,15 @@ let _intentos = 0;
 const _check = setInterval(() => {
     if (typeof jsllm7 !== 'undefined') {
         clearInterval(_check);
-        addMessage('✨ Asesor político avanzado con conectores activos y jsllm7 404M. Pregúntame sobre liderazgo, reformas y gestión pública.', false);
-        document.getElementById('contextInfo').innerHTML = `📡 Conectores: Memoria · Semántico · APIs · jsllm7 404M · ${_PAISES_RESPALDO.length}+ fuentes globales · 10 herramientas disponibles · Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`;
-        document.getElementById('newsTicker').innerHTML = `🏛️ Asesor político IA · Conectores activos · jsllm7 404M · ${_PAISES_RESPALDO.length}+ países de respaldo · 10 herramientas tácticas`;
+        addMessage('🧠 403M DECIDE activo · Asesor político avanzado con conectores inteligentes. Pregúntame sobre liderazgo, reformas y gestión pública.', false);
+        document.getElementById('contextInfo').innerHTML = `🧠 403M DECIDE · Conectores: Memoria · Semántico · APIs · jsllm7 404M · ${_PAISES_RESPALDO.length}+ fuentes globales · 10 herramientas disponibles · Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`;
+        document.getElementById('newsTicker').innerHTML = `🧠 403M DECIDE · Asesor político IA · Conectores activos · jsllm7 404M · ${_PAISES_RESPALDO.length}+ países de respaldo · 10 herramientas tácticas`;
         actualizarSidebarHistorial();
         actualizarMetricasConectores();
         verificarConexionTermux();
         setInterval(verificarConexionTermux, 30000);
-        showToast('✅ jsllm7 404M · Conectores activos · 10 herramientas políticas disponibles', false);
-        actualizarWidgets('Bienvenida', 'Asesor político activo con análisis de liderazgo global, conectores inteligentes y jsllm7 404M');
+        showToast('✅ 403M DECIDE · jsllm7 404M · Conectores activos · 10 herramientas políticas disponibles', false);
+        actualizarWidgets('Bienvenida', '403M DECIDE activo con análisis de liderazgo global, conectores inteligentes y jsllm7 404M');
     } else if (_intentos > 40) clearInterval(_check);
     _intentos++;
 }, 500);
@@ -1458,4 +1574,4 @@ document.getElementById('closeVrBtn').addEventListener('click', () => {
 });
 </script>
 </body>
-</html>
+  </html>
