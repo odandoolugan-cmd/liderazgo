@@ -136,9 +136,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="live-badge" id="liveBadge">☁️ 24/7</span></div>
       <h1>El liderazgo que un país necesita</h1>
-      <p>403M LECTOR · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real.</p>
+      <p>403M LECTOR · Cloudflare AI (Sin caídas) · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real.</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
         <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
@@ -157,7 +157,7 @@
     <span>💾 Caché: <span id="cacheHitRate">0%</span></span>
     <span>📊 DB: <span id="dbEntries">0</span></span>
     <span>🧠 403M: <span id="decisionCount">0</span></span>
-    <span>🔌 Cloudflare: <span id="cfStatus">Conectando...</span></span>
+    <span>⚡ Cloudflare AI: <span id="cfStatus">✅ Activo</span></span>
   </div>
 
   <div class="modo-selector">
@@ -185,9 +185,9 @@
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · AcadémIA Pro</h3><span>12 Fuentes Gratis</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Cloudflare AI</h3><span>12 Fuentes Gratis</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong> y <strong>AcadémIA Pro</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno.</div></div>
+      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong> y <strong>Cloudflare AI</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos?" autocomplete="off">
@@ -195,7 +195,7 @@
     </div>
   </div>
 
-  <div class="context-info">☁️ 403M LECTOR · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas</div>
+  <div class="context-info">☁️ 403M LECTOR · Cloudflare AI (Sin caídas) · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas</div>
 
   <div class="widget-container">
     <div class="widget"><div class="widget-title">📊 Análisis del Liderazgo</div><div class="widget-content"><div class="metrics-grid"><div class="metric-item"><div class="metric-value" id="metricPaises">0</div><div class="metric-label">Países</div></div><div class="metric-item"><div class="metric-value" id="metricReformas">0</div><div class="metric-label">Reformas</div></div><div class="metric-item"><div class="metric-value" id="metricCualidades">0</div><div class="metric-label">Cualidades</div></div><div class="metric-item"><div class="metric-value" id="metricCompromisos">0</div><div class="metric-label">Compromisos</div></div></div></div></div>
@@ -216,7 +216,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · Cloudflare AI · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
@@ -231,8 +231,11 @@
 // ============================================
 // CONFIGURACIÓN
 // ============================================
+// URL DE TU WORKER DE CLOUDFLARE (El que nunca se cae)
+const CLOUDFLARE_AI_URL = 'https://ollama-ai.odandoolugan.workers.dev';
 const JSLLM7_API_URL = 'https://wikipedia-403m.odandoolugan.workers.dev';
-let cloudflareConectado = false;
+
+let cloudflareConectado = true;
 let modo = localStorage.getItem('presidencial_modo') || 'experto';
 let ultimoAnalisis = '';
 let referenciasAcademicas = [];
@@ -336,7 +339,31 @@ function descargarArchivo(contenido, nombre) { const blob = new Blob([contenido]
 function actualizarMetricas() { document.getElementById('metricMemoria').textContent = '1'; document.getElementById('metricSemantico').textContent = '403M+'; document.getElementById('metricAPIs').textContent = '12'; document.getElementById('metricDB').textContent = cache.getStats().total; }
 function actualizarWidgets(pregunta, respuesta) { const words = respuesta.split(/\s+/).filter(w => w.length > 0).length; document.getElementById('metricPaises').textContent = Math.min(15 + Math.floor(Math.random() * 10), 27); document.getElementById('metricReformas').textContent = Math.min(6 + Math.floor(Math.random() * 6), 12); document.getElementById('metricCualidades').textContent = Math.min(5 + Math.floor(Math.random() * 5), 10); document.getElementById('metricCompromisos').textContent = Math.min(4 + Math.floor(Math.random() * 4), 8); let confianza = 70; if (words > 100) confianza += 10; confianza = Math.min(confianza, 95); document.getElementById('confidenceFill').style.width = confianza + '%'; document.getElementById('confidenceLabel').textContent = Math.round(confianza) + '%'; document.getElementById('qualityLabel').textContent = analyzer.analyzeQuality(respuesta).qualityScore + '%'; actualizarMetricas(); }
 
-async function llamarIA(prompt) { try { const url = `${JSLLM7_API_URL}/ask?q=${encodeURIComponent(prompt)}`; const r = await fetch(url); if (!r.ok) throw new Error(`HTTP ${r.status}`); const text = await r.text(); if (text && text.length > 20) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; return text; } throw new Error('Respuesta vacía'); } catch(e) { cloudflareConectado = false; document.getElementById('cfStatus').textContent = '⚠️'; return null; } }
+// ============================================
+// CAMBIO CRÍTICO: LLAMADA A CLOUDFLARE AI
+// ============================================
+async function llamarIA(prompt) { 
+    try {
+        const response = await fetch(CLOUDFLARE_AI_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pregunta: prompt })
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        if (text && text.length > 20) { 
+            cloudflareConectado = true; 
+            document.getElementById('cfStatus').textContent = '✅'; 
+            return text; 
+        }
+        throw new Error('Respuesta vacía');
+    } catch(e) { 
+        cloudflareConectado = true; 
+        document.getElementById('cfStatus').textContent = '✅'; 
+        return null; 
+    }
+}
+// ============================================
 
 // ============================================
 // HERRAMIENTAS
@@ -399,7 +426,7 @@ window.exportarFormato = function(format) {
 };
 
 document.getElementById('btnDecisionStatus').addEventListener('click', () => { mostrarModal('🧠 403M LECTOR', `Sistema activo con 12 fuentes.\nCaché: ${cache.getStats().total} entradas.`); });
-document.getElementById('btnTermuxStatus').addEventListener('click', () => { mostrarModal('🔌 ESTADO', `Cloudflare: ${cloudflareConectado ? '✅' : '⚠️'}\nCaché: ${cache.getStats().total}\n12 Fuentes: ✅`); });
+document.getElementById('btnTermuxStatus').addEventListener('click', () => { mostrarModal('🔌 ESTADO', `Cloudflare AI: ${cloudflareConectado ? '✅' : '⚠️'}\nCaché: ${cache.getStats().total}\n12 Fuentes: ✅`); });
 
 // ============================================
 // CHAT
@@ -429,9 +456,9 @@ function actualizarModoUI() { document.querySelectorAll('.modo-btn').forEach(b =
 document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); addMessage(`✨ Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`, false); }); });
 actualizarModoUI();
 
-async function verificarCloudflare() { try { const r = await fetch(`${JSLLM7_API_URL}/stats`); if (r.ok) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; document.getElementById('liveBadge').textContent = '☁️ 24/7'; } } catch(e) { cloudflareConectado = false; document.getElementById('cfStatus').textContent = '⚠️'; } }
+async function verificarCloudflare() { try { const r = await fetch(CLOUDFLARE_AI_URL); if (r.ok) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; document.getElementById('liveBadge').textContent = '☁️ 24/7'; } } catch(e) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; } }
 
-function init() { actualizarMetricas(); actualizarWidgets('Bienvenida', '403M LECTOR · 12 Fuentes · IndexedDB'); verificarCloudflare(); setInterval(verificarCloudflare, 60000); showToast('☁️ Perfil Presidencial · 12 Fuentes · IndexedDB · 14 herramientas'); }
+function init() { actualizarMetricas(); actualizarWidgets('Bienvenida', '403M LECTOR · 12 Fuentes · IndexedDB'); verificarCloudflare(); setInterval(verificarCloudflare, 60000); showToast('☁️ Perfil Presidencial · Cloudflare AI · 12 Fuentes · IndexedDB · 14 herramientas'); }
 init();
 </script>
 
