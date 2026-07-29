@@ -307,11 +307,39 @@ class PersistentCache {
 const cache = new PersistentCache();
 
 // ============================================
-// ANALIZADOR + PLAGIO + EXPORTADOR
+// ANALIZADOR + PLAGIO + EXPORTADOR (MEJORADO)
 // ============================================
 class ContentAnalyzer {
-    constructor() { this.stopWords = new Set(['el','la','los','las','un','una','de','del','en','con','por','para','que','es','se','su','al','lo','como','más','y','o','pero','si','no']); this.politicalWords = { 'liderazgo':3,'visión':2.5,'estrategia':2.5,'reforma':3,'transparencia':3,'corrupción':2.5,'educación':2.5,'seguridad':2.5,'economía':2.5,'justicia':3,'democracia':3,'gobernanza':2.5,'política':2,'gestión':2.5,'desarrollo':2 }; }
-    analyzeQuality(text) { const w = text.toLowerCase().split(/\s+/); const f = w.filter(w => !this.stopWords.has(w)); let s = 0; f.forEach(w => { if (this.politicalWords[w]) s += this.politicalWords[w]; }); const q = Math.min((s / Math.max(f.length, 1)) * 100 + 30, 100); return { qualityScore: Math.round(q), qualityLevel: q > 70 ? 'alta' : q > 40 ? 'media' : 'baja' }; }
+    constructor() {
+        this.stopWords = new Set(['el','la','los','las','un','una','de','del','en','con','por','para','que','es','se','su','al','lo','como','más','y','o','pero','si','no']);
+        this.politicalWords = {
+            'liderazgo':3,'visión':2.5,'estrategia':2.5,'reforma':3,
+            'transparencia':3,'corrupción':2.5,'educación':2.5,'seguridad':2.5,
+            'economía':2.5,'justicia':3,'democracia':3,'gobernanza':2.5,
+            'política':2,'gestión':2.5,'desarrollo':2,
+            'transformación':2.5,'instituciones':2.5,'ciudadanos':2.5
+        };
+    }
+    analyzeQuality(text) {
+        const words = text.toLowerCase().split(/\s+/);
+        const filtered = words.filter(w => !this.stopWords.has(w));
+        let score = 0;
+        filtered.forEach(w => { if (this.politicalWords[w]) score += this.politicalWords[w]; });
+        
+        // Bonificación por estructura política
+        let estructuraBonus = 0;
+        const lowerText = text.toLowerCase();
+        if (lowerText.includes('contexto')) estructuraBonus += 10;
+        if (lowerText.includes('propuesta')) estructuraBonus += 10;
+        if (lowerText.includes('conclusión')) estructuraBonus += 10;
+        if (lowerText.includes('1.')) estructuraBonus += 5;
+        if (lowerText.includes('2.')) estructuraBonus += 5;
+        if (lowerText.includes('3.')) estructuraBonus += 5;
+        
+        const finalScore = (score / Math.max(filtered.length, 1)) * 100 + 30 + estructuraBonus;
+        const q = Math.min(Math.round(finalScore), 100);
+        return { qualityScore: q, qualityLevel: q > 75 ? 'alta' : q > 50 ? 'media' : 'baja' };
+    }
 }
 const analyzer = new ContentAnalyzer();
 
