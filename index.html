@@ -372,7 +372,31 @@ async function herramienta(prompt, titulo) {
     showToast(`⏳ ${titulo}...`);
     const qh = prompt.substring(0, 50).toLowerCase();
     let analisis = await cache.getCachedAnalysis(qh);
-    if (!analisis) { analisis = await llamarIA(prompt) || `Análisis sobre: ${prompt}`; await cache.cacheAnalysis(qh, analisis); }
+    if (!analisis) { 
+        // === FASE 2 y 3: Búsqueda en 12 fuentes + Envío de contexto a la IA ===
+        const resultados12 = await fuentes12.buscarTodasLasFuentes(prompt.substring(0, 100));
+        let contextoAcademico = "";
+        if (resultados12.resumen.total_resultados > 0) {
+            contextoAcademico = `\n\n--- INICIO DE ANÁLISIS ACADÉMICO POLÍTICO ---\n`;
+            contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos sobre el tema.\n\n`;
+            const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
+            fuentesPrioritarias.forEach(key => {
+                const f = resultados12.fuentes[key];
+                if (f && f.exito && f.count > 0) {
+                    contextoAcademico += `\n[${key.toUpperCase()} - ${f.count} resultados]:\n`;
+                    f.data.slice(0, 2).forEach(r => {
+                        contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
+                        contextoAcademico += `  Resumen: ${(r.abstract || r.descripcion || r.snippet || 'Sin resumen disponible.').substring(0, 200)}...\n`;
+                    });
+                }
+            });
+            contextoAcademico += `\n--- FIN DE ANÁLISIS ACADÉMICO POLÍTICO ---\n\n`;
+        }
+
+        const promptConContexto = `Contexto académico:\n${contextoAcademico}\n\n${prompt}`;
+        analisis = await llamarIA(promptConContexto) || `Análisis sobre: ${prompt}`; 
+        await cache.cacheAnalysis(qh, analisis); 
+    }
     ultimoAnalisis = analisis; mostrarModal(titulo, analisis); actualizarWidgets(titulo, analisis);
 }
 
@@ -441,7 +465,30 @@ async function handleSend() {
     addMessage(q, true); chatInput.value = ''; procesando = true; chatSendBtn.disabled = true; showTyping();
     try {
         const qh = q.substring(0, 50).toLowerCase(); let analisis = await cache.getCachedAnalysis(qh);
-        if (!analisis) { analisis = await llamarIA(`Análisis político: ${q}`) || `Recomendación: El liderazgo transformador requiere visión de estado.`; await cache.cacheAnalysis(qh, analisis); }
+        if (!analisis) { 
+            // === FASE 2 y 3 en el chat ===
+            const resultados12 = await fuentes12.buscarTodasLasFuentes(q.substring(0, 100));
+            let contextoAcademico = "";
+            if (resultados12.resumen.total_resultados > 0) {
+                contextoAcademico = `\n\nContexto académico sobre el tema:\n`;
+                contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos.\n\n`;
+                const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
+                fuentesPrioritarias.forEach(key => {
+                    const f = resultados12.fuentes[key];
+                    if (f && f.exito && f.count > 0) {
+                        contextoAcademico += `[${key.toUpperCase()} - ${f.count} resultados]:\n`;
+                        f.data.slice(0, 2).forEach(r => {
+                            contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
+                            contextoAcademico += `  Resumen: ${(r.abstract || r.descripcion || r.snippet || 'Sin resumen disponible.').substring(0, 200)}...\n`;
+                        });
+                    }
+                });
+            }
+
+            const promptConContexto = `${contextoAcademico}\n\nAnálisis político: ${q}`;
+            analisis = await llamarIA(promptConContexto) || `Recomendación: El liderazgo transformador requiere visión de estado.`; 
+            await cache.cacheAnalysis(qh, analisis); 
+        }
         ultimoAnalisis = analisis; removeTyping(); addMessage(analisis, false); actualizarWidgets(q, analisis); showToast('✅ Análisis generado');
     } catch(e) { removeTyping(); addMessage('📊 El liderazgo requiere visión, integridad y ejecución.', false); }
     procesando = false; chatSendBtn.disabled = false; chatInput.focus();
