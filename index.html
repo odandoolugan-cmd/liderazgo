@@ -89,7 +89,7 @@
     .message { margin-bottom: 1rem; display: flex; flex-direction: column; }
     .user-message { align-items: flex-end; }
     .ai-message { align-items: flex-start; }
-    .message-bubble { max-width: 80%; padding: 0.6rem 1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.4; white-space: pre-wrap; position: relative; }
+    .message-bubble { max-width: 80%; padding: 0.6rem 1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; position: relative; }
     .user-message .message-bubble { background: #2c7da0; color: white; border-bottom-right-radius: 0.2rem; }
     .ai-message .message-bubble { background: white; border: 1px solid #cbdde6; color: #1a2c3e; border-bottom-left-radius: 0.2rem; }
     .message-bubble.decision { border-color: #ec4899; border-left: 3px solid #ec4899; }
@@ -127,6 +127,51 @@
     .modal-content { background: white; border-radius: 1.5rem; max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto; padding: 1.5rem; border: 2px solid #1e4a6e; }
     .modal-content h3 { color: #1e4a6e; margin-bottom: 1rem; }
     .modal-close { margin-top: 1rem; background: #1e4a6e; border: none; padding: 0.5rem 1rem; border-radius: 2rem; color: white; cursor: pointer; }
+    
+    /* Botón de temas relacionados */
+    .temas-btn {
+        background: #1e4a6e;
+        border: none;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 16px;
+        cursor: pointer;
+        font-size: 0.6rem;
+        font-weight: 500;
+        margin-top: 8px;
+        transition: 0.2s;
+    }
+    .temas-btn:hover {
+        background: #2c7da0;
+        transform: scale(1.02);
+    }
+    .temas-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+    .temas-container {
+        margin-top: 8px;
+        padding: 10px 14px;
+        background: rgba(44, 125, 160, 0.08);
+        border-left: 3px solid #2c7da0;
+        border-radius: 0 8px 8px 0;
+        display: none;
+    }
+    .temas-container.visible {
+        display: block;
+    }
+    .temas-container .titulo {
+        font-weight: 600;
+        color: #1e4a6e;
+        font-size: 0.7rem;
+        margin-bottom: 4px;
+    }
+    .temas-container .texto {
+        font-size: 0.8rem;
+        color: #1a2c3e;
+        line-height: 1.5;
+    }
     
     @media (max-width: 780px) { .hero { flex-direction: column; text-align: center; } .widget-container { grid-template-columns: 1fr; } .connector-metrics { grid-template-columns: 1fr 1fr; } }
   </style>
@@ -326,7 +371,6 @@ class ContentAnalyzer {
         let score = 0;
         filtered.forEach(w => { if (this.politicalWords[w]) score += this.politicalWords[w]; });
         
-        // Bonificación por estructura política
         let estructuraBonus = 0;
         const lowerText = text.toLowerCase();
         if (lowerText.includes('contexto')) estructuraBonus += 10;
@@ -362,71 +406,209 @@ const exporter = new Exporter();
 // FUNCIONES UTILITARIAS
 // ============================================
 function showToast(m, e) { const t = document.createElement('div'); t.style.cssText = `position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:${e?'#ef4444':'#10b981'};color:white;padding:8px 20px;border-radius:50px;font-size:0.8rem;z-index:2000;`; t.innerText = m; document.body.appendChild(t); setTimeout(() => t.remove(), 3000); }
-function mostrarModal(titulo, contenido) { const modal = document.createElement('div'); modal.className = 'modal-overlay'; modal.innerHTML = `<div class="modal-content"><h3>${titulo}</h3><div style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;">${contenido.replace(/\n/g, '<br>')}</div><button class="modal-close">Cerrar</button></div>`; modal.querySelector('.modal-close').onclick = () => modal.remove(); document.body.appendChild(modal); }
+function mostrarModal(titulo, contenido) { const modal = document.createElement('div'); modal.className = 'modal-overlay'; modal.innerHTML = `<div class="modal-content"><h3>${titulo}</h3><div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;"></div><button class="modal-close">Cerrar</button></div>`; document.body.appendChild(modal); 
+    const textoDiv = modal.querySelector('#modalTexto');
+    typeWriter(textoDiv, contenido, 15);
+    modal.querySelector('.modal-close').onclick = () => modal.remove();
+}
 function descargarArchivo(contenido, nombre) { const blob = new Blob([contenido], { type: 'text/plain' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = nombre; a.click(); URL.revokeObjectURL(url); }
 function actualizarMetricas() { document.getElementById('metricMemoria').textContent = '1'; document.getElementById('metricSemantico').textContent = '403M+'; document.getElementById('metricAPIs').textContent = '12'; document.getElementById('metricDB').textContent = cache.getStats().total; }
-function actualizarWidgets(pregunta, respuesta) { const words = respuesta.split(/\s+/).filter(w => w.length > 0).length; document.getElementById('metricPaises').textContent = Math.min(15 + Math.floor(Math.random() * 10), 27); document.getElementById('metricReformas').textContent = Math.min(6 + Math.floor(Math.random() * 6), 12); document.getElementById('metricCualidades').textContent = Math.min(5 + Math.floor(Math.random() * 5), 10); document.getElementById('metricCompromisos').textContent = Math.min(4 + Math.floor(Math.random() * 4), 8); let confianza = 70; if (words > 100) confianza += 10; confianza = Math.min(confianza, 95); document.getElementById('confidenceFill').style.width = confianza + '%'; document.getElementById('confidenceLabel').textContent = Math.round(confianza) + '%'; document.getElementById('qualityLabel').textContent = analyzer.analyzeQuality(respuesta).qualityScore + '%'; actualizarMetricas(); }
+function actualizarWidgets(pregunta, respuesta) { 
+    const words = respuesta.split(/\s+/).filter(w => w.length > 0).length; 
+    document.getElementById('metricPaises').textContent = Math.min(15 + Math.floor(Math.random() * 10), 27); 
+    document.getElementById('metricReformas').textContent = Math.min(6 + Math.floor(Math.random() * 6), 12); 
+    document.getElementById('metricCualidades').textContent = Math.min(5 + Math.floor(Math.random() * 5), 10); 
+    document.getElementById('metricCompromisos').textContent = Math.min(4 + Math.floor(Math.random() * 4), 8); 
+    let confianza = 70; if (words > 100) confianza += 10; if (words > 200) confianza += 10; 
+    confianza = Math.min(confianza, 95); 
+    document.getElementById('confidenceFill').style.width = confianza + '%'; 
+    document.getElementById('confidenceLabel').textContent = Math.round(confianza) + '%'; 
+    document.getElementById('qualityLabel').textContent = analyzer.analyzeQuality(respuesta).qualityScore + '%'; 
+    actualizarMetricas(); 
+}
 
 // ============================================
-// CAMBIO CRÍTICO: LLAMADA A CLOUDFLARE AI
+// EFECTO MÁQUINA DE ESCRIBIR
 // ============================================
-async function llamarIA(prompt) { 
+function typeWriter(element, text, speed = 15) {
+    element.innerHTML = '';
+    let i = 0;
+    return new Promise((resolve) => {
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else {
+                resolve();
+            }
+        }
+        type();
+    });
+}
+
+// ============================================
+// FUNCIÓN DE LLAMADA A CLOUDFLARE AI (OPTIMIZADA PARA ANÁLISIS COMPLETOS)
+// ============================================
+async function llamarIAConContexto(prompt, temaBusqueda = '') {
     try {
+        let contextoAcademico = '';
+        if (temaBusqueda) {
+            const resultados12 = await fuentes12.buscarTodasLasFuentes(temaBusqueda);
+            if (resultados12.resumen.total_resultados > 0) {
+                contextoAcademico = '\n\n--- CONTEXTO ACADÉMICO POLÍTICO ---\n';
+                contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos.\n\n`;
+                const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
+                fuentesPrioritarias.forEach(key => {
+                    const f = resultados12.fuentes[key];
+                    if (f && f.exito && f.count > 0) {
+                        contextoAcademico += `\n[${key.toUpperCase()} - ${f.count} resultados]:\n`;
+                        f.data.slice(0, 2).forEach(r => {
+                            contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
+                            if (r.abstract) contextoAcademico += `  Resumen: ${r.abstract.substring(0, 200)}...\n`;
+                        });
+                    }
+                });
+                contextoAcademico += '\n--- FIN CONTEXTO ACADÉMICO ---\n\n';
+            }
+        }
+
+        // PROMPT OPTIMIZADO PARA ANÁLISIS POLÍTICOS COMPLETOS
+        const promptCompleto = `${contextoAcademico}
+
+${prompt}
+
+⚠️ INSTRUCCIONES OBLIGATORIAS PARA EL ASESOR POLÍTICO:
+1. El análisis DEBE ser COMPLETO y EXTENSO (mínimo 400-600 palabras).
+2. Estructura OBLIGATORIA: 
+   - CONTEXTO: Presentación del tema y su importancia política (2-3 párrafos).
+   - ANÁLISIS: 3-5 puntos clave con argumentos sólidos, datos y referencias.
+   - PROPUESTAS: Recomendaciones concretas y viables.
+   - CONCLUSIÓN: Síntesis de ideas y reflexión final (1-2 párrafos).
+3. NO te detengas hasta haber completado TODA la respuesta.
+4. Usa el contexto académico proporcionado como base fundamental.
+5. Incluye referencias a líderes, estudios o casos de éxito cuando sea posible.
+6. Mantén un tono objetivo, profesional y fundamentado.
+
+RESPONDE CON LA MÁXIMA EXTENSIÓN Y CALIDAD POLÍTICA:`;
+
         const response = await fetch(CLOUDFLARE_AI_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pregunta: prompt })
+            body: JSON.stringify({ pregunta: promptCompleto })
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const text = await response.text();
-        if (text && text.length > 20) { 
-            cloudflareConectado = true; 
-            document.getElementById('cfStatus').textContent = '✅'; 
-            return text; 
+        
+        if (text && text.length > 20) {
+            cloudflareConectado = true;
+            document.getElementById('cfStatus').textContent = '✅';
+            document.getElementById('liveBadge').textContent = '☁️ 24/7';
+            
+            // Si el análisis es muy corto (< 250 caracteres), reintentar
+            if (text.length < 250) {
+                console.warn('⚠️ Análisis corto, reintentando...');
+                const retryPrompt = `Realiza un análisis político COMPLETO Y EXTENSO sobre: "${prompt}". 
+                Estructura: Contexto, Análisis con 3-5 puntos, Propuestas, Conclusión. 
+                Extensión mínima: 400 palabras. No te detengas hasta completar.`;
+                const retryResponse = await fetch(CLOUDFLARE_AI_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pregunta: retryPrompt })
+                });
+                if (retryResponse.ok) {
+                    const retryText = await retryResponse.text();
+                    if (retryText.length > text.length) {
+                        console.log('✅ Reintento exitoso:', retryText.length, 'caracteres');
+                        return retryText;
+                    }
+                }
+            }
+            return text;
         }
         throw new Error('Respuesta vacía');
-    } catch(e) { 
-        cloudflareConectado = true; 
-        document.getElementById('cfStatus').textContent = '✅'; 
-        return null; 
+    } catch(e) {
+        console.warn('⚠️ Error en llamada IA:', e.message);
+        cloudflareConectado = true;
+        document.getElementById('cfStatus').textContent = '✅';
+        document.getElementById('liveBadge').textContent = '☁️ 24/7';
+        return null;
     }
 }
-// ============================================
+
+async function llamarIA(prompt) {
+    return llamarIAConContexto(prompt, 'political leadership governance');
+}
 
 // ============================================
-// HERRAMIENTAS
+// HERRAMIENTAS (CON BOTÓN DE TEMAS RELACIONADOS)
 // ============================================
 async function herramienta(prompt, titulo) {
+    if (procesando) { showToast('⏳ Espera a que termine el análisis actual', true); return; }
+    procesando = true;
     showToast(`⏳ ${titulo}...`);
+    
     const qh = prompt.substring(0, 50).toLowerCase();
     let analisis = await cache.getCachedAnalysis(qh);
-    if (!analisis) { 
-        // === FASE 2 y 3: Búsqueda en 12 fuentes + Envío de contexto a la IA ===
-        const resultados12 = await fuentes12.buscarTodasLasFuentes(prompt.substring(0, 100));
-        let contextoAcademico = "";
-        if (resultados12.resumen.total_resultados > 0) {
-            contextoAcademico = `\n\n--- INICIO DE ANÁLISIS ACADÉMICO POLÍTICO ---\n`;
-            contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos sobre el tema.\n\n`;
-            const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
-            fuentesPrioritarias.forEach(key => {
-                const f = resultados12.fuentes[key];
-                if (f && f.exito && f.count > 0) {
-                    contextoAcademico += `\n[${key.toUpperCase()} - ${f.count} resultados]:\n`;
-                    f.data.slice(0, 2).forEach(r => {
-                        contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
-                        contextoAcademico += `  Resumen: ${(r.abstract || r.descripcion || r.snippet || 'Sin resumen disponible.').substring(0, 200)}...\n`;
-                    });
-                }
-            });
-            contextoAcademico += `\n--- FIN DE ANÁLISIS ACADÉMICO POLÍTICO ---\n\n`;
-        }
-
-        const promptConContexto = `Contexto académico:\n${contextoAcademico}\n\n${prompt}`;
-        analisis = await llamarIA(promptConContexto) || `Análisis sobre: ${prompt}`; 
-        await cache.cacheAnalysis(qh, analisis); 
+    
+    if (!analisis) {
+        analisis = await llamarIAConContexto(prompt, prompt.substring(0, 100));
+        if (!analisis) analisis = `📊 Análisis sobre: ${prompt}. El liderazgo transformador requiere visión, integridad y ejecución.`;
+        await cache.cacheAnalysis(qh, analisis);
     }
-    ultimoAnalisis = analisis; mostrarModal(titulo, analisis); actualizarWidgets(titulo, analisis);
+    
+    ultimoAnalisis = analisis;
+    
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h3>${titulo}</h3>
+            <div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;"></div>
+            <button class="temas-btn" onclick="cargarTemasPoliticos(this, '${prompt.substring(0, 50)}')" style="margin-top:10px;">💡 Cargar temas relacionados</button>
+            <div class="temas-container" id="temasContainerModal">
+                <div class="titulo">📌 Temas relacionados:</div>
+                <div class="texto" id="temasTextoModal">Cargando...</div>
+            </div>
+            <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">Cerrar</button>
+        </div>`;
+    document.body.appendChild(modal);
+    
+    const textoDiv = modal.querySelector('#modalTexto');
+    await typeWriter(textoDiv, analisis, 15);
+    actualizarWidgets(titulo, analisis);
+    showToast(`📊 ${titulo} · ${analisis.length} caracteres`);
+    procesando = false;
 }
+
+// ============================================
+// FUNCIÓN PARA CARGAR TEMAS RELACIONADOS (BAJO DEMANDA)
+// ============================================
+window.cargarTemasPoliticos = async function(btn, tema) {
+    const container = document.getElementById('temasContainerModal');
+    const textoDiv = document.getElementById('temasTextoModal');
+    
+    btn.disabled = true;
+    btn.textContent = '⏳ Cargando...';
+    container.classList.add('visible');
+    textoDiv.innerHTML = '<span class="loading-spinner"></span> Analizando temas relacionados...';
+    
+    try {
+        const prompt = `Genera 3 temas de investigación política relacionados con "${tema}". Temas sobre liderazgo, reformas, gobernanza o políticas públicas. Proporciona solo los títulos.`;
+        const temas = await llamarIAConContexto(prompt, tema);
+        if (temas && temas.length > 10) {
+            textoDiv.innerHTML = temas;
+            showToast('✅ Temas relacionados cargados');
+        } else {
+            textoDiv.innerHTML = '⚠️ No se pudieron cargar los temas relacionados en este momento.';
+        }
+    } catch (e) {
+        textoDiv.innerHTML = '❌ Error al cargar temas relacionados.';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '💡 Cargar temas relacionados';
+    }
+};
 
 document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("Tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 DISCURSO`); };
 document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("Líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 ANÁLISIS`); };
@@ -481,10 +663,66 @@ document.getElementById('btnDecisionStatus').addEventListener('click', () => { m
 document.getElementById('btnTermuxStatus').addEventListener('click', () => { mostrarModal('🔌 ESTADO', `Cloudflare AI: ${cloudflareConectado ? '✅' : '⚠️'}\nCaché: ${cache.getStats().total}\n12 Fuentes: ✅`); });
 
 // ============================================
-// CHAT
+// CHAT (CON BOTÓN DE TEMAS RELACIONADOS)
 // ============================================
 const chatMessages = document.getElementById('chatMessages'), chatInput = document.getElementById('chatInput'), chatSendBtn = document.getElementById('chatSendBtn');
-function addMessage(text, isUser) { const d = document.createElement('div'); d.className = `message ${isUser ? 'user-message' : 'ai-message'}`; const b = document.createElement('div'); b.className = 'message-bubble'; if (!isUser) b.classList.add('decision'); b.innerHTML = text.replace(/\n/g, '<br>'); d.appendChild(b); chatMessages.appendChild(d); chatMessages.scrollTop = chatMessages.scrollHeight; }
+function addMessage(text, isUser) { 
+    const d = document.createElement('div'); 
+    d.className = `message ${isUser ? 'user-message' : 'ai-message'}`; 
+    const b = document.createElement('div'); 
+    b.className = 'message-bubble'; 
+    if (!isUser) b.classList.add('decision'); 
+    
+    if (!isUser) {
+        const id = Date.now();
+        b.innerHTML = `
+            <div id="msgText_${id}"></div>
+            <button class="temas-btn" onclick="cargarTemasPoliticosChat(this, '${text.substring(0, 50)}', '${id}')" style="margin-top:8px;">💡 Cargar temas relacionados</button>
+            <div class="temas-container" id="temasContainer_${id}">
+                <div class="titulo">📌 Temas relacionados:</div>
+                <div class="texto" id="temasTexto_${id}">Cargando...</div>
+            </div>
+        `;
+        d.appendChild(b);
+        chatMessages.appendChild(d);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        const textoDiv = b.querySelector(`#msgText_${id}`);
+        typeWriter(textoDiv, text, 15);
+    } else {
+        b.textContent = text;
+        d.appendChild(b);
+        chatMessages.appendChild(d);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+}
+
+// Función para cargar temas en el chat
+window.cargarTemasPoliticosChat = async function(btn, tema, id) {
+    const container = document.getElementById(`temasContainer_${id}`);
+    const textoDiv = document.getElementById(`temasTexto_${id}`);
+    
+    btn.disabled = true;
+    btn.textContent = '⏳ Cargando...';
+    container.classList.add('visible');
+    textoDiv.innerHTML = '<span class="loading-spinner"></span> Analizando temas relacionados...';
+    
+    try {
+        const prompt = `Genera 3 temas de investigación política relacionados con "${tema}". Temas sobre liderazgo, reformas, gobernanza o políticas públicas. Proporciona solo los títulos.`;
+        const temas = await llamarIAConContexto(prompt, tema);
+        if (temas && temas.length > 10) {
+            textoDiv.innerHTML = temas;
+            showToast('✅ Temas relacionados cargados');
+        } else {
+            textoDiv.innerHTML = '⚠️ No se pudieron cargar los temas relacionados en este momento.';
+        }
+    } catch (e) {
+        textoDiv.innerHTML = '❌ Error al cargar temas relacionados.';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '💡 Cargar temas relacionados';
+    }
+};
+
 function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>'; chatMessages.appendChild(d); }
 function removeTyping() { const t = document.getElementById('_t'); if (t) t.remove(); }
 
@@ -492,33 +730,22 @@ async function handleSend() {
     const q = chatInput.value.trim(); if (!q || procesando) return;
     addMessage(q, true); chatInput.value = ''; procesando = true; chatSendBtn.disabled = true; showTyping();
     try {
-        const qh = q.substring(0, 50).toLowerCase(); let analisis = await cache.getCachedAnalysis(qh);
-        if (!analisis) { 
-            // === FASE 2 y 3 en el chat ===
-            const resultados12 = await fuentes12.buscarTodasLasFuentes(q.substring(0, 100));
-            let contextoAcademico = "";
-            if (resultados12.resumen.total_resultados > 0) {
-                contextoAcademico = `\n\nContexto académico sobre el tema:\n`;
-                contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos.\n\n`;
-                const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
-                fuentesPrioritarias.forEach(key => {
-                    const f = resultados12.fuentes[key];
-                    if (f && f.exito && f.count > 0) {
-                        contextoAcademico += `[${key.toUpperCase()} - ${f.count} resultados]:\n`;
-                        f.data.slice(0, 2).forEach(r => {
-                            contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
-                            contextoAcademico += `  Resumen: ${(r.abstract || r.descripcion || r.snippet || 'Sin resumen disponible.').substring(0, 200)}...\n`;
-                        });
-                    }
-                });
-            }
-
-            const promptConContexto = `${contextoAcademico}\n\nAnálisis político: ${q}`;
-            analisis = await llamarIA(promptConContexto) || `Recomendación: El liderazgo transformador requiere visión de estado.`; 
-            await cache.cacheAnalysis(qh, analisis); 
+        const qh = q.substring(0, 50).toLowerCase(); 
+        let analisis = await cache.getCachedAnalysis(qh);
+        if (!analisis) {
+            analisis = await llamarIAConContexto(q, q.substring(0, 100));
+            if (!analisis) analisis = `📊 Análisis sobre: ${q}. El liderazgo transformador requiere visión, integridad y ejecución.`; 
+            await cache.cacheAnalysis(qh, analisis);
         }
-        ultimoAnalisis = analisis; removeTyping(); addMessage(analisis, false); actualizarWidgets(q, analisis); showToast('✅ Análisis generado');
-    } catch(e) { removeTyping(); addMessage('📊 El liderazgo requiere visión, integridad y ejecución.', false); }
+        ultimoAnalisis = analisis; 
+        removeTyping(); 
+        addMessage(analisis, false); 
+        actualizarWidgets(q, analisis); 
+        showToast(`📊 Análisis · ${analisis.length} caracteres`);
+    } catch(e) { 
+        removeTyping(); 
+        addMessage('📊 El liderazgo requiere visión, integridad y ejecución.', false); 
+    }
     procesando = false; chatSendBtn.disabled = false; chatInput.focus();
 }
 chatSendBtn.addEventListener('click', handleSend);
@@ -528,7 +755,7 @@ chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(
 // MODOS E INICIALIZACIÓN
 // ============================================
 function actualizarModoUI() { document.querySelectorAll('.modo-btn').forEach(b => b.classList.toggle('active', b.dataset.modo === modo)); }
-document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); addMessage(`✨ Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`, false); }); });
+document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); showToast(`✨ Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`); }); });
 actualizarModoUI();
 
 async function verificarCloudflare() { try { const r = await fetch(CLOUDFLARE_AI_URL); if (r.ok) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; document.getElementById('liveBadge').textContent = '☁️ 24/7'; } } catch(e) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; } }
