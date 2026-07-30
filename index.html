@@ -16,6 +16,7 @@
     .hero-badge { background: #1e4a6e; color: white; display: inline-block; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 1rem; }
     .badge-decision { background: linear-gradient(90deg, #8b5cf6, #ec4899); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
     .badge-12fuentes { background: linear-gradient(90deg, #10b981, #059669); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
+    .badge-china { background: linear-gradient(135deg, #DE2910, #FFDE00); color: #1a2c3e; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; border: 1px solid #FFDE00; }
     @keyframes glow { 0%, 100% { box-shadow: 0 0 10px #8b5cf6; } 50% { box-shadow: 0 0 25px #ec4899; } }
     .live-badge { background: #10b981; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; animation: pulse 1.5s infinite; display: inline-block; vertical-align: middle; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
@@ -128,7 +129,6 @@
     .modal-content h3 { color: #1e4a6e; margin-bottom: 1rem; }
     .modal-close { margin-top: 1rem; background: #1e4a6e; border: none; padding: 0.5rem 1rem; border-radius: 2rem; color: white; cursor: pointer; }
     
-    /* Botón de temas relacionados */
     .temas-btn {
         background: #1e4a6e;
         border: none;
@@ -181,9 +181,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="live-badge" id="liveBadge">☁️ 24/7</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="live-badge" id="liveBadge">☁️ 24/7</span></div>
       <h1>El liderazgo que un país necesita</h1>
-      <p>403M LECTOR · Cloudflare AI (Sin caídas) · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real.</p>
+      <p>403M LECTOR · Cloudflare AI (Sin caídas) · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real · 🇨🇳</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
         <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
@@ -230,9 +230,9 @@
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Cloudflare AI</h3><span>12 Fuentes Gratis</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Cloudflare AI</h3><span>12 Fuentes Gratis · 🇨🇳</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong> y <strong>Cloudflare AI</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno.</div></div>
+      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong> y <strong>Cloudflare AI</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos?" autocomplete="off">
@@ -240,7 +240,7 @@
     </div>
   </div>
 
-  <div class="context-info">☁️ 403M LECTOR · Cloudflare AI (Sin caídas) · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas</div>
+  <div class="context-info">☁️ 403M LECTOR · Cloudflare AI (Sin caídas) · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas · 🇨🇳</div>
 
   <div class="widget-container">
     <div class="widget"><div class="widget-title">📊 Análisis del Liderazgo</div><div class="widget-content"><div class="metrics-grid"><div class="metric-item"><div class="metric-value" id="metricPaises">0</div><div class="metric-label">Países</div></div><div class="metric-item"><div class="metric-value" id="metricReformas">0</div><div class="metric-label">Reformas</div></div><div class="metric-item"><div class="metric-value" id="metricCualidades">0</div><div class="metric-label">Cualidades</div></div><div class="metric-item"><div class="metric-value" id="metricCompromisos">0</div><div class="metric-label">Compromisos</div></div></div></div></div>
@@ -261,7 +261,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · Cloudflare AI · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · Cloudflare AI · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7 · 🇨🇳</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
@@ -279,6 +279,7 @@
 // URL DE TU WORKER DE CLOUDFLARE (El que nunca se cae)
 const CLOUDFLARE_AI_URL = 'https://ollama-ai.odandoolugan.workers.dev';
 const JSLLM7_API_URL = 'https://wikipedia-403m.odandoolugan.workers.dev';
+const PAIS_FIJO = 'china';
 
 let cloudflareConectado = true;
 let modo = localStorage.getItem('presidencial_modo') || 'experto';
@@ -293,24 +294,24 @@ class FuentesGratuitas12 {
     constructor() { this.cache = new Map(); this.maxCacheAge = 3600000; console.log('🔬 12 FUENTES GRATUITAS inicializadas'); }
     
     async buscarSemanticScholar(tema) {
-        try { const r = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(tema)}+political+leadership+governance&limit=10&fields=title,authors,year,abstract,citationCount,url`); const d = await r.json(); return d.data?.map(p => ({ titulo: p.title, autor: p.authors?.map(a => a.name).join(', '), year: p.year, abstract: p.abstract, citas: p.citationCount, fuente: 'Semantic Scholar', url: p.url })) || []; } catch(e) { return []; }
+        try { const r = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(tema)}+political+leadership+governance+china&limit=10&fields=title,authors,year,abstract,citationCount,url`); const d = await r.json(); return d.data?.map(p => ({ titulo: p.title, autor: p.authors?.map(a => a.name).join(', '), year: p.year, abstract: p.abstract, citas: p.citationCount, fuente: 'Semantic Scholar', url: p.url })) || []; } catch(e) { return []; }
     }
     async buscarCORE(tema) {
-        try { const r = await fetch(`https://api.core.ac.uk/v3/search/works?q=${encodeURIComponent(tema)}+public+policy&limit=10`); const d = await r.json(); return d.results?.map(r => ({ titulo: r.title, autor: r.authors?.join(', '), year: r.yearPublished, abstract: r.abstract, fuente: 'CORE', url: r.downloadUrl || r.doi })) || []; } catch(e) { return []; }
+        try { const r = await fetch(`https://api.core.ac.uk/v3/search/works?q=${encodeURIComponent(tema)}+public+policy+china&limit=10`); const d = await r.json(); return d.results?.map(r => ({ titulo: r.title, autor: r.authors?.join(', '), year: r.yearPublished, abstract: r.abstract, fuente: 'CORE', url: r.downloadUrl || r.doi })) || []; } catch(e) { return []; }
     }
     async buscarArxiv(tema) {
-        try { const r = await fetch(`https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(tema)}+governance&max_results=10`); const text = await r.text(); const xml = new DOMParser().parseFromString(text, 'text/xml'); return Array.from(xml.querySelectorAll('entry')).map(e => ({ titulo: e.querySelector('title')?.textContent?.trim(), autor: Array.from(e.querySelectorAll('author name')).map(n => n.textContent).join(', '), year: e.querySelector('published')?.textContent?.substring(0,4), fuente: 'arXiv', url: e.querySelector('id')?.textContent })); } catch(e) { return []; }
+        try { const r = await fetch(`https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(tema)}+governance+china&max_results=10`); const text = await r.text(); const xml = new DOMParser().parseFromString(text, 'text/xml'); return Array.from(xml.querySelectorAll('entry')).map(e => ({ titulo: e.querySelector('title')?.textContent?.trim(), autor: Array.from(e.querySelectorAll('author name')).map(n => n.textContent).join(', '), year: e.querySelector('published')?.textContent?.substring(0,4), fuente: 'arXiv', url: e.querySelector('id')?.textContent })); } catch(e) { return []; }
     }
     async buscarInternetArchive(tema) { return [{ titulo: `${tema} - Political Archive`, autor: 'Internet Archive', year: '2024', fuente: 'Internet Archive', url: '#' }]; }
     async buscarWikipedia(tema) {
-        try { const r = await fetch(`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(tema)}+política&format=json&origin=*&srlimit=10`); const d = await r.json(); return d.query?.search?.map(r => ({ titulo: r.title, snippet: r.snippet?.replace(/<\/?[^>]+(>|$)/g, ''), fuente: 'Wikipedia', url: `https://es.wikipedia.org/wiki/${encodeURIComponent(r.title.replace(/\s+/g, '_'))}` })) || []; } catch(e) { return []; }
+        try { const r = await fetch(`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(tema)}+política+china&format=json&origin=*&srlimit=10`); const d = await r.json(); return d.query?.search?.map(r => ({ titulo: r.title, snippet: r.snippet?.replace(/<\/?[^>]+(>|$)/g, ''), fuente: 'Wikipedia', url: `https://es.wikipedia.org/wiki/${encodeURIComponent(r.title.replace(/\s+/g, '_'))}` })) || []; } catch(e) { return []; }
     }
     async buscarWikidata(tema) { return [{ titulo: `${tema} - Wikidata`, fuente: 'Wikidata', url: '#' }]; }
     async buscarPubMed(tema) { return []; }
     async buscarDOAJ(tema) { return [{ titulo: `${tema} - Open Access`, autor: 'DOAJ', year: '2024', fuente: 'DOAJ', url: '#' }]; }
     async buscarOpenLibrary(tema) { return [{ titulo: `${tema} - Digital Library`, autor: 'Open Library', year: '2024', fuente: 'Open Library', url: '#' }]; }
     async buscarHackerNews(tema) { return [{ titulo: `${tema} - Discussion`, autor: 'HN', year: '2024', fuente: 'Hacker News', url: '#' }]; }
-    async buscarGoogleScholar(tema) { return [{ titulo: `${tema}: Political Analysis`, autor: 'Scholar', year: '2024', fuente: 'Google Scholar', url: '#' }]; }
+    async buscarGoogleScholar(tema) { return [{ titulo: `${tema}: Political Analysis en China`, autor: 'Scholar', year: '2024', fuente: 'Google Scholar', url: '#' }]; }
     async buscarResearchGate(tema) { return [{ titulo: `Research: ${tema}`, autor: 'ResearchGate', year: '2024', fuente: 'ResearchGate', url: '#' }]; }
     
     async buscarTodasLasFuentes(tema) {
@@ -352,7 +353,7 @@ class PersistentCache {
 const cache = new PersistentCache();
 
 // ============================================
-// ANALIZADOR + PLAGIO + EXPORTADOR (MEJORADO)
+// ANALIZADOR + PLAGIO + EXPORTADOR
 // ============================================
 class ContentAnalyzer {
     constructor() {
@@ -448,7 +449,7 @@ function typeWriter(element, text, speed = 15) {
 }
 
 // ============================================
-// FUNCIÓN DE LLAMADA A CLOUDFLARE AI (OPTIMIZADA PARA ANÁLISIS COMPLETOS)
+// FUNCIÓN DE LLAMADA A CLOUDFLARE AI CON PROMPT DE CONSULTOR POLÍTICO
 // ============================================
 async function llamarIAConContexto(prompt, temaBusqueda = '') {
     try {
@@ -456,41 +457,109 @@ async function llamarIAConContexto(prompt, temaBusqueda = '') {
         if (temaBusqueda) {
             const resultados12 = await fuentes12.buscarTodasLasFuentes(temaBusqueda);
             if (resultados12.resumen.total_resultados > 0) {
-                contextoAcademico = '\n\n--- CONTEXTO ACADÉMICO POLÍTICO ---\n';
-                contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos.\n\n`;
+                contextoAcademico = '\n\n--- contexto académico político ---\n';
+                contextoAcademico += `se encontraron ${resultados12.resumen.total_resultados} resultados académicos.\n\n`;
                 const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
                 fuentesPrioritarias.forEach(key => {
                     const f = resultados12.fuentes[key];
                     if (f && f.exito && f.count > 0) {
                         contextoAcademico += `\n[${key.toUpperCase()} - ${f.count} resultados]:\n`;
                         f.data.slice(0, 2).forEach(r => {
-                            contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
-                            if (r.abstract) contextoAcademico += `  Resumen: ${r.abstract.substring(0, 200)}...\n`;
+                            contextoAcademico += `• título: ${r.titulo || 'sin título'}\n`;
+                            if (r.abstract) contextoAcademico += `  resumen: ${r.abstract.substring(0, 200)}...\n`;
                         });
                     }
                 });
-                contextoAcademico += '\n--- FIN CONTEXTO ACADÉMICO ---\n\n';
+                contextoAcademico += '\n--- fin contexto académico ---\n\n';
             }
         }
 
-        // PROMPT OPTIMIZADO PARA ANÁLISIS POLÍTICOS COMPLETOS
+        // PROMPT DE CONSULTOR POLÍTICO SENIOR CON ENFOQUE CHINA
         const promptCompleto = `${contextoAcademico}
 
 ${prompt}
 
-⚠️ INSTRUCCIONES OBLIGATORIAS PARA EL ASESOR POLÍTICO:
-1. El análisis DEBE ser COMPLETO y EXTENSO (mínimo 400-600 palabras).
-2. Estructura OBLIGATORIA: 
-   - CONTEXTO: Presentación del tema y su importancia política (2-3 párrafos).
-   - ANÁLISIS: 3-5 puntos clave con argumentos sólidos, datos y referencias.
-   - PROPUESTAS: Recomendaciones concretas y viables.
-   - CONCLUSIÓN: Síntesis de ideas y reflexión final (1-2 párrafos).
-3. NO te detengas hasta haber completado TODA la respuesta.
-4. Usa el contexto académico proporcionado como base fundamental.
-5. Incluye referencias a líderes, estudios o casos de éxito cuando sea posible.
-6. Mantén un tono objetivo, profesional y fundamentado.
+═══════════════════════════════════════════════════════════
+🏛️ rol: eres un consultor político senior, analista de políticas 
+públicas y estratega de comunicación con más de 15 años de 
+experiencia asesorando a gobiernos, partidos y líderes en 
+campañas electorales, gestión de crisis, diseño institucional 
+y análisis de opinión pública.
+═══════════════════════════════════════════════════════════
 
-RESPONDE CON LA MÁXIMA EXTENSIÓN Y CALIDAD POLÍTICA:`;
+⚠️ instrucciones obligatorias y no negociables:
+
+📊 extensión y profundidad:
+• mínimo 600-900 palabras de análisis riguroso
+• cero frases cliché o discursos vacíos; cada párrafo debe aportar valor estratégico
+• fundamenta cada análisis en ciencia política, sociología electoral o datos empíricos
+
+📋 estructura obligatoria (respeta el orden):
+
+1️⃣ **diagnóstico y contexto político** (3-4 párrafos)
+   - situación de la coyuntura actual (el "tablero" de juego)
+   - relación de fuerzas entre los actores involucrados
+   - clima social, humor ciudadano y nivel de polarización/consenso
+   - antecedentes estructurales que explican el problema
+
+2️⃣ **mapeo de actores e intereses** ♟️
+   - principales ganadores y perdedores del escenario analizado
+   - posición de partidos, élites, sindicatos, medios y opinión pública
+   - incentivos y motivaciones de cada actor clave
+   - formato: 👤 [actor] → [interés principal] → [capacidad de influencia (alta/media/baja)]
+
+3️⃣ **análisis de vulnerabilidades y oportunidades** 🔍
+   - ventanas de oportunidad política (policy windows)
+   - puntos débiles de la postura actual o de la oposición
+   - costes políticos de la inacción o de la acción
+
+4️⃣ **ejes discursivos y narrativa** 📢
+   - construcción del relato (framing) recomendado
+   - mensajes clave (core messages) para la opinión pública
+   - contra-narrativas para neutralizar ataques previsibles
+   - palabras/conceptos clave a potenciar y cuáles evitar
+
+5️⃣ **propuestas y hoja de ruta estratégica** 📋 (accionable)
+   - recomendaciones concretas a corto plazo (tácticas)
+   - recomendaciones a mediano/largo plazo (estratégicas)
+   - viabilidad institucional, legal y presupuestaria de las propuestas
+
+6️⃣ **gestión de riesgos y plan b** ⚠️
+   - principales riesgos políticos, mediáticos o sociales
+   - escenarios alternativos si la estrategia principal falla
+   - líneas rojas y costos de reputación a vigilar
+
+7️⃣ **referencias comparadas y casos de éxito** 🌍
+   - paralelismos con otros países, regiones o momentos históricos
+   - lecciones aprendidas de casos similares (qué funcionó y qué fracasó)
+   - estudios politológicos o autores de referencia aplicables
+
+8️⃣ **conclusión y síntesis ejecutiva** 🏁
+   - resumen contundente para la toma de decisiones (elevator pitch)
+   - reflexión final sobre el impacto político a largo plazo
+
+🎓 reglas de calidad política:
+✅ mantén absoluta objetividad analítica y rigor politológico (sin sesgos partidistas personales)
+✅ usa el contexto académico proporcionado como marco teórico fundamental
+✅ sé sumamente específico: nombres de políticas, marcos legales, dinámicas electorales
+✅ evalúa siempre el "coste político" de las decisiones
+❌ no uses clichés vacíos tipo "la democracia está en juego" o "el pueblo exige" sin explicar el mecanismo sociológico o político detrás
+❌ no omitas ninguna sección de la estructura
+❌ no ofrezcas soluciones mágicas; reconoce los trade-offs (lo que se gana y lo que se pierde)
+❌ no te detengas hasta completar todo el informe
+
+💡 formato de salida:
+- usa emojis institucionales y analíticos (🏛️📊♟️📢⚠️)
+- negritas para conceptos clave, actores y recomendaciones
+- listas y viñetas para mapeos de actores y hojas de ruta
+- separadores visuales entre secciones
+
+⚡ responde ahora con el informe de asesoría política más 
+profundo, estratégico y riguroso posible. la toma de decisiones 
+de un líder depende de la calidad y precisión de este análisis:`;
+
+        console.log('📚 enviando prompt de consultor político senior a cloudflare ai');
+        console.log('🇨🇳 enfoque geográfico fijo:', PAIS_FIJO);
 
         const response = await fetch(CLOUDFLARE_AI_URL, {
             method: 'POST',
@@ -505,12 +574,11 @@ RESPONDE CON LA MÁXIMA EXTENSIÓN Y CALIDAD POLÍTICA:`;
             document.getElementById('cfStatus').textContent = '✅';
             document.getElementById('liveBadge').textContent = '☁️ 24/7';
             
-            // Si el análisis es muy corto (< 250 caracteres), reintentar
-            if (text.length < 250) {
-                console.warn('⚠️ Análisis corto, reintentando...');
-                const retryPrompt = `Realiza un análisis político COMPLETO Y EXTENSO sobre: "${prompt}". 
-                Estructura: Contexto, Análisis con 3-5 puntos, Propuestas, Conclusión. 
-                Extensión mínima: 400 palabras. No te detengas hasta completar.`;
+            if (text.length < 300) {
+                console.warn('⚠️ análisis corto, reintentando...');
+                const retryPrompt = `realiza un análisis político completo y extenso sobre: "${prompt}" con enfoque en ${PAIS_FIJO}. 
+                estructura: diagnóstico, mapeo de actores, vulnerabilidades, ejes discursivos, propuestas, riesgos, referencias, conclusión.
+                extensión mínima: 600 palabras. no te detengas hasta completar.`;
                 const retryResponse = await fetch(CLOUDFLARE_AI_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -519,16 +587,16 @@ RESPONDE CON LA MÁXIMA EXTENSIÓN Y CALIDAD POLÍTICA:`;
                 if (retryResponse.ok) {
                     const retryText = await retryResponse.text();
                     if (retryText.length > text.length) {
-                        console.log('✅ Reintento exitoso:', retryText.length, 'caracteres');
+                        console.log('✅ reintento exitoso:', retryText.length, 'caracteres');
                         return retryText;
                     }
                 }
             }
             return text;
         }
-        throw new Error('Respuesta vacía');
+        throw new Error('respuesta vacía');
     } catch(e) {
-        console.warn('⚠️ Error en llamada IA:', e.message);
+        console.warn('⚠️ error en llamada ia:', e.message);
         cloudflareConectado = true;
         document.getElementById('cfStatus').textContent = '✅';
         document.getElementById('liveBadge').textContent = '☁️ 24/7';
@@ -536,15 +604,11 @@ RESPONDE CON LA MÁXIMA EXTENSIÓN Y CALIDAD POLÍTICA:`;
     }
 }
 
-async function llamarIA(prompt) {
-    return llamarIAConContexto(prompt, 'political leadership governance');
-}
-
 // ============================================
 // HERRAMIENTAS (CON BOTÓN DE TEMAS RELACIONADOS)
 // ============================================
 async function herramienta(prompt, titulo) {
-    if (procesando) { showToast('⏳ Espera a que termine el análisis actual', true); return; }
+    if (procesando) { showToast('⏳ espera a que termine el análisis actual', true); return; }
     procesando = true;
     showToast(`⏳ ${titulo}...`);
     
@@ -553,7 +617,7 @@ async function herramienta(prompt, titulo) {
     
     if (!analisis) {
         analisis = await llamarIAConContexto(prompt, prompt.substring(0, 100));
-        if (!analisis) analisis = `📊 Análisis sobre: ${prompt}. El liderazgo transformador requiere visión, integridad y ejecución.`;
+        if (!analisis) analisis = `📊 análisis sobre: ${prompt}. el liderazgo transformador requiere visión, integridad y ejecución.`;
         await cache.cacheAnalysis(qh, analisis);
     }
     
@@ -565,19 +629,19 @@ async function herramienta(prompt, titulo) {
         <div class="modal-content">
             <h3>${titulo}</h3>
             <div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;"></div>
-            <button class="temas-btn" onclick="cargarTemasPoliticos(this, '${prompt.substring(0, 50)}')" style="margin-top:10px;">💡 Cargar temas relacionados</button>
+            <button class="temas-btn" onclick="cargarTemasPoliticos(this, '${prompt.substring(0, 50)}')" style="margin-top:10px;">💡 cargar temas relacionados</button>
             <div class="temas-container" id="temasContainerModal">
-                <div class="titulo">📌 Temas relacionados:</div>
-                <div class="texto" id="temasTextoModal">Cargando...</div>
+                <div class="titulo">📌 temas relacionados:</div>
+                <div class="texto" id="temasTextoModal">cargando...</div>
             </div>
-            <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">Cerrar</button>
+            <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">cerrar</button>
         </div>`;
     document.body.appendChild(modal);
     
     const textoDiv = modal.querySelector('#modalTexto');
     await typeWriter(textoDiv, analisis, 15);
     actualizarWidgets(titulo, analisis);
-    showToast(`📊 ${titulo} · ${analisis.length} caracteres`);
+    showToast(`📊 ${titulo} · ${analisis.length} caracteres · 🇨🇳`);
     procesando = false;
 }
 
@@ -589,78 +653,78 @@ window.cargarTemasPoliticos = async function(btn, tema) {
     const textoDiv = document.getElementById('temasTextoModal');
     
     btn.disabled = true;
-    btn.textContent = '⏳ Cargando...';
+    btn.textContent = '⏳ cargando...';
     container.classList.add('visible');
-    textoDiv.innerHTML = '<span class="loading-spinner"></span> Analizando temas relacionados...';
+    textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
     
     try {
-        const prompt = `Genera 3 temas de investigación política relacionados con "${tema}". Temas sobre liderazgo, reformas, gobernanza o políticas públicas. Proporciona solo los títulos.`;
+        const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
         const temas = await llamarIAConContexto(prompt, tema);
         if (temas && temas.length > 10) {
             textoDiv.innerHTML = temas;
-            showToast('✅ Temas relacionados cargados');
+            showToast('✅ temas relacionados cargados');
         } else {
-            textoDiv.innerHTML = '⚠️ No se pudieron cargar los temas relacionados en este momento.';
+            textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
         }
     } catch (e) {
-        textoDiv.innerHTML = '❌ Error al cargar temas relacionados.';
+        textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
     } finally {
         btn.disabled = false;
-        btn.textContent = '💡 Cargar temas relacionados';
+        btn.textContent = '💡 cargar temas relacionados';
     }
 };
 
-document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("Tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 DISCURSO`); };
-document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("Líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 ANÁLISIS`); };
-document.getElementById('btnCompararPropuestas').onclick = async () => { const a = prompt("Área:", "educación"); if (a) await herramienta(`comparar reformas en ${a}`, `🔄 COMPARACIÓN`); };
-document.getElementById('btnRankingPaises').onclick = async () => { const a = prompt("Área:", "educación"); if (a) await herramienta(`ranking países en ${a}`, `🌍 RANKING`); };
-document.getElementById('btnReforma').onclick = async () => { const a = prompt("Área:", "educación"); if (a) await herramienta(`reforma en ${a}`, `📜 REFORMA`); };
-document.getElementById('btnMinistro').onclick = async () => { const m = prompt("Ministerio:", "Educación"); if (m) await herramienta(`ministro de ${m}`, `👥 MINISTRO`); };
-document.getElementById('btnCrisis').onclick = async () => { const c = prompt("Crisis:", "económica"); if (c) await herramienta(`gestión de ${c}`, `⚠️ CRISIS`); };
-document.getElementById('btnDebate').onclick = async () => { const t = prompt("Tema:", "corrupción"); if (t) await herramienta(`debate sobre ${t}`, `🎯 DEBATE`); };
-document.getElementById('btnEvaluarGestion').onclick = async () => { const a = prompt("Área:", "educación"); if (a) await herramienta(`evaluación de ${a}`, `📈 EVALUACIÓN`); };
-document.getElementById('btnLegado').onclick = async () => { const n = prompt("Presidente:", "Transformador"); if (n) await herramienta(`legado de ${n}`, `🏛️ LEGADO`); };
+document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 discurso`); };
+document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 análisis`); };
+document.getElementById('btnCompararPropuestas').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`comparar reformas en ${a}`, `🔄 comparación`); };
+document.getElementById('btnRankingPaises').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`ranking países en ${a}`, `🌍 ranking`); };
+document.getElementById('btnReforma').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`reforma en ${a}`, `📜 reforma`); };
+document.getElementById('btnMinistro').onclick = async () => { const m = prompt("ministerio:", "educación"); if (m) await herramienta(`ministro de ${m}`, `👥 ministro`); };
+document.getElementById('btnCrisis').onclick = async () => { const c = prompt("crisis:", "económica"); if (c) await herramienta(`gestión de ${c}`, `⚠️ crisis`); };
+document.getElementById('btnDebate').onclick = async () => { const t = prompt("tema:", "corrupción"); if (t) await herramienta(`debate sobre ${t}`, `🎯 debate`); };
+document.getElementById('btnEvaluarGestion').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`evaluación de ${a}`, `📈 evaluación`); };
+document.getElementById('btnLegado').onclick = async () => { const n = prompt("presidente:", "transformador"); if (n) await herramienta(`legado de ${n}`, `🏛️ legado`); };
 
 // ============================================
 // BOTONES ACADÉMIA PRO
 // ============================================
 document.getElementById('btn12Fuentes').addEventListener('click', async () => {
     const tema = document.getElementById('chatInput').value.trim() || 'political leadership governance reform';
-    showToast('🔬 Buscando en 12 fuentes...');
+    showToast('🔬 buscando en 12 fuentes...');
     const resultados = await fuentes12.buscarTodasLasFuentes(tema);
-    mostrarModal('🔬 12 FUENTES ACADÉMICAS GRATIS', fuentes12.formatearResultados(resultados));
+    mostrarModal('🔬 12 fuentes académicas gratis', fuentes12.formatearResultados(resultados));
     showToast(`✅ ${resultados.resumen.total_resultados} resultados de ${resultados.resumen.fuentes_exitosas}/12 fuentes`);
 });
 
 document.getElementById('btnBuscarAcademico').addEventListener('click', async () => {
-    showToast('📚 Buscando referencias...');
+    showToast('📚 buscando referencias...');
     referenciasAcademicas = await fuentes12.buscarSemanticScholar('political leadership governance');
-    if (referenciasAcademicas.length > 0) { mostrarModal('📚 REFERENCIAS', referenciasAcademicas.map((r, i) => `${i+1}. ${r.autor} (${r.year}). ${r.titulo}. ${r.fuente}.`).join('\n\n')); }
-    else { mostrarModal('📚 SIN RESULTADOS', 'No se encontraron referencias.'); }
+    if (referenciasAcademicas.length > 0) { mostrarModal('📚 referencias', referenciasAcademicas.map((r, i) => `${i+1}. ${r.autor} (${r.year}). ${r.titulo}. ${r.fuente}.`).join('\n\n')); }
+    else { mostrarModal('📚 sin resultados', 'no se encontraron referencias.'); }
 });
 
 document.getElementById('btnVerificarPlagio').addEventListener('click', () => {
-    if (!ultimoAnalisis) { showToast('⚠️ Realiza un análisis primero', true); return; }
-    const resultado = plagiarismDetector.check(ultimoAnalisis, Object.values({ c1: { analisis: 'Liderazgo y visión de estado' }, c2: { analisis: 'Reforma educativa profunda' } }).map(c => c.analisis));
-    mostrarModal('⚠️ PLAGIO', `Riesgo: ${resultado.overallRisk}\nSimilitud: ${Math.round(resultado.maxSimilarity * 100)}%\n\n${resultado.details.slice(0,5).map(d => `• ${d.source}: ${Math.round(d.similarity*100)}%`).join('\n')}`);
+    if (!ultimoAnalisis) { showToast('⚠️ realiza un análisis primero', true); return; }
+    const resultado = plagiarismDetector.check(ultimoAnalisis, Object.values({ c1: { analisis: 'liderazgo y visión de estado' }, c2: { analisis: 'reforma educativa profunda' } }).map(c => c.analisis));
+    mostrarModal('⚠️ plagio', `riesgo: ${resultado.overallRisk}\nsimilitud: ${Math.round(resultado.maxSimilarity * 100)}%\n\n${resultado.details.slice(0,5).map(d => `• ${d.source}: ${Math.round(d.similarity*100)}%`).join('\n')}`);
 });
 
 document.getElementById('btnExportar').addEventListener('click', () => {
-    if (!ultimoAnalisis) { showToast('⚠️ Realiza un análisis primero', true); return; }
+    if (!ultimoAnalisis) { showToast('⚠️ realiza un análisis primero', true); return; }
     const buttons = ['latex','markdown','bibtex','apa'].map(f => `<button style="margin:5px;padding:8px 16px;background:#1e4a6e;color:white;border:none;border-radius:20px;cursor:pointer;" onclick="window.exportarFormato('${f}')">📄 ${f.toUpperCase()}</button>`).join('');
-    mostrarModal('📤 EXPORTAR', `Selecciona formato:\n\n${buttons}`);
+    mostrarModal('📤 exportar', `selecciona formato:\n\n${buttons}`);
 });
 
 window.exportarFormato = function(format) {
     if (!ultimoAnalisis) return;
-    const title = 'Análisis Político'; let content = '', filename = 'analisis_politico';
+    const title = 'análisis político'; let content = '', filename = 'analisis_politico';
     switch(format) { case 'latex': content = exporter.toLatex(ultimoAnalisis, title); filename += '.tex'; break; case 'markdown': content = exporter.toMarkdown(ultimoAnalisis, title); filename += '.md'; break; case 'bibtex': content = exporter.toBibTeX(title, referenciasAcademicas.length > 0 ? referenciasAcademicas : [{fuente:'403M LECTOR'}]); filename += '.bib'; break; case 'apa': content = exporter.toAPA(title, referenciasAcademicas.length > 0 ? referenciasAcademicas : [{fuente:'403M LECTOR'}]); filename += '.txt'; break; }
     descargarArchivo(content, filename); document.querySelectorAll('.modal-overlay').forEach(m => m.remove());
-    showToast(`📤 Exportado como ${format.toUpperCase()}`);
+    showToast(`📤 exportado como ${format.toUpperCase()}`);
 };
 
-document.getElementById('btnDecisionStatus').addEventListener('click', () => { mostrarModal('🧠 403M LECTOR', `Sistema activo con 12 fuentes.\nCaché: ${cache.getStats().total} entradas.`); });
-document.getElementById('btnTermuxStatus').addEventListener('click', () => { mostrarModal('🔌 ESTADO', `Cloudflare AI: ${cloudflareConectado ? '✅' : '⚠️'}\nCaché: ${cache.getStats().total}\n12 Fuentes: ✅`); });
+document.getElementById('btnDecisionStatus').addEventListener('click', () => { mostrarModal('🧠 403M LECTOR', `sistema activo con 12 fuentes.\ncaché: ${cache.getStats().total} entradas.`); });
+document.getElementById('btnTermuxStatus').addEventListener('click', () => { mostrarModal('🔌 estado', `cloudflare ai: ${cloudflareConectado ? '✅' : '⚠️'}\ncaché: ${cache.getStats().total}\n12 fuentes: ✅\n🇨🇳 enfoque: ${PAIS_FIJO}`); });
 
 // ============================================
 // CHAT (CON BOTÓN DE TEMAS RELACIONADOS)
@@ -677,10 +741,10 @@ function addMessage(text, isUser) {
         const id = Date.now();
         b.innerHTML = `
             <div id="msgText_${id}"></div>
-            <button class="temas-btn" onclick="cargarTemasPoliticosChat(this, '${text.substring(0, 50)}', '${id}')" style="margin-top:8px;">💡 Cargar temas relacionados</button>
+            <button class="temas-btn" onclick="cargarTemasPoliticosChat(this, '${text.substring(0, 50)}', '${id}')" style="margin-top:8px;">💡 cargar temas relacionados</button>
             <div class="temas-container" id="temasContainer_${id}">
-                <div class="titulo">📌 Temas relacionados:</div>
-                <div class="texto" id="temasTexto_${id}">Cargando...</div>
+                <div class="titulo">📌 temas relacionados:</div>
+                <div class="texto" id="temasTexto_${id}">cargando...</div>
             </div>
         `;
         d.appendChild(b);
@@ -696,34 +760,33 @@ function addMessage(text, isUser) {
     }
 }
 
-// Función para cargar temas en el chat
 window.cargarTemasPoliticosChat = async function(btn, tema, id) {
     const container = document.getElementById(`temasContainer_${id}`);
     const textoDiv = document.getElementById(`temasTexto_${id}`);
     
     btn.disabled = true;
-    btn.textContent = '⏳ Cargando...';
+    btn.textContent = '⏳ cargando...';
     container.classList.add('visible');
-    textoDiv.innerHTML = '<span class="loading-spinner"></span> Analizando temas relacionados...';
+    textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
     
     try {
-        const prompt = `Genera 3 temas de investigación política relacionados con "${tema}". Temas sobre liderazgo, reformas, gobernanza o políticas públicas. Proporciona solo los títulos.`;
+        const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
         const temas = await llamarIAConContexto(prompt, tema);
         if (temas && temas.length > 10) {
             textoDiv.innerHTML = temas;
-            showToast('✅ Temas relacionados cargados');
+            showToast('✅ temas relacionados cargados');
         } else {
-            textoDiv.innerHTML = '⚠️ No se pudieron cargar los temas relacionados en este momento.';
+            textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
         }
     } catch (e) {
-        textoDiv.innerHTML = '❌ Error al cargar temas relacionados.';
+        textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
     } finally {
         btn.disabled = false;
-        btn.textContent = '💡 Cargar temas relacionados';
+        btn.textContent = '💡 cargar temas relacionados';
     }
 };
 
-function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> Analizando...</div>'; chatMessages.appendChild(d); }
+function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> analizando...</div>'; chatMessages.appendChild(d); }
 function removeTyping() { const t = document.getElementById('_t'); if (t) t.remove(); }
 
 async function handleSend() {
@@ -734,17 +797,17 @@ async function handleSend() {
         let analisis = await cache.getCachedAnalysis(qh);
         if (!analisis) {
             analisis = await llamarIAConContexto(q, q.substring(0, 100));
-            if (!analisis) analisis = `📊 Análisis sobre: ${q}. El liderazgo transformador requiere visión, integridad y ejecución.`; 
+            if (!analisis) analisis = `📊 análisis sobre: ${q}. el liderazgo transformador requiere visión, integridad y ejecución.`; 
             await cache.cacheAnalysis(qh, analisis);
         }
         ultimoAnalisis = analisis; 
         removeTyping(); 
         addMessage(analisis, false); 
         actualizarWidgets(q, analisis); 
-        showToast(`📊 Análisis · ${analisis.length} caracteres`);
+        showToast(`📊 análisis · ${analisis.length} caracteres · 🇨🇳`);
     } catch(e) { 
         removeTyping(); 
-        addMessage('📊 El liderazgo requiere visión, integridad y ejecución.', false); 
+        addMessage('📊 el liderazgo requiere visión, integridad y ejecución.', false); 
     }
     procesando = false; chatSendBtn.disabled = false; chatInput.focus();
 }
@@ -755,12 +818,19 @@ chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(
 // MODOS E INICIALIZACIÓN
 // ============================================
 function actualizarModoUI() { document.querySelectorAll('.modo-btn').forEach(b => b.classList.toggle('active', b.dataset.modo === modo)); }
-document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); showToast(`✨ Modo ${modo === 'experto' ? 'EXPERTO' : 'BÁSICO'}`); }); });
+document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); showToast(`✨ modo ${modo === 'experto' ? 'experto' : 'básico'}`); }); });
 actualizarModoUI();
 
 async function verificarCloudflare() { try { const r = await fetch(CLOUDFLARE_AI_URL); if (r.ok) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; document.getElementById('liveBadge').textContent = '☁️ 24/7'; } } catch(e) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; } }
 
-function init() { actualizarMetricas(); actualizarWidgets('Bienvenida', '403M LECTOR · 12 Fuentes · IndexedDB'); verificarCloudflare(); setInterval(verificarCloudflare, 60000); showToast('☁️ Perfil Presidencial · Cloudflare AI · 12 Fuentes · IndexedDB · 14 herramientas'); }
+function init() { 
+    console.log(`🇨🇳 enfoque geográfico fijo: ${PAIS_FIJO}`);
+    actualizarMetricas(); 
+    actualizarWidgets('bienvenida', '403M LECTOR · 12 fuentes · indexedDB'); 
+    verificarCloudflare(); 
+    setInterval(verificarCloudflare, 60000); 
+    showToast(`☁️ perfil presidencial · cloudflare ai · 12 fuentes · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO}`); 
+}
 init();
 </script>
 
