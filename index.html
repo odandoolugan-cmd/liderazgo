@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes">
-  <title>Perfil Presidencial · 403M LECTOR · Cloudflare 24/7 · AcadémIA Pro · 12 Fuentes · WASM</title>
+  <title>Perfil Presidencial · 403M LECTOR · Mistral AI · AcadémIA Pro · 12 Fuentes · WASM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -16,6 +16,7 @@
     .hero-badge { background: #1e4a6e; color: white; display: inline-block; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 1rem; }
     .badge-decision { background: linear-gradient(90deg, #8b5cf6, #ec4899); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
     .badge-12fuentes { background: linear-gradient(90deg, #10b981, #059669); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
+    .badge-mistral { background: linear-gradient(90deg, #f97316, #dc2626); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; }
     .badge-wasm { background: #1e4a6e; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; }
     .badge-china { background: linear-gradient(135deg, #DE2910, #FFDE00); color: #1a2c3e; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; border: 1px solid #FFDE00; }
     @keyframes glow { 0%, 100% { box-shadow: 0 0 10px #8b5cf6; } 50% { box-shadow: 0 0 25px #ec4899; } }
@@ -36,6 +37,14 @@
     
     .status-bar { background: white; border-radius: 1rem; padding: 0.5rem 1rem; margin: 0.5rem 0; font-size: 0.65rem; display: flex; justify-content: space-around; flex-wrap: wrap; color: #2c4b66; border: 1px solid #e2edf2; }
     
+    .modo-selector { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 15px; align-items: center; flex-wrap: wrap; }
+    .modo-btn { background: #e2edf2; border: none; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; cursor: pointer; font-weight: 600; color: #2c4b66; transition: 0.2s; }
+    .modo-btn.active { background: #1e4a6e; color: white; }
+    .modo-btn:hover { background: #2c7da0; color: white; }
+    .modo-activo-indicator { display: inline-block; padding: 2px 12px; border-radius: 12px; font-size: 0.65rem; font-weight: 600; margin-left: 10px; }
+    .modo-experto { background: #1e4a6e; color: white; }
+    .modo-basico { background: #f97316; color: white; }
+    
     .tools-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; justify-content: center; }
     .tool-btn { background: #e2edf2; border: none; padding: 8px 14px; border-radius: 30px; font-size: 0.7rem; cursor: pointer; font-weight: 600; color: #1e4a6e; transition: 0.2s; }
     .tool-btn:hover { background: #1e4a6e; color: white; transform: scale(1.02); }
@@ -45,6 +54,9 @@
     .tool-btn.decision:hover { background: linear-gradient(135deg, #8b5cf6, #ec4899); color: white; }
     .tool-btn.fuentes12 { background: #d1fae5; color: #065f46; border: 2px solid #10b981; }
     .tool-btn.fuentes12:hover { background: #10b981; color: white; }
+    
+    .progress-bar-container { width: 100%; height: 4px; background: #e2edf2; border-radius: 2px; margin: 8px 0; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, #1e4a6e, #2c7da0); width: 0%; transition: width 0.5s; border-radius: 2px; }
     
     .widget-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
     .widget { background: rgba(255, 255, 255, 0.95); border: 1px solid #2c7da0; border-radius: 12px; padding: 15px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative; }
@@ -103,27 +115,6 @@
     .ia-badge { background: #10b981; padding: 2px 8px; border-radius: 20px; font-size: 0.6rem; margin-left: 8px; }
     .typing { color: #94a3b8; font-style: italic; }
     .context-info { background: rgba(139,92,246,0.1); border-radius: 1rem; padding: 0.5rem; margin: 0.5rem 0 1rem 0; font-size: 0.65rem; color: #a5b4fc; text-align: center; }
-    .transform-plan { background: #ffffffdd; backdrop-filter: blur(4px); border-radius: 2rem; padding: 2rem; margin: 2rem 0; border: 1px solid #cde3ec; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .grid-2cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
-    .milestone { display: flex; gap: 1rem; margin-bottom: 1.8rem; align-items: flex-start; }
-    .milestone i { font-size: 1.8rem; color: #2c7da0; background: #e0f0f7; padding: 0.6rem; border-radius: 1rem; }
-    .milestone h4 { font-weight: 700; margin-bottom: 0.3rem; }
-    .virtues { background: linear-gradient(120deg, #eef2f5, #ffffff); border-radius: 2rem; padding: 2rem; margin: 2rem 0; }
-    .virtue-list { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
-    .virtue-item { background: white; border-radius: 60px; padding: 0.6rem 1.3rem; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid #d4e2ea; display: flex; align-items: center; gap: 8px; }
-    .virtue-item i { color: #1e6f8f; }
-    .ad-container { margin: 2rem 0; text-align: center; background: rgba(255,255,255,0.5); border-radius: 1.5rem; padding: 0.75rem; overflow-x: auto; }
-    .ad-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #6c8ea0; margin-bottom: 0.5rem; }
-    .footer-note { margin-top: 3rem; text-align: center; padding: 1.5rem; border-top: 1px solid #cbdde6; color: #3f627c; font-size: 0.85rem; }
-    .vr-button { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #f59e0b, #d97706); border: none; padding: 12px 20px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; z-index: 100; }
-    .vr-mode { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: none; background: #0a0f1e; }
-    .vr-mode.active { display: block; }
-    .close-vr { position: fixed; top: 20px; right: 20px; background: rgba(0,0,0,0.7); border: 1px solid #e9c46a; padding: 8px 16px; border-radius: 30px; color: #e9c46a; cursor: pointer; z-index: 1001; }
-    .loading-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #1e4a6e; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 6px; vertical-align: middle; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .modo-selector { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 10px; }
-    .modo-btn { background: #e2edf2; border: none; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; cursor: pointer; font-weight: 600; color: #2c4b66; }
-    .modo-btn.active { background: #1e4a6e; color: white; }
     
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center; }
     .modal-content { background: white; border-radius: 1.5rem; max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto; padding: 1.5rem; border: 2px solid #1e4a6e; }
@@ -184,6 +175,16 @@
         border-radius: 0.5rem;
     }
     
+    .vr-button { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #f59e0b, #d97706); border: none; padding: 12px 20px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; z-index: 100; }
+    .vr-mode { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: none; background: #0a0f1e; }
+    .vr-mode.active { display: block; }
+    .close-vr { position: fixed; top: 20px; right: 20px; background: rgba(0,0,0,0.7); border: 1px solid #e9c46a; padding: 8px 16px; border-radius: 30px; color: #e9c46a; cursor: pointer; z-index: 1001; }
+    .loading-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #1e4a6e; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 6px; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #1e4a6e; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; z-index: 2000; animation: fadeOut 3s forwards; }
+    @keyframes fadeOut { 0% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+    .footer-note { margin-top: 3rem; text-align: center; padding: 1.5rem; border-top: 1px solid #cbdde6; color: #3f627c; font-size: 0.85rem; }
+    
     @media (max-width: 780px) { .hero { flex-direction: column; text-align: center; } .widget-container { grid-template-columns: 1fr; } .connector-metrics { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
@@ -192,9 +193,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-wasm">⚡ WASM</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="live-badge" id="liveBadge">☁️ 24/7</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-mistral">⚡ MISTRAL AI</span><span class="badge-wasm">⚡ WASM</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
       <h1>El liderazgo que un país necesita</h1>
-      <p>403M LECTOR · Cloudflare AI (Sin caídas) · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real · 🇨🇳</p>
+      <p>403M LECTOR · Mistral AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real · 🇨🇳</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
         <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
@@ -213,13 +214,20 @@
     <span>💾 Caché: <span id="cacheHitRate">0%</span></span>
     <span>📊 DB: <span id="dbEntries">0</span></span>
     <span>🧠 403M: <span id="decisionCount">0</span></span>
-    <span>⚡ Cloudflare AI: <span id="cfStatus">✅ Activo</span></span>
+    <span>⚡ Mistral AI: <span id="cfStatus">✅ Activo</span></span>
     <span>⚡ WASM: <span id="wasmStatus">⏳ Cargando...</span></span>
+    <span>📌 Modo: <span id="modoStatus" style="color:#1e4a6e;">🧠 Experto</span></span>
   </div>
 
   <div class="modo-selector">
-    <button class="modo-btn active" data-modo="experto">🧠 MODO EXPERTO</button>
-    <button class="modo-btn" data-modo="basico">⚡ MODO BÁSICO</button>
+    <button class="modo-btn active" data-modo="experto">🧠 MODO EXPERTO (4000 tokens)</button>
+    <button class="modo-btn" data-modo="basico">⚡ MODO BÁSICO (1500 tokens)</button>
+    <span id="modoActualIndicator" class="modo-activo-indicator modo-experto">🧠 Experto</span>
+  </div>
+
+  <!-- Barra de progreso -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progressBar"></div>
   </div>
 
   <div class="tools-bar">
@@ -242,9 +250,9 @@
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Cloudflare AI · WASM</h3><span>12 Fuentes Gratis · 🇨🇳</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Mistral AI · WASM</h3><span>12 Fuentes Gratis · 🇨🇳</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong>, <strong>Cloudflare AI</strong> y <strong>WebAssembly</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China.</div></div>
+      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong>, <strong>Mistral AI</strong> y <strong>WebAssembly</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos?" autocomplete="off">
@@ -252,11 +260,11 @@
     </div>
   </div>
 
-  <div class="context-info">☁️ 403M LECTOR · Cloudflare AI (Sin caídas) · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas · 🇨🇳</div>
+  <div class="context-info">☁️ 403M LECTOR · Mistral AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas · 🇨🇳</div>
 
   <div class="widget-container">
     <div class="widget"><div class="widget-title">📊 Análisis del Liderazgo</div><div class="widget-content"><div class="metrics-grid"><div class="metric-item"><div class="metric-value" id="metricPaises">0</div><div class="metric-label">Países</div></div><div class="metric-item"><div class="metric-value" id="metricReformas">0</div><div class="metric-label">Reformas</div></div><div class="metric-item"><div class="metric-value" id="metricCualidades">0</div><div class="metric-label">Cualidades</div></div><div class="metric-item"><div class="metric-value" id="metricCompromisos">0</div><div class="metric-label">Compromisos</div></div></div></div></div>
-    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Conversaciones</div></div><div class="connector-metric"><div class="value" id="metricSemantico">403M+</div><div class="label">Datos</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">IndexedDB</div></div></div><div id="jsllm7WidgetStatus">⚡ Cloudflare AI: ✅ Activo (Sin caídas)</div><div id="wasmWidgetStatus">⚡ WebAssembly: <span id="wasmWidgetStatusText">⏳ Cargando...</span></div></div></div>
+    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Conversaciones</div></div><div class="connector-metric"><div class="value" id="metricSemantico">403M+</div><div class="label">Datos</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">IndexedDB</div></div></div><div id="jsllm7WidgetStatus">⚡ Mistral AI: ✅ Activo</div><div id="wasmWidgetStatus">⚡ WebAssembly: <span id="wasmWidgetStatusText">⏳ Cargando...</span></div></div></div>
     <div class="widget"><div class="widget-title">🎯 Confianza del Perfil</div><div class="widget-content"><div class="widget-confidence"><span>📊</span><div class="confidence-bar"><div class="confidence-fill" id="confidenceFill" style="width:0%"></div></div><span class="confidence-label" id="confidenceLabel">0%</span></div><div style="font-size:0.75rem;color:#2c4b66;margin-top:8px;">Calidad: <span id="qualityLabel">--</span></div></div></div>
     <div class="widget"><div class="widget-title">🏛️ Estructura de Gobierno</div><div class="widget-content" id="widgetEstructuraContent"><div style="display:flex;gap:10px;flex-wrap:wrap;"><span style="background:#e2edf2;padding:4px 10px;border-radius:15px;font-size:0.7rem;border:1px solid #2c7da0;">🏛️ Ejecutivo</span></div></div></div>
   </div>
@@ -273,20 +281,32 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · Cloudflare AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7 · 🇨🇳</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · Mistral AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7 · 🇨🇳</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
 <div class="vr-mode" id="vrMode"><button class="close-vr" id="closeVrBtn">✕ SALIR DE VR</button><div id="vrContainer" style="width:100%;height:100%"></div></div>
 
-<script src="https://cdn.jsdelivr.net/npm/jsllm7@0.1.0/jsllm7.js"></script>
 <script type="importmap">
 { "imports": { "three": "https://unpkg.com/three@0.128.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/" } }
 </script>
 
 <script>
 // ============================================
-// WEBASSEMBLY OPTIMIZER
+// CONFIGURACIÓN - MISTRAL AI (SIN CLOUDFLARE)
+// ============================================
+const MISTRAL_API_KEY = 'eKzUq9HIk9xGnJtT6BfzdVSqKKWscOjT';
+const MISTRAL_API_URL = 'https://api.mistral.ai/v1/chat/completions';
+const PAIS_FIJO = 'china';
+
+let modoActual = 'experto';
+let ultimoAnalisis = '';
+let referenciasAcademicas = [];
+let procesando = false;
+let ocupado = false;
+
+// ============================================
+// WEBASSEMBLY OPTIMIZER - LIMPIA FORMATO
 // ============================================
 class WASMOptimizer {
     constructor() {
@@ -310,25 +330,16 @@ class WASMOptimizer {
                 0x00, 0x20, 0x01, 0x6a,
                 0x0b
             ]);
-            const module = await WebAssembly.instantiate(wasmCode);
-            if (module.instance.exports.add) {
-                console.log('✅ WebAssembly inicializado correctamente');
-                this.initialized = true;
-                document.getElementById('wasmStatus').textContent = '✅ Activo';
-                document.getElementById('wasmStatus').style.color = '#1e4a6e';
-                document.getElementById('wasmWidgetStatusText').textContent = '✅ Activo';
-                document.getElementById('wasmWidgetStatusText').style.color = '#1e4a6e';
-                return true;
-            }
+            await WebAssembly.instantiate(wasmCode);
             this.initialized = true;
-            console.log('✅ WebAssembly inicializado (modo simulado)');
-            document.getElementById('wasmStatus').textContent = '⚠️ Simulado';
-            document.getElementById('wasmStatus').style.color = '#f59e0b';
-            document.getElementById('wasmWidgetStatusText').textContent = '⚠️ Simulado';
-            document.getElementById('wasmWidgetStatusText').style.color = '#f59e0b';
+            console.log('✅ WebAssembly inicializado');
+            document.getElementById('wasmStatus').textContent = '✅ Activo';
+            document.getElementById('wasmStatus').style.color = '#1e4a6e';
+            document.getElementById('wasmWidgetStatusText').textContent = '✅ Activo';
+            document.getElementById('wasmWidgetStatusText').style.color = '#1e4a6e';
             return true;
         } catch (error) {
-            console.warn('⚠️ Error en WebAssembly, usando modo JS:', error.message);
+            console.warn('⚠️ Error en WebAssembly:', error.message);
             this.initialized = true;
             document.getElementById('wasmStatus').textContent = '⚠️ JS Fallback';
             document.getElementById('wasmStatus').style.color = '#f59e0b';
@@ -338,38 +349,27 @@ class WASMOptimizer {
         }
     }
 
-    optimizeText(text) {
+    cleanText(text) {
         const inicio = performance.now();
-        if (!text || text.length < 50) return text;
-        let optimized = text;
-        if (this.initialized) {
-            try {
-                optimized = this.optimizeTextJS(text);
-                this.stats.optimizaciones++;
-            } catch (e) {
-                optimized = this.optimizeTextJS(text);
-            }
-        } else {
-            optimized = this.optimizeTextJS(text);
-        }
-        const fin = performance.now();
-        this.stats.tiempoTotal += (fin - inicio);
-        return optimized;
-    }
-
-    optimizeTextJS(text) {
-        if (!text || text.length < 50) return text;
+        if (!text) return text;
+        
         let result = text;
+        // Eliminar asteriscos
+        result = result.replace(/\*\*(.*?)\*\*/g, '$1');
+        result = result.replace(/\*(.*?)\*/g, '$1');
+        // Eliminar guiones bajos
+        result = result.replace(/__(.*?)__/g, '$1');
+        result = result.replace(/_(.*?)_/g, '$1');
+        // Eliminar hashtags
+        result = result.replace(/#(.*?)(\s|$)/g, '$1$2');
+        // Limpiar espacios
         result = result.replace(/\s+/g, ' ');
         result = result.replace(/\s+([.,;:!?])/g, '$1');
         result = result.replace(/\.\s*([a-z])/g, (_, c) => '. ' + c.toUpperCase());
         result = result.replace(/\n\s*\n/g, '\n\n');
-        if (!result.includes('DIAGNÓSTICO')) {
-            result = '🏛️ DIAGNÓSTICO POLÍTICO\n' + result;
-        }
-        if (!result.includes('CONCLUSIÓN')) {
-            result += '\n\n🏁 CONCLUSIÓN: El liderazgo transformador requiere visión, integridad y ejecución.';
-        }
+        
+        this.stats.optimizaciones++;
+        this.stats.tiempoTotal += (performance.now() - inicio);
         return result;
     }
 
@@ -378,20 +378,6 @@ class WASMOptimizer {
 
 const wasm = new WASMOptimizer();
 wasm.init();
-
-// ============================================
-// CONFIGURACIÓN
-// ============================================
-// URL DEL AGENTE CON 12 FUENTES + MISTRAL
-const CLOUDFLARE_AI_URL = 'https://agente-buscador.odandoolugan.workers.dev';
-const JSLLM7_API_URL = 'https://wikipedia-403m.odandoolugan.workers.dev';
-const PAIS_FIJO = 'china';
-
-let cloudflareConectado = true;
-let modo = localStorage.getItem('presidencial_modo') || 'experto';
-let ultimoAnalisis = '';
-let referenciasAcademicas = [];
-let procesando = false;
 
 // ============================================
 // 12 FUENTES GRATUITAS SIN API KEY
@@ -512,21 +498,45 @@ const exporter = new Exporter();
 // ============================================
 // FUNCIONES UTILITARIAS
 // ============================================
-function showToast(m, e) { const t = document.createElement('div'); t.style.cssText = `position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:${e?'#ef4444':'#10b981'};color:white;padding:8px 20px;border-radius:50px;font-size:0.8rem;z-index:2000;`; t.innerText = m; document.body.appendChild(t); setTimeout(() => t.remove(), 3000); }
-function mostrarModal(titulo, contenido) { const modal = document.createElement('div'); modal.className = 'modal-overlay'; modal.innerHTML = `<div class="modal-content"><h3>${titulo}</h3><div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;"></div><button class="modal-close">Cerrar</button></div>`; document.body.appendChild(modal); 
-    const textoDiv = modal.querySelector('#modalTexto');
-    typeWriter(textoDiv, contenido, 15);
-    modal.querySelector('.modal-close').onclick = () => modal.remove();
+function showToast(m, e) { 
+    const t = document.createElement('div'); 
+    t.className = 'toast-msg'; 
+    t.style.background = e ? '#ef4444' : '#1e4a6e'; 
+    t.innerText = m; 
+    document.body.appendChild(t); 
+    setTimeout(() => t.remove(), 3000); 
 }
+
+function mostrarModal(titulo, contenido) { 
+    const modal = document.createElement('div'); 
+    modal.className = 'modal-overlay'; 
+    modal.innerHTML = `<div class="modal-content"><h3>${titulo}</h3><div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;">${contenido}</div><button class="modal-close">Cerrar</button></div>`; 
+    document.body.appendChild(modal); 
+    modal.querySelector('.modal-close').onclick = () => modal.remove(); 
+}
+
 function descargarArchivo(contenido, nombre) { const blob = new Blob([contenido], { type: 'text/plain' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = nombre; a.click(); URL.revokeObjectURL(url); }
-function actualizarMetricas() { document.getElementById('metricMemoria').textContent = '1'; document.getElementById('metricSemantico').textContent = '403M+'; document.getElementById('metricAPIs').textContent = '12'; document.getElementById('metricDB').textContent = cache.getStats().total; }
+
+function actualizarProgress(porcentaje) {
+    document.getElementById('progressBar').style.width = `${Math.min(100, porcentaje)}%`;
+}
+
+function actualizarMetricas() { 
+    document.getElementById('metricMemoria').textContent = '1'; 
+    document.getElementById('metricSemantico').textContent = '403M+'; 
+    document.getElementById('metricAPIs').textContent = '12'; 
+    document.getElementById('metricDB').textContent = cache.getStats().total; 
+}
+
 function actualizarWidgets(pregunta, respuesta) { 
     const words = respuesta.split(/\s+/).filter(w => w.length > 0).length; 
     document.getElementById('metricPaises').textContent = Math.min(15 + Math.floor(Math.random() * 10), 27); 
     document.getElementById('metricReformas').textContent = Math.min(6 + Math.floor(Math.random() * 6), 12); 
     document.getElementById('metricCualidades').textContent = Math.min(5 + Math.floor(Math.random() * 5), 10); 
     document.getElementById('metricCompromisos').textContent = Math.min(4 + Math.floor(Math.random() * 4), 8); 
-    let confianza = 70; if (words > 100) confianza += 10; if (words > 200) confianza += 10; 
+    let confianza = 70; 
+    if (words > 100) confianza += 10; 
+    if (words > 200) confianza += 10; 
     confianza = Math.min(confianza, 95); 
     document.getElementById('confidenceFill').style.width = confianza + '%'; 
     document.getElementById('confidenceLabel').textContent = Math.round(confianza) + '%'; 
@@ -535,27 +545,7 @@ function actualizarWidgets(pregunta, respuesta) {
 }
 
 // ============================================
-// EFECTO MÁQUINA DE ESCRIBIR
-// ============================================
-function typeWriter(element, text, speed = 15) {
-    element.innerHTML = '';
-    let i = 0;
-    return new Promise((resolve) => {
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            } else {
-                resolve();
-            }
-        }
-        type();
-    });
-}
-
-// ============================================
-// FUNCIÓN DE LLAMADA A CLOUDFLARE AI CON PROMPT DE CONSULTOR POLÍTICO
+// FUNCIÓN DE LLAMADA A MISTRAL AI - CONSULTOR POLÍTICO
 // ============================================
 async function llamarIAConContexto(prompt, temaBusqueda = '') {
     try {
@@ -580,18 +570,17 @@ async function llamarIAConContexto(prompt, temaBusqueda = '') {
             }
         }
 
-        // PROMPT DE CONSULTOR POLÍTICO SENIOR CON ENFOQUE CHINA
-        const promptCompleto = `${contextoAcademico}
+        // PROMPT SEGÚN MODO
+        let promptCompleto;
+        let maxTokens;
+
+        if (modoActual === 'experto') {
+            promptCompleto = `
+Actúa como un consultor político senior con experiencia en gobierno y reformas.
+
+${contextoAcademico}
 
 ${prompt}
-
-═══════════════════════════════════════════════════════════
-🏛️ ROL: CONSULTOR POLÍTICO SENIOR
-═══════════════════════════════════════════════════════════
-
-⚠️ INSTRUCCIONES OBLIGATORIAS:
-
-📊 EXTENSIÓN: Mínimo 600-900 palabras.
 
 📋 ESTRUCTURA OBLIGATORIA:
    1️⃣ Diagnóstico y Contexto Político
@@ -603,49 +592,82 @@ ${prompt}
    7️⃣ Referencias Comparadas y Casos de Éxito 🌍
    8️⃣ Conclusión y Síntesis Ejecutiva 🏁
 
-🎓 REGLAS DE CALIDAD:
+Reglas:
 ✅ Mantén objetividad analítica y rigor politológico
 ✅ Sé específico: nombres de políticas, marcos legales
 ✅ Evalúa el "coste político" de las decisiones
-❌ No uses clichés vacíos
-❌ No omitas ninguna sección
+✅ Extensión: 600-900 palabras
+✅ NO uses asteriscos ni formato especial
 
 Empieza con "🏛️ DIAGNÓSTICO POLÍTICO" y termina con "🏁 CONCLUSIÓN".`;
+            maxTokens = 4000;
+        } else {
+            promptCompleto = `
+Actúa como consultor político.
 
-        console.log('📚 Enviando prompt a Cloudflare AI');
-        console.log('🇨🇳 Enfoque geográfico fijo:', PAIS_FIJO);
+${contextoAcademico}
 
-        // ⏱️ TIMEOUT DE 60 SEGUNDOS
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 60000);
+${prompt}
 
-        const response = await fetch(CLOUDFLARE_AI_URL, {
+Estructura:
+1. Diagnóstico y Contexto
+2. Propuestas Clave
+3. Conclusión
+
+Extensión: 250-450 palabras.
+NO uses asteriscos ni formato especial.
+
+Empieza con "🏛️ DIAGNÓSTICO POLÍTICO" y termina con "🏁 CONCLUSIÓN".`;
+            maxTokens = 1500;
+        }
+
+        console.log(`📚 Enviando prompt a Mistral AI (${modoActual})`);
+        console.log('🇨🇳 Enfoque geográfico:', PAIS_FIJO);
+        actualizarProgress(30);
+
+        const response = await fetch(MISTRAL_API_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pregunta: promptCompleto }),
-            signal: controller.signal
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${MISTRAL_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: 'mistral-large-latest',
+                messages: [
+                    { 
+                        role: 'system', 
+                        content: 'Eres un consultor político senior experto en gobierno y reformas. Responde en español con estructura profesional. NO uses asteriscos ni formato especial.' 
+                    },
+                    { role: 'user', content: promptCompleto }
+                ],
+                temperature: 0.7,
+                max_tokens: maxTokens
+            })
         });
 
-        clearTimeout(timeoutId);
+        actualizarProgress(60);
 
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const text = await response.text();
-
-        if (text && text.length > 50) {
-            cloudflareConectado = true;
-            document.getElementById('cfStatus').textContent = '✅';
-            document.getElementById('liveBadge').textContent = '☁️ 24/7';
-            
-            // Optimizar con WebAssembly
-            const textoOptimizado = wasm.optimizeText(text);
-            return textoOptimizado;
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.error?.message || `Error ${response.status}`);
         }
-        throw new Error('Respuesta vacía');
+
+        const data = await response.json();
+        let text = data.choices?.[0]?.message?.content || '';
+
+        if (text && text.length > 20) {
+            document.getElementById('cfStatus').textContent = '✅ Activo';
+            document.getElementById('cfStatus').style.color = '#10b981';
+            document.getElementById('liveBadge').textContent = '🌐 24/7';
+            actualizarProgress(80);
+            // Optimizar con WebAssembly
+            return wasm.cleanText(text);
+        }
+        throw new Error('respuesta vacía');
     } catch(e) {
-        console.warn('⚠️ Error en llamada IA:', e.message);
-        cloudflareConectado = true;
-        document.getElementById('cfStatus').textContent = '✅';
-        document.getElementById('liveBadge').textContent = '☁️ 24/7';
+        console.warn('⚠️ Error en llamada Mistral:', e.message);
+        document.getElementById('cfStatus').textContent = '⚠️ Error';
+        document.getElementById('cfStatus').style.color = '#f59e0b';
         return null;
     }
 }
@@ -653,10 +675,43 @@ Empieza con "🏛️ DIAGNÓSTICO POLÍTICO" y termina con "🏁 CONCLUSIÓN".`;
 // ============================================
 // HERRAMIENTAS (CON BOTÓN DE TEMAS RELACIONADOS)
 // ============================================
+window.cargarTemasPoliticos = async function(btn, tema) {
+    const container = document.getElementById('temasContainerModal');
+    const textoDiv = document.getElementById('temasTextoModal');
+    
+    btn.disabled = true;
+    btn.textContent = '⏳ cargando...';
+    container.classList.add('visible');
+    textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
+    actualizarProgress(10);
+    
+    try {
+        const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
+        const temas = await llamarIAConContexto(prompt, tema);
+        actualizarProgress(80);
+        if (temas && temas.length > 10) {
+            textoDiv.innerHTML = temas;
+            actualizarProgress(100);
+            showToast('✅ temas relacionados cargados');
+        } else {
+            textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
+            actualizarProgress(0);
+        }
+    } catch (e) {
+        textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
+        actualizarProgress(0);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '💡 cargar temas relacionados';
+    }
+};
+
 async function herramienta(prompt, titulo) {
-    if (procesando) { showToast('⏳ espera a que termine el análisis actual', true); return; }
+    if (procesando || ocupado) { showToast('⏳ espera a que termine el análisis actual', true); return; }
     procesando = true;
+    ocupado = true;
     showToast(`⏳ ${titulo}...`);
+    actualizarProgress(10);
     
     const qh = prompt.substring(0, 50).toLowerCase();
     let analisis = await cache.getCachedAnalysis(qh);
@@ -667,6 +722,7 @@ async function herramienta(prompt, titulo) {
         await cache.cacheAnalysis(qh, analisis);
     }
     
+    actualizarProgress(80);
     ultimoAnalisis = analisis;
     const stats = wasm.getStats();
     
@@ -675,7 +731,7 @@ async function herramienta(prompt, titulo) {
     modal.innerHTML = `
         <div class="modal-content">
             <h3>${titulo}</h3>
-            <div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;"></div>
+            <div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;">${analisis}</div>
             <button class="temas-btn" onclick="cargarTemasPoliticos(this, '${prompt.substring(0, 50)}')" style="margin-top:10px;">💡 cargar temas relacionados</button>
             <div class="temas-container" id="temasContainerModal">
                 <div class="titulo">📌 temas relacionados:</div>
@@ -684,42 +740,13 @@ async function herramienta(prompt, titulo) {
             <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">cerrar</button>
         </div>`;
     document.body.appendChild(modal);
-    
-    const textoDiv = modal.querySelector('#modalTexto');
-    await typeWriter(textoDiv, analisis, 15);
+    actualizarProgress(100);
     actualizarWidgets(titulo, analisis);
     showToast(`📊 ${titulo} · ${analisis.length} caracteres · WASM (${stats.optimizaciones} optimizaciones) · 🇨🇳`);
     procesando = false;
+    ocupado = false;
+    setTimeout(() => actualizarProgress(0), 2000);
 }
-
-// ============================================
-// FUNCIÓN PARA CARGAR TEMAS RELACIONADOS (BAJO DEMANDA)
-// ============================================
-window.cargarTemasPoliticos = async function(btn, tema) {
-    const container = document.getElementById('temasContainerModal');
-    const textoDiv = document.getElementById('temasTextoModal');
-    
-    btn.disabled = true;
-    btn.textContent = '⏳ cargando...';
-    container.classList.add('visible');
-    textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
-    
-    try {
-        const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
-        const temas = await llamarIAConContexto(prompt, tema);
-        if (temas && temas.length > 10) {
-            textoDiv.innerHTML = temas;
-            showToast('✅ temas relacionados cargados');
-        } else {
-            textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
-        }
-    } catch (e) {
-        textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
-    } finally {
-        btn.disabled = false;
-        btn.textContent = '💡 cargar temas relacionados';
-    }
-};
 
 document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 discurso`); };
 document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 análisis`); };
@@ -786,20 +813,46 @@ document.getElementById('btnTermuxStatus').addEventListener('click', () => {
     const stats = wasm.getStats();
     mostrarModal('🔌 estado', 
         `=== ESTADO DEL SISTEMA ===\n` +
-        `⚡ Cloudflare AI: ✅ Conectado (Sin caídas)\n` +
+        `⚡ Mistral AI: ✅ Conectado (Sin Cloudflare)\n` +
         `⚡ WebAssembly: ${wasm.initialized ? '✅ Activo' : '⚠️ No disponible'}\n` +
         `📊 Optimizaciones: ${stats.optimizaciones}\n` +
         `⏱️ Tiempo WASM: ${Math.round(stats.tiempoTotal)}ms\n` +
         `💾 Caché: ${cache.getStats().total} entradas\n` +
         `📚 Fuentes: 12 activas\n` +
+        `📌 Modo: ${modoActual === 'experto' ? '🧠 Experto (4000 tokens)' : '⚡ Básico (1500 tokens)'}\n` +
         `🇨🇳 Enfoque: ${PAIS_FIJO}`
     );
 });
 
 // ============================================
-// CHAT (CON BOTÓN DE TEMAS RELACIONADOS)
+// SELECTOR DE MODO
+// ============================================
+document.querySelectorAll('.modo-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.modo-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        modoActual = this.dataset.modo;
+        const indicator = document.getElementById('modoActualIndicator');
+        if (modoActual === 'experto') {
+            indicator.textContent = '🧠 Experto (4000 tokens)';
+            indicator.className = 'modo-activo-indicator modo-experto';
+            document.getElementById('modoStatus').textContent = '🧠 Experto';
+            document.getElementById('modoStatus').style.color = '#1e4a6e';
+        } else {
+            indicator.textContent = '⚡ Básico (1500 tokens)';
+            indicator.className = 'modo-activo-indicator modo-basico';
+            document.getElementById('modoStatus').textContent = '⚡ Básico';
+            document.getElementById('modoStatus').style.color = '#f97316';
+        }
+        showToast(`✨ Modo ${modoActual === 'experto' ? 'EXPERTO' : 'BÁSICO'}`);
+    });
+});
+
+// ============================================
+// CHAT
 // ============================================
 const chatMessages = document.getElementById('chatMessages'), chatInput = document.getElementById('chatInput'), chatSendBtn = document.getElementById('chatSendBtn');
+
 function addMessage(text, isUser) { 
     const d = document.createElement('div'); 
     d.className = `message ${isUser ? 'user-message' : 'ai-message'}`; 
@@ -810,7 +863,7 @@ function addMessage(text, isUser) {
     if (!isUser) {
         const id = Date.now();
         b.innerHTML = `
-            <div id="msgText_${id}"></div>
+            <div id="msgText_${id}">${text}</div>
             <button class="temas-btn" onclick="cargarTemasPoliticosChat(this, '${text.substring(0, 50)}', '${id}')" style="margin-top:8px;">💡 cargar temas relacionados</button>
             <div class="temas-container" id="temasContainer_${id}">
                 <div class="titulo">📌 temas relacionados:</div>
@@ -820,8 +873,6 @@ function addMessage(text, isUser) {
         d.appendChild(b);
         chatMessages.appendChild(d);
         chatMessages.scrollTop = chatMessages.scrollHeight;
-        const textoDiv = b.querySelector(`#msgText_${id}`);
-        typeWriter(textoDiv, text, 15);
     } else {
         b.textContent = text;
         d.appendChild(b);
@@ -838,18 +889,23 @@ window.cargarTemasPoliticosChat = async function(btn, tema, id) {
     btn.textContent = '⏳ cargando...';
     container.classList.add('visible');
     textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
+    actualizarProgress(10);
     
     try {
         const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
         const temas = await llamarIAConContexto(prompt, tema);
+        actualizarProgress(80);
         if (temas && temas.length > 10) {
             textoDiv.innerHTML = temas;
+            actualizarProgress(100);
             showToast('✅ temas relacionados cargados');
         } else {
             textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
+            actualizarProgress(0);
         }
     } catch (e) {
         textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
+        actualizarProgress(0);
     } finally {
         btn.disabled = false;
         btn.textContent = '💡 cargar temas relacionados';
@@ -862,6 +918,7 @@ function removeTyping() { const t = document.getElementById('_t'); if (t) t.remo
 async function handleSend() {
     const q = chatInput.value.trim(); if (!q || procesando) return;
     addMessage(q, true); chatInput.value = ''; procesando = true; chatSendBtn.disabled = true; showTyping();
+    actualizarProgress(10);
     try {
         const qh = q.substring(0, 50).toLowerCase(); 
         let analisis = await cache.getCachedAnalysis(qh);
@@ -870,14 +927,18 @@ async function handleSend() {
             if (!analisis) analisis = `📊 análisis sobre: ${q}. el liderazgo transformador requiere visión, integridad y ejecución.`; 
             await cache.cacheAnalysis(qh, analisis);
         }
+        actualizarProgress(80);
         ultimoAnalisis = analisis; 
         removeTyping(); 
         addMessage(analisis, false); 
         actualizarWidgets(q, analisis); 
+        actualizarProgress(100);
         showToast(`📊 análisis · ${analisis.length} caracteres · WASM (${wasm.getStats().optimizaciones} optimizaciones) · 🇨🇳`);
+        setTimeout(() => actualizarProgress(0), 2000);
     } catch(e) { 
         removeTyping(); 
         addMessage('📊 el liderazgo requiere visión, integridad y ejecución.', false); 
+        actualizarProgress(0);
     }
     procesando = false; chatSendBtn.disabled = false; chatInput.focus();
 }
@@ -885,22 +946,15 @@ chatSendBtn.addEventListener('click', handleSend);
 chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
 
 // ============================================
-// MODOS E INICIALIZACIÓN
+// INICIALIZACIÓN
 // ============================================
-function actualizarModoUI() { document.querySelectorAll('.modo-btn').forEach(b => b.classList.toggle('active', b.dataset.modo === modo)); }
-document.querySelectorAll('.modo-btn').forEach(b => { b.addEventListener('click', () => { modo = b.dataset.modo; localStorage.setItem('presidencial_modo', modo); actualizarModoUI(); showToast(`✨ modo ${modo === 'experto' ? 'experto' : 'básico'}`); }); });
-actualizarModoUI();
-
-async function verificarCloudflare() { try { const r = await fetch(CLOUDFLARE_AI_URL); if (r.ok) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; document.getElementById('liveBadge').textContent = '☁️ 24/7'; } } catch(e) { cloudflareConectado = true; document.getElementById('cfStatus').textContent = '✅'; } }
-
 function init() { 
     console.log(`🇨🇳 enfoque geográfico fijo: ${PAIS_FIJO}`);
     console.log(`⚡ WebAssembly: ${wasm.initialized ? '✅ Activo' : '⚠️ No disponible'}`);
+    console.log(`🧠 Modo Experto: 4000 tokens | ⚡ Modo Básico: 1500 tokens`);
     actualizarMetricas(); 
     actualizarWidgets('bienvenida', '403M LECTOR · 12 fuentes · indexedDB · WASM'); 
-    verificarCloudflare(); 
-    setInterval(verificarCloudflare, 60000); 
-    showToast(`☁️ perfil presidencial · cloudflare ai · wasm · 12 fuentes · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO}`); 
+    showToast(`☁️ perfil presidencial · Mistral AI · wasm · 12 fuentes · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO}`); 
 }
 init();
 </script>
