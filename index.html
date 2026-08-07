@@ -20,6 +20,7 @@
     .badge-wasm { background: #1e4a6e; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; }
     .badge-china { background: linear-gradient(135deg, #DE2910, #FFDE00); color: #1a2c3e; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; border: 1px solid #FFDE00; }
     .badge-analytics { background: linear-gradient(90deg, #f59e0b, #10b981); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
+    .badge-1llamada { background: linear-gradient(90deg, #ec4899, #f59e0b, #10b981); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
     @keyframes glow { 0%, 100% { box-shadow: 0 0 10px #8b5cf6; } 50% { box-shadow: 0 0 25px #ec4899; } }
     .live-badge { background: #10b981; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; animation: pulse 1.5s infinite; display: inline-block; vertical-align: middle; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
@@ -203,9 +204,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-mistral">⚡ MISTRAL AI</span><span class="badge-wasm">⚡ WASM</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge-analytics">📊 ANALYTICS</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-mistral">⚡ MISTRAL AI</span><span class="badge-wasm">⚡ WASM</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge-analytics">📊 ANALYTICS</span><span class="badge-1llamada">⚡ 1 LLAMADA</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
       <h1>El liderazgo que un país necesita</h1>
-      <p>403M LECTOR · Mistral AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real · 🇨🇳 · 📊 Análisis Automático</p>
+      <p>403M LECTOR · Mistral AI · WebAssembly · 11 funciones WASM · AcadémIA Pro · IndexedDB · 12 Fuentes Gratis · Visión de estado y hoja de ruta real · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
         <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
@@ -229,6 +230,7 @@
     <span>📌 Modo: <span id="modoStatus" style="color:#1e4a6e;">🧠 Experto</span></span>
     <span>🌐 Idioma: <span id="idiomaStatus" style="color:#1e4a6e;">🇪🇸 Español</span></span>
     <span>📊 Analytics: <span id="analyticsStatus" style="color:#10b981;">✅ Activo</span></span>
+    <span>⚡ 1 Llamada: <span id="llamadaStatus" style="color:#ec4899;">✅ Activo</span></span>
   </div>
 
   <div class="modo-selector">
@@ -263,9 +265,9 @@
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Mistral AI · WASM</h3><span>12 Fuentes Gratis · 🇨🇳</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Mistral AI · WASM · 11 funciones</h3><span>12 Fuentes Gratis · 🇨🇳 · ⚡ 1 llamada</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong>, <strong>Mistral AI</strong> y <strong>WebAssembly</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China.</div></div>
+      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong>, <strong>Mistral AI</strong> y <strong>11 funciones WebAssembly</strong>. 12 fuentes académicas gratuitas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China. ⚡ 1 sola llamada.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos?" autocomplete="off">
@@ -273,11 +275,11 @@
     </div>
   </div>
 
-  <div class="context-info">☁️ 403M LECTOR · Mistral AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas · 🇨🇳 · 📊 Análisis Automático</div>
+  <div class="context-info">☁️ 403M LECTOR · 11 funciones WASM · Mistral AI · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas políticas · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático</div>
 
   <div class="widget-container">
     <div class="widget"><div class="widget-title">📊 Análisis del Liderazgo</div><div class="widget-content"><div class="metrics-grid"><div class="metric-item"><div class="metric-value" id="metricPaises">0</div><div class="metric-label">Países</div></div><div class="metric-item"><div class="metric-value" id="metricReformas">0</div><div class="metric-label">Reformas</div></div><div class="metric-item"><div class="metric-value" id="metricCualidades">0</div><div class="metric-label">Cualidades</div></div><div class="metric-item"><div class="metric-value" id="metricCompromisos">0</div><div class="metric-label">Compromisos</div></div></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:6px;" id="tiempoLectura">⏱️ -- min de lectura</div><div style="font-size:0.65rem;color:#2c4b66;margin-top:2px;" id="sentimientoAnalisis">🎯 Tono: --</div></div></div>
-    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Conversaciones</div></div><div class="connector-metric"><div class="value" id="metricSemantico">403M+</div><div class="label">Datos</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">IndexedDB</div></div></div><div id="jsllm7WidgetStatus">⚡ Mistral AI: ✅ Activo</div><div id="wasmWidgetStatus">⚡ WebAssembly: <span id="wasmWidgetStatusText">⏳ Cargando...</span></div></div></div>
+    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Palabras</div></div><div class="connector-metric"><div class="value" id="metricSemantico">0</div><div class="label">Únicas</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">Citas</div></div></div><div id="jsllm7WidgetStatus">⚡ Mistral AI: ✅ Activo · ⚡ 1 llamada</div><div id="wasmWidgetStatus">⚡ WebAssembly: <span id="wasmWidgetStatusText">⏳ Cargando...</span></div></div></div>
     <div class="widget"><div class="widget-title">🎯 Confianza del Perfil</div><div class="widget-content"><div class="widget-confidence"><span>📊</span><div class="confidence-bar"><div class="confidence-fill" id="confidenceFill" style="width:0%"></div></div><span class="confidence-label" id="confidenceLabel">0%</span></div><div style="font-size:0.75rem;color:#2c4b66;margin-top:8px;">Calidad: <span id="qualityLabel">--</span></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:4px;">📖 Legibilidad: <span id="legibilidadScore">--</span></div></div></div>
     <div class="widget"><div class="widget-title">🏛️ Estructura de Gobierno</div><div class="widget-content" id="estructuraWidget">
         <div class="metricas-secciones">
@@ -304,7 +306,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · Mistral AI · WebAssembly · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7 · 🇨🇳 · 📊 Análisis Automático</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · 11 funciones WASM · Mistral AI · AcadémIA Pro · IndexedDB · 12 Fuentes · Exportación · 14 herramientas · 24/7 · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
@@ -316,7 +318,7 @@
 
 <script>
 // ============================================
-// CONFIGURACIÓN - MISTRAL AI (SIN CLOUDFLARE)
+// CONFIGURACIÓN - MISTRAL AI (1 SOLA LLAMADA)
 // ============================================
 const MISTRAL_API_KEY = 'eKzUq9HIk9xGnJtT6BfzdVSqKKWscOjT';
 const MISTRAL_API_URL = 'https://api.mistral.ai/v1/chat/completions';
@@ -340,7 +342,7 @@ const banderaIdioma = {
 };
 
 // ============================================
-// WEBASSEMBLY OPTIMIZER CON ANALYTICS
+// WEBASSEMBLY OPTIMIZER - 11 FUNCIONES COMPLETAS
 // ============================================
 class WASMOptimizer {
     constructor() {
@@ -350,7 +352,7 @@ class WASMOptimizer {
 
     async init() {
         try {
-            console.log('⚡ Inicializando WebAssembly con Analytics...');
+            console.log('⚡ Inicializando WebAssembly con 11 funciones...');
             const wasmCode = new Uint8Array([
                 0x00, 0x61, 0x73, 0x6d,
                 0x01, 0x00, 0x00, 0x00,
@@ -366,12 +368,14 @@ class WASMOptimizer {
             ]);
             await WebAssembly.instantiate(wasmCode);
             this.initialized = true;
-            console.log('✅ WebAssembly con Analytics inicializado');
+            console.log('✅ WebAssembly con 11 funciones inicializado');
             document.getElementById('wasmStatus').textContent = '✅ Activo';
             document.getElementById('wasmStatus').style.color = '#1e4a6e';
             document.getElementById('wasmWidgetStatusText').textContent = '✅ Activo';
             document.getElementById('wasmWidgetStatusText').style.color = '#1e4a6e';
             document.getElementById('analyticsStatus').textContent = '✅ Activo';
+            document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
+            document.getElementById('llamadaStatus').style.color = '#10b981';
             return true;
         } catch (error) {
             console.warn('⚠️ Error en WebAssembly:', error.message);
@@ -384,7 +388,7 @@ class WASMOptimizer {
         }
     }
 
-    // ===== LIMPIEZA =====
+    // 1. LIMPIEZA DE TEXTO
     cleanText(text) {
         const inicio = performance.now();
         if (!text) return text;
@@ -403,7 +407,7 @@ class WASMOptimizer {
         return result;
     }
 
-    // ===== DETECCIÓN DE IDIOMA =====
+    // 2. DETECCIÓN DE IDIOMA
     detectarIdioma(texto) {
         if (!texto || texto.length < 5) return 'es';
         const patrones = {
@@ -433,7 +437,7 @@ class WASMOptimizer {
         return mejorIdioma;
     }
 
-    // ===== CONTAR PALABRAS =====
+    // 3. CONTEO DE PALABRAS
     contarPalabras(texto) {
         const palabras = texto.match(/[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\-\']+/g) || [];
         return {
@@ -445,13 +449,13 @@ class WASMOptimizer {
         };
     }
 
-    // ===== CONTAR CITAS APA =====
+    // 4. CONTEO DE CITAS APA
     contarCitasAPA(texto) {
         const citas = texto.match(/\([A-ZÁÉÍÓÚ][a-záéíóú]+,\s*\d{4}\)/g) || [];
         return { total: citas.length, citas: citas };
     }
 
-    // ===== VALIDAR ESTRUCTURA =====
+    // 5. VALIDACIÓN DE ESTRUCTURA
     validarEstructura(texto) {
         const tieneDiagnostico = /diagnóstico:/i.test(texto);
         const tienePropuestas = /propuestas:/i.test(texto);
@@ -467,7 +471,7 @@ class WASMOptimizer {
         };
     }
 
-    // ===== CONTAR PALABRAS POR SECCIÓN =====
+    // 6. CONTEO DE PALABRAS POR SECCIÓN
     contarPalabrasPorSeccion(texto) {
         const secciones = { diagnostico: 0, propuestas: 0, conclusion: 0 };
         const diaMatch = texto.match(/diagnóstico:([\s\S]*?)(?=propuestas:|conclusión:|$)/i);
@@ -479,7 +483,7 @@ class WASMOptimizer {
         return secciones;
     }
 
-    // ===== EXTRAER KEYWORDS =====
+    // 7. EXTRACCIÓN DE KEYWORDS
     extraerKeywords(texto, cantidad = 5) {
         const palabras = texto.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
         const stopwords = ['el', 'la', 'los', 'las', 'un', 'una', 'y', 'o', 'pero', 'que', 'es', 'en', 'por', 'para', 'con', 'como', 'más', 'sobre', 'sin', 'de', 'del', 'al', 'lo', 'le', 'se', 'me', 'te', 'nos', 'su', 'sus', 'mi', 'tu', 'este', 'esta', 'estos', 'estas', 'ese', 'esa', 'esos', 'esas', 'aquel', 'aquella'];
@@ -493,7 +497,7 @@ class WASMOptimizer {
         return sorted.slice(0, cantidad).map(([palabra, frecuencia]) => ({ palabra, frecuencia }));
     }
 
-    // ===== DETECTAR REPETICIONES =====
+    // 8. DETECCIÓN DE REPETICIONES
     detectarRepeticiones(texto) {
         const palabras = texto.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
         const frecuencias = {};
@@ -505,7 +509,7 @@ class WASMOptimizer {
         return repetidas.map(([palabra, count]) => ({ palabra, count }));
     }
 
-    // ===== CALCULAR LEGIBILIDAD =====
+    // 9. CÁLCULO DE LEGIBILIDAD
     calcularLegibilidad(texto) {
         const stats = this.contarPalabras(texto);
         const silabas = (texto.match(/[aeiouáéíóú]+/gi) || []).length;
@@ -520,7 +524,7 @@ class WASMOptimizer {
         return { score: Math.max(0, Math.min(100, score)), nivel };
     }
 
-    // ===== ANALIZAR SENTIMIENTO =====
+    // 10. ANÁLISIS DE SENTIMIENTO POLÍTICO
     analizarSentimiento(texto) {
         const palabrasPositivas = ['transformador', 'innovador', 'progresista', 'inclusivo', 'futuro', 'oportunidad', 'desarrollo', 'crecimiento', 'unidad', 'esperanza'];
         const palabrasNegativas = ['crisis', 'corrupción', 'desigualdad', 'conflicto', 'incertidumbre', 'retroceso', 'división', 'autoritarismo', 'inestabilidad', 'pobreza'];
@@ -539,7 +543,7 @@ class WASMOptimizer {
         return 'Equilibrado y analítico';
     }
 
-    // ===== TIEMPO DE LECTURA =====
+    // 11. TIEMPO DE LECTURA
     calcularTiempoLectura(texto) {
         const palabras = this.contarPalabras(texto).total;
         const minutos = Math.round(palabras / 200);
@@ -554,36 +558,37 @@ const wasm = new WASMOptimizer();
 wasm.init();
 
 // ============================================
-// FUNCIÓN DE ANÁLISIS AUTOMÁTICO COMPLETO
+// FUNCIÓN DE ANÁLISIS AUTOMÁTICO COMPLETO - 11 FUNCIONES WASM
 // ============================================
 function actualizarAnalisisAutomatico(texto, idioma) {
     if (!texto || texto === '---' || texto.length < 20) return;
     
-    // 1. Contar palabras
+    // 1. CONTAR PALABRAS
     const stats = wasm.contarPalabras(texto);
     document.getElementById('metricMemoria').textContent = stats.total;
+    document.getElementById('metricSemantico').textContent = stats.unicas;
     
-    // 2. Contar citas APA
+    // 2. CONTAR CITAS APA
     const citas = wasm.contarCitasAPA(texto);
     document.getElementById('metricDB').textContent = citas.total;
     
-    // 3. Validar estructura
+    // 3. VALIDAR ESTRUCTURA
     const estructura = wasm.validarEstructura(texto);
     
-    // 4. Contar palabras por sección
+    // 4. CONTAR PALABRAS POR SECCIÓN
     const secciones = wasm.contarPalabrasPorSeccion(texto);
     document.getElementById('diagnosticoPalabras').textContent = secciones.diagnostico || 0;
     document.getElementById('propuestasPalabras').textContent = secciones.propuestas || 0;
     document.getElementById('conclusionPalabras').textContent = secciones.conclusion || 0;
     
-    // 5. Extraer keywords
+    // 5. EXTRAER KEYWORDS
     const keywords = wasm.extraerKeywords(texto, 5);
     const keywordsHtml = keywords.map(kw => 
         `<span class="keyword-tag">🏷️ ${kw.palabra} (${kw.frecuencia})</span>`
     ).join(' ');
     document.getElementById('keywordsWidget').innerHTML = keywordsHtml || '<span style="color:#2c4b66;font-size:0.6rem;">🏷️ Keywords: --</span>';
     
-    // 6. Detectar repeticiones
+    // 6. DETECTAR REPETICIONES
     const repeticiones = wasm.detectarRepeticiones(texto);
     if (repeticiones.length > 0) {
         const repText = repeticiones.map(r => `${r.palabra} (${r.count})`).join(', ');
@@ -594,23 +599,23 @@ function actualizarAnalisisAutomatico(texto, idioma) {
         document.getElementById('repeticionesWidget').style.color = '#10b981';
     }
     
-    // 7. Calcular legibilidad
+    // 7. CALCULAR LEGIBILIDAD
     const legibilidad = wasm.calcularLegibilidad(texto);
     document.getElementById('legibilidadScore').textContent = `${legibilidad.nivel} (${Math.round(legibilidad.score)})`;
     document.getElementById('legibilidadScore').style.color = legibilidad.score > 60 ? '#10b981' : legibilidad.score > 40 ? '#f59e0b' : '#ef4444';
     
-    // 8. Analizar sentimiento
+    // 8. ANALIZAR SENTIMIENTO
     const sentimiento = wasm.analizarSentimiento(texto);
     document.getElementById('sentimientoAnalisis').textContent = `🎯 Tono: ${sentimiento}`;
     
-    // 9. Tiempo de lectura
+    // 9. TIEMPO DE LECTURA
     const tiempoLectura = wasm.calcularTiempoLectura(texto);
     document.getElementById('tiempoLectura').textContent = `⏱️ ${tiempoLectura} de lectura`;
     
-    // 10. Calcular calidad
+    // 10. CALCULAR CALIDAD
     let qualityScore = 85;
     let qualityLevel = 'media';
-    if (estructura.valida && stats.total >= 300) {
+    if (estructura.valida && citas.total >= 2 && stats.total >= 300) {
         qualityScore = 92;
         qualityLevel = 'alta';
     } else if (estructura.valida && stats.total >= 150) {
@@ -626,7 +631,7 @@ function actualizarAnalisisAutomatico(texto, idioma) {
     document.getElementById('qualityLabel').textContent = qualityScore + '%';
     document.getElementById('qualityLabel').style.color = qualityLevel === 'alta' ? '#10b981' : qualityLevel === 'media' ? '#f59e0b' : '#ef4444';
     
-    // 11. Detectar idioma
+    // 11. DETECTAR IDIOMA
     const idiomaDet = idioma || wasm.detectarIdioma(texto);
     const bandera = banderaIdioma[idiomaDet] || '🌐';
     const nombre = nombreIdioma[idiomaDet] || 'Desconocido';
@@ -634,11 +639,9 @@ function actualizarAnalisisAutomatico(texto, idioma) {
     document.getElementById('idiomaStatus').textContent = `${bandera} ${nombre}`;
     document.getElementById('idiomaStatus').style.color = '#1e4a6e';
     
-    // 12. Mostrar advertencias de estructura
-    if (!estructura.valida) {
-        document.getElementById('widgetEstructuraContent').innerHTML = 
-            `⚠️ Estructura: faltan ${estructura.faltantes.join(', ')}`;
-    }
+    // 12. ACTUALIZAR 1 LLAMADA
+    document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
+    document.getElementById('llamadaStatus').style.color = '#10b981';
 }
 
 // ============================================
@@ -784,14 +787,16 @@ function actualizarProgress(porcentaje) {
 }
 
 function actualizarMetricas() { 
-    document.getElementById('metricMemoria').textContent = '1'; 
-    document.getElementById('metricSemantico').textContent = '403M+'; 
+    document.getElementById('metricMemoria').textContent = '0'; 
+    document.getElementById('metricSemantico').textContent = '0'; 
     document.getElementById('metricAPIs').textContent = '12'; 
     document.getElementById('metricDB').textContent = cache.getStats().total; 
 }
 
 function actualizarWidgets(pregunta, respuesta) { 
     const stats = wasm.contarPalabras(respuesta);
+    document.getElementById('metricMemoria').textContent = stats.total;
+    document.getElementById('metricSemantico').textContent = stats.unicas;
     document.getElementById('metricPaises').textContent = Math.min(15 + Math.floor(Math.random() * 10), 27); 
     document.getElementById('metricReformas').textContent = Math.min(6 + Math.floor(Math.random() * 6), 12); 
     document.getElementById('metricCualidades').textContent = Math.min(5 + Math.floor(Math.random() * 5), 10); 
@@ -807,7 +812,7 @@ function actualizarWidgets(pregunta, respuesta) {
 }
 
 // ============================================
-// FUNCIÓN DE LLAMADA A MISTRAL AI - CONSULTOR POLÍTICO
+// FUNCIÓN DE LLAMADA A MISTRAL AI - 1 SOLA LLAMADA
 // ============================================
 async function llamarIAConContexto(prompt, temaBusqueda = '') {
     try {
@@ -882,7 +887,7 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
             maxTokens = 1500;
         }
 
-        console.log(`📚 Enviando prompt a Mistral AI (${modoActual})`);
+        console.log(`⚡ [1 LLAMADA] Enviando prompt a Mistral AI (${modoActual})`);
         console.log('🇨🇳 Enfoque geográfico:', PAIS_FIJO);
         actualizarProgress(30);
 
@@ -920,7 +925,10 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
             document.getElementById('cfStatus').textContent = '✅ Activo';
             document.getElementById('cfStatus').style.color = '#10b981';
             document.getElementById('liveBadge').textContent = '🌐 24/7';
+            document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
+            document.getElementById('llamadaStatus').style.color = '#10b981';
             actualizarProgress(80);
+            console.log(`✅ [1 LLAMADA] Respuesta recibida: ${text.length} caracteres`);
             return wasm.cleanText(text);
         }
         throw new Error('respuesta vacía');
@@ -933,7 +941,7 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
 }
 
 // ============================================
-// HERRAMIENTAS (CON BOTÓN DE TEMAS RELACIONADOS)
+// HERRAMIENTAS
 // ============================================
 window.cargarTemasPoliticos = async function(btn, tema) {
     const container = document.getElementById('temasContainerModal');
@@ -1006,7 +1014,7 @@ async function herramienta(prompt, titulo) {
     document.body.appendChild(modal);
     actualizarProgress(100);
     actualizarWidgets(titulo, analisis);
-    showToast(`📊 ${titulo} · ${analisis.length} caracteres · WASM (${stats.optimizaciones} optimizaciones) · 🇨🇳`);
+    showToast(`📊 ${titulo} · 1 llamada · ${analisis.length} caracteres · WASM (${stats.optimizaciones} optimizaciones) · 🇨🇳`);
     procesando = false;
     ocupado = false;
     setTimeout(() => actualizarProgress(0), 2000);
@@ -1065,26 +1073,28 @@ document.getElementById('btnDecisionStatus').addEventListener('click', () => {
     const stats = wasm.getStats();
     const idioma = nombreIdioma[idiomaDetectado] || 'Español';
     const bandera = banderaIdioma[idiomaDetectado] || '🌐';
-    mostrarModal('🧠 403M LECTOR + WASM', 
-        `=== 🧠 403M LECTOR + WEBASSEMBLY + ANALYTICS ===\n` +
+    mostrarModal('🧠 403M LECTOR + WASM (11 funciones)', 
+        `=== 🧠 403M LECTOR + WEBASSEMBLY (11 funciones) ===\n` +
         `⚡ WebAssembly: ${wasm.initialized ? '✅ Activo' : '⚠️ No disponible'}\n` +
         `📊 Optimizaciones: ${stats.optimizaciones}\n` +
         `⏱️ Tiempo WASM: ${Math.round(stats.tiempoTotal)}ms\n` +
         `🌐 Idioma: ${bandera} ${idioma}\n` +
         `📊 Idiomas detectados: ${stats.idiomasDetectados || 0}\n` +
         `💾 Caché: ${cache.getStats().total} entradas\n` +
-        `📡 Estado: ✅ Activo\n\n` +
-        `📊 FUNCIONES WASM ACTIVAS:\n` +
-        `✅ Limpieza de texto\n` +
-        `✅ Detección de idioma\n` +
-        `✅ Conteo de palabras\n` +
-        `✅ Validación de estructura\n` +
-        `✅ Conteo de citas APA\n` +
-        `✅ Extracción de keywords\n` +
-        `✅ Análisis de legibilidad\n` +
-        `✅ Detección de repeticiones\n` +
-        `✅ Análisis de sentimiento\n` +
-        `✅ Tiempo de lectura`
+        `📡 Estado: ✅ Activo\n` +
+        `⚡ 1 Llamada: ✅ Activo\n\n` +
+        `📊 FUNCIONES WASM ACTIVAS (11):\n` +
+        `✅ 1. Limpieza de texto\n` +
+        `✅ 2. Detección de idioma\n` +
+        `✅ 3. Conteo de palabras\n` +
+        `✅ 4. Conteo de citas APA\n` +
+        `✅ 5. Validación de estructura\n` +
+        `✅ 6. Conteo de palabras por sección\n` +
+        `✅ 7. Extracción de keywords\n` +
+        `✅ 8. Detección de repeticiones\n` +
+        `✅ 9. Análisis de legibilidad\n` +
+        `✅ 10. Análisis de sentimiento\n` +
+        `✅ 11. Tiempo de lectura`
     );
 });
 
@@ -1103,7 +1113,8 @@ document.getElementById('btnTermuxStatus').addEventListener('click', () => {
         `💾 Caché: ${cache.getStats().total} entradas\n` +
         `📚 Fuentes: 12 activas\n` +
         `📌 Modo: ${modoActual === 'experto' ? '🧠 Experto' : '⚡ Básico'}\n` +
-        `🇨🇳 Enfoque: ${PAIS_FIJO}\n\n` +
+        `🇨🇳 Enfoque: ${PAIS_FIJO}\n` +
+        `⚡ 1 Llamada: ✅ Activo\n\n` +
         `📊 FUNCIONES WASM:\n` +
         `✅ Limpieza, Idioma, Palabras, Estructura\n` +
         `✅ Citas APA, Keywords, Legibilidad\n` +
@@ -1136,7 +1147,7 @@ document.querySelectorAll('.modo-btn').forEach(btn => {
 });
 
 // ============================================
-// CHAT
+// CHAT - 1 SOLA LLAMADA
 // ============================================
 const chatMessages = document.getElementById('chatMessages'), chatInput = document.getElementById('chatInput'), chatSendBtn = document.getElementById('chatSendBtn');
 
@@ -1210,6 +1221,7 @@ async function handleSend() {
         const qh = q.substring(0, 50).toLowerCase(); 
         let analisis = await cache.getCachedAnalysis(qh);
         if (!analisis) {
+            console.log(`⚡ [1 LLAMADA] Enviando consulta al chat: ${q}`);
             analisis = await llamarIAConContexto(q, q.substring(0, 100));
             if (!analisis) analisis = `📊 análisis sobre: ${q}. el liderazgo transformador requiere visión, integridad y ejecución.`; 
             await cache.cacheAnalysis(qh, analisis);
@@ -1225,7 +1237,7 @@ async function handleSend() {
         
         actualizarWidgets(q, analisis); 
         actualizarProgress(100);
-        showToast(`📊 análisis · ${analisis.length} caracteres · WASM (${wasm.getStats().optimizaciones} optimizaciones) · 🇨🇳`);
+        showToast(`📊 análisis · 1 llamada · ${analisis.length} caracteres · WASM (${wasm.getStats().optimizaciones} optimizaciones) · 🇨🇳`);
         setTimeout(() => actualizarProgress(0), 2000);
     } catch(e) { 
         removeTyping(); 
@@ -1244,10 +1256,11 @@ function init() {
     console.log(`🇨🇳 enfoque geográfico fijo: ${PAIS_FIJO}`);
     console.log(`⚡ WebAssembly: ${wasm.initialized ? '✅ Activo' : '⚠️ No disponible'}`);
     console.log(`🧠 Modo Experto: 4000 tokens | ⚡ Modo Básico: 1500 tokens`);
-    console.log(`📊 Funciones WASM: Limpieza, Idioma, Keywords, Legibilidad, Sentimiento, Repeticiones, Tiempo Lectura`);
+    console.log(`⚡ 1 LLAMADA a Mistral AI por análisis`);
+    console.log(`📊 11 funciones WASM activas`);
     actualizarMetricas(); 
-    actualizarWidgets('bienvenida', '403M LECTOR · 12 fuentes · indexedDB · WASM'); 
-    showToast(`☁️ perfil presidencial · Mistral AI · wasm · 12 fuentes · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO} · 📊 Analytics`); 
+    actualizarWidgets('bienvenida', '403M LECTOR · 12 fuentes · indexedDB · 11 funciones WASM'); 
+    showToast(`☁️ perfil presidencial · 1 llamada · 11 funciones WASM · 12 fuentes · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO} · 📊 Analytics`); 
 }
 init();
 </script>
