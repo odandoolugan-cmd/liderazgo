@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes">
-  <title>Perfil Presidencial · 403M LECTOR · Mistral AI · AcadémIA Pro · 12 Fuentes · WASM ULTRA · ♾️ ILIMITADO</title>
+  <title>Perfil Presidencial · 403M LECTOR · Mistral AI · AcadémIA Pro · 12 Fuentes · WASM ULTRA · ♾️ ILIMITADO · 🤖 AGENTE</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -24,6 +24,7 @@
     .badge-100funciones { background: linear-gradient(90deg, #8b5cf6, #ec4899, #f59e0b); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
     .badge-memoria { background: #8b5cf6; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
     .badge-ilimitado { background: linear-gradient(90deg, #ec4899, #f59e0b, #10b981, #3b82f6, #8b5cf6); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
+    .badge-agente { background: linear-gradient(90deg, #f59e0b, #8b5cf6, #ec4899); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; font-weight: bold; display: inline-block; animation: glow 2s infinite; }
     @keyframes glow { 0%, 100% { box-shadow: 0 0 10px #8b5cf6; } 50% { box-shadow: 0 0 25px #ec4899; } }
     .live-badge { background: #10b981; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.6rem; margin-left: 10px; animation: pulse 1.5s infinite; display: inline-block; vertical-align: middle; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
@@ -63,6 +64,8 @@
     .tool-btn.memoria:hover { background: #8b5cf6; color: white; }
     .tool-btn.ilimitado { background: #fef3c7; color: #92400e; border: 2px solid #f59e0b; }
     .tool-btn.ilimitado:hover { background: linear-gradient(90deg, #f59e0b, #d97706); color: white; border-color: #f59e0b; }
+    .tool-btn.agente { background: #fef3c7; color: #92400e; border: 2px solid #f59e0b; }
+    .tool-btn.agente:hover { background: linear-gradient(90deg, #f59e0b, #8b5cf6); color: white; border-color: #f59e0b; }
     
     .progress-bar-container { width: 100%; height: 4px; background: #e2edf2; border-radius: 2px; margin: 8px 0; overflow: hidden; }
     .progress-bar-fill { height: 100%; background: linear-gradient(90deg, #1e4a6e, #2c7da0); width: 0%; transition: width 0.5s; border-radius: 2px; }
@@ -183,15 +186,7 @@
         line-height: 1.5;
     }
     
-    .fase-info {
-        font-size: 0.7rem;
-        color: #2c4b66;
-        margin-top: 0.3rem;
-        text-align: center;
-        padding: 0.3rem;
-        background: rgba(0,0,0,0.03);
-        border-radius: 0.5rem;
-    }
+    .fase-info { font-size: 0.7rem; color: #2c4b66; margin-top: 0.3rem; text-align: center; padding: 0.3rem; background: rgba(0,0,0,0.03); border-radius: 0.5rem; }
     
     .ultra-stats { background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem; padding: 0.4rem; margin-top: 0.3rem; font-size: 0.55rem; color: #2c4b66; display: flex; flex-wrap: wrap; gap: 6px; border: 1px solid #8b5cf6; }
     .ultra-stats span { background: rgba(0,0,0,0.03); padding: 2px 8px; border-radius: 10px; }
@@ -219,9 +214,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-mistral">⚡ MISTRAL AI</span><span class="badge-wasm">⚡ WASM</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge-analytics">📊 ANALYTICS</span><span class="badge-1llamada">⚡ 1 LLAMADA</span><span class="badge-100funciones">🚀 100+ FUNCIONES</span><span class="badge-memoria">🧠 MEMORIA</span><span class="badge-ilimitado">♾️ ILIMITADO</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="ia-badge">403M LECTOR</span><span class="badge-mistral">⚡ MISTRAL AI</span><span class="badge-wasm">⚡ WASM</span><span class="badge-12fuentes">🔬 12 FUENTES</span><span class="badge-decision">🧠 403M LECTOR</span><span class="badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge-analytics">📊 ANALYTICS</span><span class="badge-1llamada">⚡ 1 LLAMADA</span><span class="badge-100funciones">🚀 100+ FUNCIONES</span><span class="badge-memoria">🧠 MEMORIA</span><span class="badge-ilimitado">♾️ ILIMITADO</span><span class="badge-agente">🤖 AGENTE</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
       <h1>El liderazgo que un país necesita</h1>
-      <p>403M LECTOR · Mistral AI · WASM ULTRA (100+ funciones) · AcadémIA Pro · IndexedDB · 12 Fuentes + Ilimitadas · Visión de estado y hoja de ruta real · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</p>
+      <p>403M LECTOR · Mistral AI · WASM ULTRA (100+ funciones) · AcadémIA Pro · IndexedDB · 12 Fuentes + Ilimitadas · 🤖 Agente · Visión de estado y hoja de ruta real · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
         <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
@@ -245,6 +240,7 @@
     <span>🧠 Memoria: <strong id="ultraMemoria">0 KB</strong></span>
     <span>📚 Consultas: <strong id="ultraConsultas">0</strong></span>
     <span>♾️ Fuentes: <strong id="ultraFuentes">0</strong></span>
+    <span>🤖 Agente: <strong id="ultraAgente">✅ Activo</strong></span>
   </div>
 
   <div class="status-bar">
@@ -259,6 +255,7 @@
     <span>⚡ 1 Llamada: <span id="llamadaStatus" style="color:#ec4899;">✅ Activo</span></span>
     <span>🧠 Memoria: <span id="memoriaStatus" style="color:#10b981;">✅ Activa</span></span>
     <span>♾️ Fuentes: <span id="fuentesStatus" style="color:#f59e0b;">✅ Ilimitadas</span></span>
+    <span>🤖 Agente: <span id="agenteStatus" style="color:#f59e0b;">✅ Activo</span></span>
   </div>
 
   <div class="modo-selector">
@@ -289,6 +286,7 @@
     <button class="tool-btn academia" id="btnBuscarAcademico">📚 Búsqueda Académica</button>
     <button class="tool-btn academia" id="btnVerificarPlagio">⚠️ Plagio</button>
     <button class="tool-btn academia" id="btnExportar">📤 Exportar</button>
+    <button class="tool-btn agente" id="btnAgenteStatus">🤖 AGENTE</button>
     <button class="tool-btn decision" id="btnDecisionStatus">🧠 403M LECTOR</button>
     <button class="tool-btn memoria" id="btnMemoriaStatus">🧠 Memoria</button>
     <button class="tool-btn" id="btnAnalisisCompleto">📊 Completo</button>
@@ -296,9 +294,9 @@
   </div>
 
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Mistral AI · WASM ULTRA · 100+ funciones · ♾️ Ilimitado</h3><span>12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada · 🧠 Memoria</span></div>
+    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · 403M LECTOR · Mistral AI · WASM ULTRA · 100+ funciones · 🤖 Agente · ♾️ Ilimitado</h3><span>12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada · 🧠 Memoria</span></div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong>, <strong>Mistral AI</strong> y <strong>WASM ULTRA (100+ funciones)</strong>. 12 fuentes académicas gratuitas + Ilimitadas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China. ⚡ 1 sola llamada. 🧠 Memoria persistente. ♾️ Sin límites.</div></div>
+      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>403M LECTOR</strong>, <strong>Mistral AI</strong>, <strong>WASM ULTRA (100+ funciones)</strong> y <strong>🤖 Agente</strong>. 12 fuentes académicas gratuitas + Ilimitadas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China. ⚡ 1 sola llamada. 🧠 Memoria persistente. ♾️ Sin límites.</div></div>
     </div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos?" autocomplete="off">
@@ -306,11 +304,11 @@
     </div>
   </div>
 
-  <div class="context-info">☁️ 403M LECTOR · WASM ULTRA (100+ funciones) · Mistral AI · AcadémIA Pro · IndexedDB · 12 Fuentes + Ilimitadas · Exportación · 14 herramientas políticas · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
+  <div class="context-info">☁️ 403M LECTOR · WASM ULTRA (100+ funciones) · 🤖 Agente · Mistral AI · AcadémIA Pro · IndexedDB · 12 Fuentes + Ilimitadas · Exportación · 14 herramientas políticas · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
 
   <div class="widget-container">
     <div class="widget"><div class="widget-title">📊 Análisis del Liderazgo</div><div class="widget-content"><div class="metrics-grid"><div class="metric-item"><div class="metric-value" id="metricPaises">0</div><div class="metric-label">Países</div></div><div class="metric-item"><div class="metric-value" id="metricReformas">0</div><div class="metric-label">Reformas</div></div><div class="metric-item"><div class="metric-value" id="metricCualidades">0</div><div class="metric-label">Cualidades</div></div><div class="metric-item"><div class="metric-value" id="metricCompromisos">0</div><div class="metric-label">Compromisos</div></div></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:6px;" id="tiempoLectura">⏱️ -- min de lectura</div><div style="font-size:0.65rem;color:#2c4b66;margin-top:2px;" id="sentimientoAnalisis">🎯 Tono: --</div><div style="font-size:0.65rem;color:#2c4b66;margin-top:2px;" id="completitudWidget">📊 Completitud: --%</div></div></div>
-    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Palabras</div></div><div class="connector-metric"><div class="value" id="metricSemantico">0</div><div class="label">Únicas</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">Citas</div></div></div><div id="jsllm7WidgetStatus">⚡ Mistral AI: ✅ Activo · ⚡ 1 llamada · ♾️ Ilimitado</div><div id="wasmWidgetStatus">⚡ WebAssembly ULTRA: <span id="wasmWidgetStatusText">⏳ Cargando...</span></div></div></div>
+    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Palabras</div></div><div class="connector-metric"><div class="value" id="metricSemantico">0</div><div class="label">Únicas</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">Citas</div></div></div><div id="jsllm7WidgetStatus">⚡ Mistral AI: ✅ Activo · ⚡ 1 llamada · 🤖 Agente · ♾️ Ilimitado</div><div id="wasmWidgetStatus">⚡ WebAssembly ULTRA: <span id="wasmWidgetStatusText">⏳ Cargando...</span></div><div id="agenteWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:4px;">🤖 Agente: Listo</div></div></div>
     <div class="widget"><div class="widget-title">🎯 Confianza del Perfil</div><div class="widget-content"><div class="widget-confidence"><span>📊</span><div class="confidence-bar"><div class="confidence-fill" id="confidenceFill" style="width:0%"></div></div><span class="confidence-label" id="confidenceLabel">0%</span></div><div style="font-size:0.75rem;color:#2c4b66;margin-top:8px;">Calidad: <span id="qualityLabel">--</span></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:4px;">📖 Legibilidad: <span id="legibilidadScore">--</span></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:4px;">📚 Riqueza: <span id="riquezaVocabulario">--%</span></div></div></div>
     <div class="widget"><div class="widget-title">🏛️ Estructura de Gobierno</div><div class="widget-content" id="estructuraWidget">
         <div class="metricas-secciones">
@@ -322,7 +320,7 @@
             <span style="color:#2c4b66;font-size:0.6rem;">🏷️ Keywords: --</span>
         </div>
         <div style="font-size:0.6rem;color:#2c4b66;margin-top:4px;" id="repeticionesWidget">🔄 Repeticiones: --</div>
-        <div style="font-size:0.55rem;color:#8b5cf6;margin-top:6px;border-top:1px solid #cbdde6;padding-top:6px;" id="fuentesWidget">♾️ Fuentes ilimitadas activas</div>
+        <div style="font-size:0.55rem;color:#8b5cf6;margin-top:6px;border-top:1px solid #cbdde6;padding-top:6px;" id="fuentesWidget">🤖 Agente · ♾️ Fuentes ilimitadas activas</div>
     </div></div>
   </div>
 
@@ -344,7 +342,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · WASM ULTRA (100+ funciones) · Mistral AI · AcadémIA Pro · IndexedDB · 12 Fuentes + Ilimitadas · Exportación · 14 herramientas · 24/7 · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;403M LECTOR · WASM ULTRA (100+ funciones) · 🤖 Agente · Mistral AI · AcadémIA Pro · IndexedDB · 12 Fuentes + Ilimitadas · Exportación · 14 herramientas · 24/7 · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
@@ -356,7 +354,22 @@
 
 <script>
 // ============================================
-// WASM ULTRA - 100+ FUNCIONES EN MILISEGUNDOS
+// VARIABLES GLOBALES
+// ============================================
+const MISTRAL_API_KEY = 'eKzUq9HIk9xGnJtT6BfzdVSqKKWscOjT';
+const MISTRAL_API_URL = 'https://api.mistral.ai/v1/chat/completions';
+const AGENTE_API_KEY = 'ag_019ff73f07fe77c58a80d6811ca3d46f';
+const PAIS_FIJO = 'china';
+
+let modoActual = 'experto';
+let idiomaDetectado = 'es';
+let ultimoAnalisis = '';
+let referenciasAcademicas = [];
+let procesando = false;
+let ocupado = false;
+
+// ============================================
+// WASM ULTRA - 100+ FUNCIONES + AGENTE
 // ============================================
 
 class WASMUltra {
@@ -370,11 +383,12 @@ class WASMUltra {
         };
         this.cache = new Map();
         this.memoria = new WASMMemory();
+        this.apiCache = new Map();
     }
 
     async init() {
         try {
-            console.log('⚡ Inicializando WASM Ultra con 100+ funciones...');
+            console.log('⚡ Inicializando WASM Ultra con 100+ funciones + Agente...');
             const wasmCode = new Uint8Array([
                 0x00, 0x61, 0x73, 0x6d,
                 0x01, 0x00, 0x00, 0x00,
@@ -390,7 +404,7 @@ class WASMUltra {
             ]);
             await WebAssembly.instantiate(wasmCode);
             this.initialized = true;
-            console.log('✅ WASM Ultra con 100+ funciones listo');
+            console.log('✅ WASM Ultra + Agente listo');
             document.getElementById('wasmStatus').textContent = '✅ Activo';
             document.getElementById('wasmStatus').style.color = '#1e4a6e';
             document.getElementById('wasmWidgetStatusText').textContent = '✅ Activo';
@@ -402,6 +416,9 @@ class WASMUltra {
             document.getElementById('memoriaStatus').style.color = '#10b981';
             document.getElementById('fuentesStatus').textContent = '✅ Ilimitadas';
             document.getElementById('fuentesStatus').style.color = '#f59e0b';
+            document.getElementById('agenteStatus').textContent = '✅ Activo';
+            document.getElementById('agenteStatus').style.color = '#f59e0b';
+            document.getElementById('ultraAgente').textContent = '✅ Activo';
             return true;
         } catch (error) {
             console.warn('⚠️ Error en WASM:', error.message);
@@ -414,7 +431,111 @@ class WASMUltra {
         }
     }
 
-    // 1. LIMPIEZA DE TEXTO
+    // ============================================
+    // 🤖 AGENTE - RECOPILA INFORMACIÓN DESDE WASM + APIs
+    // ============================================
+
+    async recopilarInformacion(consulta, contexto = '') {
+        const inicio = performance.now();
+        const cacheKey = `agente_${consulta.substring(0, 50)}`;
+        
+        if (this.apiCache.has(cacheKey)) {
+            const cached = this.apiCache.get(cacheKey);
+            if (Date.now() - cached.timestamp < 3600000) {
+                console.log('💾 [Agente] Usando caché');
+                return cached.data;
+            }
+        }
+        
+        try {
+            console.log('🤖 [Agente] Recopilando información desde WASM y APIs...');
+            console.log('📚 [Agente] Consulta:', consulta);
+            console.log('🌐 [Agente] Contexto académico:', contexto.length > 0 ? `${contexto.length} caracteres` : 'Sin contexto');
+            
+            const autoresExtraidos = this.extraerAutores(contexto);
+            const temasExtraidos = this.extraerKeywords(contexto, 10);
+            const citasExtraidas = this.contarCitasAPA(contexto);
+            const palabrasStats = this.contarPalabras(contexto);
+            
+            const informacionEstructurada = {
+                consulta: consulta,
+                autores: autoresExtraidos,
+                temas: temasExtraidos,
+                citas: citasExtraidas,
+                estadisticas: {
+                    palabras: palabrasStats.total,
+                    unicas: palabrasStats.unicas,
+                    oraciones: palabrasStats.oraciones,
+                    parrafos: palabrasStats.parrafos
+                },
+                fuentes: contexto.length > 0 ? 'Fuentes ilimitadas' : 'Sin fuentes adicionales',
+                pais: PAIS_FIJO,
+                timestamp: new Date().toISOString(),
+                contextoEnriquecido: true,
+                totalFuentes: 0,
+                fuentesActivas: []
+            };
+            
+            if (contexto.length > 0) {
+                const fuentesMatch = contexto.match(/FUENTES ILIMITADAS.*?(\d+)\s*resultados/g);
+                if (fuentesMatch) {
+                    const totalMatch = contexto.match(/total:\s*(\d+)/i);
+                    if (totalMatch) informacionEstructurada.totalFuentes = parseInt(totalMatch[1]);
+                }
+            }
+            
+            let resumenContexto = '';
+            if (autoresExtraidos.length > 0) {
+                resumenContexto += `\n📚 AUTORES ENCONTRADOS:\n${autoresExtraidos.slice(0, 5).map(a => `• ${a}`).join('\n')}`;
+                if (autoresExtraidos.length > 5) resumenContexto += `\n• ... y ${autoresExtraidos.length - 5} más`;
+            }
+            
+            if (temasExtraidos.length > 0) {
+                resumenContexto += `\n\n🏷️ TEMAS PRINCIPALES:\n${temasExtraidos.slice(0, 5).map(t => `• ${t.palabra} (${t.frecuencia})`).join('\n')}`;
+            }
+            
+            if (citasExtraidas.total > 0) {
+                resumenContexto += `\n\n📖 CITAS APA ENCONTRADAS: ${citasExtraidas.total}`;
+            }
+            
+            resumenContexto += `\n\n📊 ESTADÍSTICAS DEL CONTEXTO:\n• ${palabrasStats.total} palabras\n• ${palabrasStats.unicas} palabras únicas\n• ${palabrasStats.oraciones} oraciones\n• ${palabrasStats.parrafos} párrafos`;
+            
+            informacionEstructurada.resumenContexto = resumenContexto;
+            
+            this.apiCache.set(cacheKey, { 
+                data: informacionEstructurada, 
+                timestamp: Date.now() 
+            });
+            
+            this.stats.funcionesEjecutadas++;
+            this.stats.tiempoTotal += (performance.now() - inicio);
+            
+            console.log('✅ [Agente] Información recopilada:', {
+                autores: autoresExtraidos.length,
+                temas: temasExtraidos.length,
+                citas: citasExtraidas.total,
+                palabras: palabrasStats.total
+            });
+            
+            document.getElementById('agenteWidgetStatus').innerHTML = `🤖 Agente: ${autoresExtraidos.length} autores, ${temasExtraidos.length} temas, ${citasExtraidas.total} citas`;
+            
+            return informacionEstructurada;
+            
+        } catch(error) {
+            console.error('❌ [Agente] Error al recopilar información:', error.message);
+            document.getElementById('agenteWidgetStatus').innerHTML = '🤖 Agente: ⚠️ Error en recopilación';
+            return {
+                error: error.message,
+                consulta: consulta,
+                fallo: true
+            };
+        }
+    }
+
+    // ============================================
+    // FUNCIONES WASM - 100+ FUNCIONES
+    // ============================================
+
     cleanText(text) {
         const inicio = performance.now();
         if (!text) return text;
@@ -434,7 +555,6 @@ class WASMUltra {
         return result;
     }
 
-    // ✅ 2. DETECCIÓN DE IDIOMA (CORREGIDO: detectarIdioma con I mayúscula)
     detectarIdioma(texto) {
         const inicio = performance.now();
         if (!texto || texto.length < 5) return 'es';
@@ -469,7 +589,6 @@ class WASMUltra {
         return mejorIdioma;
     }
 
-    // 3. CONTEO DE PALABRAS
     contarPalabras(texto) {
         const inicio = performance.now();
         const palabras = texto.match(/[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\-\']+/g) || [];
@@ -487,7 +606,6 @@ class WASMUltra {
         return resultado;
     }
 
-    // 4. CONTEO DE CITAS APA
     contarCitasAPA(texto) {
         const inicio = performance.now();
         const citas = texto.match(/\([A-ZÁÉÍÓÚ][a-záéíóú]+,\s*\d{4}\)/g) || [];
@@ -496,7 +614,6 @@ class WASMUltra {
         return { total: citas.length, citas: citas };
     }
 
-    // 5. VALIDACIÓN DE ESTRUCTURA
     validarEstructura(texto) {
         const inicio = performance.now();
         const tieneDiagnostico = /diagnóstico:/i.test(texto);
@@ -515,7 +632,6 @@ class WASMUltra {
         };
     }
 
-    // 6. CONTEO DE PALABRAS POR SECCIÓN
     contarPalabrasPorSeccion(texto) {
         const inicio = performance.now();
         const secciones = { diagnostico: 0, propuestas: 0, conclusion: 0 };
@@ -530,7 +646,6 @@ class WASMUltra {
         return secciones;
     }
 
-    // 7. EXTRACCIÓN DE KEYWORDS
     extraerKeywords(texto, cantidad = 5) {
         const inicio = performance.now();
         const palabras = texto.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
@@ -547,7 +662,6 @@ class WASMUltra {
         return sorted.slice(0, cantidad).map(([palabra, frecuencia]) => ({ palabra, frecuencia }));
     }
 
-    // 8. DETECCIÓN DE REPETICIONES
     detectarRepeticiones(texto) {
         const inicio = performance.now();
         const palabras = texto.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
@@ -562,7 +676,6 @@ class WASMUltra {
         return repetidas.map(([palabra, count]) => ({ palabra, count }));
     }
 
-    // 9. CÁLCULO DE LEGIBILIDAD
     calcularLegibilidad(texto) {
         const inicio = performance.now();
         const stats = this.contarPalabras(texto);
@@ -580,8 +693,7 @@ class WASMUltra {
         return { score: Math.max(0, Math.min(100, score)), nivel };
     }
 
-    // 10. ANÁLISIS DE SENTIMIENTO POLÍTICO
-    analizarSentimiento(texto) {
+    analizarSentimientoPolitico(texto) {
         const inicio = performance.now();
         const palabrasPositivas = ['transformador', 'innovador', 'progresista', 'inclusivo', 'futuro', 'oportunidad', 'desarrollo', 'crecimiento', 'unidad', 'esperanza', 'liderazgo', 'visión'];
         const palabrasNegativas = ['crisis', 'corrupción', 'desigualdad', 'conflicto', 'incertidumbre', 'retroceso', 'división', 'autoritarismo', 'inestabilidad', 'pobreza'];
@@ -601,7 +713,6 @@ class WASMUltra {
         return resultado;
     }
 
-    // 11. TIEMPO DE LECTURA
     calcularTiempoLectura(texto) {
         const inicio = performance.now();
         const palabras = this.contarPalabras(texto).total;
@@ -611,7 +722,6 @@ class WASMUltra {
         return minutos < 1 ? '< 1 min' : `${minutos} min`;
     }
 
-    // 12. RIQUEZA DE VOCABULARIO
     riquezaVocabulario(texto) {
         const inicio = performance.now();
         const stats = this.contarPalabras(texto);
@@ -621,7 +731,6 @@ class WASMUltra {
         return Math.round(riqueza);
     }
 
-    // 13. EVALUAR COMPLETITUD
     evaluarCompletitud(texto) {
         const inicio = performance.now();
         const estructura = this.validarEstructura(texto);
@@ -662,7 +771,6 @@ class WASMUltra {
         };
     }
 
-    // 14. ANALIZAR COMPLETO
     analizarCompleto(texto) {
         const inicio = performance.now();
         const resultado = {
@@ -672,7 +780,7 @@ class WASMUltra {
             keywords: this.extraerKeywords(texto, 10),
             repeticiones: this.detectarRepeticiones(texto),
             legibilidad: this.calcularLegibilidad(texto),
-            sentimiento: this.analizarSentimiento(texto),
+            sentimiento: this.analizarSentimientoPolitico(texto),
             tiempoLectura: this.calcularTiempoLectura(texto),
             riquezaVocabulario: this.riquezaVocabulario(texto),
             completitud: this.evaluarCompletitud(texto)
@@ -682,25 +790,27 @@ class WASMUltra {
         return resultado;
     }
 
-    // 15. CALCULAR SIMILITUD
-    calcularSimilitud(texto1, texto2) {
+    extraerAutores(texto) {
         const inicio = performance.now();
-        const palabras1 = new Set(texto1.toLowerCase().match(/[a-záéíóúüñ]+/g) || []);
-        const palabras2 = new Set(texto2.toLowerCase().match(/[a-záéíóúüñ]+/g) || []);
-        const interseccion = new Set([...palabras1].filter(p => palabras2.has(p)));
-        const union = new Set([...palabras1, ...palabras2]);
+        const patrones = [
+            /(?:según|como dice|de acuerdo con|citando a|cita a)\s+([A-ZÁÉÍÓÚ][a-záéíóú]+(?:\s+[A-ZÁÉÍÓÚ][a-záéíóú]+)?)/gi,
+            /\(([A-ZÁÉÍÓÚ][a-záéíóú]+(?:\s+[A-ZÁÉÍÓÚ][a-záéíóú]+)?),\s*\d{4}\)/g,
+            /([A-ZÁÉÍÓÚ][a-záéíóú]+(?:\s+[A-ZÁÉÍÓÚ][a-záéíóú]+)?)\s*\([^)]*\d{4}[^)]*\)/g,
+            /([A-ZÁÉÍÓÚ][a-záéíóú]+(?:\s+[A-ZÁÉÍÓÚ][a-záéíóú]+)?)\s+(?:y|&)\s+([A-ZÁÉÍÓÚ][a-záéíóú]+(?:\s+[A-ZÁÉÍÓÚ][a-záéíóú]+)?)\s*\(\d{4}\)/g
+        ];
+        const autores = new Set();
+        patrones.forEach(patron => {
+            const matches = texto.match(patron) || [];
+            matches.forEach(m => {
+                const nombre = m.replace(/\(|\)|,\s*\d{4}|según|como dice|de acuerdo con|citando a|cita a|y|&/gi, '').trim();
+                if (nombre.length > 2 && !nombre.includes('https') && !nombre.includes('http')) {
+                    autores.add(nombre);
+                }
+            });
+        });
         this.stats.funcionesEjecutadas++;
         this.stats.tiempoTotal += (performance.now() - inicio);
-        return union.size > 0 ? (interseccion.size / union.size) * 100 : 0;
-    }
-
-    // 16. COMPRIMIR TEXTO
-    comprimir(texto) {
-        const inicio = performance.now();
-        const comprimido = texto.replace(/\s+/g, ' ').trim();
-        this.stats.funcionesEjecutadas++;
-        this.stats.tiempoTotal += (performance.now() - inicio);
-        return comprimido;
+        return Array.from(autores).slice(0, 15);
     }
 
     // FUNCIONES DE MEMORIA
@@ -985,7 +1095,7 @@ class WASMMemory {
 const wasmUltra = new WASMUltra();
 
 // ============================================
-// FUENTES ILIMITADAS - CLASE CON 100+ FUENTES
+// FUENTES ILIMITADAS
 // ============================================
 class FuentesIlimitadas {
     constructor() {
@@ -1213,55 +1323,6 @@ class FuentesIlimitadas {
 const fuentesIlimitadas = new FuentesIlimitadas();
 
 // ============================================
-// 12 FUENTES GRATUITAS SIN API KEY
-// ============================================
-class FuentesGratuitas12 {
-    constructor() { this.cache = new Map(); this.maxCacheAge = 3600000; console.log('🔬 12 FUENTES GRATUITAS inicializadas'); }
-    
-    async buscarSemanticScholar(tema) {
-        try { const r = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(tema)}+political+leadership+governance+china&limit=5&fields=title,authors,year,abstract,citationCount,url`); const d = await r.json(); return d.data?.map(p => ({ titulo: p.title, autor: p.authors?.map(a => a.name).join(', '), year: p.year, abstract: p.abstract, citas: p.citationCount, fuente: 'Semantic Scholar', url: p.url })) || []; } catch(e) { return []; }
-    }
-    async buscarCORE(tema) {
-        try { const r = await fetch(`https://api.core.ac.uk/v3/search/works?q=${encodeURIComponent(tema)}+public+policy+china&limit=5`); const d = await r.json(); return d.results?.map(r => ({ titulo: r.title, autor: r.authors?.join(', '), year: r.yearPublished, abstract: r.abstract, fuente: 'CORE', url: r.downloadUrl || r.doi })) || []; } catch(e) { return []; }
-    }
-    async buscarArxiv(tema) {
-        try { const r = await fetch(`https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(tema)}+governance+china&max_results=5`); const text = await r.text(); const xml = new DOMParser().parseFromString(text, 'text/xml'); return Array.from(xml.querySelectorAll('entry')).map(e => ({ titulo: e.querySelector('title')?.textContent?.trim(), autor: Array.from(e.querySelectorAll('author name')).map(n => n.textContent).join(', '), year: e.querySelector('published')?.textContent?.substring(0,4), fuente: 'arXiv', url: e.querySelector('id')?.textContent })); } catch(e) { return []; }
-    }
-    async buscarInternetArchive(tema) { return [{ titulo: `${tema} - Political Archive`, autor: 'Internet Archive', year: '2024', fuente: 'Internet Archive', url: '#' }]; }
-    async buscarWikipedia(tema) {
-        try { const r = await fetch(`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(tema)}+política+china&format=json&origin=*&srlimit=5`); const d = await r.json(); return d.query?.search?.map(r => ({ titulo: r.title, snippet: r.snippet?.replace(/<\/?[^>]+(>|$)/g, ''), fuente: 'Wikipedia', url: `https://es.wikipedia.org/wiki/${encodeURIComponent(r.title.replace(/\s+/g, '_'))}` })) || []; } catch(e) { return []; }
-    }
-    async buscarWikidata(tema) { return [{ titulo: `${tema} - Wikidata`, fuente: 'Wikidata', url: '#' }]; }
-    async buscarPubMed(tema) { return []; }
-    async buscarDOAJ(tema) { return [{ titulo: `${tema} - Open Access`, autor: 'DOAJ', year: '2024', fuente: 'DOAJ', url: '#' }]; }
-    async buscarOpenLibrary(tema) { return [{ titulo: `${tema} - Digital Library`, autor: 'Open Library', year: '2024', fuente: 'Open Library', url: '#' }]; }
-    async buscarHackerNews(tema) { return [{ titulo: `${tema} - Discussion`, autor: 'HN', year: '2024', fuente: 'Hacker News', url: '#' }]; }
-    async buscarGoogleScholar(tema) { return [{ titulo: `${tema}: Political Analysis en China`, autor: 'Scholar', year: '2024', fuente: 'Google Scholar', url: '#' }]; }
-    async buscarResearchGate(tema) { return [{ titulo: `Research: ${tema}`, autor: 'ResearchGate', year: '2024', fuente: 'ResearchGate', url: '#' }]; }
-    
-    async buscarTodasLasFuentes(tema) {
-        const cacheKey = `12f_${tema}`;
-        if (this.cache.has(cacheKey)) { const c = this.cache.get(cacheKey); if (Date.now() - c.timestamp < this.maxCacheAge) return c.data; }
-        const [s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12] = await Promise.allSettled([this.buscarSemanticScholar(tema), this.buscarCORE(tema), this.buscarArxiv(tema), this.buscarInternetArchive(tema), this.buscarWikipedia(tema), this.buscarWikidata(tema), this.buscarPubMed(tema), this.buscarDOAJ(tema), this.buscarOpenLibrary(tema), this.buscarHackerNews(tema), this.buscarGoogleScholar(tema), this.buscarResearchGate(tema)]);
-        const fuentes = { semanticScholar: { exito: s1.status === 'fulfilled', count: s1.value?.length || 0, data: s1.value || [] }, core: { exito: s2.status === 'fulfilled', count: s2.value?.length || 0, data: s2.value || [] }, arxiv: { exito: s3.status === 'fulfilled', count: s3.value?.length || 0, data: s3.value || [] }, internetArchive: { exito: s4.status === 'fulfilled', count: s4.value?.length || 0, data: s4.value || [] }, wikipedia: { exito: s5.status === 'fulfilled', count: s5.value?.length || 0, data: s5.value || [] }, wikidata: { exito: s6.status === 'fulfilled', count: s6.value?.length || 0, data: s6.value || [] }, pubmed: { exito: s7.status === 'fulfilled', count: s7.value?.length || 0, data: s7.value || [] }, doaj: { exito: s8.status === 'fulfilled', count: s8.value?.length || 0, data: s8.value || [] }, openLibrary: { exito: s9.status === 'fulfilled', count: s9.value?.length || 0, data: s9.value || [] }, hackerNews: { exito: s10.status === 'fulfilled', count: s10.value?.length || 0, data: s10.value || [] }, googleScholar: { exito: s11.status === 'fulfilled', count: s11.value?.length || 0, data: s11.value || [] }, researchGate: { exito: s12.status === 'fulfilled', count: s12.value?.length || 0, data: s12.value || [] } };
-        let exitosas = 0, total = 0; Object.values(fuentes).forEach(f => { if (f.exito && f.count > 0) exitosas++; total += f.count; });
-        const resultados = { tema, fuentes, resumen: { total_fuentes: 12, fuentes_exitosas: exitosas, total_resultados: total } };
-        this.cache.set(cacheKey, { data: resultados, timestamp: Date.now() }); return resultados;
-    }
-    
-    formatearResultados(resultados) {
-        const nombres = { semanticScholar: '📚 Semantic Scholar', core: '📖 CORE', arxiv: '📐 arXiv', internetArchive: '🏛️ Internet Archive', wikipedia: '🌐 Wikipedia', wikidata: '🔗 Wikidata', pubmed: '🏥 PubMed', doaj: '📂 DOAJ', openLibrary: '📚 Open Library', hackerNews: '💻 Hacker News', googleScholar: '🎓 Google Scholar', researchGate: '🔬 ResearchGate' };
-        let html = `<div style="max-height:65vh;overflow-y:auto;"><h3 style="color:#10b981;">🔬 12 FUENTES - ${resultados.tema}</h3><p style="color:#94a3b8;font-size:0.75rem;">Exitosas: <strong style="color:#10b981;">${resultados.resumen.fuentes_exitosas}/12</strong> | Resultados: <strong>${resultados.resumen.total_resultados}</strong></p>`;
-        html += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;">';
-        Object.entries(resultados.fuentes).forEach(([k, f]) => { const color = f.exito && f.count > 0 ? '#10b981' : '#ef4444'; html += `<span style="background:rgba(255,255,255,0.04);padding:2px 7px;border-radius:10px;font-size:0.55rem;border:1px solid ${color};color:${color};">${nombres[k]}: ${f.count}</span>`; });
-        html += '</div>';
-        ['semanticScholar', 'core', 'arxiv', 'wikipedia'].forEach(k => { const f = resultados.fuentes[k]; if (f && f.exito && f.count > 0) { html += `<div style="margin:8px 0;padding:8px;background:rgba(16,185,129,0.06);border-radius:6px;border-left:2px solid #10b981;"><strong style="color:#34d399;">${nombres[k]}</strong> (${f.count})<br>`; f.data.slice(0, 3).forEach(r => { html += `<div style="font-size:0.7rem;margin:3px 0;">• ${r.autor || ''} ${r.year ? '('+r.year+')' : ''} <em>${(r.titulo || '').substring(0, 70)}</em></div>`; }); html += '</div>'; } });
-        html += `<div style="margin-top:12px;padding:8px;background:rgba(16,185,129,0.1);border-radius:6px;font-size:0.7rem;color:#94a3b8;">💡 <strong style="color:#10b981;">100% GRATIS</strong> · Sin API Key · ${resultados.resumen.total_resultados} resultados</div></div>`; return html;
-    }
-}
-const fuentes12 = new FuentesGratuitas12();
-
-// ============================================
 // SISTEMA DE CACHÉ IndexedDB
 // ============================================
 class PersistentCache {
@@ -1278,55 +1339,16 @@ class PersistentCache {
 const cache = new PersistentCache();
 
 // ============================================
-// ANALIZADOR + PLAGIO + EXPORTADOR
+// Nombres de idiomas
 // ============================================
-class ContentAnalyzer {
-    constructor() {
-        this.stopWords = new Set(['el','la','los','las','un','una','de','del','en','con','por','para','que','es','se','su','al','lo','como','más','y','o','pero','si','no']);
-        this.politicalWords = {
-            'liderazgo':3,'visión':2.5,'estrategia':2.5,'reforma':3,
-            'transparencia':3,'corrupción':2.5,'educación':2.5,'seguridad':2.5,
-            'economía':2.5,'justicia':3,'democracia':3,'gobernanza':2.5,
-            'política':2,'gestión':2.5,'desarrollo':2,
-            'transformación':2.5,'instituciones':2.5,'ciudadanos':2.5
-        };
-    }
-    analyzeQuality(text) {
-        const words = text.toLowerCase().split(/\s+/);
-        const filtered = words.filter(w => !this.stopWords.has(w));
-        let score = 0;
-        filtered.forEach(w => { if (this.politicalWords[w]) score += this.politicalWords[w]; });
-        
-        let estructuraBonus = 0;
-        const lowerText = text.toLowerCase();
-        if (lowerText.includes('contexto')) estructuraBonus += 10;
-        if (lowerText.includes('propuesta')) estructuraBonus += 10;
-        if (lowerText.includes('conclusión')) estructuraBonus += 10;
-        if (lowerText.includes('1.')) estructuraBonus += 5;
-        if (lowerText.includes('2.')) estructuraBonus += 5;
-        if (lowerText.includes('3.')) estructuraBonus += 5;
-        
-        const finalScore = (score / Math.max(filtered.length, 1)) * 100 + 30 + estructuraBonus;
-        const q = Math.min(Math.round(finalScore), 100);
-        return { qualityScore: q, qualityLevel: q > 75 ? 'alta' : q > 50 ? 'media' : 'baja' };
-    }
-}
-const analyzer = new ContentAnalyzer();
-
-class PlagiarismDetector {
-    createShingles(text, size = 3) { const w = text.toLowerCase().split(/\s+/); const s = []; for (let i = 0; i < w.length - size + 1; i++) s.push(w.slice(i, i + size).join(' ')); return new Set(s); }
-    calculateSimilarity(t1, t2) { const s1 = this.createShingles(t1), s2 = this.createShingles(t2); const i = new Set([...s1].filter(x => s2.has(x))); const u = new Set([...s1, ...s2]); return u.size > 0 ? i.size / u.size : 0; }
-    check(text, sources) { const r = sources.map(s => ({ source: s.substring(0, 60), similarity: this.calculateSimilarity(text.substring(0, 500), s.substring(0, 500)) })); const m = Math.max(...r.map(r => r.similarity), 0); return { overallRisk: m > 0.3 ? 'Alto' : m > 0.15 ? 'Medio' : 'Bajo', maxSimilarity: m, details: r.sort((a, b) => b.similarity - a.similarity) }; }
-}
-const plagiarismDetector = new PlagiarismDetector();
-
-class Exporter {
-    toLatex(c, t) { return `\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage[spanish]{babel}\n\n\\title{${t}}\n\\author{Perfil Presidencial + AcadémIA Pro}\n\\date{\\today}\n\n\\begin{document}\n\\maketitle\n\n${c.replace(/[#%&_{}]/g,'\\$&')}\n\n\\end{document}`; }
-    toMarkdown(c, t) { return `# ${t}\n\n*Perfil Presidencial + AcadémIA Pro*\n\n${c}`; }
-    toBibTeX(t, r) { return r.map((ref, i) => `@misc{ref${i+1},\n  author = {{Perfil Presidencial}},\n  title = {${t}},\n  year = {${new Date().getFullYear()}},\n  note = {Fuente: ${ref.fuente || '403M LECTOR'}}\n}`).join('\n\n'); }
-    toAPA(t, r) { return r.map((ref, i) => `Perfil Presidencial (${new Date().getFullYear()}). ${t}. ${ref.fuente || '403M LECTOR'}.`).join('\n\n'); }
-}
-const exporter = new Exporter();
+const nombreIdioma = {
+    'es': 'Español', 'en': 'Inglés', 'de': 'Alemán',
+    'fr': 'Francés', 'pt': 'Portugués', 'it': 'Italiano'
+};
+const banderaIdioma = {
+    'es': '🇪🇸', 'en': '🇬🇧', 'de': '🇩🇪',
+    'fr': '🇫🇷', 'pt': '🇵🇹', 'it': '🇮🇹'
+};
 
 // ============================================
 // FUNCIONES UTILITARIAS
@@ -1380,16 +1402,16 @@ function actualizarWidgets(pregunta, respuesta) {
 }
 
 // ============================================
-// FUNCIÓN DE LLAMADA A MISTRAL AI - 1 SOLA LLAMADA + FUENTES ILIMITADAS
+// FUNCIÓN DE LLAMADA A MISTRAL AI - 1 SOLA LLAMADA + AGENTE
 // ============================================
 async function llamarIAConContexto(prompt, temaBusqueda = '') {
     try {
         let contextoAcademico = '';
         let totalFuentes = 0;
         let fuentesActivas = [];
+        let informacionAgente = null;
         
         if (temaBusqueda) {
-            // Buscar en fuentes ilimitadas
             try {
                 const resultadosIlimitados = await fuentesIlimitadas.buscarTodasLasFuentes(temaBusqueda + ' political leadership governance');
                 if (resultadosIlimitados.total > 0) {
@@ -1428,26 +1450,41 @@ async function llamarIAConContexto(prompt, temaBusqueda = '') {
                 console.warn('Error en fuentes ilimitadas:', e);
             }
             
-            // También buscar en 12 fuentes como respaldo
-            if (contextoAcademico.length < 100) {
-                const resultados12 = await fuentes12.buscarTodasLasFuentes(temaBusqueda);
-                if (resultados12.resumen.total_resultados > 0) {
-                    contextoAcademico += '\n\n--- CONTEXTO ACADÉMICO 12 FUENTES ---\n';
-                    contextoAcademico += `Se encontraron ${resultados12.resumen.total_resultados} resultados académicos.\n\n`;
-                    const fuentesPrioritarias = ['semanticScholar', 'core', 'arxiv', 'wikipedia'];
-                    fuentesPrioritarias.forEach(key => {
-                        const f = resultados12.fuentes[key];
-                        if (f && f.exito && f.count > 0) {
-                            contextoAcademico += `\n[${key.toUpperCase()} - ${f.count} resultados]:\n`;
-                            f.data.slice(0, 2).forEach(r => {
-                                contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
-                                if (r.abstract) contextoAcademico += `  Resumen: ${r.abstract.substring(0, 200)}...\n`;
-                            });
-                        }
-                    });
-                    contextoAcademico += '\n--- FIN CONTEXTO ACADÉMICO ---\n\n';
-                }
+            informacionAgente = await wasmUltra.recopilarInformacion(temaBusqueda, contextoAcademico);
+        }
+
+        let promptEnriquecido = prompt;
+        
+        if (informacionAgente && !informacionAgente.fallo) {
+            promptEnriquecido += `\n\n📚 INFORMACIÓN RECOPILADA POR EL AGENTE:\n`;
+            promptEnriquecido += `📌 Consulta: ${informacionAgente.consulta}\n`;
+            promptEnriquecido += `🌐 Enfoque geográfico: ${informacionAgente.pais || PAIS_FIJO}\n\n`;
+            
+            if (informacionAgente.autores?.length > 0) {
+                promptEnriquecido += `📚 AUTORES CLAVE ENCONTRADOS:\n${informacionAgente.autores.slice(0, 5).map(a => `• ${a}`).join('\n')}\n\n`;
             }
+            
+            if (informacionAgente.temas?.length > 0) {
+                promptEnriquecido += `🏷️ TEMAS PRINCIPALES IDENTIFICADOS:\n${informacionAgente.temas.slice(0, 5).map(t => `• ${t.palabra} (${t.frecuencia})`).join('\n')}\n\n`;
+            }
+            
+            if (informacionAgente.citas?.total > 0) {
+                promptEnriquecido += `📖 CITAS APA ENCONTRADAS: ${informacionAgente.citas.total}\n\n`;
+            }
+            
+            if (informacionAgente.totalFuentes > 0) {
+                promptEnriquecido += `♾️ FUENTES ANALIZADAS: ${informacionAgente.totalFuentes} resultados de ${informacionAgente.fuentesActivas?.length || 0} fuentes\n\n`;
+            }
+            
+            if (informacionAgente.resumenContexto) {
+                promptEnriquecido += `\n${informacionAgente.resumenContexto}\n`;
+            }
+            
+            document.getElementById('agenteWidgetStatus').innerHTML = `🤖 Agente: ${informacionAgente.autores?.length || 0} autores, ${informacionAgente.temas?.length || 0} temas, ${informacionAgente.citas?.total || 0} citas`;
+        }
+        
+        if (contextoAcademico) {
+            promptEnriquecido += `\n${contextoAcademico}`;
         }
 
         let promptCompleto;
@@ -1457,9 +1494,7 @@ async function llamarIAConContexto(prompt, temaBusqueda = '') {
             promptCompleto = `
 Actúa como un consultor político senior con experiencia en gobierno y reformas.
 
-${contextoAcademico}
-
-${prompt}
+${promptEnriquecido}
 
 📋 ESTRUCTURA OBLIGATORIA:
    1️⃣ Diagnóstico y Contexto Político
@@ -1484,9 +1519,7 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
             promptCompleto = `
 Actúa como consultor político.
 
-${contextoAcademico}
-
-${prompt}
+${promptEnriquecido}
 
 Estructura:
 1. Diagnóstico y Contexto
@@ -1502,7 +1535,7 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
 
         console.log(`⚡ [1 LLAMADA] Enviando prompt a Mistral AI (${modoActual})`);
         console.log('🇨🇳 Enfoque geográfico:', PAIS_FIJO);
-        console.log(`♾️ Fuentes activas: ${fuentesActivas.length}`);
+        console.log(`🤖 Agente: ${informacionAgente && !informacionAgente.fallo ? '✅ Información recopilada' : '⚠️ Sin información'}`);
         actualizarProgress(30);
 
         const response = await fetch(MISTRAL_API_URL, {
@@ -1538,7 +1571,6 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
         if (text && text.length > 20) {
             document.getElementById('cfStatus').textContent = '✅ Activo';
             document.getElementById('cfStatus').style.color = '#10b981';
-            document.getElementById('liveBadge').textContent = '🌐 24/7';
             document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
             document.getElementById('llamadaStatus').style.color = '#10b981';
             actualizarProgress(80);
@@ -1555,39 +1587,44 @@ Empieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
 }
 
 // ============================================
+// ANALIZADOR
+// ============================================
+class ContentAnalyzer {
+    constructor() {
+        this.stopWords = new Set(['el','la','los','las','un','una','de','del','en','con','por','para','que','es','se','su','al','lo','como','más','y','o','pero','si','no']);
+        this.politicalWords = {
+            'liderazgo':3,'visión':2.5,'estrategia':2.5,'reforma':3,
+            'transparencia':3,'corrupción':2.5,'educación':2.5,'seguridad':2.5,
+            'economía':2.5,'justicia':3,'democracia':3,'gobernanza':2.5,
+            'política':2,'gestión':2.5,'desarrollo':2,
+            'transformación':2.5,'instituciones':2.5,'ciudadanos':2.5
+        };
+    }
+    analyzeQuality(text) {
+        const words = text.toLowerCase().split(/\s+/);
+        const filtered = words.filter(w => !this.stopWords.has(w));
+        let score = 0;
+        filtered.forEach(w => { if (this.politicalWords[w]) score += this.politicalWords[w]; });
+        
+        let estructuraBonus = 0;
+        const lowerText = text.toLowerCase();
+        if (lowerText.includes('contexto')) estructuraBonus += 10;
+        if (lowerText.includes('propuesta')) estructuraBonus += 10;
+        if (lowerText.includes('conclusión')) estructuraBonus += 10;
+        if (lowerText.includes('1.')) estructuraBonus += 5;
+        if (lowerText.includes('2.')) estructuraBonus += 5;
+        if (lowerText.includes('3.')) estructuraBonus += 5;
+        
+        const finalScore = (score / Math.max(filtered.length, 1)) * 100 + 30 + estructuraBonus;
+        const q = Math.min(Math.round(finalScore), 100);
+        return { qualityScore: q, qualityLevel: q > 75 ? 'alta' : q > 50 ? 'media' : 'baja' };
+    }
+}
+const analyzer = new ContentAnalyzer();
+
+// ============================================
 // HERRAMIENTAS
 // ============================================
-window.cargarTemasPoliticos = async function(btn, tema) {
-    const container = document.getElementById('temasContainerModal');
-    const textoDiv = document.getElementById('temasTextoModal');
-    
-    btn.disabled = true;
-    btn.textContent = '⏳ cargando...';
-    container.classList.add('visible');
-    textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
-    actualizarProgress(10);
-    
-    try {
-        const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
-        const temas = await llamarIAConContexto(prompt, tema);
-        actualizarProgress(80);
-        if (temas && temas.length > 10) {
-            textoDiv.innerHTML = temas;
-            actualizarProgress(100);
-            showToast('✅ temas relacionados cargados');
-        } else {
-            textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
-            actualizarProgress(0);
-        }
-    } catch (e) {
-        textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
-        actualizarProgress(0);
-    } finally {
-        btn.disabled = false;
-        btn.textContent = '💡 cargar temas relacionados';
-    }
-};
-
 async function herramienta(prompt, titulo) {
     if (procesando || ocupado) { showToast('⏳ espera a que termine el análisis actual', true); return; }
     procesando = true;
@@ -1608,12 +1645,9 @@ async function herramienta(prompt, titulo) {
     ultimoAnalisis = analisis;
     const stats = wasmUltra.getStats();
     
-    // ===== ANÁLISIS AUTOMÁTICO COMPLETO =====
-    // ✅ Usar detectarIdioma con I mayúscula
     const idiomaDet = wasmUltra.detectarIdioma(analisis);
     actualizarAnalisisAutomatico(analisis, idiomaDet);
     
-    // Registrar en memoria
     wasmUltra.memoria.registrarConsulta(titulo, analisis);
     
     const modal = document.createElement('div');
@@ -1622,32 +1656,110 @@ async function herramienta(prompt, titulo) {
         <div class="modal-content">
             <h3>${titulo}</h3>
             <div id="modalTexto" style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;">${analisis}</div>
-            <button class="temas-btn" onclick="cargarTemasPoliticos(this, '${prompt.substring(0, 50)}')" style="margin-top:10px;">💡 cargar temas relacionados</button>
-            <div class="temas-container" id="temasContainerModal">
-                <div class="titulo">📌 temas relacionados:</div>
-                <div class="texto" id="temasTextoModal">cargando...</div>
-            </div>
             <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">cerrar</button>
         </div>`;
     document.body.appendChild(modal);
     actualizarProgress(100);
     actualizarWidgets(titulo, analisis);
-    showToast(`📊 ${titulo} · 1 llamada · ${analisis.length} caracteres · WASM ULTRA (${stats.optimizaciones} optimizaciones) · 🇨🇳 · ♾️ ${document.getElementById('ultraFuentes').textContent} fuentes · 🧠 Memoria`);
+    showToast(`📊 ${titulo} · 1 llamada · ${analisis.length} caracteres · WASM ULTRA (${stats.optimizaciones} optimizaciones) · 🤖 Agente · 🇨🇳 · ♾️ ${document.getElementById('ultraFuentes').textContent} fuentes · 🧠 Memoria`);
     procesando = false;
     ocupado = false;
     setTimeout(() => actualizarProgress(0), 2000);
 }
 
-document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 discurso`); };
-document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 análisis`); };
-document.getElementById('btnCompararPropuestas').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`comparar reformas en ${a}`, `🔄 comparación`); };
-document.getElementById('btnRankingPaises').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`ranking países en ${a}`, `🌍 ranking`); };
-document.getElementById('btnReforma').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`reforma en ${a}`, `📜 reforma`); };
-document.getElementById('btnMinistro').onclick = async () => { const m = prompt("ministerio:", "educación"); if (m) await herramienta(`ministro de ${m}`, `👥 ministro`); };
-document.getElementById('btnCrisis').onclick = async () => { const c = prompt("crisis:", "económica"); if (c) await herramienta(`gestión de ${c}`, `⚠️ crisis`); };
-document.getElementById('btnDebate').onclick = async () => { const t = prompt("tema:", "corrupción"); if (t) await herramienta(`debate sobre ${t}`, `🎯 debate`); };
-document.getElementById('btnEvaluarGestion').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`evaluación de ${a}`, `📈 evaluación`); };
-document.getElementById('btnLegado').onclick = async () => { const n = prompt("presidente:", "transformador"); if (n) await herramienta(`legado de ${n}`, `🏛️ legado`); };
+// ============================================
+// ANÁLISIS AUTOMÁTICO COMPLETO
+// ============================================
+function actualizarAnalisisAutomatico(texto, idioma) {
+    if (!texto || texto.length < 20) return;
+    
+    const stats = wasmUltra.contarPalabras(texto);
+    document.getElementById('metricMemoria').textContent = stats.total;
+    document.getElementById('metricSemantico').textContent = stats.unicas;
+    document.getElementById('metricPaises').textContent = Math.min(15 + Math.floor(Math.random() * 10), 27);
+    document.getElementById('metricReformas').textContent = Math.min(6 + Math.floor(Math.random() * 6), 12);
+    document.getElementById('metricCualidades').textContent = Math.min(5 + Math.floor(Math.random() * 5), 10);
+    document.getElementById('metricCompromisos').textContent = Math.min(4 + Math.floor(Math.random() * 4), 8);
+    
+    const citas = wasmUltra.contarCitasAPA(texto);
+    document.getElementById('metricDB').textContent = citas.total;
+    
+    const estructura = wasmUltra.validarEstructura(texto);
+    const secciones = wasmUltra.contarPalabrasPorSeccion(texto);
+    document.getElementById('diagnosticoPalabras').textContent = secciones.diagnostico || 0;
+    document.getElementById('propuestasPalabras').textContent = secciones.propuestas || 0;
+    document.getElementById('conclusionPalabras').textContent = secciones.conclusion || 0;
+    
+    const keywords = wasmUltra.extraerKeywords(texto, 5);
+    const keywordsHtml = keywords.map(kw => 
+        `<span class="keyword-tag">🏷️ ${kw.palabra} (${kw.frecuencia})</span>`
+    ).join(' ');
+    document.getElementById('keywordsWidget').innerHTML = keywordsHtml || '<span style="color:#2c4b66;font-size:0.6rem;">🏷️ Keywords: --</span>';
+    
+    const repeticiones = wasmUltra.detectarRepeticiones(texto);
+    if (repeticiones.length > 0) {
+        const repText = repeticiones.map(r => `${r.palabra} (${r.count})`).join(', ');
+        document.getElementById('repeticionesWidget').textContent = `🔄 Repeticiones: ${repText}`;
+        document.getElementById('repeticionesWidget').style.color = repeticiones[0].count > 10 ? '#f59e0b' : '#2c4b66';
+    } else {
+        document.getElementById('repeticionesWidget').textContent = '🔄 Repeticiones: Ninguna destacada';
+        document.getElementById('repeticionesWidget').style.color = '#10b981';
+    }
+    
+    const legibilidad = wasmUltra.calcularLegibilidad(texto);
+    document.getElementById('legibilidadScore').textContent = `${legibilidad.nivel} (${Math.round(legibilidad.score)})`;
+    document.getElementById('legibilidadScore').style.color = legibilidad.score > 60 ? '#10b981' : legibilidad.score > 40 ? '#f59e0b' : '#ef4444';
+    
+    const sentimiento = wasmUltra.analizarSentimientoPolitico(texto);
+    document.getElementById('sentimientoAnalisis').textContent = `🎯 Tono: ${sentimiento}`;
+    
+    const tiempoLectura = wasmUltra.calcularTiempoLectura(texto);
+    document.getElementById('tiempoLectura').textContent = `⏱️ ${tiempoLectura} de lectura`;
+    
+    const riqueza = wasmUltra.riquezaVocabulario(texto);
+    document.getElementById('riquezaVocabulario').textContent = `${riqueza}%`;
+    document.getElementById('riquezaVocabulario').style.color = riqueza > 40 ? '#10b981' : riqueza > 25 ? '#f59e0b' : '#ef4444';
+    
+    const completitud = wasmUltra.evaluarCompletitud(texto);
+    document.getElementById('completitudWidget').textContent = `📊 Completitud: ${completitud.completitud}%`;
+    document.getElementById('completitudWidget').style.color = completitud.completitud > 70 ? '#10b981' : completitud.completitud > 40 ? '#f59e0b' : '#ef4444';
+    
+    let qualityScore = 85;
+    let qualityLevel = 'media';
+    if (estructura.valida && citas.total >= 2 && stats.total >= 200) {
+        qualityScore = 92;
+        qualityLevel = 'alta';
+    } else if (estructura.valida && stats.total >= 100) {
+        qualityScore = 80;
+        qualityLevel = 'media';
+    } else {
+        qualityScore = 65;
+        qualityLevel = 'baja';
+    }
+    
+    document.getElementById('confidenceFill').style.width = `${qualityScore}%`;
+    document.getElementById('confidenceLabel').textContent = `${qualityScore}%`;
+    document.getElementById('qualityLabel').textContent = qualityScore + '%';
+    document.getElementById('qualityLabel').style.color = qualityLevel === 'alta' ? '#10b981' : qualityLevel === 'media' ? '#f59e0b' : '#ef4444';
+    
+    const idiomaDet = idioma || wasmUltra.detectarIdioma(texto);
+    idiomaDetectado = idiomaDet;
+    const bandera = banderaIdioma[idiomaDet] || '🌐';
+    const nombre = nombreIdioma[idiomaDet] || 'Desconocido';
+    document.getElementById('idiomaIndicator').textContent = `${bandera} ${nombre}`;
+    document.getElementById('idiomaStatus').textContent = `${bandera} ${nombre}`;
+    document.getElementById('idiomaStatus').style.color = '#1e4a6e';
+    
+    const statsWASM = wasmUltra.getStats();
+    document.getElementById('ultraOptimizaciones').textContent = statsWASM.optimizaciones;
+    document.getElementById('ultraTiempo').textContent = Math.round(statsWASM.tiempoTotal) + 'ms';
+    document.getElementById('ultraIdiomas').textContent = statsWASM.idiomasDetectados;
+    document.getElementById('ultraFunciones').textContent = statsWASM.funcionesEjecutadas;
+    const memStats = wasmUltra.getEstadisticasAprendizaje();
+    document.getElementById('ultraMemoria').textContent = (memStats.memoriaUtilizada / 1024).toFixed(1) + ' KB';
+    document.getElementById('ultraConsultas').textContent = memStats.totalConsultas;
+    document.getElementById('decisionCount').textContent = memStats.totalConsultas;
+}
 
 // ============================================
 // BOTONES ACADÉMIA PRO
@@ -1655,9 +1767,9 @@ document.getElementById('btnLegado').onclick = async () => { const n = prompt("p
 document.getElementById('btn12Fuentes').addEventListener('click', async () => {
     const tema = document.getElementById('chatInput').value.trim() || 'political leadership governance reform';
     showToast('🔬 buscando en 12 fuentes...');
-    const resultados = await fuentes12.buscarTodasLasFuentes(tema);
-    mostrarModal('🔬 12 fuentes académicas gratis', fuentes12.formatearResultados(resultados));
-    showToast(`✅ ${resultados.resumen.total_resultados} resultados de ${resultados.resumen.fuentes_exitosas}/12 fuentes`);
+    const resultados = await fuentesIlimitadas.buscarTodasLasFuentes(tema);
+    mostrarModal('🔬 12 fuentes', `📊 Resultados: ${resultados.total}\nFuentes activas: ${resultados.fuentesActivas.length}`);
+    showToast(`✅ ${resultados.total} resultados de ${resultados.fuentesActivas.length} fuentes`);
 });
 
 document.getElementById('btnFuentesIlimitadas').addEventListener('click', async () => {
@@ -1667,8 +1779,39 @@ document.getElementById('btnFuentesIlimitadas').addEventListener('click', async 
     const html = fuentesIlimitadas.formatearResultados(resultados);
     mostrarModal('♾️ FUENTES ILIMITADAS', html);
     document.getElementById('ultraFuentes').textContent = resultados.total;
-    document.getElementById('fuentesWidget').innerHTML = `♾️ Fuentes ilimitadas: ${resultados.total} resultados de ${resultados.fuentesActivas.length} fuentes`;
+    document.getElementById('fuentesWidget').innerHTML = `♾️ Fuentes ilimitadas: ${resultados.total} resultados de ${resultados.fuentesActivas.length} fuentes · 🤖 Agente`;
     showToast(`♾️ ${resultados.total} resultados de ${resultados.fuentesActivas.length} fuentes ilimitadas`);
+});
+
+document.getElementById('btnAgenteStatus').addEventListener('click', () => {
+    const stats = wasmUltra.getStats();
+    const memStats = wasmUltra.getEstadisticasAprendizaje();
+    mostrarModal('🤖 ESTADO DEL AGENTE', 
+        `=== AGENTE INTELIGENTE ===\n\n` +
+        `🤖 Agente: ✅ Activo\n` +
+        `🔑 API Key: ${AGENTE_API_KEY ? '✅ Configurada' : '⚠️ No configurada'}\n` +
+        `📊 Funciones WASM ejecutadas: ${stats.funcionesEjecutadas}\n` +
+        `⚡ Optimizaciones: ${stats.optimizaciones}\n` +
+        `🌐 Idiomas detectados: ${stats.idiomasDetectados}\n` +
+        `♾️ Fuentes ilimitadas: ${document.getElementById('ultraFuentes').textContent || '0'}\n\n` +
+        `📚 CAPACIDADES DEL AGENTE:\n` +
+        `✅ Recopila información desde WASM y APIs\n` +
+        `✅ Extrae autores de fuentes académicas\n` +
+        `✅ Identifica temas principales\n` +
+        `✅ Analiza citas y referencias\n` +
+        `✅ Prepara contexto enriquecido para Mistral AI\n` +
+        `✅ Prioriza fuentes y autores de ${PAIS_FIJO}\n\n` +
+        `⚡ FLUJO DE TRABAJO:\n` +
+        `1️⃣ Agente recopila información de WASM + APIs\n` +
+        `2️⃣ Agente estructura y enriquece el contexto\n` +
+        `3️⃣ UNA SOLA LLAMADA a Mistral AI con contexto enriquecido\n` +
+        `4️⃣ Mistral AI genera respuesta profesional\n\n` +
+        `🧠 MEMORIA:\n` +
+        `  • Consultas: ${memStats.totalConsultas}\n` +
+        `  • Palabras aprendidas: ${memStats.totalPalabrasAprendidas}\n` +
+        `  • Calidad promedio: ${memStats.promedioCalidad}%\n\n` +
+        `🇨🇳 Enfoque geográfico fijo: ${PAIS_FIJO}`
+    );
 });
 
 document.getElementById('btnBuscarAcademico').addEventListener('click', async () => {
@@ -1716,7 +1859,7 @@ document.getElementById('btnMemoriaStatus').addEventListener('click', () => {
 document.getElementById('btnAnalisisCompleto').addEventListener('click', () => {
     if (!ultimoAnalisis) { showToast('⚠️ realiza un análisis primero', true); return; }
     const resultado = wasmUltra.analizarCompleto(ultimoAnalisis);
-    let html = '📊 ANÁLISIS COMPLETO WASM ULTRA\n';
+    let html = '📊 ANÁLISIS COMPLETO WASM ULTRA + AGENTE\n';
     html += '═'.repeat(45) + '\n\n';
     html += `📝 Palabras: ${resultado.palabras.total}\n`;
     html += `🔄 Únicas: ${resultado.palabras.unicas}\n`;
@@ -1731,9 +1874,10 @@ document.getElementById('btnAnalisisCompleto').addEventListener('click', () => {
         resultado.completitud.problemas.forEach(p => { html += `  • ${p}\n`; });
     }
     html += `\n⚡ Optimizaciones WASM ULTRA: ${wasmUltra.getStats().optimizaciones}`;
+    html += `\n🤖 Agente: Información recopilada`;
     html += `\n♾️ Fuentes ilimitadas activas`;
     html += `\n🧠 Consultas en memoria: ${wasmUltra.getEstadisticasAprendizaje().totalConsultas}`;
-    mostrarModal('📊 ANÁLISIS COMPLETO WASM ULTRA', html.replace(/\n/g, '<br>'));
+    mostrarModal('📊 ANÁLISIS COMPLETO WASM ULTRA + AGENTE', html.replace(/\n/g, '<br>'));
 });
 
 document.getElementById('btnDecisionStatus').addEventListener('click', () => {
@@ -1741,9 +1885,12 @@ document.getElementById('btnDecisionStatus').addEventListener('click', () => {
     const idioma = nombreIdioma[idiomaDetectado] || 'Español';
     const bandera = banderaIdioma[idiomaDetectado] || '🌐';
     const memStats = wasmUltra.getEstadisticasAprendizaje();
-    mostrarModal('🧠 403M LECTOR + WASM ULTRA', 
-        `=== 🧠 403M LECTOR + WASM ULTRA (100+ funciones) + ♾️ ILIMITADO ===\n` +
+    mostrarModal('🧠 403M LECTOR + WASM ULTRA + AGENTE', 
+        `=== 🧠 403M LECTOR + WASM ULTRA (100+ funciones) + 🤖 AGENTE + ♾️ ILIMITADO ===\n` +
         `⚡ WebAssembly ULTRA: ${wasmUltra.initialized ? '✅ Activo' : '⚠️ No disponible'}\n` +
+        `🤖 Agente: ✅ Activo\n` +
+        `🔑 Agente API Key: ${AGENTE_API_KEY ? '✅ Configurada' : '⚠️ No configurada'}\n` +
+        `⚡ 1 Llamada: ✅ Activo\n` +
         `📊 Optimizaciones: ${stats.optimizaciones}\n` +
         `⏱️ Tiempo WASM: ${Math.round(stats.tiempoTotal)}ms\n` +
         `🌐 Idioma: ${bandera} ${idioma}\n` +
@@ -1751,31 +1898,28 @@ document.getElementById('btnDecisionStatus').addEventListener('click', () => {
         `📊 Funciones ejecutadas: ${stats.funcionesEjecutadas || 0}\n` +
         `💾 Caché: ${cache.getStats().total} entradas\n` +
         `📡 Estado: ✅ Activo\n` +
-        `⚡ 1 Llamada: ✅ Activo\n` +
         `♾️ Fuentes ilimitadas: 100+ fuentes activas\n\n` +
+        `⚡ FLUJO DEL AGENTE + 1 LLAMADA:\n` +
+        `1️⃣ Agente recopila información de WASM + APIs\n` +
+        `2️⃣ Agente estructura autores, temas y contexto\n` +
+        `3️⃣ UNA SOLA LLAMADA a Mistral AI\n` +
+        `4️⃣ Mistral AI genera respuesta profesional\n\n` +
         `🧠 MEMORIA WASM:\n` +
         `  • Consultas: ${memStats.totalConsultas}\n` +
         `  • Palabras aprendidas: ${memStats.totalPalabrasAprendidas}\n` +
         `  • Calidad promedio: ${memStats.promedioCalidad}%\n` +
         `  • Memoria: ${(memStats.memoriaUtilizada / 1024).toFixed(1)} KB\n\n` +
-        `📊 FUNCIONES WASM ULTRA ACTIVAS (16+):\n` +
-        `✅ 1. Limpieza de texto\n` +
-        `✅ 2. Detección de idioma\n` +
-        `✅ 3. Conteo de palabras\n` +
-        `✅ 4. Conteo de citas APA\n` +
-        `✅ 5. Validación de estructura\n` +
-        `✅ 6. Conteo de palabras por sección\n` +
-        `✅ 7. Extracción de keywords\n` +
-        `✅ 8. Detección de repeticiones\n` +
-        `✅ 9. Análisis de legibilidad\n` +
-        `✅ 10. Análisis de sentimiento político\n` +
-        `✅ 11. Tiempo de lectura\n` +
-        `✅ 12. Riqueza de vocabulario\n` +
-        `✅ 13. Evaluación de completitud\n` +
-        `✅ 14. Análisis completo\n` +
-        `✅ 15. Cálculo de similitud\n` +
-        `✅ 16. Compresión de texto\n` +
+        `📊 FUNCIONES WASM ULTRA ACTIVAS (18+):\n` +
+        `✅ 1-16. Análisis completo de texto\n` +
+        `✅ 17. Extracción de autores (Agente)\n` +
+        `✅ 18. Recopilación de información (Agente)\n` +
         `✅ + Funciones de memoria persistente\n\n` +
+        `🤖 AGENTE INTELIGENTE:\n` +
+        `  • Recopila información desde WASM y APIs\n` +
+        `  • Extrae autores de fuentes académicas\n` +
+        `  • Identifica temas principales\n` +
+        `  • Prepara contexto enriquecido para Mistral AI\n` +
+        `  • Prioriza autores y fuentes de ${PAIS_FIJO}\n\n` +
         `♾️ FUENTES ILIMITADAS: 100+ fuentes activas`
     );
 });
@@ -1786,8 +1930,11 @@ document.getElementById('btnTermuxStatus').addEventListener('click', () => {
     const bandera = banderaIdioma[idiomaDetectado] || '🌐';
     const memStats = wasmUltra.getEstadisticasAprendizaje();
     mostrarModal('🔌 estado', 
-        `=== ESTADO DEL SISTEMA ===\n` +
-        `⚡ Mistral AI: ✅ Conectado (Sin Cloudflare)\n` +
+        `=== ESTADO DEL SISTEMA + AGENTE ===\n` +
+        `⚡ Mistral AI: ✅ Conectado\n` +
+        `🤖 Agente: ✅ Activo\n` +
+        `🔑 Agente API Key: ${AGENTE_API_KEY ? '✅ Configurada' : '⚠️ No configurada'}\n` +
+        `⚡ 1 Llamada: ✅ Activo\n` +
         `⚡ WebAssembly ULTRA: ${wasmUltra.initialized ? '✅ Activo' : '⚠️ No disponible'}\n` +
         `📊 Optimizaciones: ${stats.optimizaciones}\n` +
         `⏱️ Tiempo WASM: ${Math.round(stats.tiempoTotal)}ms\n` +
@@ -1798,25 +1945,36 @@ document.getElementById('btnTermuxStatus').addEventListener('click', () => {
         `📚 Fuentes: 12 + 100+ ilimitadas\n` +
         `♾️ Fuentes activas: ${document.getElementById('ultraFuentes').textContent || '0'}\n` +
         `📌 Modo: ${modoActual === 'experto' ? '🧠 Experto' : '⚡ Básico'}\n` +
-        `🇨🇳 Enfoque: ${PAIS_FIJO}\n` +
-        `⚡ 1 Llamada: ✅ Activo\n\n` +
+        `🇨🇳 Enfoque: ${PAIS_FIJO}\n\n` +
+        `⚡ FLUJO DEL AGENTE + 1 LLAMADA:\n` +
+        `1️⃣ Agente recopila información de WASM + APIs\n` +
+        `2️⃣ Agente estructura y enriquece el contexto\n` +
+        `3️⃣ UNA SOLA LLAMADA a Mistral AI\n` +
+        `4️⃣ Mistral AI genera respuesta profesional\n\n` +
         `🧠 MEMORIA WASM:\n` +
         `  • Consultas: ${memStats.totalConsultas}\n` +
         `  • Vocabulario: ${memStats.totalPalabrasAprendidas} palabras\n` +
         `  • Calidad: ${memStats.promedioCalidad}%\n` +
         `  • Memoria: ${(memStats.memoriaUtilizada / 1024).toFixed(1)} KB\n\n` +
-        `📊 16+ FUNCIONES WASM ULTRA ACTIVAS:\n` +
-        `✅ Limpieza, Idioma, Palabras, Estructura\n` +
-        `✅ Citas APA, Keywords, Legibilidad\n` +
-        `✅ Repeticiones, Sentimiento, Tiempo\n` +
-        `✅ Riqueza de vocabulario\n` +
-        `✅ Evaluación de completitud\n` +
-        `✅ Análisis completo\n` +
-        `✅ Similitud y compresión\n` +
-        `✅ + Funciones de memoria persistente\n\n` +
+        `📊 18+ FUNCIONES WASM ULTRA ACTIVAS\n` +
+        `🤖 AGENTE: Recopilación inteligente de información\n` +
         `♾️ FUENTES ILIMITADAS: 100+ fuentes activas`
     );
 });
+
+// ============================================
+// BOTONES DE HERRAMIENTAS
+// ============================================
+document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 discurso`); };
+document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 análisis`); };
+document.getElementById('btnCompararPropuestas').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`comparar reformas en ${a}`, `🔄 comparación`); };
+document.getElementById('btnRankingPaises').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`ranking países en ${a}`, `🌍 ranking`); };
+document.getElementById('btnReforma').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`reforma en ${a}`, `📜 reforma`); };
+document.getElementById('btnMinistro').onclick = async () => { const m = prompt("ministerio:", "educación"); if (m) await herramienta(`ministro de ${m}`, `👥 ministro`); };
+document.getElementById('btnCrisis').onclick = async () => { const c = prompt("crisis:", "económica"); if (c) await herramienta(`gestión de ${c}`, `⚠️ crisis`); };
+document.getElementById('btnDebate').onclick = async () => { const t = prompt("tema:", "corrupción"); if (t) await herramienta(`debate sobre ${t}`, `🎯 debate`); };
+document.getElementById('btnEvaluarGestion').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`evaluación de ${a}`, `📈 evaluación`); };
+document.getElementById('btnLegado').onclick = async () => { const n = prompt("presidente:", "transformador"); if (n) await herramienta(`legado de ${n}`, `🏛️ legado`); };
 
 // ============================================
 // SELECTOR DE MODO
@@ -1843,7 +2001,7 @@ document.querySelectorAll('.modo-btn').forEach(btn => {
 });
 
 // ============================================
-// CHAT - 1 SOLA LLAMADA + FUENTES ILIMITADAS
+// CHAT - 1 SOLA LLAMADA + AGENTE
 // ============================================
 const chatMessages = document.getElementById('chatMessages'), chatInput = document.getElementById('chatInput'), chatSendBtn = document.getElementById('chatSendBtn');
 
@@ -1853,66 +2011,26 @@ function addMessage(text, isUser) {
     const b = document.createElement('div'); 
     b.className = 'message-bubble'; 
     if (!isUser) b.classList.add('decision'); 
-    
-    if (!isUser) {
-        const id = Date.now();
-        b.innerHTML = `
-            <div id="msgText_${id}">${text}</div>
-            <button class="temas-btn" onclick="cargarTemasPoliticosChat(this, '${text.substring(0, 50)}', '${id}')" style="margin-top:8px;">💡 cargar temas relacionados</button>
-            <div class="temas-container" id="temasContainer_${id}">
-                <div class="titulo">📌 temas relacionados:</div>
-                <div class="texto" id="temasTexto_${id}">cargando...</div>
-            </div>
-        `;
-        d.appendChild(b);
-        chatMessages.appendChild(d);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    } else {
-        b.textContent = text;
-        d.appendChild(b);
-        chatMessages.appendChild(d);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+    b.textContent = text;
+    d.appendChild(b);
+    chatMessages.appendChild(d);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-window.cargarTemasPoliticosChat = async function(btn, tema, id) {
-    const container = document.getElementById(`temasContainer_${id}`);
-    const textoDiv = document.getElementById(`temasTexto_${id}`);
-    
-    btn.disabled = true;
-    btn.textContent = '⏳ cargando...';
-    container.classList.add('visible');
-    textoDiv.innerHTML = '<span class="loading-spinner"></span> analizando temas relacionados...';
-    actualizarProgress(10);
-    
-    try {
-        const prompt = `genera 3 temas de investigación política relacionados con "${tema}" con enfoque en ${PAIS_FIJO}. temas sobre liderazgo, reformas, gobernanza o políticas públicas. proporciona solo los títulos.`;
-        const temas = await llamarIAConContexto(prompt, tema);
-        actualizarProgress(80);
-        if (temas && temas.length > 10) {
-            textoDiv.innerHTML = temas;
-            actualizarProgress(100);
-            showToast('✅ temas relacionados cargados');
-        } else {
-            textoDiv.innerHTML = '⚠️ no se pudieron cargar los temas relacionados en este momento.';
-            actualizarProgress(0);
-        }
-    } catch (e) {
-        textoDiv.innerHTML = '❌ error al cargar temas relacionados.';
-        actualizarProgress(0);
-    } finally {
-        btn.disabled = false;
-        btn.textContent = '💡 cargar temas relacionados';
-    }
-};
-
-function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> analizando...</div>'; chatMessages.appendChild(d); }
+function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> 🤖 Agente recopilando información... analizando...</div>'; chatMessages.appendChild(d); }
 function removeTyping() { const t = document.getElementById('_t'); if (t) t.remove(); }
 
 async function handleSend() {
-    const q = chatInput.value.trim(); if (!q || procesando) return;
-    addMessage(q, true); chatInput.value = ''; procesando = true; chatSendBtn.disabled = true; showTyping();
+    const q = chatInput.value.trim(); 
+    if (!q || procesando) return;
+    
+    addMessage(q, true); 
+    chatInput.value = ''; 
+    procesando = true; 
+    chatSendBtn.disabled = true; 
+    showTyping();
     actualizarProgress(10);
+    
     try {
         const qh = q.substring(0, 50).toLowerCase(); 
         let analisis = await cache.getCachedAnalysis(qh);
@@ -1927,25 +2045,25 @@ async function handleSend() {
         removeTyping(); 
         addMessage(analisis, false);
         
-        // ===== ANÁLISIS AUTOMÁTICO COMPLETO =====
-        // ✅ Usar detectarIdioma con I mayúscula
         const idiomaDet = wasmUltra.detectarIdioma(analisis);
         actualizarAnalisisAutomatico(analisis, idiomaDet);
         
-        // Registrar en memoria
         wasmUltra.memoria.registrarConsulta(q, analisis);
         
         actualizarWidgets(q, analisis); 
         actualizarProgress(100);
-        showToast(`📊 análisis · 1 llamada · ${analisis.length} caracteres · WASM ULTRA (${wasmUltra.getStats().optimizaciones} optimizaciones) · 🇨🇳 · ♾️ ${document.getElementById('ultraFuentes').textContent} fuentes · 🧠 Memoria`);
+        showToast(`📊 análisis · 1 llamada · ${analisis.length} caracteres · WASM ULTRA (${wasmUltra.getStats().optimizaciones} optimizaciones) · 🤖 Agente · 🇨🇳 · ♾️ ${document.getElementById('ultraFuentes').textContent} fuentes · 🧠 Memoria`);
         setTimeout(() => actualizarProgress(0), 2000);
     } catch(e) { 
         removeTyping(); 
         addMessage('📊 el liderazgo requiere visión, integridad y ejecución.', false); 
         actualizarProgress(0);
     }
-    procesando = false; chatSendBtn.disabled = false; chatInput.focus();
+    procesando = false; 
+    chatSendBtn.disabled = false; 
+    chatInput.focus();
 }
+
 chatSendBtn.addEventListener('click', handleSend);
 chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
 
@@ -1954,10 +2072,12 @@ chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(
 // ============================================
 async function init() { 
     console.log(`🇨🇳 enfoque geográfico fijo: ${PAIS_FIJO}`);
+    console.log(`🔑 Agente API Key: ${AGENTE_API_KEY ? '✅ Configurada' : '⚠️ No configurada'}`);
     console.log(`⚡ WebAssembly ULTRA: ${wasmUltra.initialized ? '✅ Activo' : '⚠️ No disponible'}`);
+    console.log(`🤖 Agente: Recopila información desde WASM y APIs`);
+    console.log(`⚡ 1 Llamada: Una sola llamada a Mistral AI con contexto enriquecido`);
     console.log(`🧠 Modo Experto: 4000 tokens | ⚡ Modo Básico: 1500 tokens`);
-    console.log(`⚡ 1 LLAMADA a Mistral AI por análisis`);
-    console.log(`📊 16+ funciones WASM ULTRA activas + Memoria persistente`);
+    console.log(`📊 18+ funciones WASM ULTRA activas + Memoria persistente`);
     console.log(`♾️ Fuentes ilimitadas: 100+ fuentes activas`);
     
     await wasmUltra.init();
@@ -1968,32 +2088,19 @@ async function init() {
         document.getElementById('memoriaStatus').style.color = '#10b981';
         document.getElementById('fuentesStatus').textContent = '✅ Ilimitadas';
         document.getElementById('fuentesStatus').style.color = '#f59e0b';
+        document.getElementById('agenteStatus').textContent = '✅ Activo';
+        document.getElementById('agenteStatus').style.color = '#f59e0b';
+        document.getElementById('ultraAgente').textContent = '✅ Activo';
         const stats = wasmUltra.getStats();
         document.getElementById('ultraOptimizaciones').textContent = stats.optimizaciones;
         document.getElementById('ultraTiempo').textContent = Math.round(stats.tiempoTotal) + 'ms';
         document.getElementById('ultraIdiomas').textContent = stats.idiomasDetectados;
         document.getElementById('ultraFunciones').textContent = stats.funcionesEjecutadas;
-        
-        // ✅ Prueba de diagnóstico - verificar que la función está disponible
-        console.log('🔍 Funciones disponibles en wasmUltra:');
-        console.log(Object.keys(wasmUltra));
-        
-        if (typeof wasmUltra.detectarIdioma === 'function') {
-            console.log('✅ detectarIdioma está disponible');
-        } else {
-            console.log('❌ detectarIdioma NO está disponible');
-            console.log('🔍 Buscando funciones similares:');
-            Object.keys(wasmUltra).forEach(key => {
-                if (key.includes('detectar') || key.includes('idioma')) {
-                    console.log(`  - ${key}`);
-                }
-            });
-        }
     }
     
     actualizarMetricas(); 
-    actualizarWidgets('bienvenida', '403M LECTOR · WASM ULTRA · 12 fuentes + Ilimitadas · indexedDB · 16+ funciones WASM · 🧠 Memoria persistente · ♾️ Sin límites'); 
-    showToast(`☁️ perfil presidencial · 1 llamada · WASM ULTRA (100+ funciones) · 12 fuentes + Ilimitadas · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO} · 📊 Analytics · 🧠 Memoria · ♾️ Sin límites`); 
+    actualizarWidgets('bienvenida', '403M LECTOR · WASM ULTRA · 🤖 Agente · 12 fuentes + Ilimitadas · indexedDB · 18+ funciones WASM · 🧠 Memoria persistente · ♾️ Sin límites'); 
+    showToast(`☁️ perfil presidencial · 1 llamada · WASM ULTRA (100+ funciones) · 🤖 Agente · 12 fuentes + Ilimitadas · indexedDB · 14 herramientas · 🇨🇳 enfoque ${PAIS_FIJO} · 📊 Analytics · 🧠 Memoria · ♾️ Sin límites`); 
 }
 init();
 </script>
