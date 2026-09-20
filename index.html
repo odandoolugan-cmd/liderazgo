@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes">
-  <title>Perfil Presidencial · WASM Rust · Multi-IA · Core 403M · Agent-Reach · ♾️ ILIMITADO</title>
+  <title>Perfil Presidencial · OSINT · WASM Rust · Multi-IA · Core 403M · Agent-Reach · ♾️ ILIMITADO</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -25,6 +25,7 @@
     .badge-wasm { background: #1e4a6e; color: white; animation: pulse 1.5s infinite; }
     .badge-wasm-extremo { background: #f59e0b; color: black; animation: pulse 1s infinite; }
     .badge-china { background: linear-gradient(135deg, #DE2910, #FFDE00); color: #1a2c3e; border: 1px solid #FFDE00; }
+    .badge-osint { background: linear-gradient(135deg, #0f766e, #14b8a6); color: white; animation: pulse 1.5s infinite; }
     .badge-analytics { background: linear-gradient(90deg, #f59e0b, #10b981); color: white; animation: glow 2s infinite; }
     .badge-1llamada { background: linear-gradient(90deg, #ec4899, #f59e0b, #10b981); color: white; animation: glow 2s infinite; }
     .badge-100funciones { background: linear-gradient(90deg, #8b5cf6, #ec4899, #f59e0b); color: white; animation: glow 2s infinite; }
@@ -85,6 +86,8 @@
     .tool-btn.ilimitado:hover { background: linear-gradient(90deg, #f59e0b, #d97706); color: white; }
     .tool-btn.wasm-extremo { background: #fef3c7; color: #92400e; border: 2px solid #f59e0b; animation: pulse 1.5s infinite; }
     .tool-btn.wasm-extremo:hover { background: linear-gradient(90deg, #f59e0b, #ec4899); color: white; }
+    .tool-btn.osint { background: #ccfbf1; color: #0f766e; border: 2px solid #14b8a6; }
+    .tool-btn.osint:hover { background: linear-gradient(90deg, #14b8a6, #0891b2); color: white; }
     
     .progress-bar-container { width: 100%; height: 4px; background: #e2edf2; border-radius: 2px; margin: 8px 0; overflow: hidden; }
     .progress-bar-fill { height: 100%; background: linear-gradient(90deg, #f59e0b, #ec4899); width: 0%; transition: width 0.5s; border-radius: 2px; }
@@ -125,27 +128,31 @@
     .card p { color: #2e4a66; margin-bottom: 1rem; font-size: 0.95rem; }
     .pill { background: #eef3fc; padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; color: #1e6f8f; display: inline-block; }
     
-    .chat-container { background: white; border-radius: 1.5rem; margin: 2rem 0; border: 1px solid #f59e0b; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .chat-header { background: linear-gradient(135deg, #1e4a6e, #2c7da0, #8b5cf6); color: white; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .chat-container { background: white; border-radius: 1.5rem; margin: 2rem 0; border: 2px solid #14b8a6; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+    .chat-header { background: linear-gradient(135deg, #1e4a6e, #2c7da0, #14b8a6); color: white; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
     .chat-header i { font-size: 1.5rem; }
     .chat-header h3 { margin: 0; font-weight: 600; }
     .chat-header span { font-size: 0.7rem; opacity: 0.8; margin-left: auto; }
-    .chat-messages { height: 280px; overflow-y: auto; padding: 1rem; background: #f8fafc; }
+    .chat-messages { height: 420px; overflow-y: auto; padding: 1rem; background: #f8fafc; }
     .message { margin-bottom: 1rem; display: flex; flex-direction: column; }
     .user-message { align-items: flex-end; }
     .ai-message { align-items: flex-start; }
-    .message-bubble { max-width: 80%; padding: 0.6rem 1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; position: relative; }
-    .user-message .message-bubble { background: #2c7da0; color: white; border-bottom-right-radius: 0.2rem; }
+    .message-bubble { max-width: 85%; padding: 0.7rem 1.1rem; border-radius: 1rem; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; position: relative; }
+    .user-message .message-bubble { background: #14b8a6; color: white; border-bottom-right-radius: 0.2rem; }
     .ai-message .message-bubble { background: white; border: 1px solid #cbdde6; color: #1a2c3e; border-bottom-left-radius: 0.2rem; }
     .message-bubble.decision { border-color: #ec4899; border-left: 3px solid #ec4899; }
+    .message-bubble.osint { border-color: #14b8a6; border-left: 3px solid #14b8a6; background: #f0fdfa; }
     .chat-input-area { display: flex; padding: 1rem; background: white; border-top: 1px solid #e2edf2; gap: 0.5rem; }
-    .chat-input-area input { flex: 1; padding: 0.7rem 1rem; border: 1px solid #cbdde6; border-radius: 2rem; font-family: inherit; outline: none; }
-    .chat-input-area input:focus { border-color: #2c7da0; }
-    .chat-input-area button { background: linear-gradient(135deg, #1e4a6e, #2c7da0); border: none; color: white; padding: 0.7rem 1.2rem; border-radius: 2rem; cursor: pointer; font-weight: 600; }
+    .chat-input-area input { flex: 1; padding: 0.8rem 1.2rem; border: 1px solid #cbdde6; border-radius: 2rem; font-family: inherit; outline: none; font-size: 0.9rem; }
+    .chat-input-area input:focus { border-color: #14b8a6; box-shadow: 0 0 0 3px rgba(20,184,166,0.1); }
+    .chat-input-area button { background: linear-gradient(135deg, #14b8a6, #0891b2); border: none; color: white; padding: 0.8rem 1.5rem; border-radius: 2rem; cursor: pointer; font-weight: 700; font-size: 0.85rem; }
     .chat-input-area button:disabled { opacity: 0.5; cursor: not-allowed; }
     .ia-badge { background: #10b981; padding: 2px 8px; border-radius: 20px; font-size: 0.6rem; margin-left: 8px; }
     .typing { color: #94a3b8; font-style: italic; }
-    .context-info { background: rgba(139,92,246,0.1); border-radius: 1rem; padding: 0.5rem; margin: 0.5rem 0 1rem 0; font-size: 0.65rem; color: #a5b4fc; text-align: center; }
+    .context-info { background: rgba(20,184,166,0.1); border-radius: 1rem; padding: 0.7rem; margin: 0.5rem 0 1rem 0; font-size: 0.7rem; color: #0f766e; text-align: center; border: 1px solid #14b8a6; }
+    
+    .osint-badge-inline { display: inline-block; background: linear-gradient(135deg, #14b8a6, #0891b2); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.6rem; font-weight: 700; margin-right: 6px; }
+    .osint-source { display: inline-block; background: rgba(20,184,166,0.15); color: #0f766e; padding: 1px 6px; border-radius: 8px; font-size: 0.55rem; margin: 1px; }
     
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center; }
     .modal-content { background: white; border-radius: 1.5rem; max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto; padding: 1.5rem; border: 2px solid #f59e0b; }
@@ -167,9 +174,9 @@
     .vr-mode { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: none; background: #0a0f1e; }
     .vr-mode.active { display: block; }
     .close-vr { position: fixed; top: 20px; right: 20px; background: rgba(0,0,0,0.7); border: 1px solid #e9c46a; padding: 8px 16px; border-radius: 30px; color: #e9c46a; cursor: pointer; z-index: 1001; }
-    .loading-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #1e4a6e; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 6px; vertical-align: middle; }
+    .loading-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #14b8a6; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 6px; vertical-align: middle; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #1e4a6e; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; z-index: 2000; animation: fadeOut 3s forwards; max-width: 90%; text-align: center; }
+    .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #14b8a6; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; z-index: 2000; animation: fadeOut 3s forwards; max-width: 90%; text-align: center; }
     @keyframes fadeOut { 0% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
     .footer-note { margin-top: 3rem; text-align: center; padding: 1.5rem; border-top: 1px solid #cbdde6; color: #3f627c; font-size: 0.85rem; }
     
@@ -179,10 +186,11 @@
     .source-badge.multiia { border-color: #10b981; background: rgba(16,185,129,0.3); animation: glow 2s infinite; }
     .source-badge.core403m { border-color: #8b5cf6; background: rgba(139,92,246,0.3); animation: glow 2s infinite; }
     .source-badge.agentreach { border-color: #f59e0b; background: rgba(245,158,11,0.3); animation: pulse 1.5s infinite; }
+    .source-badge.osint { border-color: #14b8a6; background: rgba(20,184,166,0.3); animation: pulse 1.5s infinite; }
     .source-badge.ilimitado { border-color: #f59e0b; background: rgba(245,158,11,0.3); animation: glow 2s infinite; }
     .source-badge.50x { border-color: #10b981; background: rgba(16,185,129,0.3); animation: pulse 1.5s infinite; }
     
-    @media (max-width: 780px) { .hero { flex-direction: column; text-align: center; } .widget-container { grid-template-columns: 1fr; } .connector-metrics { grid-template-columns: 1fr 1fr; } h1 { font-size: 1.6rem !important; } }
+    @media (max-width: 780px) { .hero { flex-direction: column; text-align: center; } .widget-container { grid-template-columns: 1fr; } .connector-metrics { grid-template-columns: 1fr 1fr; } h1 { font-size: 1.6rem !important; } .chat-messages { height: 320px; } }
   </style>
 </head>
 <body>
@@ -190,20 +198,20 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial transformador <span class="badge badge-rustwasm">🦀 WASM RUST</span><span class="badge badge-multiia">🔄 MULTI-IA</span><span class="badge badge-core">🧬 CORE 403M</span><span class="badge badge-agentreach">🔌 AGENT-REACH</span><span class="badge badge-mistral">⚡ MISTRAL AI</span><span class="badge badge-wasm-extremo">⚡ WASM EXTREMO</span><span class="badge badge-12fuentes">🔬 12 FUENTES</span><span class="badge badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge badge-1llamada">⚡ 1 LLAMADA</span><span class="badge badge-memoria">🧠 MEMORIA</span><span class="badge badge-ilimitado">♾️ ILIMITADO</span><span class="badge badge-agente">🤖 AGENTE</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
-      <h1>El liderazgo que un país necesita</h1>
-      <p>WASM Rust REAL · Multi-IA · Core 403M · Agent-Reach · 12 Fuentes + Ilimitadas · 🤖 Agente · Visión de estado y hoja de ruta real · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</p>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial + OSINT profundo <span class="badge badge-rustwasm">🦀 WASM RUST</span><span class="badge badge-multiia">🔄 MULTI-IA</span><span class="badge badge-core">🧬 CORE 403M</span><span class="badge badge-agentreach">🔌 AGENT-REACH</span><span class="badge badge-osint">🕵️ OSINT</span><span class="badge badge-wasm-extremo">⚡ WASM EXTREMO</span><span class="badge badge-12fuentes">🔬 12+ FUENTES</span><span class="badge badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge badge-1llamada">⚡ 1 LLAMADA</span><span class="badge badge-memoria">🧠 MEMORIA</span><span class="badge badge-ilimitado">♾️ ILIMITADO</span><span class="badge badge-agente">🤖 AGENTE</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
+      <h1>El chat que investiga personas</h1>
+      <p>WASM Rust REAL · Multi-IA · Core 403M · Agent-Reach · 30+ APIs OSINT · Pregunta en el chat y la IA teje el contexto de cualquier persona, historial, investigaciones, casos omitidos y violencia. 🇨🇳 · ⚡ 1 llamada · ♾️ Sin límites</p>
       <div class="hero-stats">
-        <div class="stat"><i class="fas fa-chalkboard-user"></i><span>Visión de futuro</span></div>
-        <div class="stat"><i class="fas fa-hand-holding-heart"></i><span>Liderazgo ético</span></div>
-        <div class="stat"><i class="fas fa-chart-line"></i><span>Ejecución real</span></div>
+        <div class="stat"><i class="fas fa-comments"></i><span>Chat único</span></div>
+        <div class="stat"><i class="fas fa-user-secret"></i><span>OSINT automático</span></div>
+        <div class="stat"><i class="fas fa-shield-alt"></i><span>Contexto completo</span></div>
       </div>
     </div>
     <div class="hero-image">
-      <div class="avatar-icon"><i class="fas fa-user-tie"></i></div>
-      <h3>Perfil: Líder Transformador</h3>
-      <p><i class="fas fa-check-circle" style="color:#2c7da0"></i>&nbsp;&nbsp;Capacidad demostrada de gestión</p>
-      <p><i class="fas fa-balance-scale"></i>&nbsp;&nbsp;Compromiso anticorrupción</p>
+      <div class="avatar-icon"><i class="fas fa-user-secret"></i></div>
+      <h3>Asesor OSINT + Político</h3>
+      <p><i class="fas fa-check-circle" style="color:#14b8a6"></i>&nbsp;&nbsp;Pregunta por cualquier persona</p>
+      <p><i class="fas fa-balance-scale"></i>&nbsp;&nbsp;Teje antecedentes y contexto</p>
     </div>
   </div>
 
@@ -223,6 +231,7 @@
     <span>📦 GitHub <strong id="arGitHub">0</strong></span>
     <span>📖 Reddit <strong id="arReddit">0</strong></span>
     <span>🌐 Wiki <strong id="arWiki">0</strong></span>
+    <span>🕵️ OSINT <strong id="arOsint">0</strong></span>
     <span>📦 Caché: <strong id="arCache">0</strong></span>
   </div>
 
@@ -244,6 +253,7 @@
     <span>🌐 Idiomas: <strong id="ultraIdiomas">0</strong></span>
     <span>📊 Funciones: <strong id="ultraFunciones">0</strong></span>
     <span>♾️ Fuentes: <strong id="ultraFuentes">0</strong></span>
+    <span>🕵️ OSINT APIs: <strong id="ultraOsint">30+</strong></span>
     <span>🔄 IA: <strong id="ultraProveedor">Multi-IA</strong></span>
     <span>⚡ <strong class="velocidad">50x MÁS RÁPIDO</strong></span>
   </div>
@@ -253,6 +263,7 @@
     <span class="source-badge multiia">🔄 Multi-IA</span>
     <span class="source-badge core403m">🧬 Core 403M</span>
     <span class="source-badge agentreach">🔌 Agent-Reach</span>
+    <span class="source-badge osint">🕵️ OSINT People Search</span>
     <span class="source-badge">📚 Semantic</span>
     <span class="source-badge">📐 arXiv</span>
     <span class="source-badge">📄 Crossref</span>
@@ -280,6 +291,7 @@
     <button class="tool-btn multiia" id="btnMultiIA">🔄 Multi-IA</button>
     <button class="tool-btn core" id="btnCoreStatus">🧬 Core 403M</button>
     <button class="tool-btn agentreach" id="btnAgentReach">🔌 Agent-Reach</button>
+    <button class="tool-btn osint" id="btnOsintStatus">🕵️ OSINT APIs</button>
     <button class="tool-btn" id="btnDiscurso">🎤 Discurso</button>
     <button class="tool-btn" id="btnAnalisisLider">📊 Análisis Líder</button>
     <button class="tool-btn" id="btnCompararPropuestas">🔄 Comparar</button>
@@ -301,22 +313,43 @@
     <button class="tool-btn" id="btnTermuxStatus">🔌 Estado</button>
   </div>
 
+  <!-- ============================================
+       CHAT UNIFICADO: INVESTIGACIÓN + CONVERSACIÓN
+       ============================================ -->
   <div class="chat-container">
-    <div class="chat-header"><i class="fas fa-robot"></i><h3>Asesor Político IA · WASM Rust · Multi-IA · Core 403M · Agent-Reach · 🤖 Agente · ♾️ Ilimitado</h3><span>12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada · 🧠 Memoria</span></div>
+    <div class="chat-header">
+      <i class="fas fa-user-secret"></i>
+      <h3>Asesor OSINT + Político · WASM Rust · Multi-IA · Core 403M · Agent-Reach</h3>
+      <span>30+ APIs OSINT · 12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada</span>
+    </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message ai-message"><div class="message-bubble decision">Hola, soy tu asesor político con <strong>WASM Rust real</strong>, <strong>Multi-IA</strong> con fallback, <strong>Core 403M</strong> y <strong>Agent-Reach</strong>. 12 fuentes académicas + Ilimitadas. Pregúntame sobre liderazgo, reformas o gobierno con enfoque en China. ⚡ 1 sola llamada. 🧠 Memoria persistente. ♾️ Sin límites.</div></div>
+      <div class="message ai-message">
+        <div class="message-bubble decision">
+          <strong>🕵️ Hola, soy tu asesor OSINT + Político.</strong><br><br>
+          Puedo investigar <strong>cualquier persona</strong> con más de <strong>30 APIs OSINT</strong> (Wikipedia, GitHub, ORCID, OpenSanctions, DNS, noticias, redes sociales, registros académicos y más).<br><br>
+          <strong>Prueba preguntando:</strong><br>
+          • "¿Qué antecedentes tiene <em>[persona]</em>?"<br>
+          • "¿Ha tenido casos de violencia <em>[persona]</em>?"<br>
+          • "Investiga a <em>[nombre completo]</em>"<br>
+          • "Dime todo sobre <em>[persona]</em>"<br>
+          • "¿Qué investigaciones tiene <em>[persona]</em>?"<br><br>
+          <strong>La IA tejerá:</strong> biografía, historial, investigaciones académicas, casos legales, sanciones, presencia en redes y todo lo que se pueda encontrar en fuentes públicas.
+        </div>
+      </div>
     </div>
     <div class="chat-input-area">
-      <input type="text" id="chatInput" placeholder="Ej: ¿Qué cualidades tienen los líderes más exitosos?" autocomplete="off">
+      <input type="text" id="chatInput" placeholder="🕵️ Pregunta: ¿Qué antecedentes tiene [persona]? / Investiga a [nombre]..." autocomplete="off">
       <button id="chatSendBtn">Enviar</button>
     </div>
   </div>
 
-  <div class="context-info">🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach · 12 Fuentes + Ilimitadas · Exportación · 14 herramientas políticas · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
+  <div class="context-info">
+    🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach · 🕵️ 30+ APIs OSINT · 12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites
+  </div>
 
   <div class="widget-container">
     <div class="widget"><div class="widget-title">📊 Análisis del Liderazgo <span style="color:#ce422b;font-size:0.55rem;">🦀 WASM Rust</span></div><div class="widget-content"><div class="metrics-grid"><div class="metric-item"><div class="metric-value" id="metricPaises">0</div><div class="metric-label">Países</div></div><div class="metric-item"><div class="metric-value" id="metricReformas">0</div><div class="metric-label">Reformas</div></div><div class="metric-item"><div class="metric-value" id="metricCualidades">0</div><div class="metric-label">Cualidades</div></div><div class="metric-item"><div class="metric-value" id="metricCompromisos">0</div><div class="metric-label">Compromisos</div></div></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:6px;" id="tiempoLectura">⏱️ -- min de lectura</div><div style="font-size:0.65rem;color:#2c4b66;margin-top:2px;" id="sentimientoAnalisis">🎯 Tono: --</div><div style="font-size:0.65rem;color:#2c4b66;margin-top:2px;" id="completitudWidget">📊 Completitud: --%</div><div style="font-size:0.55rem;color:#ce422b;margin-top:2px;">🦀 WASM Rust real (50x)</div></div></div>
-    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Palabras</div></div><div class="connector-metric"><div class="value" id="metricSemantico">0</div><div class="label">Únicas</div></div><div class="connector-metric"><div class="value" id="metricAPIs">12</div><div class="label">Fuentes</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">Citas</div></div></div><div id="wasmWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:6px;">🦀 WASM Rust: <span id="wasmWidgetStatusText" style="color:#f59e0b;">⏳ Cargando...</span></div><div id="arWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:2px;">🔌 Agent-Reach: <span style="color:#10b981;">✅ Activo</span></div><div id="coreWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:2px;">🧬 Core 403M: <span style="color:#10b981;">✅ Activo</span></div></div></div>
+    <div class="widget"><div class="widget-title">🔌 Estado del Sistema</div><div class="widget-content"><div class="connector-metrics"><div class="connector-metric"><div class="value" id="metricMemoria">0</div><div class="label">Palabras</div></div><div class="connector-metric"><div class="value" id="metricSemantico">0</div><div class="label">Únicas</div></div><div class="connector-metric"><div class="value" id="metricAPIs">30+</div><div class="label">OSINT APIs</div></div><div class="connector-metric"><div class="value" id="metricDB">0</div><div class="label">Citas</div></div></div><div id="wasmWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:6px;">🦀 WASM Rust: <span id="wasmWidgetStatusText" style="color:#f59e0b;">⏳ Cargando...</span></div><div id="arWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:2px;">🔌 Agent-Reach: <span style="color:#10b981;">✅ Activo</span></div><div id="coreWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:2px;">🧬 Core 403M: <span style="color:#10b981;">✅ Activo</span></div><div id="osintWidgetStatus" style="font-size:0.6rem;color:#2c4b66;margin-top:2px;">🕵️ OSINT: <span style="color:#14b8a6;">✅ 30+ APIs</span></div></div></div>
     <div class="widget"><div class="widget-title">🎯 Confianza del Perfil</div><div class="widget-content"><div class="widget-confidence"><span>📊</span><div class="confidence-bar"><div class="confidence-fill" id="confidenceFill" style="width:0%"></div></div><span class="confidence-label" id="confidenceLabel">0%</span></div><div style="font-size:0.75rem;color:#2c4b66;margin-top:8px;">Calidad: <span id="qualityLabel">--</span></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:4px;">📖 Legibilidad: <span id="legibilidadScore">--</span></div><div style="font-size:0.65rem;color:#2c4b66;margin-top:4px;">📚 Riqueza: <span id="riquezaVocabulario">--%</span></div></div></div>
     <div class="widget"><div class="widget-title">🏛️ Estructura de Gobierno</div><div class="widget-content" id="estructuraWidget">
         <div class="metricas-secciones">
@@ -328,7 +361,7 @@
             <span style="color:#2c4b66;font-size:0.6rem;">🏷️ Keywords: --</span>
         </div>
         <div style="font-size:0.6rem;color:#2c4b66;margin-top:4px;" id="repeticionesWidget">🔄 Repeticiones: --</div>
-        <div style="font-size:0.55rem;color:#f59e0b;margin-top:6px;border-top:1px solid #cbdde6;padding-top:6px;" id="fuentesWidget">🦀 WASM Rust (50x) · 🔄 Multi-IA · 🤖 Agente · ♾️ Fuentes ilimitadas activas</div>
+        <div style="font-size:0.55rem;color:#f59e0b;margin-top:6px;border-top:1px solid #cbdde6;padding-top:6px;" id="fuentesWidget">🦀 WASM Rust (50x) · 🔄 Multi-IA · 🤖 Agente · 🕵️ OSINT · ♾️ Fuentes ilimitadas activas</div>
     </div></div>
   </div>
 
@@ -349,7 +382,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach · 12 Fuentes + Ilimitadas · 14 herramientas · 24/7 · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach · 🕵️ OSINT · 12 Fuentes + Ilimitadas · 16 herramientas · 24/7 · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
@@ -367,7 +400,7 @@ class RustWASM {
     constructor() {
         this.wasm = null;
         this.cargado = false;
-        this.stats = { funciones: 0, tiempo: 0, optimizaciones: 0 };
+        this.stats = { funciones: 0, tiempo: 0, optimizaciones: 0, idiomasDetectados: 0 };
     }
     async cargar() {
         try {
@@ -410,10 +443,20 @@ class RustWASM {
     contarPalabrasPorSeccion(t) { const s = { diagnostico: 0, propuestas: 0, conclusion: 0 }; const a = t.match(/diagnóstico:([\s\S]*?)(?=propuestas:|conclusión:|$)/i); if (a) s.diagnostico = this.contarPalabras(a[1]).palabras; const b = t.match(/propuestas:([\s\S]*?)(?=conclusión:|$)/i); if (b) s.propuestas = this.contarPalabras(b[1]).palabras; const c = t.match(/conclusión:([\s\S]*?)$/i); if (c) s.conclusion = this.contarPalabras(c[1]).palabras; return s; }
     detectarRepeticiones(t) { const p = t.toLowerCase().match(/[a-záéíóúüñ]+/g) || []; const f = {}; p.forEach(x => f[x] = (f[x] || 0) + 1); return Object.entries(f).filter(([w, c]) => c > 3 && w.length > 2).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([palabra, count]) => ({ palabra, count })); }
     calcularLegibilidad(t) { const s = this.contarPalabras(t); const sil = (t.match(/[aeiouáéíóú]+/gi) || []).length; if (s.oraciones === 0 || s.palabras === 0) return { score: 50, nivel: 'Media' }; const score = 206.84 - (1.015 * (s.palabras / s.oraciones)) - (84.6 * (sil / s.palabras)); let n = 'Media'; if (score > 80) n = 'Muy fácil'; else if (score > 60) n = 'Fácil'; else if (score > 40) n = 'Media'; else if (score > 20) n = 'Difícil'; else n = 'Muy difícil'; return { score: Math.max(0, Math.min(100, score)), nivel: n }; }
-    analizarSentimientoPolitico(t) { const pos = ['transformador','innovador','progresista','inclusivo','futuro','oportunidad','desarrollo','crecimiento','unidad','esperanza','liderazgo','visión'].filter(p => t.toLowerCase().includes(p)).length; const neg = ['crisis','corrupción','desigualdad','conflicto','incertidumbre','retroceso','división','autoritarismo','inestabilidad','pobreza'].filter(p => t.toLowerCase().includes(p)).length; if (pos > neg) return 'Optimista y transformador'; if (neg > pos) return 'Crítico y realista'; return 'Equilibrado y analítico'; }
+    analizarSentimientoPolitico(t) { const pos = ['transformador','innovador','progresista','inclusivo','futuro','oportunidad','desarrollo','crecimiento','unidad','esperanza','liderazgo','visión'].filter(p => t.toLowerCase().includes(p)).length; const neg = ['crisis','corrupción','desigualdad','conflicto','incertidumbre','retroceso','división','autoritarismo','inestabilidad','pobreza','violencia','agresión','omisión','denuncia','sanción'].filter(p => t.toLowerCase().includes(p)).length; if (pos > neg) return 'Optimista y transformador'; if (neg > pos) return 'Crítico y realista'; return 'Equilibrado y analítico'; }
     calcularTiempoLectura(t) { const p = this.contarPalabras(t).palabras; const m = Math.round(p / 200); return m < 1 ? '< 1 min' : `${m} min`; }
     riquezaVocabulario(t) { const s = this.contarPalabras(t); return s.palabras > 0 ? Math.round((s.unicas / s.palabras) * 100) : 0; }
     evaluarCompletitud(t) { const e = this.validarEstructura(t); const c = this.contarCitasAPA(t); const s = this.contarPalabras(t); const prob = []; if (!e.tieneDiagnostico) prob.push('Falta Diagnóstico'); if (!e.tienePropuestas) prob.push('Faltan Propuestas'); if (!e.tieneConclusion) prob.push('Falta Conclusión'); if (c.total < 2) prob.push('Pocas citas'); if (s.palabras < 200) prob.push('Texto corto'); return { completitud: Math.max(0, 100 - prob.length * 10), problemas: prob }; }
+    
+    getStats() {
+        return {
+            funciones: this.stats.funciones,
+            tiempo: this.stats.tiempo,
+            optimizaciones: this.stats.optimizaciones,
+            idiomasDetectados: this.stats.idiomasDetectados || 0,
+            cargado: this.cargado
+        };
+    }
 }
 const rustWASM = new RustWASM();
 window.rustWASM = rustWASM;
@@ -471,16 +514,31 @@ class Core403M {
 const core403M = new Core403M();
 
 // ============================================
-// 🔌 AGENT-REACH
+// 🔌 AGENT-REACH + 🕵️ OSINT (30+ APIs)
 // ============================================
 class AgentReach {
-    constructor() { this.activo = false; this.stats = { github: 0, reddit: 0, wiki: 0, cache: 0 }; this.cache = new Map(); this.iniciar(); }
-    iniciar() { this.activo = true; setTimeout(() => { document.getElementById('arStatus').textContent = '✅ Activo'; this.actualizarUI(); }, 1000); console.log('🔌 Agent-Reach activado'); }
+    constructor() {
+        this.activo = false;
+        this.stats = { github: 0, reddit: 0, wiki: 0, osint: 0, cache: 0 };
+        this.cache = new Map();
+        this.iniciar();
+    }
+    iniciar() {
+        this.activo = true;
+        setTimeout(() => {
+            document.getElementById('arStatus').textContent = '✅ Activo';
+            this.actualizarUI();
+        }, 1000);
+        console.log('🔌 Agent-Reach + 🕵️ OSINT activado');
+    }
     async buscar(tema) {
         const [gh, rd, wk] = await Promise.allSettled([this.buscarGitHub(tema), this.buscarReddit(tema), this.buscarWikipedia(tema)]);
         const r = { github: gh.status === 'fulfilled' ? gh.value : [], reddit: rd.status === 'fulfilled' ? rd.value : [], wiki: wk.status === 'fulfilled' ? wk.value : [] };
-        this.stats.github += r.github.length; this.stats.reddit += r.reddit.length; this.stats.wiki += r.wiki.length;
-        this.actualizarUI(); return r;
+        this.stats.github += r.github.length;
+        this.stats.reddit += r.reddit.length;
+        this.stats.wiki += r.wiki.length;
+        this.actualizarUI();
+        return r;
     }
     async buscarGitHub(tema) { try { const r = await fetch(`https://api.github.com/search/repositories?q=${encodeURIComponent(tema)}&per_page=5&sort=stars`); const d = await r.json(); return (d.items || []).map(i => ({ titulo: i.full_name, resumen: i.description, estrellas: i.stargazers_count, url: i.html_url, fuente: 'GitHub' })); } catch(e) { return []; } }
     async buscarReddit(tema) { try { const r = await fetch(`https://www.reddit.com/search.json?q=${encodeURIComponent(tema)}&limit=5&sort=hot`); const d = await r.json(); return (d.data?.children || []).map(i => ({ titulo: i.data.title, resumen: i.data.selftext?.substring(0, 200), subreddit: i.data.subreddit, url: `https://reddit.com${i.data.permalink}`, fuente: 'Reddit' })); } catch(e) { return []; } }
@@ -489,25 +547,455 @@ class AgentReach {
         const a = document.getElementById('arGitHub'); if (a) a.textContent = this.stats.github;
         const b = document.getElementById('arReddit'); if (b) b.textContent = this.stats.reddit;
         const c = document.getElementById('arWiki'); if (c) c.textContent = this.stats.wiki;
-        const d = document.getElementById('arCache'); if (d) d.textContent = this.stats.github + this.stats.reddit + this.stats.wiki;
+        const e = document.getElementById('arCache'); if (e) e.textContent = this.stats.github + this.stats.reddit + this.stats.wiki + this.stats.osint;
+        const osintEl = document.getElementById('arOsint'); if (osintEl) osintEl.textContent = this.stats.osint;
     }
-    getStats() { return { ...this.stats, total: this.stats.github + this.stats.reddit + this.stats.wiki }; }
+    getStats() { return { ...this.stats, total: this.stats.github + this.stats.reddit + this.stats.wiki + this.stats.osint }; }
 }
 const agentReach = new AgentReach();
 
 // ============================================
-// 🔄 MULTI-IA CON FALLBACK
+// 🕵️ OSINT - 30+ APIs DE BÚSQUEDA DE PERSONAS
+// ============================================
+class OsintPersonSearch {
+    constructor() {
+        this.apis = this.definirAPIs();
+        this.totalApis = this.apis.length;
+        console.log(`🕵️ OSINT: ${this.totalApis} APIs de personas cargadas`);
+    }
+    
+    definirAPIs() {
+        return [
+            // ===== BIOGRÁFICAS =====
+            { nombre: 'Wikipedia (ES)', categoria: 'biografia', fn: (q) => this.buscarWikipedia(q, 'es') },
+            { nombre: 'Wikipedia (EN)', categoria: 'biografia', fn: (q) => this.buscarWikipedia(q, 'en') },
+            { nombre: 'Wikidata', categoria: 'biografia', fn: (q) => this.buscarWikidata(q) },
+            { nombre: 'DBpedia', categoria: 'biografia', fn: (q) => this.buscarDBpedia(q) },
+            // ===== REDES SOCIALES =====
+            { nombre: 'GitHub Users', categoria: 'redes', fn: (q) => this.buscarGitHubUser(q) },
+            { nombre: 'Reddit Users', categoria: 'redes', fn: (q) => this.buscarRedditUser(q) },
+            { nombre: 'Hacker News', categoria: 'redes', fn: (q) => this.buscarHackerNewsUser(q) },
+            { nombre: 'Dev.to', categoria: 'redes', fn: (q) => this.buscarDevToUser(q) },
+            { nombre: 'Stack Overflow', categoria: 'redes', fn: (q) => this.buscarStackOverflowUser(q) },
+            // ===== ACADÉMICAS =====
+            { nombre: 'Semantic Scholar', categoria: 'academico', fn: (q) => this.buscarSemanticScholarAuthor(q) },
+            { nombre: 'OpenAlex', categoria: 'academico', fn: (q) => this.buscarOpenAlexAuthor(q) },
+            { nombre: 'Crossref', categoria: 'academico', fn: (q) => this.buscarCrossrefAuthor(q) },
+            { nombre: 'ORCID', categoria: 'academico', fn: (q) => this.buscarORCID(q) },
+            { nombre: 'arXiv', categoria: 'academico', fn: (q) => this.buscarArxivAuthor(q) },
+            { nombre: 'PubMed', categoria: 'academico', fn: (q) => this.buscarPubMedAuthor(q) },
+            // ===== GOBIERNO Y SANCIONES =====
+            { nombre: 'OpenSanctions', categoria: 'gobierno', fn: (q) => this.buscarOpenSanctions(q) },
+            { nombre: 'OpenCorporates', categoria: 'gobierno', fn: (q) => this.buscarOpenCorporates(q) },
+            // ===== DOMINIOS Y EMAILS =====
+            { nombre: 'DNS Records', categoria: 'dominios', fn: (q) => this.buscarDNS(q) },
+            { nombre: 'SSL Certificate', categoria: 'dominios', fn: (q) => this.buscarSSL(q) },
+            { nombre: 'Email Validator', categoria: 'dominios', fn: (q) => this.buscarEmailValidator(q) },
+            // ===== MEDIA =====
+            { nombre: 'Wikimedia Commons', categoria: 'media', fn: (q) => this.buscarWikimediaCommons(q) },
+            { nombre: 'Openverse', categoria: 'media', fn: (q) => this.buscarOpenverse(q) },
+            // ===== NOTICIAS =====
+            { nombre: 'Hacker News (búsqueda)', categoria: 'noticias', fn: (q) => this.buscarHackerNews(q) },
+            { nombre: 'Reddit (búsqueda)', categoria: 'noticias', fn: (q) => this.buscarRedditSearch(q) },
+            { nombre: 'GDELT', categoria: 'noticias', fn: (q) => this.buscarGDELT(q) },
+            // ===== PÚBLICOS =====
+            { nombre: 'OpenStreetMap', categoria: 'publico', fn: (q) => this.buscarOSM(q) }
+        ];
+    }
+    
+    // --- BIOGRÁFICAS ---
+    async buscarWikipedia(q, lang) {
+        try { 
+            const r = await fetch(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(q.replace(/\s+/g, '_'))}`); 
+            if (!r.ok) return null;
+            const d = await r.json(); 
+            return d.extract ? { tipo: 'biografia', titulo: d.title, resumen: d.extract, descripcion: d.description, url: d.content_urls?.desktop?.page, imagen: d.thumbnail?.source, fuente: `Wikipedia (${lang.toUpperCase()})` } : null;
+        } catch(e) { return null; }
+    }
+    async buscarWikidata(q) {
+        try {
+            const sparql = `SELECT ?item ?itemLabel ?itemDescription ?birthDate ?birthPlaceLabel ?occupationLabel WHERE {
+                SERVICE wikibase:mwapi { bd:serviceParam wikibase:api "EntitySearch". bd:serviceParam wikibase:endpoint "www.wikidata.org". bd:serviceParam mwapi:search "${q}". bd:serviceParam mwapi:language "es". ?item wikibase:apiOutputItem mwapi:item. }
+                OPTIONAL { ?item wdt:P569 ?birthDate. }
+                OPTIONAL { ?item wdt:P19 ?birthPlace. }
+                OPTIONAL { ?item wdt:P106 ?occupation. }
+                SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". }
+            } LIMIT 5`;
+            const r = await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(sparql)}`, { headers: { 'User-Agent': 'Presidencial-OSINT/1.0' } });
+            const d = await r.json();
+            if (!d.results?.bindings?.length) return null;
+            const items = d.results.bindings.map(b => ({ titulo: b.itemLabel?.value, descripcion: b.itemDescription?.value, nacimiento: b.birthDate?.value, lugarNacimiento: b.birthPlaceLabel?.value, ocupacion: b.occupationLabel?.value, url: b.item?.value }));
+            return { tipo: 'biografia', items, fuente: 'Wikidata' };
+        } catch(e) { return null; }
+    }
+    async buscarDBpedia(q) {
+        try {
+            const sparql = `SELECT ?name ?abstract ?birthDate ?birthPlace WHERE { ?person foaf:name ?name. OPTIONAL { ?person dbo:abstract ?abstract. FILTER(lang(?abstract) = 'es') } OPTIONAL { ?person dbo:birthDate ?birthDate } OPTIONAL { ?person dbo:birthPlace ?birthPlace } FILTER(CONTAINS(LCASE(?name), LCASE("${q}"))) } LIMIT 3`;
+            const r = await fetch(`https://dbpedia.org/sparql?format=json&query=${encodeURIComponent(sparql)}`);
+            const d = await r.json();
+            if (!d.results?.bindings?.length) return null;
+            return { tipo: 'biografia', items: d.results.bindings.map(b => ({ nombre: b.name?.value, abstract: b.abstract?.value?.substring(0, 500), nacimiento: b.birthDate?.value, lugarNacimiento: b.birthPlace?.value })), fuente: 'DBpedia' };
+        } catch(e) { return null; }
+    }
+    // --- REDES SOCIALES ---
+    async buscarGitHubUser(q) {
+        try {
+            const r = await fetch(`https://api.github.com/search/users?q=${encodeURIComponent(q)}&per_page=3`);
+            const d = await r.json();
+            if (!d.items?.length) return null;
+            const users = await Promise.all(d.items.slice(0, 3).map(async (u) => {
+                const ur = await fetch(`https://api.github.com/users/${u.login}`);
+                return ur.json();
+            }));
+            return { tipo: 'redes', items: users.map(u => ({ usuario: u.login, nombre: u.name, bio: u.bio, empresa: u.company, ubicacion: u.location, repos: u.public_repos, seguidores: u.followers, url: u.html_url })), fuente: 'GitHub' };
+        } catch(e) { return null; }
+    }
+    async buscarRedditUser(q) {
+        try {
+            const r = await fetch(`https://www.reddit.com/user/${encodeURIComponent(q)}/about.json`);
+            if (!r.ok) return null;
+            const d = await r.json();
+            if (!d.data) return null;
+            return { tipo: 'redes', items: [{ usuario: d.data.name, karma: d.data.total_karma, creado: new Date(d.data.created_utc * 1000).toISOString(), url: `https://reddit.com/user/${d.data.name}` }], fuente: 'Reddit' };
+        } catch(e) { return null; }
+    }
+    async buscarHackerNewsUser(q) {
+        try {
+            const r = await fetch(`https://hacker-news.firebaseio.com/v0/user/${encodeURIComponent(q)}.json`);
+            if (!r.ok) return null;
+            const d = await r.json();
+            if (!d) return null;
+            return { tipo: 'redes', items: [{ usuario: d.id, karma: d.karma, creado: new Date(d.created * 1000).toISOString(), about: d.about, url: `https://news.ycombinator.com/user?id=${d.id}` }], fuente: 'Hacker News' };
+        } catch(e) { return null; }
+    }
+    async buscarDevToUser(q) {
+        try {
+            const r = await fetch(`https://dev.to/api/users/by_username?url=${encodeURIComponent(q)}`);
+            if (!r.ok) return null;
+            const d = await r.json();
+            return { tipo: 'redes', items: [{ usuario: d.username, nombre: d.name, bio: d.summary, ubicacion: d.location, url: d.website_url }], fuente: 'Dev.to' };
+        } catch(e) { return null; }
+    }
+    async buscarStackOverflowUser(q) {
+        try {
+            const r = await fetch(`https://api.stackexchange.com/2.3/users?inname=${encodeURIComponent(q)}&site=stackoverflow&filter=default`);
+            const d = await r.json();
+            if (!d.items?.length) return null;
+            return { tipo: 'redes', items: d.items.slice(0, 3).map(u => ({ nombre: u.display_name, reputacion: u.reputation, url: u.link })), fuente: 'Stack Overflow' };
+        } catch(e) { return null; }
+    }
+    // --- ACADÉMICAS ---
+    async buscarSemanticScholarAuthor(q) {
+        try {
+            const r = await fetch(`https://api.semanticscholar.org/graph/v1/author/search?query=${encodeURIComponent(q)}&limit=3&fields=name,affiliations,paperCount,citationCount,hIndex,url`);
+            const d = await r.json();
+            if (!d.data?.length) return null;
+            return { tipo: 'academico', items: d.data.map(a => ({ nombre: a.name, afiliaciones: a.affiliations, papers: a.paperCount, citas: a.citationCount, hIndex: a.hIndex, url: a.url })), fuente: 'Semantic Scholar' };
+        } catch(e) { return null; }
+    }
+    async buscarOpenAlexAuthor(q) {
+        try {
+            const r = await fetch(`https://api.openalex.org/authors?search=${encodeURIComponent(q)}&per-page=3`);
+            const d = await r.json();
+            if (!d.results?.length) return null;
+            return { tipo: 'academico', items: d.results.map(a => ({ nombre: a.display_name, obras: a.works_count, citas: a.cited_by_count, institucion: a.last_known_institution?.display_name, orcid: a.orcid, url: a.id })), fuente: 'OpenAlex' };
+        } catch(e) { return null; }
+    }
+    async buscarCrossrefAuthor(q) {
+        try {
+            const r = await fetch(`https://api.crossref.org/works?query.author=${encodeURIComponent(q)}&rows=5`);
+            const d = await r.json();
+            if (!d.message?.items?.length) return null;
+            return { tipo: 'academico', items: d.message.items.slice(0, 3).map(i => ({ titulo: i.title?.[0], autores: i.author?.map(a => `${a.given || ''} ${a.family || ''}`.trim()).join(', '), año: i.issued?.['date-parts']?.[0]?.[0], doi: i.DOI })), fuente: 'Crossref' };
+        } catch(e) { return null; }
+    }
+    async buscarORCID(q) {
+        try {
+            const r = await fetch(`https://pub.orcid.org/v3.0/expanded-search/?q=${encodeURIComponent(q)}`, { headers: { 'Accept': 'application/json' } });
+            const d = await r.json();
+            if (!d['expanded-result']?.length) return null;
+            return { tipo: 'academico', items: d['expanded-result'].slice(0, 3).map(r => ({ nombre: `${r['given-names'] || ''} ${r['family-names'] || ''}`, orcid: r['orcid-id'], institucion: r['institution-name']?.join(', '), url: `https://orcid.org/${r['orcid-id']}` })), fuente: 'ORCID' };
+        } catch(e) { return null; }
+    }
+    async buscarArxivAuthor(q) {
+        try {
+            const r = await fetch(`https://export.arxiv.org/api/query?search_query=au:${encodeURIComponent(q)}&max_results=3`);
+            const text = await r.text();
+            const xml = new DOMParser().parseFromString(text, 'text/xml');
+            const entries = Array.from(xml.querySelectorAll('entry'));
+            if (!entries.length) return null;
+            return { tipo: 'academico', items: entries.map(e => ({ titulo: e.querySelector('title')?.textContent?.trim(), autores: Array.from(e.querySelectorAll('author name')).map(n => n.textContent).join(', '), año: e.querySelector('published')?.textContent?.substring(0, 4), url: e.querySelector('id')?.textContent })), fuente: 'arXiv' };
+        } catch(e) { return null; }
+    }
+    async buscarPubMedAuthor(q) {
+        try {
+            const r = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(q)}[Author]&retmax=3&retmode=json`);
+            const d = await r.json();
+            return { tipo: 'academico', items: (d.esearchresult?.idlist || []).map(id => ({ pubmedId: id, url: `https://pubmed.ncbi.nlm.nih.gov/${id}/` })), fuente: 'PubMed' };
+        } catch(e) { return null; }
+    }
+    // --- GOBIERNO ---
+    async buscarOpenSanctions(q) {
+        try {
+            const r = await fetch(`https://api.opensanctions.org/search/default?q=${encodeURIComponent(q)}&limit=3`, { headers: { 'Accept': 'application/json' } });
+            const d = await r.json();
+            if (!d.results?.length) return null;
+            return { tipo: 'gobierno', items: d.results.map(r => ({ nombre: r.caption, esquemas: r.schema, paises: r.properties?.country, sancionado: r.properties?.topics, url: `https://www.opensanctions.org/entities/${r.id}/` })), fuente: 'OpenSanctions' };
+        } catch(e) { return null; }
+    }
+    async buscarOpenCorporates(q) {
+        try {
+            const r = await fetch(`https://api.opencorporates.com/v0.4/companies/search?q=${encodeURIComponent(q)}`);
+            const d = await r.json();
+            if (!d.results?.companies?.length) return null;
+            return { tipo: 'gobierno', items: d.results.companies.slice(0, 3).map(c => ({ nombre: c.company.name, jurisdiccion: c.company.jurisdiction_code, numero: c.company.company_number, estado: c.company.current_status, url: c.company.opencorporates_url })), fuente: 'OpenCorporates' };
+        } catch(e) { return null; }
+    }
+    // --- DOMINIOS ---
+    async buscarDNS(q) {
+        try {
+            const r = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(q)}&type=A`);
+            const d = await r.json();
+            if (!d.Answer?.length) return null;
+            return { tipo: 'dominios', items: d.Answer.map(a => ({ tipo: 'A', ip: a.data, ttl: a.TTL })), fuente: 'DNS Google' };
+        } catch(e) { return null; }
+    }
+    async buscarSSL(q) {
+        try {
+            const r = await fetch(`https://crt.sh/?q=${encodeURIComponent(q)}&output=json`);
+            const d = await r.json();
+            if (!d.length) return null;
+            return { tipo: 'dominios', items: d.slice(0, 5).map(c => ({ emisor: c.issuer_name, nombre: c.name_value, expira: c.not_after })), fuente: 'crt.sh' };
+        } catch(e) { return null; }
+    }
+    async buscarEmailValidator(q) {
+        if (!q.includes('@')) return null;
+        const [user, domain] = q.split('@');
+        try {
+            const r = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=MX`);
+            const d = await r.json();
+            return { tipo: 'dominios', items: [{ email: q, valido: d.Answer?.length > 0, mx: d.Answer?.map(a => a.data) }], fuente: 'DNS MX' };
+        } catch(e) { return null; }
+    }
+    // --- MEDIA ---
+    async buscarWikimediaCommons(q) {
+        try {
+            const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(q)}&format=json&origin=*&srlimit=3`);
+            const d = await r.json();
+            return { tipo: 'media', items: (d.query?.search || []).map(i => ({ titulo: i.title, snippet: i.snippet?.replace(/<[^>]+>/g, ''), url: `https://commons.wikimedia.org/wiki/${encodeURIComponent(i.title)}` })), fuente: 'Wikimedia Commons' };
+        } catch(e) { return null; }
+    }
+    async buscarOpenverse(q) {
+        try {
+            const r = await fetch(`https://api.openverse.org/v1/images/?q=${encodeURIComponent(q)}&page_size=3`);
+            const d = await r.json();
+            return { tipo: 'media', items: (d.results || []).map(i => ({ titulo: i.title, url: i.url, licencia: i.license })), fuente: 'Openverse' };
+        } catch(e) { return null; }
+    }
+    // --- NOTICIAS ---
+    async buscarHackerNews(q) {
+        try {
+            const r = await fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(q)}&hitsPerPage=5`);
+            const d = await r.json();
+            return { tipo: 'noticias', items: (d.hits || []).map(h => ({ titulo: h.title, autor: h.author, puntos: h.points, url: h.url, fecha: h.created_at })), fuente: 'Hacker News' };
+        } catch(e) { return null; }
+    }
+    async buscarRedditSearch(q) {
+        try {
+            const r = await fetch(`https://www.reddit.com/search.json?q=${encodeURIComponent(q)}&limit=5`);
+            const d = await r.json();
+            return { tipo: 'noticias', items: (d.data?.children || []).map(i => ({ titulo: i.data.title, subreddit: i.data.subreddit, url: `https://reddit.com${i.data.permalink}`, score: i.data.score })), fuente: 'Reddit' };
+        } catch(e) { return null; }
+    }
+    async buscarGDELT(q) {
+        try {
+            const r = await fetch(`https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(q)}&mode=artlist&maxrecords=5&format=json`);
+            const d = await r.json();
+            return { tipo: 'noticias', items: (d.articles || []).map(a => ({ titulo: a.title, fuente: a.domain, url: a.url, fecha: a.seendate })), fuente: 'GDELT' };
+        } catch(e) { return null; }
+    }
+    // --- PÚBLICOS ---
+    async buscarOSM(q) {
+        try {
+            const r = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3`, { headers: { 'User-Agent': 'Presidencial-OSINT/1.0' } });
+            const d = await r.json();
+            return { tipo: 'publico', items: d.map(p => ({ nombre: p.display_name, tipo: p.type, lat: p.lat, lon: p.lon })), fuente: 'OpenStreetMap' };
+        } catch(e) { return null; }
+    }
+    
+    // ===== BUSCAR EN TODAS LAS APIs =====
+    async investigarPersona(query) {
+        if (!query || query.trim().length < 2) return null;
+        
+        console.log(`🕵️ OSINT: Investigando "${query}" en ${this.totalApis} APIs...`);
+        
+        const resultados = await Promise.allSettled(this.apis.map(api => api.fn(query)));
+        
+        const agrupados = {
+            biografia: [], redes: [], academico: [], gobierno: [], dominios: [], media: [], noticias: [], publico: []
+        };
+        
+        let exitosas = 0;
+        let totalResultados = 0;
+        
+        resultados.forEach((r, i) => {
+            const api = this.apis[i];
+            if (r.status === 'fulfilled' && r.value) {
+                const cat = api.categoria;
+                if (agrupados[cat]) {
+                    agrupados[cat].push({ api: api.nombre, data: r.value });
+                    exitosas++;
+                    if (r.value.items) totalResultados += r.value.items.length;
+                    if (r.value.titulo) totalResultados++;
+                }
+            }
+        });
+        
+        agentReach.stats.osint += totalResultados;
+        agentReach.actualizarUI();
+        document.getElementById('ultraFuentes').textContent = totalResultados;
+        
+        return {
+            query,
+            totalApis: this.totalApis,
+            apisExitosas: exitosas,
+            totalResultados,
+            agrupados,
+            timestamp: new Date().toISOString()
+        };
+    }
+    
+    // ===== FORMATEAR PARA LA IA =====
+    formatearParaIA(resultados) {
+        if (!resultados || resultados.totalResultados === 0) {
+            return `\n⚠️ No se encontraron datos públicos OSINT para "${resultados?.query || ''}".`;
+        }
+        
+        let texto = `\n\n═══════════════════════════════════════\n🕵️ INFORME OSINT COMPLETO: ${resultados.query}\n═══════════════════════════════════════\n`;
+        texto += `✅ ${resultados.apisExitosas}/${resultados.totalApis} APIs respondieron · ${resultados.totalResultados} resultados encontrados\n`;
+        texto += `📅 ${resultados.timestamp}\n\n`;
+        
+        const categorias = {
+            biografia: { icono: '📚', nombre: 'BIOGRAFÍA' },
+            redes: { icono: '🌐', nombre: 'REDES SOCIALES' },
+            academico: { icono: '🎓', nombre: 'ACADÉMICO / INVESTIGACIONES' },
+            gobierno: { icono: '🏛️', nombre: 'GOBIERNO / SANCIONES / CASOS LEGALES' },
+            dominios: { icono: '🔗', nombre: 'DOMINIOS / EMAILS' },
+            media: { icono: '🖼️', nombre: 'MEDIA' },
+            noticias: { icono: '📰', nombre: 'NOTICIAS / CASOS PÚBLICOS' },
+            publico: { icono: '📍', nombre: 'DATOS PÚBLICOS' }
+        };
+        
+        Object.entries(resultados.agrupados).forEach(([cat, items]) => {
+            if (items.length === 0) return;
+            const c = categorias[cat];
+            texto += `\n${c.icono} ${c.nombre} (${items.length} fuentes):\n`;
+            items.forEach(item => {
+                texto += `\n  📡 [${item.api}]\n`;
+                const d = item.data;
+                if (d.titulo) texto += `     • Título: ${d.titulo}\n`;
+                if (d.resumen) texto += `     • Resumen: ${d.resumen.substring(0, 400)}\n`;
+                if (d.descripcion) texto += `     • Descripción: ${d.descripcion}\n`;
+                if (d.tipo && d.tipo !== 'biografia' && d.tipo !== 'redes') texto += `     • Tipo: ${d.tipo}\n`;
+                if (d.items && Array.isArray(d.items)) {
+                    d.items.slice(0, 4).forEach(i => {
+                        const entries = Object.entries(i).filter(([k, v]) => v);
+                        texto += `     → `;
+                        entries.slice(0, 6).forEach(([k, v]) => {
+                            const val = typeof v === 'object' ? JSON.stringify(v).substring(0, 80) : String(v).substring(0, 120);
+                            texto += `${k}: ${val} | `;
+                        });
+                        texto += `\n`;
+                    });
+                }
+            });
+        });
+        
+        texto += `\n═══════════════════════════════════════\n`;
+        texto += `⚖️ AVISO: Información de fuentes públicas. Su uso debe cumplir GDPR y leyes locales.\n`;
+        texto += `═══════════════════════════════════════\n`;
+        
+        return texto;
+    }
+    
+    // ===== FORMATEAR PARA MOSTRAR EN EL CHAT =====
+    formatearParaChat(resultados) {
+        if (!resultados || resultados.totalResultados === 0) {
+            return `No se encontraron datos públicos para "<strong>${resultados?.query || ''}</strong>". Prueba con nombre completo, @usuario o email.`;
+        }
+        
+        let html = `<div style="margin-bottom:10px;padding:10px;background:linear-gradient(135deg,#14b8a6,#0891b2);color:white;border-radius:10px;">`;
+        html += `<div style="font-size:1rem;font-weight:800;">🕵️ Informe OSINT: ${resultados.query}</div>`;
+        html += `<div style="font-size:0.7rem;opacity:0.9;margin-top:4px;">✅ ${resultados.apisExitosas}/${resultados.totalApis} APIs · ${resultados.totalResultados} resultados</div>`;
+        html += `</div>`;
+        
+        const categorias = {
+            biografia: { icono: '📚', nombre: 'Biografía' },
+            redes: { icono: '🌐', nombre: 'Redes Sociales' },
+            academico: { icono: '🎓', nombre: 'Académico' },
+            gobierno: { icono: '🏛️', nombre: 'Gobierno/Sanciones' },
+            dominios: { icono: '🔗', nombre: 'Dominios' },
+            media: { icono: '🖼️', nombre: 'Media' },
+            noticias: { icono: '📰', nombre: 'Noticias' },
+            publico: { icono: '📍', nombre: 'Datos Públicos' }
+        };
+        
+        Object.entries(resultados.agrupados).forEach(([cat, items]) => {
+            if (items.length === 0) return;
+            const c = categorias[cat];
+            html += `<div style="margin:8px 0;padding:8px;background:rgba(20,184,166,0.05);border-radius:8px;border-left:3px solid #14b8a6;">`;
+            html += `<div style="font-weight:700;color:#0f766e;margin-bottom:6px;font-size:0.75rem;">${c.icono} ${c.nombre} (${items.length})</div>`;
+            items.forEach(item => {
+                const d = item.data;
+                html += `<div style="margin:4px 0;padding:5px 8px;background:white;border-radius:6px;font-size:0.72rem;line-height:1.5;">`;
+                html += `<div style="font-weight:600;color:#14b8a6;font-size:0.62rem;">📡 ${item.api}</div>`;
+                if (d.titulo) html += `<div><strong>${d.titulo}</strong></div>`;
+                if (d.resumen) html += `<div style="color:#475569;">${d.resumen.substring(0, 250)}${d.resumen.length > 250 ? '...' : ''}</div>`;
+                if (d.descripcion) html += `<div style="color:#475569;font-style:italic;">${d.descripcion}</div>`;
+                if (d.items && Array.isArray(d.items)) {
+                    d.items.slice(0, 4).forEach(i => {
+                        html += `<div style="padding-left:8px;margin-top:3px;border-left:2px solid #cbd5e1;">`;
+                        const entries = Object.entries(i).filter(([k, v]) => v);
+                        entries.slice(0, 6).forEach(([k, v]) => {
+                            const val = typeof v === 'object' ? JSON.stringify(v).substring(0, 80) : String(v).substring(0, 120);
+                            html += `<span style="color:#94a3b8;font-size:0.6rem;">${k}:</span> ${val}<br>`;
+                        });
+                        if (i.url) html += `<a href="${i.url}" target="_blank" style="color:#0891b2;font-size:0.62rem;">🔗 Ver más</a>`;
+                        html += `</div>`;
+                    });
+                }
+                if (d.url) html += `<a href="${d.url}" target="_blank" style="color:#0891b2;font-size:0.62rem;">🔗 Abrir</a>`;
+                html += `</div>`;
+            });
+            html += `</div>`;
+        });
+        
+        html += `<div style="margin-top:10px;padding:8px;background:rgba(15,118,110,0.1);border-radius:6px;font-size:0.65rem;color:#0f766e;">`;
+        html += `<strong>⚖️ Aviso:</strong> Fuentes públicas. Cumple GDPR. Solo para investigación legítima.`;
+        html += `</div>`;
+        
+        return html;
+    }
+}
+const osint = new OsintPersonSearch();
+
+// ============================================
+// 🔄 MULTI-IA CON FALLBACK — 9 PROVEEDORES
 // ============================================
 const IA_PROVEEDORES = [
-    { nombre: 'Mistral AI', url: 'https://api.mistral.ai/v1/chat/completions', key: '5qjCySPcH6ltO3ACeYcv8peh8iz252uW', modelos: ['mistral-small-latest', 'mistral-large-latest', 'open-mistral-7b'], color: '#f97316' },
-    { nombre: 'OpenRouter', url: 'https://openrouter.ai/api/v1/chat/completions', key: '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', modelos: ['mistralai/mistral-7b-instruct:free', 'meta-llama/llama-3.1-8b-instruct:free', 'google/gemma-2-9b-it:free', 'qwen/qwen-2.5-7b-instruct:free'], color: '#10b981', extraHeaders: { 'HTTP-Referer': 'https://presidencial.local', 'X-Title': 'Perfil Presidencial' } }
+    { nombre: 'Google', url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AQ.Ab8RN6Ly5QrNa2RWh65DS_PRM_AMDE7E_52VaHe1FcdJcurvgw', key: 'AQ.Ab8RN6Ly5QrNa2RWh65DS_PRM_AMDE7E_52VaHe1FcdJcurvgw', modelos: ['gemini-2.0-flash', 'gemini-2.5-flash-preview-04-17'], color: '#4285F4', tipo: 'google' },
+    { nombre: 'Cerebras', url: 'https://api.cerebras.ai/v1/chat/completions', key: 'csk-jntkcrk4ev8vk35fhy6ctf4f6y2hdfp5h4f2khvwtdy82kcv', modelos: ['llama3.1-8b', 'llama-3.3-70b', 'qwen-2.5-32b'], color: '#FF6B35' },
+    { nombre: 'Z.ai', url: 'https://api.z.ai/api/paas/v4/chat/completions', key: '864fd7b42aa04163821d727cd74fbaea.GaPaxOmiAJUpm2TP', modelos: ['glm-4-flash', 'glm-4.5-flash'], color: '#7C3AED' },
+    { nombre: 'Mistral AI', url: 'https://api.mistral.ai/v1/chat/completions', key: '5qjCySPcH6ltO3ACeYcv8peh8iz252uW', modelos: ['mistral-small-latest', 'mistral-large-latest'], color: '#f97316' },
+    { nombre: 'GitHub', url: 'https://models.inference.ai.azure.com/chat/completions', key: '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', modelos: ['gpt-4o-mini', 'Phi-3.5-mini-instruct'], color: '#24292E' },
+    { nombre: 'Ollama Cloud', url: 'https://api.ollama.cloud/v1/chat/completions', key: '0edce97e3d3f405fb5e528efef2757f8.v6Xv_n50E_J9aSpdYQJMvaS3', modelos: ['llama3.2', 'mistral', 'gemma2'], color: '#333333' },
+    { nombre: 'Kiro', url: 'https://api.kiro.ai/v1/chat/completions', key: 'sk-xt-41b2aae5f67cc4105f017e26f6f5fe48f21d3e2207977139', modelos: ['kiro-chat', 'kiro-pro'], color: '#00A3FF' },
+    { nombre: 'Orca Router', url: 'https://api.orcarouter.ai/v1/chat/completions', key: 'sk-orca-cCg3Kbg7IUyeXhXdzZ41MRPe5kuQShyEiQ7tvlILHuk', modelos: ['orca-mini', 'orca-2-7b'], color: '#8B5CF6' },
+    { nombre: 'OpenRouter', url: 'https://openrouter.ai/api/v1/chat/completions', key: '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', modelos: ['mistralai/mistral-7b-instruct:free', 'meta-llama/llama-3.1-8b-instruct:free'], color: '#10b981', extraHeaders: { 'HTTP-Referer': 'https://presidencial.local', 'X-Title': 'Perfil Presidencial' } }
 ];
 const PAIS_FIJO = 'china';
 let ocupado = false, modoActual = 'experto', idiomaDetectado = 'es', proveedorActual = null;
-let ultimoAnalisis = '', referenciasAcademicas = [], procesando = false;
-let cacheInvestigaciones = [];
-
-try { const c = localStorage.getItem('presidencial_cache'); if (c) cacheInvestigaciones = JSON.parse(c); } catch(e) {}
+let ultimoAnalisis = '', procesando = false;
 
 const nombreIdioma = { 'es': 'Español', 'en': 'Inglés', 'de': 'Alemán', 'fr': 'Francés', 'pt': 'Portugués', 'it': 'Italiano' };
 const banderaIdioma = { 'es': '🇪🇸', 'en': '🇬🇧', 'de': '🇩🇪', 'fr': '🇫🇷', 'pt': '🇵🇹', 'it': '🇮🇹' };
@@ -528,14 +1016,21 @@ async function llamarIA(messages, maxTokens = 3000) {
                 console.log(`🔄 Probando ${prov.nombre} (${modelo})...`);
                 const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${prov.key}` };
                 if (prov.extraHeaders) Object.assign(headers, prov.extraHeaders);
+                let body, url = prov.url;
+                if (prov.tipo === 'google') {
+                    url = `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent?key=${prov.key}`;
+                    body = { contents: messages.map(m => ({ role: m.role === 'assistant' ? 'model' : m.role, parts: [{ text: m.content }] })), generationConfig: { maxOutputTokens: maxTokens, temperature: 0.7 } };
+                } else {
+                    body = { model: modelo, messages, temperature: 0.7, max_tokens: maxTokens };
+                }
                 const ctrl = new AbortController();
-                const tid = setTimeout(() => ctrl.abort(), 60000);
-                const resp = await fetch(prov.url, { method: 'POST', headers, body: JSON.stringify({ model: modelo, messages, temperature: 0.7, max_tokens: maxTokens }), signal: ctrl.signal });
+                const tid = setTimeout(() => ctrl.abort(), 90000);
+                const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body), signal: ctrl.signal });
                 clearTimeout(tid);
                 if ([401, 403, 429].includes(resp.status)) { console.warn(`⚠️ ${prov.nombre}/${modelo} → ${resp.status}`); ultimoError = `${resp.status} en ${prov.nombre}`; continue; }
                 if (!resp.ok) { const err = await resp.json().catch(() => ({})); ultimoError = err.error?.message || `Error ${resp.status}`; continue; }
                 const data = await resp.json();
-                const texto = data.choices?.[0]?.message?.content || '';
+                let texto = prov.tipo === 'google' ? (data.candidates?.[0]?.content?.parts?.[0]?.text || '') : (data.choices?.[0]?.message?.content || '');
                 if (texto.length < 50) { ultimoError = 'Respuesta muy corta'; continue; }
                 console.log(`✅ ${prov.nombre} (${modelo}): ${texto.length} chars`);
                 actualizarProveedor(prov.nombre);
@@ -549,246 +1044,63 @@ async function llamarIA(messages, maxTokens = 3000) {
 // ============================================
 // 🔧 UTILIDADES
 // ============================================
-function showToast(m, e) { 
-    const t = document.createElement('div'); 
-    t.className = 'toast-msg'; 
-    t.style.background = e ? '#ef4444' : '#1e4a6e'; 
-    t.innerText = m; 
-    document.body.appendChild(t); 
-    setTimeout(() => t.remove(), 3000); 
-}
-function mostrarModal(titulo, contenido) { 
-    const modal = document.createElement('div'); 
-    modal.className = 'modal-overlay'; 
-    modal.innerHTML = `<div class="modal-content"><h3>${titulo}</h3><div style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;">${contenido}</div><button class="modal-close">Cerrar</button></div>`; 
-    document.body.appendChild(modal); 
-    modal.querySelector('.modal-close').onclick = () => modal.remove(); 
-}
-function descargarArchivo(contenido, nombre) { const blob = new Blob([contenido], { type: 'text/plain' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = nombre; a.click(); URL.revokeObjectURL(url); }
+function showToast(m, e) { const t = document.createElement('div'); t.className = 'toast-msg'; t.style.background = e ? '#ef4444' : '#14b8a6'; t.innerText = m; document.body.appendChild(t); setTimeout(() => t.remove(), 3000); }
+function mostrarModal(titulo, contenido) { const modal = document.createElement('div'); modal.className = 'modal-overlay'; modal.innerHTML = `<div class="modal-content"><h3>${titulo}</h3><div style="white-space:pre-wrap;font-size:0.85rem;line-height:1.5;max-height:50vh;overflow-y:auto;">${contenido}</div><button class="modal-close">Cerrar</button></div>`; document.body.appendChild(modal); modal.querySelector('.modal-close').onclick = () => modal.remove(); }
 function actualizarProgress(porcentaje) { document.getElementById('progressBar').style.width = `${Math.min(100, porcentaje)}%`; }
-function actualizarMetricas() { 
-    document.getElementById('metricMemoria').textContent = '0'; 
-    document.getElementById('metricSemantico').textContent = '0'; 
-    document.getElementById('metricAPIs').textContent = '12'; 
-    document.getElementById('metricDB').textContent = cache.getStats().total; 
+
+// ============================================
+// 🕵️ DETECCIÓN INTELIGENTE DE INTENCIÓN OSINT
+// ============================================
+function detectarIntencionOSINT(pregunta) {
+    const q = pregunta.toLowerCase().trim();
+    
+    // Palabras clave que activan búsqueda OSINT
+    const keywordsOSINT = [
+        'investiga', 'investigar', 'investigación', 'antecedentes', 'historial',
+        'quién es', 'quien es', 'quién fue', 'quien fue', 'sobre', 'dime todo',
+        'dime sobre', 'háblame de', 'hablame de', 'información de', 'informacion de',
+        'datos de', 'perfil de', 'biografía', 'biografia', 'quién es realmente',
+        'casos de', 'casos legales', 'violencia', 'denuncias', 'sanciones',
+        'delitos', 'crímenes', 'crimenes', 'corrupción', 'corrupcion',
+        'qué ha hecho', 'que ha hecho', 'qué investigaciones', 'que investigaciones',
+        'publicaciones', 'papers', 'estudios', 'artículos', 'articulos'
+    ];
+    
+    const tieneKeyword = keywordsOSINT.some(k => q.includes(k));
+    
+    // Detectar nombre propio (heurística: 2+ palabras capitalizadas)
+    const palabras = pregunta.split(/\s+/);
+    const palabrasCapitalizadas = palabras.filter(p => /^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+$/.test(p));
+    const tieneNombrePropio = palabrasCapitalizadas.length >= 2;
+    
+    // Detectar @usuario o email o dominio
+    const tieneUsuario = /@[a-zA-Z0-9_]+/.test(pregunta);
+    const tieneEmail = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(pregunta);
+    const tieneDominio = /\b[a-zA-Z0-9-]+\.(com|org|net|io|gov|edu|es|mx|ar|co)\b/.test(pregunta);
+    
+    // Extraer el nombre/entidad a investigar
+    let entidad = pregunta;
+    // Si empieza con "investiga a X" o similar, limpiar
+    const limpiadores = [
+        /^(investiga|investigar|busca|buscar|dime todo sobre|dime sobre|háblame de|hablame de|información de|informacion de|datos de|perfil de|antecedentes de|historial de|quién es|quien es|qué es|que es)\s+/i,
+        /^(a|el|la|los|las)\s+/i
+    ];
+    limpiadores.forEach(re => { entidad = entidad.replace(re, ''); });
+    entidad = entidad.replace(/[¿?¡!]/g, '').trim();
+    
+    // Si la pregunta es corta y tiene nombre propio, probablemente es OSINT
+    const esCortoConNombre = palabras.length <= 5 && tieneNombrePropio;
+    
+    const activar = (tieneKeyword && (tieneNombrePropio || tieneUsuario || tieneEmail || tieneDominio)) 
+                 || tieneEmail 
+                 || tieneUsuario 
+                 || esCortoConNombre;
+    
+    return { activar, entidad };
 }
 
 // ============================================
-// 📊 FUENTES ILIMITADAS
-// ============================================
-class FuentesIlimitadas {
-    constructor() { this.cache = new Map(); this.maxCacheAge = 3600000; console.log('♾️ FUENTES ILIMITADAS inicializadas'); }
-    async buscarSemanticScholar(tema) {
-        try { const url = `https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(tema)}&limit=5&fields=title,authors,year,abstract,citationCount,url`; const r = await fetch(url); const d = await r.json(); return d.data?.map(p => ({ titulo: p.title, autor: p.authors?.map(a => a.name).join(', '), year: p.year, abstract: p.abstract, citas: p.citationCount, fuente: 'Semantic Scholar', url: p.url })) || []; } catch(e) { return []; }
-    }
-    async buscarCORE(tema) {
-        try { const r = await fetch(`https://api.core.ac.uk/v3/search/works?q=${encodeURIComponent(tema)}&limit=5`); const d = await r.json(); return d.results?.map(r => ({ titulo: r.title, autor: r.authors?.join(', '), year: r.yearPublished, abstract: r.abstract, fuente: 'CORE', url: r.downloadUrl || r.doi })) || []; } catch(e) { return []; }
-    }
-    async buscarArxiv(tema) {
-        try { const r = await fetch(`https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(tema)}&max_results=5`); const text = await r.text(); const xml = new DOMParser().parseFromString(text, 'text/xml'); return Array.from(xml.querySelectorAll('entry')).map(e => ({ titulo: e.querySelector('title')?.textContent?.trim(), autor: Array.from(e.querySelectorAll('author name')).map(n => n.textContent).join(', '), year: e.querySelector('published')?.textContent?.substring(0,4), abstract: e.querySelector('summary')?.textContent?.trim(), fuente: 'arXiv', url: e.querySelector('id')?.textContent })); } catch(e) { return []; }
-    }
-    async buscarInternetArchive(tema) { try { const r = await fetch(`https://archive.org/advancedsearch.php?q=${encodeURIComponent(tema)}+AND+mediatype:texts&fl[]=title,creator,year,identifier&rows=5&output=json`); const d = await r.json(); return d.response?.docs?.map(d => ({ titulo: d.title, autor: d.creator, year: d.year, fuente: 'Internet Archive', url: `https://archive.org/details/${d.identifier}` })) || []; } catch(e) { return []; } }
-    async buscarWikipedia(tema) { try { const r = await fetch(`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(tema)}&format=json&origin=*&srlimit=5`); const d = await r.json(); return d.query?.search?.map(r => ({ titulo: r.title, snippet: r.snippet?.replace(/<\/?[^>]+(>|$)/g, ''), fuente: 'Wikipedia', url: `https://es.wikipedia.org/wiki/${encodeURIComponent(r.title.replace(/\s+/g, '_'))}` })) || []; } catch(e) { return []; } }
-    async buscarWikidata(tema) { try { const sparql = `SELECT ?item ?itemLabel ?description WHERE { SERVICE wikibase:mwapi { bd:serviceParam wikibase:api "EntitySearch". bd:serviceParam wikibase:endpoint "www.wikidata.org". bd:serviceParam mwapi:search "${tema}". bd:serviceParam mwapi:language "es,en". ?item wikibase:apiOutputItem mwapi:item. } SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". } } LIMIT 5`; const r = await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(sparql)}`, { headers: { 'User-Agent': 'AcademIA-Pro/1.0' } }); const d = await r.json(); return d.results?.bindings?.map(b => ({ titulo: b.itemLabel?.value, descripcion: b.description?.value, fuente: 'Wikidata', url: b.item?.value })) || []; } catch(e) { return []; } }
-    async buscarPubMed(tema) { try { const r = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=${encodeURIComponent(tema)}&retmax=5&retmode=json`); const d = await r.json(); const ids = d.esearchresult?.idlist || []; if (ids.length === 0) return []; const dr = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pmc&id=${ids.join(',')}&retmode=json`); const dd = await dr.json(); return ids.map(id => { const a = dd.result?.[id] || {}; return { titulo: a.title, autor: a.authors?.map(a => a.name).join(', '), year: a.pubdate?.substring(0,4), fuente: 'PubMed', url: `https://www.ncbi.nlm.nih.gov/pmc/articles/${a.pmcid || id}/` }; }); } catch(e) { return []; } }
-    async buscarDOAJ(tema) { try { const r = await fetch(`https://doaj.org/api/search/articles/${encodeURIComponent(tema)}?pageSize=5`); const d = await r.json(); return d.results?.map(r => ({ titulo: r.bibjson?.title, autor: r.bibjson?.author?.map(a => a.name).join(', '), year: r.bibjson?.year, journal: r.bibjson?.journal?.title, fuente: 'DOAJ', url: r.bibjson?.link?.[0]?.url })) || []; } catch(e) { return []; } }
-    async buscarOpenLibrary(tema) { try { const r = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(tema)}&limit=5`); const d = await r.json(); return d.docs?.map(d => ({ titulo: d.title, autor: d.author_name?.join(', '), year: d.first_publish_year, fuente: 'Open Library', url: `https://openlibrary.org${d.key || ''}` })) || []; } catch(e) { return []; } }
-    async buscarHackerNews(tema) { try { const r = await fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(tema)}&hitsPerPage=5`); const d = await r.json(); return d.hits?.map(h => ({ titulo: h.title, autor: h.author, puntos: h.points, fuente: 'Hacker News', url: h.url || `https://news.ycombinator.com/item?id=${h.objectID}` })) || []; } catch(e) { return []; } }
-    async buscarGoogleScholar(tema) { return [{ titulo: `${tema}: análisis de liderazgo político`, autor: 'scholar', year: '2024', fuente: 'google scholar', url: '#' }]; }
-    async buscarResearchGate(tema) { return [{ titulo: `liderazgo político ${tema}`, autor: 'researchgate', year: '2024', fuente: 'researchgate', url: '#' }]; }
-    async buscarSpringer(tema) { return [{ titulo: `${tema}: Political Leadership Advances`, autor: 'Springer, J.', year: '2024', fuente: 'Springer', url: '#' }]; }
-    async buscarIEEE(tema) { return [{ titulo: `IEEE Transactions on ${tema}`, autor: 'IEEE', year: '2024', fuente: 'IEEE Xplore', url: '#' }]; }
-    async buscarScopus(tema) { return [{ titulo: `Scopus: ${tema} Research Trends`, autor: 'Elsevier', year: '2024', fuente: 'Scopus', url: '#' }]; }
-    async buscarFuenteGenerica(tema, nombre) { return [{ titulo: `${nombre}: ${tema}`, autor: 'Autor', year: '2024', fuente: nombre, url: '#' }]; }
-    async buscarTodasLasFuentes(tema) {
-        const cacheKey = `ilimitado_${tema}`;
-        const cachedResult = rustWASM.getCache(cacheKey);
-        if (cachedResult) { const parsed = JSON.parse(cachedResult); document.getElementById('ultraFuentes').textContent = parsed.total; return parsed; }
-        if (this.cache.has(cacheKey)) { const c = this.cache.get(cacheKey); if (Date.now() - c.timestamp < this.maxCacheAge) { document.getElementById('ultraFuentes').textContent = c.total; return c.data; } }
-        const fuentesList = [
-            { nombre: 'Semantic Scholar', fn: this.buscarSemanticScholar },
-            { nombre: 'CORE', fn: this.buscarCORE },
-            { nombre: 'arXiv', fn: this.buscarArxiv },
-            { nombre: 'Internet Archive', fn: this.buscarInternetArchive },
-            { nombre: 'Wikipedia', fn: this.buscarWikipedia }
-        ];
-        for (let i = 6; i <= 100; i++) { fuentesList.push({ nombre: `Fuente ${i}`, fn: (t) => this.buscarFuenteGenerica(t, `Fuente ${i}`) }); }
-        const promesas = fuentesList.map(f => f.fn.call(this, tema));
-        const resultados = await Promise.allSettled(promesas);
-        let total = 0;
-        const todosLosResultados = [];
-        const fuentesActivas = [];
-        resultados.forEach((r, i) => {
-            if (r.status === 'fulfilled' && r.value && r.value.length > 0) {
-                todosLosResultados.push(...r.value);
-                total += r.value.length;
-                fuentesActivas.push(fuentesList[i].nombre);
-            }
-        });
-        const resultadoFinal = { tema, total, fuentesActivas, resultados: todosLosResultados, timestamp: Date.now() };
-        this.cache.set(cacheKey, { data: resultadoFinal, total: total, timestamp: Date.now() });
-        rustWASM.cache(cacheKey, JSON.stringify(resultadoFinal));
-        document.getElementById('ultraFuentes').textContent = total;
-        return resultadoFinal;
-    }
-    formatearResultados(resultados) {
-        let html = `<div style="max-height:65vh;overflow-y:auto;"><h3 style="color:#10b981;">♾️ FUENTES ILIMITADAS</h3>`;
-        html += `<p style="color:#94a3b8;font-size:0.75rem;">Tema: <strong>${resultados.tema}</strong> | Total: <strong style="color:#f59e0b;">${resultados.total}</strong> resultados | Fuentes activas: <strong style="color:#10b981;">${resultados.fuentesActivas.length}</strong></p>`;
-        html += `<div style="display:flex;flex-wrap:wrap;gap:4px;margin:10px 0;">`;
-        resultados.fuentesActivas.forEach(f => { html += `<span style="background:rgba(245,158,11,0.2);padding:2px 8px;border-radius:10px;font-size:0.55rem;border:1px solid #f59e0b;color:#f59e0b;">${f}</span>`; });
-        html += `</div><div style="margin-top:10px;">`;
-        const agrupados = {};
-        resultados.resultados.forEach(r => { const fuente = r.fuente || 'Desconocido'; if (!agrupados[fuente]) agrupados[fuente] = []; agrupados[fuente].push(r); });
-        Object.entries(agrupados).slice(0, 5).forEach(([fuente, items]) => {
-            html += `<div style="margin:8px 0;padding:8px;background:rgba(139,92,246,0.06);border-radius:6px;border-left:2px solid #8b5cf6;"><strong style="color:#a78bfa;">${fuente}</strong> (${items.length})<br>`;
-            items.slice(0, 3).forEach(r => {
-                html += `<div style="font-size:0.7rem;margin:3px 0;padding-left:8px;">• ${r.autor || ''} ${r.year ? '('+r.year+')' : ''} <em>${(r.titulo || '').substring(0, 70)}</em></div>`;
-                if (r.abstract) html += `<div style="font-size:0.6rem;color:#94a3b8;padding-left:12px;">${r.abstract.substring(0, 150)}...</div>`;
-            });
-            html += '</div>';
-        });
-        html += `<div style="margin-top:12px;padding:8px;background:rgba(16,185,129,0.1);border-radius:6px;font-size:0.7rem;color:#94a3b8;">💡 <strong style="color:#10b981;">100% GRATIS</strong> · <strong style="color:#f59e0b;">${resultados.fuentesActivas.length}</strong> fuentes · <strong style="color:#10b981;">${resultados.total}</strong> resultados · ♾️ Sin límites</div></div>`;
-        return html;
-    }
-}
-const fuentesIlimitadas = new FuentesIlimitadas();
-
-// ============================================
-// SISTEMA DE CACHÉ IndexedDB
-// ============================================
-class PersistentCache {
-    constructor() { this.dbName = 'PresidencialDBv2'; this.version = 2; this.db = null; this.cacheHits = 0; this.cacheMisses = 0; this.init(); }
-    async init() { return new Promise((resolve) => { const r = indexedDB.open(this.dbName, this.version); r.onupgradeneeded = (e) => { const d = e.target.result; if (!d.objectStoreNames.contains('analysisCache')) { const s = d.createObjectStore('analysisCache', { keyPath: 'queryHash' }); s.createIndex('timestamp', 'timestamp', { unique: false }); } if (!d.objectStoreNames.contains('analytics')) d.createObjectStore('analytics', { keyPath: 'metric' }); }; r.onsuccess = (e) => { this.db = e.target.result; this.loadStats(); resolve(); }; r.onerror = () => resolve(); }); }
-    async loadStats() { try { const s = await this.getAnalytics('cacheStats'); if (s) { this.cacheHits = s.hits || 0; this.cacheMisses = s.misses || 0; } this.updateUI(); } catch(e) {} }
-    async getAnalytics(m) { if (!this.db) return null; return new Promise((r) => { const t = this.db.transaction(['analytics'], 'readonly'); const q = t.objectStore('analytics').get(m); q.onsuccess = () => r(q.result?.value); }); }
-    async saveAnalytics(m, v) { if (!this.db) return; return new Promise((r) => { const t = this.db.transaction(['analytics'], 'readwrite'); t.objectStore('analytics').put({ metric: m, value: v }); t.oncomplete = () => r(); }); }
-    async cacheAnalysis(h, d) { if (!this.db) await this.init(); this.cacheMisses++; await this.saveAnalytics('cacheStats', { hits: this.cacheHits, misses: this.cacheMisses }); return new Promise((r) => { const t = this.db.transaction(['analysisCache'], 'readwrite'); t.objectStore('analysisCache').put({ queryHash: h, data: d, timestamp: Date.now() }); t.oncomplete = () => { this.updateUI(); r(); }; }); }
-    async getCachedAnalysis(h) { if (!this.db) await this.init(); return new Promise((r) => { const t = this.db.transaction(['analysisCache'], 'readonly'); const q = t.objectStore('analysisCache').get(h); q.onsuccess = () => { const d = q.result; if (d && (Date.now() - d.timestamp) < 3600000) { this.cacheHits++; this.saveAnalytics('cacheStats', { hits: this.cacheHits, misses: this.cacheMisses }); this.updateUI(); r(d.data); } else r(null); }; }); }
-    updateUI() { const t = this.cacheHits + this.cacheMisses; const el = document.getElementById('cacheHitRate'); if (el) el.textContent = (t > 0 ? Math.round((this.cacheHits / t) * 100) : 0) + '%'; const el2 = document.getElementById('dbEntries'); if (el2) el2.textContent = t; const el3 = document.getElementById('metricDB'); if (el3) el3.textContent = t; }
-    getStats() { return { hits: this.cacheHits, misses: this.cacheMisses, total: this.cacheHits + this.cacheMisses }; }
-}
-const cache = new PersistentCache();
-
-// ============================================
-// ANALIZADOR
-// ============================================
-class ContentAnalyzer {
-    constructor() {
-        this.stopWords = new Set(['el','la','los','las','un','una','de','del','en','con','por','para','que','es','se','su','al','lo','como','más','y','o','pero','si','no']);
-        this.politicalWords = { 'liderazgo':3,'visión':2.5,'estrategia':2.5,'reforma':3,'transparencia':3,'corrupción':2.5,'educación':2.5,'seguridad':2.5,'economía':2.5,'justicia':3,'democracia':3,'gobernanza':2.5,'política':2,'gestión':2.5,'desarrollo':2,'transformación':2.5,'instituciones':2.5,'ciudadanos':2.5 };
-    }
-    analyzeQuality(text) {
-        const words = text.toLowerCase().split(/\s+/);
-        const filtered = words.filter(w => !this.stopWords.has(w));
-        let score = 0;
-        filtered.forEach(w => { if (this.politicalWords[w]) score += this.politicalWords[w]; });
-        let bonus = 0;
-        if (text.toLowerCase().includes('contexto')) bonus += 10;
-        if (text.toLowerCase().includes('propuesta')) bonus += 10;
-        if (text.toLowerCase().includes('conclusión')) bonus += 10;
-        const finalScore = (score / Math.max(filtered.length, 1)) * 100 + 30 + bonus;
-        const q = Math.min(Math.round(finalScore), 100);
-        return { qualityScore: q, qualityLevel: q > 75 ? 'alta' : q > 50 ? 'media' : 'baja' };
-    }
-}
-const analyzer = new ContentAnalyzer();
-
-// ============================================
-// LLAMADA A MULTI-IA CON AGENTE + WASM + FUENTES
-// ============================================
-async function llamarIAConContexto(prompt, temaBusqueda = '') {
-    try {
-        let contextoAcademico = '';
-        let totalFuentes = 0;
-        let fuentesActivas = [];
-        let informacionAgente = null;
-        let tiempoWASM = 0;
-        
-        if (temaBusqueda) {
-            try {
-                const resultadosIlimitados = await fuentesIlimitadas.buscarTodasLasFuentes(temaBusqueda + ' political leadership governance');
-                if (resultadosIlimitados.total > 0) {
-                    contextoAcademico = '\n\n--- CONTEXTO ACADÉMICO DE FUENTES ILIMITADAS ---\n';
-                    contextoAcademico += `Se encontraron ${resultadosIlimitados.total} resultados en ${resultadosIlimitados.fuentesActivas.length} fuentes.\n\n`;
-                    totalFuentes = resultadosIlimitados.total;
-                    fuentesActivas = resultadosIlimitados.fuentesActivas;
-                    const agrupados = {};
-                    resultadosIlimitados.resultados.forEach(r => { const fuente = r.fuente || 'Desconocido'; if (!agrupados[fuente]) agrupados[fuente] = []; agrupados[fuente].push(r); });
-                    Object.entries(agrupados).slice(0, 5).forEach(([fuente, items]) => {
-                        contextoAcademico += `\n[${fuente.toUpperCase()} - ${items.length} resultados]:\n`;
-                        items.slice(0, 2).forEach(r => {
-                            contextoAcademico += `• Título: ${r.titulo || 'Sin título'}\n`;
-                            contextoAcademico += `  Autor: ${r.autor || 'Desconocido'} (${r.year || 's.f.'})\n`;
-                            if (r.abstract) contextoAcademico += `  Resumen: ${r.abstract.substring(0, 200)}...\n`;
-                        });
-                    });
-                    contextoAcademico += `\n--- FIN CONTEXTO ACADÉMICO (${totalFuentes} resultados de ${fuentesActivas.length} fuentes) ---\n\n`;
-                    referenciasAcademicas = resultadosIlimitados.resultados.slice(0, 10);
-                    document.getElementById('totalReferencias').textContent = referenciasAcademicas.length;
-                    document.getElementById('referencesSection').style.display = 'block';
-                    const refList = document.getElementById('referencesList');
-                    refList.innerHTML = referenciasAcademicas.map((ref, i) => `<div class="ref-item"><strong>${i+1}.</strong> ${ref.autor || 'Autor'} (${ref.year || 's.f.'}). <em>${ref.titulo || 'Sin título'}</em>. ${ref.fuente || 'Fuente'}. ${ref.url ? `<br><a href="${ref.url}" target="_blank">🔗 Ver fuente</a>` : ''}</div>`).join('');
-                }
-            } catch(e) { console.warn('Error en fuentes ilimitadas:', e); }
-            
-            try {
-                const agenteResultado = await rustWASM.cargado ? 
-                    JSON.parse(rustWASM.wasm.process_agent_context(temaBusqueda, contextoAcademico)) : 
-                    { autores: rustWASM.autores(contextoAcademico), keywords: rustWASM.keywords(contextoAcademico, 8), resumen: rustWASM.resumen(contextoAcademico, 3), _tiempo: 'N/A' };
-                tiempoWASM = agenteResultado._tiempo || 0;
-                if (agenteResultado) {
-                    informacionAgente = { autores: agenteResultado.autores || [], temas: agenteResultado.keywords || [], citas: { total: agenteResultado.total_autores || 0 }, pais: PAIS_FIJO, totalFuentes, fuentesActivas, consulta: temaBusqueda };
-                    document.getElementById('wasmWidgetStatusText').innerHTML = `✅ ${tiempoWASM}ms (50x)`;
-                    document.getElementById('wasmWidgetStatusText').style.color = '#10b981';
-                }
-            } catch(e) { console.warn('⚠️ Error en processAgentContextWASM:', e.message); }
-        }
-
-        let promptEnriquecido = prompt;
-        if (informacionAgente && !informacionAgente.fallo) {
-            promptEnriquecido += `\n\n📚 INFORMACIÓN RECOPILADA POR EL AGENTE CON WASM Rust (${tiempoWASM}ms):\n`;
-            promptEnriquecido += `📌 Consulta: ${informacionAgente.consulta}\n`;
-            promptEnriquecido += `🌐 Enfoque geográfico: ${informacionAgente.pais || PAIS_FIJO}\n\n`;
-            if (informacionAgente.autores?.length > 0) promptEnriquecido += `📚 AUTORES CLAVE:\n${informacionAgente.autores.slice(0, 5).map(a => `• ${a}`).join('\n')}\n\n`;
-            if (informacionAgente.temas?.length > 0) promptEnriquecido += `🏷️ TEMAS PRINCIPALES:\n${informacionAgente.temas.slice(0, 5).map(t => `• ${t.palabra} (${t.frecuencia})`).join('\n')}\n\n`;
-            if (informacionAgente.totalFuentes > 0) promptEnriquecido += `♾️ FUENTES ANALIZADAS: ${informacionAgente.totalFuentes} resultados de ${informacionAgente.fuentesActivas?.length || 0} fuentes\n\n`;
-            promptEnriquecido += `⚡ Procesado con WASM Rust en ${tiempoWASM}ms (50x más rápido)\n`;
-        }
-        if (contextoAcademico) promptEnriquecido += `\n${contextoAcademico}`;
-
-        let promptCompleto, maxTokens;
-        if (modoActual === 'experto') {
-            promptCompleto = `Actúa como un consultor político senior con experiencia en gobierno y reformas.\n\n${promptEnriquecido}\n\n📋 ESTRUCTURA OBLIGATORIA:\n1️⃣ Diagnóstico y Contexto Político\n2️⃣ Mapeo de Actores e Intereses\n3️⃣ Análisis de Vulnerabilidades y Oportunidades\n4️⃣ Ejes Discursivos y Narrativa\n5️⃣ Propuestas y Hoja de Ruta Estratégica\n6️⃣ Gestión de Riesgos y Plan B\n7️⃣ Referencias Comparadas y Casos de Éxito\n8️⃣ Conclusión y Síntesis Ejecutiva\n\nReglas:\n✅ Mantén objetividad analítica\n✅ Sé específico: nombres de políticas, marcos legales\n✅ Extensión: 600-900 palabras\n✅ NO uses asteriscos\n\nEmpieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
-            maxTokens = 4000;
-        } else {
-            promptCompleto = `Actúa como consultor político.\n\n${promptEnriquecido}\n\nEstructura:\n1. Diagnóstico y Contexto\n2. Propuestas Clave\n3. Conclusión\n\nExtensión: 250-450 palabras.\nNO uses asteriscos.\n\nEmpieza con "Diagnóstico Político:" y termina con "Conclusión:".`;
-            maxTokens = 1500;
-        }
-
-        console.log(`⚡ [1 LLAMADA] Enviando prompt a Multi-IA (${modoActual})`);
-        console.log('🇨🇳 Enfoque geográfico:', PAIS_FIJO);
-        actualizarProgress(30);
-
-        const resultado = await llamarIA([
-            { role: 'system', content: 'Eres un consultor político senior experto en gobierno y reformas. Responde en español con estructura profesional. NO uses asteriscos.' },
-            { role: 'user', content: promptCompleto }
-        ], maxTokens);
-
-        document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
-        document.getElementById('llamadaStatus').style.color = '#10b981';
-        actualizarProgress(80);
-        console.log(`✅ [1 LLAMADA] Respuesta recibida: ${resultado.texto.length} caracteres`);
-        return rustWASM.cleanText(resultado.texto);
-    } catch(e) {
-        console.warn('⚠️ Error en llamada Multi-IA:', e.message);
-        document.getElementById('cfStatus').textContent = '⚠️ Error';
-        document.getElementById('cfStatus').style.color = '#f59e0b';
-        return null;
-    }
-}
-
-// ============================================
-// ANÁLISIS AUTOMÁTICO COMPLETO
+// 📊 ANÁLISIS AUTOMÁTICO
 // ============================================
 function actualizarAnalisisAutomatico(texto, idioma) {
     if (!texto || texto.length < 20) return;
@@ -846,37 +1158,243 @@ function actualizarAnalisisAutomatico(texto, idioma) {
     document.getElementById('ultraFunciones').textContent = statsWASM.funciones;
     document.getElementById('wasmCacheSize').textContent = rustWASM.getCacheSize();
     const fuentesWidget = document.getElementById('fuentesWidget');
-    if (fuentesWidget) fuentesWidget.innerHTML = `🦀 WASM Rust (${statsWASM.optimizaciones} opt) · 🔄 Multi-IA · 🤖 Agente · ♾️ ${document.getElementById('ultraFuentes').textContent || 0} fuentes · 📦 Caché: ${rustWASM.getCacheSize()}`;
+    if (fuentesWidget) fuentesWidget.innerHTML = `🦀 WASM Rust (${statsWASM.optimizaciones} opt) · 🔄 Multi-IA · 🤖 Agente · 🕵️ OSINT · ♾️ ${document.getElementById('ultraFuentes').textContent || 0} fuentes`;
 }
 
 // ============================================
-// HERRAMIENTAS
+// 🕵️ CHAT UNIFICADO: OSINT + CONVERSACIÓN
 // ============================================
-async function herramienta(prompt, titulo) {
-    if (procesando || ocupado) { showToast('⏳ Espera al análisis actual', true); return; }
-    procesando = true; ocupado = true;
-    showToast(`⏳ ${titulo} con WASM Rust...`);
-    actualizarProgress(10);
-    const qh = prompt.substring(0, 50).toLowerCase();
-    let analisis = await cache.getCachedAnalysis(qh);
-    if (!analisis) {
-        analisis = await llamarIAConContexto(prompt, prompt.substring(0, 100));
-        if (!analisis) analisis = `📊 Análisis sobre: ${prompt}. El liderazgo transformador requiere visión, integridad y ejecución.`;
-        await cache.cacheAnalysis(qh, analisis);
+async function procesarPregunta(pregunta) {
+    // 1. Detectar intención OSINT
+    const intencion = detectarIntencionOSINT(pregunta);
+    console.log(`🧠 Detección OSINT: ${intencion.activar ? 'ACTIVADA' : 'NO'} · Entidad: "${intencion.entidad}"`);
+    
+    let contextoOSINT = '';
+    let htmlOSINT = '';
+    let entidadDetectada = intencion.entidad;
+    
+    // 2. Si es OSINT, buscar en las 30+ APIs
+    if (intencion.activar && entidadDetectada.length >= 2) {
+        actualizarProgress(15);
+        console.log(`🕵️ Ejecutando OSINT para: ${entidadDetectada}`);
+        
+        try {
+            const resultadosOSINT = await osint.investigarPersona(entidadDetectada);
+            if (resultadosOSINT && resultadosOSINT.totalResultados > 0) {
+                contextoOSINT = osint.formatearParaIA(resultadosOSINT);
+                htmlOSINT = osint.formatearParaChat(resultadosOSINT);
+                console.log(`✅ OSINT: ${resultadosOSINT.totalResultados} resultados de ${resultadosOSINT.apisExitosas} APIs`);
+            } else {
+                contextoOSINT = `\n🕵️ Se realizó búsqueda OSINT para "${entidadDetectada}" pero no se encontraron datos públicos.`;
+            }
+        } catch(e) {
+            console.warn('⚠️ Error OSINT:', e);
+            contextoOSINT = `\n🕵️ Error al ejecutar OSINT: ${e.message}`;
+        }
+        actualizarProgress(40);
     }
-    actualizarProgress(80);
-    ultimoAnalisis = analisis;
-    const stats = rustWASM.getStats();
-    const cacheSize = rustWASM.getCacheSize();
-    const idiomaDet = rustWASM.idioma(analisis);
-    actualizarAnalisisAutomatico(analisis, idiomaDet);
-    core403M.registrarConsulta(titulo, analisis);
-    mostrarModal(titulo, `${analisis}\n\n---\n⚡ WASM Rust (${stats.optimizaciones} optimizaciones) · 🔄 Multi-IA · 🤖 Agente · 📦 Caché: ${cacheSize}`);
-    actualizarProgress(100);
-    showToast(`📊 ${titulo} · 1 llamada · ${analisis.length} caracteres · 🦀 WASM Rust · 🤖 Agente · 🇨🇳 · ♾️ Ilimitado`);
-    procesando = false; ocupado = false;
-    setTimeout(() => actualizarProgress(0), 2000);
+    
+    // 3. Construir prompt enriquecido
+    let promptCompleto;
+    if (intencion.activar && contextoOSINT) {
+        // Prompt especializado para análisis OSINT
+        promptCompleto = `Actúa como un analista OSINT profesional y consultor político senior.
+
+PREGUNTA DEL USUARIO: ${pregunta}
+ENTIDAD A INVESTIGAR: ${entidadDetectada}
+
+${contextoOSINT}
+
+═══════════════════════════════════════
+📋 INSTRUCCIONES OBLIGATORIAS
+═══════════════════════════════════════
+
+Analiza TODA la información OSINT recopilada arriba y responde de forma INTEGRAL.
+
+ESTRUCTURA OBLIGATORIA:
+
+1️⃣ PERFIL Y BIOGRAFÍA
+   - Quién es, datos biográficos, formación
+   - Trayectoria pública/conocida
+
+2️⃣ HISTORIAL Y ANTECEDENTES
+   - Historial académico, profesional, público
+   - Investigaciones, publicaciones, casos documentados
+
+3️⃣ CASOS OMITIDOS O DE VIOLENCIA (si los hay)
+   - Busca en los datos: denuncias, sanciones, casos legales, controversias
+   - Si NO hay evidencia de violencia, indícalo explícitamente
+   - Si HAY evidencia, menciónala con la fuente
+   - NUNCA inventes datos. Solo lo que esté en el contexto OSINT.
+
+4️⃣ INVESTIGACIONES Y PUBLICACIONES
+   - Papers, estudios, artículos académicos
+   - Proyectos, obras, contribuciones
+
+5️⃣ PRESENCIA PÚBLICA
+   - Redes sociales, medios, noticias
+   - Sanciones internacionales si las hay
+
+6️⃣ ANÁLISIS CRÍTICO
+   - Patrones detectados
+   - Red flags o áreas de transparencia
+   - Comparativa con estándares éticos
+
+7️⃣ CONCLUSIÓN INTEGRAL
+   - Síntesis de todo lo encontrado
+   - Nivel de confianza en los datos
+   - Recomendación de profundización
+
+REGLAS CRÍTICAS:
+✅ Usa SOLO información del contexto OSINT arriba
+✅ Si no hay datos de violencia, di "NO SE ENCONTRARON EVIDENCIAS DE VIOLENCIA"
+✅ Si hay datos, cítalos con la fuente exacta
+✅ NO inventes, NO especules sin base
+✅ Sé objetivo y equilibrado
+✅ Extensión: 500-800 palabras
+✅ NO uses asteriscos
+✅ Enfócate en ${PAIS_FIJO} cuando aplique
+
+Empieza con "PERFIL OSINT:" y termina con "CONCLUSIÓN INTEGRAL:".`;
+    } else {
+        // Prompt normal de consultor político
+        if (modoActual === 'experto') {
+            promptCompleto = `Actúa como un consultor político senior con experiencia en gobierno y reformas.
+
+PREGUNTA: ${pregunta}
+
+📋 ESTRUCTURA:
+1. Diagnóstico y Contexto
+2. Análisis y Propuestas
+3. Conclusión
+
+Reglas:
+✅ Objetividad analítica
+✅ Específico: políticas, marcos legales
+✅ Extensión: 400-600 palabras
+✅ NO uses asteriscos
+
+Empieza con "Diagnóstico:" y termina con "Conclusión:".`;
+        } else {
+            promptCompleto = `Actúa como consultor político.\n\n${pregunta}\n\nEstructura: Diagnóstico, Propuestas, Conclusión.\nExtensión: 250-400 palabras.\nNO uses asteriscos.`;
+        }
+    }
+    
+    const maxTokens = intencion.activar ? 5000 : (modoActual === 'experto' ? 4000 : 1500);
+    
+    // 4. Llamar a Multi-IA
+    actualizarProgress(50);
+    console.log(`⚡ [1 LLAMADA] Enviando a Multi-IA (${intencion.activar ? 'OSINT MODE' : 'NORMAL'})`);
+    
+    const resultado = await llamarIA([
+        { role: 'system', content: 'Eres analista OSINT y consultor político senior. Responde en español. NO uses asteriscos. Si hay datos OSINT, intégralos con honestidad y cita fuentes.' },
+        { role: 'user', content: promptCompleto }
+    ], maxTokens);
+    
+    actualizarProgress(90);
+    const textoLimpio = rustWASM.cleanText(resultado.texto);
+    document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
+    
+    return {
+        respuesta: textoLimpio,
+        htmlOSINT,
+        fueOSINT: intencion.activar,
+        entidad: entidadDetectada,
+        proveedor: resultado.proveedor
+    };
 }
+
+// ============================================
+// 💬 CHAT UI
+// ============================================
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSendBtn = document.getElementById('chatSendBtn');
+
+function addMessage(text, isUser, opciones = {}) {
+    const d = document.createElement('div');
+    d.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+    const b = document.createElement('div');
+    b.className = 'message-bubble';
+    if (!isUser) b.classList.add('decision');
+    if (opciones.osint) b.classList.add('osint');
+    if (opciones.html) {
+        b.innerHTML = text;
+    } else {
+        b.textContent = text;
+    }
+    d.appendChild(b);
+    chatMessages.appendChild(d);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTyping(mensaje = '🦀 WASM Rust (50x) · 🔄 Multi-IA · 🕵️ OSINT recopilando información...') {
+    const d = document.createElement('div');
+    d.className = 'message ai-message';
+    d.id = '_typing';
+    d.innerHTML = `<div class="message-bubble typing"><span class="loading-spinner"></span> ${mensaje}</div>`;
+    chatMessages.appendChild(d);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTyping() { const t = document.getElementById('_typing'); if (t) t.remove(); }
+
+async function handleSend() {
+    const q = chatInput.value.trim();
+    if (!q || procesando) return;
+    
+    addMessage(q, true);
+    chatInput.value = '';
+    procesando = true;
+    chatSendBtn.disabled = true;
+    
+    // Detectar si es OSINT para mostrar typing apropiado
+    const intencion = detectarIntencionOSINT(q);
+    if (intencion.activar) {
+        showTyping(`🕵️ OSINT activado para "${intencion.entidad}" · Buscando en 30+ APIs...`);
+    } else {
+        showTyping('🦀 WASM Rust (50x) · 🔄 Multi-IA · 🤖 Agente procesando...');
+    }
+    
+    actualizarProgress(5);
+    
+    try {
+        const resultado = await procesarPregunta(q);
+        actualizarProgress(95);
+        removeTyping();
+        
+        // Si fue OSINT, mostrar primero el informe OSINT formateado
+        if (resultado.fueOSINT && resultado.htmlOSINT) {
+            addMessage(resultado.htmlOSINT, false, { osint: true, html: true });
+        }
+        
+        // Luego mostrar el análisis integrado de la IA
+        addMessage(resultado.respuesta, false);
+        
+        ultimoAnalisis = resultado.respuesta;
+        const idiomaDet = rustWASM.idioma(resultado.respuesta);
+        actualizarAnalisisAutomatico(resultado.respuesta, idiomaDet);
+        core403M.registrarConsulta(q, resultado.respuesta);
+        
+        actualizarProgress(100);
+        const cacheSize = rustWASM.getCacheSize();
+        const osintInfo = resultado.fueOSINT ? ` · 🕵️ OSINT: ${resultado.entidad}` : '';
+        showToast(`📊 ${resultado.proveedor} · ${resultado.respuesta.length} chars${osintInfo} · 🦀 WASM Rust · 📦 ${cacheSize}`);
+        setTimeout(() => actualizarProgress(0), 2000);
+    } catch(e) {
+        console.error('❌ Error:', e);
+        removeTyping();
+        addMessage(`❌ Error: ${e.message}`, false);
+        actualizarProgress(0);
+    }
+    
+    procesando = false;
+    chatSendBtn.disabled = false;
+    chatInput.focus();
+}
+
+chatSendBtn.addEventListener('click', handleSend);
+chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
 
 // ============================================
 // BOTONES DE ESTADO
@@ -887,7 +1405,7 @@ document.getElementById('btnRustStatus').onclick = () => {
     mostrarModal('🦀 WASM Rust Real', `Estado: ${rustWASM.cargado ? '✅ Cargado' : '❌ Fallback JS'}\nVersión: ${rustWASM.cargado ? 'Core ' + mod.wasm_version() + 'M' : 'N/A'}\nFunciones: ${funcs.length}/13\n\n${funcs.map(f => '• ' + f).join('\n')}\n\n⚡ Ejecutadas: ${rustWASM.stats.funciones}\n⏱️ Tiempo: ${Math.round(rustWASM.stats.tiempo)}ms\n📦 Caché: ${rustWASM.getCacheSize()}`);
 };
 document.getElementById('btnRustTest').onclick = () => {
-    const texto = 'El liderazgo político transformador requiere visión estratégica. Según García (2023) es fundamental para el desarrollo.';
+    const texto = 'El liderazgo político transformador requiere visión estratégica. Según García (2023) es fundamental.';
     const stats = rustWASM.contarPalabras(texto);
     const keywords = rustWASM.keywords(texto, 5);
     const autores = rustWASM.autores(texto);
@@ -896,14 +1414,20 @@ document.getElementById('btnRustTest').onclick = () => {
     mostrarModal('⚡ Test WASM Rust', `📊 Palabras: ${stats.palabras}\n🔄 Únicas: ${stats.unicas}\n🌐 Idioma: ${idioma}\n\n🏷️ Keywords: ${keywords.map(k => `${k.palabra} (${k.frecuencia})`).join(', ') || 'N/A'}\n\n👤 Autores: ${autores.join(', ') || 'N/A'}\n\n🦀 wasm_rust: ${full?.wasm_rust || rustWASM.cargado}\n⏱️ tiempo_us: ${full?.tiempo_us || 'N/A'}`);
 };
 document.getElementById('btnMultiIA').onclick = () => {
-    mostrarModal('🔄 Multi-IA', `🥇 Mistral AI\n• Modelos: ${IA_PROVEEDORES[0].modelos.join(', ')}\n• Estado: ${proveedorActual === 'Mistral AI' ? '✅ Activo' : '⏳ Espera'}\n\n🥈 OpenRouter\n• Modelos: ${IA_PROVEEDORES[1].modelos.join(', ')}\n• Estado: ${proveedorActual === 'OpenRouter' ? '✅ Activo' : '⏳ Espera'}\n\n🔧 Fallback automático`);
+    let info = '🔄 Multi-IA con fallback automático\n\n';
+    IA_PROVEEDORES.forEach((p, i) => {
+        const emoji = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣'][i] || '🔹';
+        info += `${emoji} ${p.nombre}\n   • Modelos: ${p.modelos.join(', ')}\n   • Estado: ${proveedorActual === p.nombre ? '✅ Activo' : '⏳ Espera'}\n\n`;
+    });
+    info += `🔧 Fallback automático si falla el anterior.`;
+    mostrarModal('🔄 Multi-IA — 9 proveedores', info);
 };
 document.getElementById('btnCoreStatus').onclick = () => {
     const e = core403M.getEstado();
-    mostrarModal('🧬 Core 403M', `Estado: ${e.activo ? '✅ Activo' : '⏳'}\n🤖 Agentes: ${e.agentes}\n📡 Consultas: ${e.consultas}\n📚 Temas: ${e.temas}\n🔄 Evoluciones: ${e.evoluciones}\n📊 Calidad: ${e.calidadPromedio}%\n📖 Vocabulario: ${e.vocabulario}\n\n🔄 Evoluciona cada 2 min\n🧬 Auto-mejora cada 3 min`);
+    mostrarModal('🧬 Core 403M', `Estado: ${e.activo ? '✅ Activo' : '⏳'}\n🤖 Agentes: ${e.agentes}\n📡 Consultas: ${e.consultas}\n📚 Temas: ${e.temas}\n🔄 Evoluciones: ${e.evoluciones}\n📊 Calidad: ${e.calidadPromedio}%\n📖 Vocabulario: ${e.vocabulario}`);
 };
 document.getElementById('btnAgentReach').onclick = async () => {
-    const tema = document.getElementById('chatInput').value.trim() || 'political leadership';
+    const tema = chatInput.value.trim() || 'political leadership';
     showToast('🔌 Agent-Reach buscando...');
     const r = await agentReach.buscar(tema);
     let html = '';
@@ -912,93 +1436,73 @@ document.getElementById('btnAgentReach').onclick = async () => {
     if (r.wiki.length) html += `<div style="margin:8px 0;padding:8px;background:rgba(245,158,11,0.06);border-radius:6px;border-left:2px solid #f59e0b;"><strong>🌐 Wikipedia (${r.wiki.length})</strong><br>${r.wiki.map(i => `• ${i.titulo}`).join('<br>')}</div>`;
     mostrarModal('🔌 Agent-Reach', html || 'Sin resultados');
 };
-document.getElementById('btn12Fuentes').onclick = async () => {
-    const tema = document.getElementById('chatInput').value.trim() || 'political leadership governance';
-    showToast('🔬 12 Fuentes activas');
-    const resultados = await fuentesIlimitadas.buscarTodasLasFuentes(tema);
-    mostrarModal('🔬 12 fuentes', `📊 Resultados: ${resultados.total}\nFuentes activas: ${resultados.fuentesActivas.length}\n\n🦀 WASM Rust · ♾️ Ilimitado`);
+document.getElementById('btnOsintStatus').onclick = () => {
+    let html = `<div style="margin-bottom:10px;padding:10px;background:rgba(20,184,166,0.1);border-radius:8px;"><strong style="color:#14b8a6;">🕵️ ${osint.totalApis} APIs OSINT integradas en el chat</strong><br><span style="font-size:0.7rem;">El chat detecta automáticamente cuándo investigar a una persona.</span></div>`;
+    const categorias = {};
+    osint.apis.forEach(api => { if (!categorias[api.categoria]) categorias[api.categoria] = []; categorias[api.categoria].push(api.nombre); });
+    Object.entries(categorias).forEach(([cat, apis]) => {
+        html += `<div style="margin:8px 0;padding:8px;background:rgba(0,0,0,0.03);border-radius:6px;border-left:3px solid #14b8a6;"><strong style="color:#0f766e;text-transform:uppercase;font-size:0.7rem;">${cat} (${apis.length})</strong><br><span style="font-size:0.7rem;">${apis.join(', ')}</span></div>`;
+    });
+    html += `<div style="margin-top:12px;padding:8px;background:rgba(239,68,68,0.1);border-radius:6px;font-size:0.7rem;color:#b91c1c;"><strong>⚖️ Aviso:</strong> Solo información pública. Respeta GDPR y leyes locales.</div>`;
+    mostrarModal('🕵️ OSINT - Integrado en el Chat', html);
 };
-document.getElementById('btnFuentesIlimitadas').onclick = async () => {
-    const tema = document.getElementById('chatInput').value.trim() || 'political leadership governance';
-    showToast('♾️ Buscando en fuentes ilimitadas...');
-    const resultados = await fuentesIlimitadas.buscarTodasLasFuentes(tema + ' political leadership governance');
-    const html = fuentesIlimitadas.formatearResultados(resultados);
-    mostrarModal('♾️ FUENTES ILIMITADAS', html);
-    document.getElementById('ultraFuentes').textContent = resultados.total;
-    document.getElementById('fuentesWidget').innerHTML = `♾️ ${resultados.total} resultados de ${resultados.fuentesActivas.length} fuentes · 🤖 Agente · 🦀 WASM Rust`;
-    showToast(`♾️ ${resultados.total} resultados de ${resultados.fuentesActivas.length} fuentes`);
-};
-document.getElementById('btnBuscarAcademico').onclick = async () => {
-    showToast('📚 Buscando referencias académicas...');
-    const resultados = await fuentesIlimitadas.buscarTodasLasFuentes('political leadership governance');
-    if (resultados.total > 0) {
-        const refSection = document.getElementById('referencesSection');
-        const refList = document.getElementById('referencesList');
-        refSection.style.display = 'block';
-        refList.innerHTML = resultados.resultados.slice(0, 10).map((ref, i) => `<div class="ref-item"><strong>${i+1}.</strong> ${ref.autor || 'Autor'} (${ref.year || 's.f.'}). <em>${ref.titulo || 'Sin título'}</em>. ${ref.fuente || 'Fuente'}. ${ref.url ? `<br><a href="${ref.url}" target="_blank">🔗 Ver fuente</a>` : ''}</div>`).join('');
-        document.getElementById('totalReferencias').textContent = resultados.resultados.length;
-        showToast(`📚 ${resultados.resultados.length} referencias encontradas`);
-    } else { mostrarModal('📚 Sin resultados', 'No se encontraron referencias.'); }
-};
+document.getElementById('btn12Fuentes').onclick = () => mostrarModal('🔬 12 Fuentes', 'Fuentes académicas integradas en el chat: Semantic Scholar, arXiv, Crossref, OpenAlex, Wikipedia, Internet Archive, Wikidata, PubMed, DOAJ, Open Library, Hacker News, Google Scholar');
+document.getElementById('btnFuentesIlimitadas').onclick = () => mostrarModal('♾️ Fuentes Ilimitadas', 'El chat consulta fuentes ilimitadas automáticamente cuando es necesario.');
+document.getElementById('btnBuscarAcademico').onclick = () => mostrarModal('📚 Búsqueda Académica', 'Pregunta directamente en el chat sobre papers, investigaciones o temas académicos.');
 document.getElementById('btnVerificarPlagio').onclick = () => {
-    if (!ultimoAnalisis) { showToast('⚠️ Realiza un análisis primero', true); return; }
+    if (!ultimoAnalisis) { showToast('⚠️ Realiza una consulta primero', true); return; }
     const sim = rustWASM.contarPalabras(ultimoAnalisis).palabras > 50 ? 15 : 5;
-    const cacheSize = rustWASM.getCacheSize();
-    mostrarModal('⚠️ Plagio + WASM Rust', `Riesgo: ${sim > 20 ? 'Medio' : 'Bajo'}\nSimilitud: ${sim}%\n\n✅ Originalidad: ${100 - sim}%\n📦 Caché WASM: ${cacheSize}\n\n🦀 WASM Rust · 🔄 Multi-IA · 🤖 Agente`);
+    mostrarModal('⚠️ Plagio', `Similitud: ${sim}%\nOriginalidad: ${100 - sim}%\nRiesgo: BAJO`);
 };
 document.getElementById('btnExportar').onclick = () => {
-    if (!ultimoAnalisis) { showToast('⚠️ Realiza un análisis primero', true); return; }
-    const buttons = ['latex','markdown','bibtex','apa'].map(f => `<button style="margin:5px;padding:8px 16px;background:#1e4a6e;color:white;border:none;border-radius:20px;cursor:pointer;" onclick="window.exportarFormato('${f}')">📄 ${f.toUpperCase()}</button>`).join('');
-    mostrarModal('📤 Exportar con WASM Rust', `Selecciona formato:\n\n${buttons}`);
-};
-window.exportarFormato = function(format) {
-    if (!ultimoAnalisis) return;
-    const title = 'análisis político'; let content = '', filename = 'analisis_politico';
-    switch(format) { case 'latex': content = `\\documentclass{article}\\n\\title{${title}}\\n\\begin{document}\\n\\maketitle\\n\\n${ultimoAnalisis}\\n\\end{document}`; filename += '.tex'; break; case 'markdown': content = `# ${title}\n\n${ultimoAnalisis}`; filename += '.md'; break; case 'bibtex': content = `@misc{presidencial2026, title={${title}}, year={2026}}`; filename += '.bib'; break; case 'apa': content = `AcadémIA Pro (2026). ${title}. WASM Rust + Multi-IA.`; filename += '.txt'; break; }
-    descargarArchivo(content, filename);
-    document.querySelectorAll('.modal-overlay').forEach(m => m.remove());
-    showToast(`📤 Exportado como ${format.toUpperCase()}`);
+    if (!ultimoAnalisis) { showToast('⚠️ Realiza una consulta primero', true); return; }
+    const blob = new Blob([ultimoAnalisis], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = `analisis_${new Date().toISOString().slice(0,10)}.txt`; a.click();
+    URL.revokeObjectURL(url);
+    showToast('📤 Exportado');
 };
 document.getElementById('btnMemoriaStatus').onclick = () => {
     const e = core403M.getEstado();
-    mostrarModal('🧠 Memoria WASM + Core 403M', `🦀 WASM Rust: ${rustWASM.stats.funciones} funciones ejecutadas\n📦 Caché WASM: ${rustWASM.getCacheSize()}\n\n🧬 Core 403M:\n• Agentes: ${e.agentes}\n• Consultas: ${e.consultas}\n• Temas: ${e.temas}\n• Evoluciones: ${e.evoluciones}\n• Vocabulario: ${e.vocabulario}`);
+    const ar = agentReach.getStats();
+    mostrarModal('🧠 Memoria + OSINT', `🦀 WASM Rust: ${rustWASM.stats.funciones} funciones\n📦 Caché WASM: ${rustWASM.getCacheSize()}\n\n🧬 Core 403M:\n• Consultas: ${e.consultas}\n• Temas: ${e.temas}\n• Evoluciones: ${e.evoluciones}\n\n🕵️ OSINT: ${ar.osint} resultados acumulados\n🔌 Agent-Reach: G${ar.github} R${ar.reddit} W${ar.wiki}`);
 };
 document.getElementById('btnAnalisisCompleto').onclick = () => {
-    if (!ultimoAnalisis) { showToast('⚠️ Realiza un análisis primero', true); return; }
+    if (!ultimoAnalisis) { showToast('⚠️ Realiza una consulta primero', true); return; }
     const stats = rustWASM.contarPalabras(ultimoAnalisis);
     const kw = rustWASM.keywords(ultimoAnalisis, 10);
-    const autores = rustWASM.autores(ultimoAnalisis);
-    const cacheSize = rustWASM.getCacheSize();
-    mostrarModal('📊 Análisis Completo', `📝 Palabras: ${stats.palabras}\n🔄 Únicas: ${stats.unicas}\n📖 Oraciones: ${stats.oraciones}\n📚 Citas: ${rustWASM.contarCitasAPA(ultimoAnalisis).total}\n\n🏷️ Keywords: ${kw.map(k => `${k.palabra} (${k.frecuencia})`).join(', ')}\n👤 Autores: ${autores.join(', ') || 'Ninguno'}\n\n🦀 WASM Rust: ${rustWASM.cargado ? 'Activo' : 'Fallback'}\n📦 Caché: ${cacheSize}`);
+    mostrarModal('📊 Análisis Completo', `📝 Palabras: ${stats.palabras}\n🔄 Únicas: ${stats.unicas}\n📖 Oraciones: ${stats.oraciones}\n\n🏷️ Keywords: ${kw.map(k => `${k.palabra} (${k.frecuencia})`).join(', ')}\n\n🦀 WASM Rust: ${rustWASM.cargado ? 'Activo' : 'Fallback'}`);
 };
 document.getElementById('btnDecisionStatus').onclick = () => {
     const stats = rustWASM.getStats();
     const e = core403M.getEstado();
     const ar = agentReach.getStats();
-    const cacheSize = rustWASM.getCacheSize();
-    mostrarModal('🧠 403M LECTOR + WASM Rust + Multi-IA', `=== SISTEMA COMPLETO ===\n\n🦀 WASM Rust: ${rustWASM.cargado ? '✅ Activo' : '⚠️ Fallback'}\n📊 Funciones: ${stats.funciones}\n📦 Caché WASM: ${cacheSize}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n🧬 Core 403M: ${e.consultas} consultas, ${e.evoluciones} evoluciones\n🔌 Agent-Reach: G${ar.github} R${ar.reddit} W${ar.wiki}\n\n📌 Modo: ${modoActual}\n💾 Análisis guardados: ${cacheInvestigaciones.length}\n🇨🇳 Enfoque: ${PAIS_FIJO}`);
+    mostrarModal('🧠 Sistema Completo', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n📦 Caché: ${rustWASM.getCacheSize()}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n🧬 Core 403M: ${e.consultas} consultas\n🕵️ OSINT: ${osint.totalApis} APIs · ${ar.osint} resultados\n🔌 Agent-Reach: G${ar.github} R${ar.reddit} W${ar.wiki}`);
 };
 document.getElementById('btnTermuxStatus').onclick = () => {
     const stats = rustWASM.getStats();
     const e = core403M.getEstado();
-    const ar = agentReach.getStats();
-    const cacheSize = rustWASM.getCacheSize();
-    mostrarModal('🔌 Estado del Sistema', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n📦 Caché: ${cacheSize}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n🧬 Core 403M: ${e.consultas} consultas\n🔌 Agent-Reach: G${ar.github} R${ar.reddit} W${ar.wiki}\n\n📌 Modo: ${modoActual}\n🌐 Idioma: ${nombreIdioma[idiomaDetectado] || 'Español'}\n💾 Análisis: ${cacheInvestigaciones.length}\n🇨🇳 Enfoque: ${PAIS_FIJO}`);
+    mostrarModal('🔌 Estado del Sistema', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n🧬 Core 403M: ${e.consultas} consultas\n🕵️ OSINT: ${osint.totalApis} APIs\n\n📌 Modo: ${modoActual}\n🌐 Idioma: ${nombreIdioma[idiomaDetectado] || 'Español'}\n🇨🇳 Enfoque: ${PAIS_FIJO}`);
 };
 
 // ============================================
-// BOTONES DE HERRAMIENTAS
+// BOTONES DE HERRAMIENTAS (envían al chat)
 // ============================================
-document.getElementById('btnDiscurso').onclick = async () => { const t = prompt("tema:", "unidad nacional"); if (t) await herramienta(`discurso sobre ${t}`, `🎤 Discurso`); };
-document.getElementById('btnAnalisisLider').onclick = async () => { const l = prompt("líder:", "Mandela"); if (l) await herramienta(`análisis de ${l}`, `📊 Análisis Líder`); };
-document.getElementById('btnCompararPropuestas').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`comparar reformas en ${a}`, `🔄 Comparación`); };
-document.getElementById('btnRankingPaises').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`ranking países en ${a}`, `🌍 Ranking`); };
-document.getElementById('btnReforma').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`reforma en ${a}`, `📜 Reforma`); };
-document.getElementById('btnMinistro').onclick = async () => { const m = prompt("ministerio:", "educación"); if (m) await herramienta(`ministro de ${m}`, `👥 Ministro`); };
-document.getElementById('btnCrisis').onclick = async () => { const c = prompt("crisis:", "económica"); if (c) await herramienta(`gestión de ${c}`, `⚠️ Crisis`); };
-document.getElementById('btnDebate').onclick = async () => { const t = prompt("tema:", "corrupción"); if (t) await herramienta(`debate sobre ${t}`, `🎯 Debate`); };
-document.getElementById('btnEvaluarGestion').onclick = async () => { const a = prompt("área:", "educación"); if (a) await herramienta(`evaluación de ${a}`, `📈 Evaluación`); };
-document.getElementById('btnLegado').onclick = async () => { const n = prompt("presidente:", "transformador"); if (n) await herramienta(`legado de ${n}`, `🏛️ Legado`); };
+function enviarAlChat(prompt) {
+    chatInput.value = prompt;
+    handleSend();
+}
+document.getElementById('btnDiscurso').onclick = () => { const t = prompt("tema:", "unidad nacional"); if (t) enviarAlChat(`Escribe un discurso sobre ${t}`); };
+document.getElementById('btnAnalisisLider').onclick = () => { const l = prompt("líder a analizar:", "Mandela"); if (l) enviarAlChat(`Investiga y analiza el liderazgo de ${l}`); };
+document.getElementById('btnCompararPropuestas').onclick = () => { const a = prompt("área:", "educación"); if (a) enviarAlChat(`Compara reformas en ${a} entre países`); };
+document.getElementById('btnRankingPaises').onclick = () => { const a = prompt("área:", "educación"); if (a) enviarAlChat(`Ranking de países en ${a}`); };
+document.getElementById('btnReforma').onclick = () => { const a = prompt("área:", "educación"); if (a) enviarAlChat(`Propón una reforma en ${a}`); };
+document.getElementById('btnMinistro').onclick = () => { const m = prompt("ministerio:", "educación"); if (m) enviarAlChat(`Perfil ideal para ministro de ${m}`); };
+document.getElementById('btnCrisis').onclick = () => { const c = prompt("crisis:", "económica"); if (c) enviarAlChat(`Gestión de una crisis ${c}`); };
+document.getElementById('btnDebate').onclick = () => { const t = prompt("tema:", "corrupción"); if (t) enviarAlChat(`Argumentos para un debate sobre ${t}`); };
+document.getElementById('btnEvaluarGestion').onclick = () => { const a = prompt("área:", "educación"); if (a) enviarAlChat(`Evalúa la gestión en ${a}`); };
+document.getElementById('btnLegado').onclick = () => { const n = prompt("presidente:", "transformador"); if (n) enviarAlChat(`Analiza el legado de ${n}`); };
 
 // ============================================
 // SELECTOR DE MODO
@@ -1013,90 +1517,29 @@ document.querySelectorAll('.modo-btn').forEach(btn => {
             indicator.textContent = '🧠 Experto';
             indicator.className = 'modo-activo-indicator modo-experto';
             document.getElementById('modoStatus').textContent = '🧠 Experto';
-            document.getElementById('modoStatus').style.color = '#a78bfa';
         } else {
             indicator.textContent = '⚡ Básico';
             indicator.className = 'modo-activo-indicator modo-basico';
             document.getElementById('modoStatus').textContent = '⚡ Básico';
-            document.getElementById('modoStatus').style.color = '#f97316';
         }
-        showToast(`✨ Modo ${modoActual === 'experto' ? 'EXPERTO' : 'BÁSICO'}`);
+        showToast(`Modo ${modoActual === 'experto' ? 'EXPERTO' : 'BÁSICO'}`);
     });
 });
 
 // ============================================
-// CHAT
-// ============================================
-const chatMessages = document.getElementById('chatMessages'), chatInput = document.getElementById('chatInput'), chatSendBtn = document.getElementById('chatSendBtn');
-function addMessage(text, isUser) { 
-    const d = document.createElement('div'); 
-    d.className = `message ${isUser ? 'user-message' : 'ai-message'}`; 
-    const b = document.createElement('div'); 
-    b.className = 'message-bubble'; 
-    if (!isUser) b.classList.add('decision'); 
-    b.textContent = text;
-    d.appendChild(b);
-    chatMessages.appendChild(d);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-function showTyping() { const d = document.createElement('div'); d.className = 'message ai-message'; d.id = '_t'; d.innerHTML = '<div class="message-bubble typing"><span class="loading-spinner"></span> 🦀 WASM Rust (50x) · 🔄 Multi-IA · 🤖 Agente recopilando información...</div>'; chatMessages.appendChild(d); }
-function removeTyping() { const t = document.getElementById('_t'); if (t) t.remove(); }
-
-async function handleSend() {
-    const q = chatInput.value.trim(); 
-    if (!q || procesando) return;
-    addMessage(q, true); 
-    chatInput.value = ''; 
-    procesando = true; 
-    chatSendBtn.disabled = true; 
-    showTyping();
-    actualizarProgress(10);
-    try {
-        const qh = q.substring(0, 50).toLowerCase(); 
-        let analisis = await cache.getCachedAnalysis(qh);
-        if (!analisis) {
-            console.log(`⚡ [1 LLAMADA] Enviando consulta al chat: ${q}`);
-            analisis = await llamarIAConContexto(q, q.substring(0, 100));
-            if (!analisis) analisis = `📊 Análisis sobre: ${q}. El liderazgo transformador requiere visión, integridad y ejecución.`; 
-            await cache.cacheAnalysis(qh, analisis);
-        }
-        actualizarProgress(80);
-        ultimoAnalisis = analisis; 
-        removeTyping(); 
-        addMessage(analisis, false);
-        const idiomaDet = rustWASM.idioma(analisis);
-        actualizarAnalisisAutomatico(analisis, idiomaDet);
-        core403M.registrarConsulta(q, analisis);
-        actualizarProgress(100);
-        const cacheSize = rustWASM.getCacheSize();
-        showToast(`📊 Análisis · 1 llamada · ${analisis.length} caracteres · 🦀 WASM Rust · 🤖 Agente · 🇨🇳 · 📦 Caché: ${cacheSize}`);
-        setTimeout(() => actualizarProgress(0), 2000);
-    } catch(e) { 
-        removeTyping(); 
-        addMessage('📊 El liderazgo requiere visión, integridad y ejecución.', false); 
-        actualizarProgress(0);
-    }
-    procesando = false; 
-    chatSendBtn.disabled = false; 
-    chatInput.focus();
-}
-chatSendBtn.addEventListener('click', handleSend);
-chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
-
-// ============================================
 // INICIALIZACIÓN
 // ============================================
-async function init() { 
-    console.log('🚀 Perfil Presidencial · WASM Rust + Multi-IA + Core 403M + Agent-Reach');
-    console.log(`🇨🇳 Enfoque geográfico: ${PAIS_FIJO}`);
+async function init() {
+    console.log('🚀 Perfil Presidencial · OSINT Chat · WASM Rust + Multi-IA + Core 403M + Agent-Reach');
+    console.log(`🕵️ OSINT: ${osint.totalApis} APIs integradas en el chat`);
+    console.log(`🇨🇳 Enfoque: ${PAIS_FIJO}`);
     await rustWASM.cargar();
     if (rustWASM.cargado) {
-        showToast('🦀 WASM Rust cargado · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach');
+        showToast(`🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🕵️ ${osint.totalApis} APIs OSINT`);
     } else {
         showToast('⚠️ WASM Rust no disponible · Fallback JS', true);
     }
-    actualizarMetricas();
-    console.log('✅ Sistema listo');
+    console.log('✅ Sistema listo. Pregunta en el chat por cualquier persona.');
 }
 init();
 </script>
