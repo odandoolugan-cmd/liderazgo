@@ -198,9 +198,9 @@
 <div class="container" id="normalMode">
   <div class="hero">
     <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial + OSINT profundo <span class="badge badge-rustwasm">🦀 WASM RUST</span><span class="badge badge-multiia">🔄 MULTI-IA</span><span class="badge badge-core">🧬 CORE 403M</span><span class="badge badge-agentreach">🔌 AGENT-REACH</span><span class="badge badge-osint">🕵️ OSINT</span><span class="badge badge-wasm-extremo">⚡ WASM EXTREMO</span><span class="badge badge-12fuentes">🔬 12+ FUENTES</span><span class="badge badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge badge-1llamada">⚡ 1 LLAMADA</span><span class="badge badge-memoria">🧠 MEMORIA</span><span class="badge badge-ilimitado">♾️ ILIMITADO</span><span class="badge badge-agente">🤖 AGENTE</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
+      <div class="hero-badge"><i class="fas fa-star-of-life"></i>&nbsp;&nbsp;Perfil presidencial + OSINT profundo <span class="badge badge-rustwasm">🦀 WASM RUST</span><span class="badge badge-multiia">🔄 MULTI-IA</span><span class="badge badge-core">🧬 CORE 403M</span><span class="badge badge-agentreach">🔌 AGENT-REACH</span><span class="badge badge-osint">🕵️ OSINT</span><span class="badge badge-wasm-extremo">⚡ WASM EXTREMO</span><span class="badge badge-12fuentes">🔬 12+ FUENTES</span><span class="badge badge-china">🇨🇳 ENFOQUE CHINA</span><span class="badge badge-1llamada">⚡ PARALELO</span><span class="badge badge-memoria">🧠 MEMORIA</span><span class="badge badge-ilimitado">♾️ ILIMITADO</span><span class="badge badge-agente">🤖 AGENTE</span><span class="live-badge" id="liveBadge">🌐 24/7</span></div>
       <h1>El chat que investiga personas</h1>
-      <p>WASM Rust REAL · Multi-IA · Core 403M · Agent-Reach · 30+ APIs OSINT · Pregunta en el chat y la IA teje el contexto de cualquier persona, historial, investigaciones, casos omitidos y violencia. 🇨🇳 · ⚡ 1 llamada · ♾️ Sin límites</p>
+      <p>WASM Rust REAL · Multi-IA paralelo (Promise.any) · Core 403M · Agent-Reach · 30+ APIs OSINT · Pregunta en el chat y la IA teje el contexto de cualquier persona, historial, investigaciones, casos omitidos y violencia. 🇨🇳 · ⚡ Paralelo · ♾️ Sin límites</p>
       <div class="hero-stats">
         <div class="stat"><i class="fas fa-comments"></i><span>Chat único</span></div>
         <div class="stat"><i class="fas fa-user-secret"></i><span>OSINT automático</span></div>
@@ -241,6 +241,7 @@
     <span>📊 Funciones: <strong id="wasmFuncsStatus">0</strong></span>
     <span>📦 Caché: <strong id="wasmCacheSize">0</strong></span>
     <span>🔄 Multi-IA: <strong id="cfStatus" style="color:#10b981;">✅ Activo</strong></span>
+    <span>✅ OK: <strong id="iaOkCount" style="color:#10b981;">0</strong> · ❌ Fallos: <strong id="iaFailsCount" style="color:#ef4444;">0</strong></span>
     <span>⚡ 1 Llamada: <strong id="llamadaStatus" style="color:#ec4899;">✅</strong></span>
     <span>📌 Modo: <strong id="modoStatus" style="color:#a78bfa;">🧠 Experto</strong></span>
     <span>🌐 <strong id="idiomaStatus" style="color:#3b82f6;">🇪🇸</strong></span>
@@ -255,7 +256,7 @@
     <span>♾️ Fuentes: <strong id="ultraFuentes">0</strong></span>
     <span>🕵️ OSINT APIs: <strong id="ultraOsint">30+</strong></span>
     <span>🔄 IA: <strong id="ultraProveedor">Multi-IA</strong></span>
-    <span>⚡ <strong class="velocidad">50x MÁS RÁPIDO</strong></span>
+    <span>⚡ <strong class="velocidad">PARALELO 50x</strong></span>
   </div>
 
   <div class="sources-badge">
@@ -313,14 +314,12 @@
     <button class="tool-btn" id="btnTermuxStatus">🔌 Estado</button>
   </div>
 
-  <!-- ============================================
-       CHAT UNIFICADO: INVESTIGACIÓN + CONVERSACIÓN
-       ============================================ -->
+  <!-- CHAT UNIFICADO: INVESTIGACIÓN + CONVERSACIÓN -->
   <div class="chat-container">
     <div class="chat-header">
       <i class="fas fa-user-secret"></i>
-      <h3>Asesor OSINT + Político · WASM Rust · Multi-IA · Core 403M · Agent-Reach</h3>
-      <span>30+ APIs OSINT · 12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada</span>
+      <h3>Asesor OSINT + Político · WASM Rust · Multi-IA paralelo · Core 403M · Agent-Reach</h3>
+      <span>30+ APIs OSINT · 12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ Paralelo</span>
     </div>
     <div class="chat-messages" id="chatMessages">
       <div class="message ai-message">
@@ -344,7 +343,7 @@
   </div>
 
   <div class="context-info">
-    🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach · 🕵️ 30+ APIs OSINT · 12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites
+    🦀 WASM Rust · 🔄 Multi-IA paralelo · 🧬 Core 403M · 🔌 Agent-Reach · 🕵️ 30+ APIs OSINT · 12 Fuentes + Ilimitadas · 🇨🇳 · ⚡ Paralelo · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites
   </div>
 
   <div class="widget-container">
@@ -361,7 +360,7 @@
             <span style="color:#2c4b66;font-size:0.6rem;">🏷️ Keywords: --</span>
         </div>
         <div style="font-size:0.6rem;color:#2c4b66;margin-top:4px;" id="repeticionesWidget">🔄 Repeticiones: --</div>
-        <div style="font-size:0.55rem;color:#f59e0b;margin-top:6px;border-top:1px solid #cbdde6;padding-top:6px;" id="fuentesWidget">🦀 WASM Rust (50x) · 🔄 Multi-IA · 🤖 Agente · 🕵️ OSINT · ♾️ Fuentes ilimitadas activas</div>
+        <div style="font-size:0.55rem;color:#f59e0b;margin-top:6px;border-top:1px solid #cbdde6;padding-top:6px;" id="fuentesWidget">🦀 WASM Rust (50x) · 🔄 Multi-IA paralelo · 🤖 Agente · 🕵️ OSINT · ♾️ Fuentes ilimitadas activas</div>
     </div></div>
   </div>
 
@@ -382,7 +381,7 @@
     </div>
   </div>
 
-  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🔌 Agent-Reach · 🕵️ OSINT · 12 Fuentes + Ilimitadas · 16 herramientas · 24/7 · 🇨🇳 · ⚡ 1 llamada · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
+  <div class="footer-note"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;🦀 WASM Rust · 🔄 Multi-IA paralelo · 🧬 Core 403M · 🔌 Agent-Reach · 🕵️ OSINT · 12 Fuentes + Ilimitadas · 16 herramientas · 24/7 · 🇨🇳 · ⚡ Paralelo · 📊 Análisis Automático · 🧠 Memoria Persistente · ♾️ Sin límites</div>
 </div>
 
 <button class="vr-button" id="vrModeBtn">🔮 ACTIVAR MODO VR</button>
@@ -409,7 +408,7 @@ class RustWASM {
             await mod.default('./pkg/academia_wasm_bg.wasm');
             this.wasm = mod;
             this.cargado = true;
-            const version = mod.wasm_version();
+            const version = mod.wasm_version ? mod.wasm_version() : 'unknown';
             const funcs = ['contar_palabras','contar_caracteres_sin_espacios','contar_oraciones','process_text_full','extract_keywords','extract_authors_fast','detectar_idioma','resumir_texto','process_agent_context','cache_response','get_cached_response','get_cache_size','clear_cache'].filter(f => typeof mod[f] === 'function');
             console.log(`✅ WASM Rust cargado (Core ${version}M) · ${funcs.length}/13 funciones`);
             document.getElementById('wasmStatus').textContent = `✅ Rust real (${funcs.length} funcs)`;
@@ -432,7 +431,7 @@ class RustWASM {
     processFull(t) { if (!this.cargado) return null; try { this.stats.funciones++; const r = JSON.parse(this.wasm.process_text_full(t)); if (r.tiempo_us) this.stats.tiempo += r.tiempo_us / 1000; return r; } catch(e) { return null; } }
     keywords(t, n = 8) { if (!this.cargado) return []; try { this.stats.funciones++; return JSON.parse(this.wasm.extract_keywords(t, n)); } catch(e) { return []; } }
     autores(t) { if (!this.cargado) return []; try { this.stats.funciones++; return JSON.parse(this.wasm.extract_authors_fast(t)); } catch(e) { return []; } }
-    idioma(t) { if (!this.cargado) return 'es'; try { this.stats.funciones++; return this.wasm.detectar_idioma(t); } catch(e) { return 'es'; } }
+    idioma(t) { if (!this.cargado) return 'es'; try { this.stats.funciones++; const r = this.wasm.detectar_idioma(t); this.stats.idiomasDetectados = (this.stats.idiomasDetectados || 0) + 1; return r; } catch(e) { return 'es'; } }
     resumen(t, n = 3) { if (!this.cargado) return t.substring(0, 500); try { this.stats.funciones++; return this.wasm.resumir_texto(t, n); } catch(e) { return t.substring(0, 500); } }
     cache(k, v) { if (this.cargado) try { this.wasm.cache_response(k, v); } catch(e) {} }
     getCache(k) { if (this.cargado) { try { const v = this.wasm.get_cached_response(k); return v && v.length > 0 ? v : null; } catch(e) {} } return null; }
@@ -447,7 +446,6 @@ class RustWASM {
     calcularTiempoLectura(t) { const p = this.contarPalabras(t).palabras; const m = Math.round(p / 200); return m < 1 ? '< 1 min' : `${m} min`; }
     riquezaVocabulario(t) { const s = this.contarPalabras(t); return s.palabras > 0 ? Math.round((s.unicas / s.palabras) * 100) : 0; }
     evaluarCompletitud(t) { const e = this.validarEstructura(t); const c = this.contarCitasAPA(t); const s = this.contarPalabras(t); const prob = []; if (!e.tieneDiagnostico) prob.push('Falta Diagnóstico'); if (!e.tienePropuestas) prob.push('Faltan Propuestas'); if (!e.tieneConclusion) prob.push('Falta Conclusión'); if (c.total < 2) prob.push('Pocas citas'); if (s.palabras < 200) prob.push('Texto corto'); return { completitud: Math.max(0, 100 - prob.length * 10), problemas: prob }; }
-    
     getStats() {
         return {
             funciones: this.stats.funciones,
@@ -566,44 +564,35 @@ class OsintPersonSearch {
     
     definirAPIs() {
         return [
-            // ===== BIOGRÁFICAS =====
             { nombre: 'Wikipedia (ES)', categoria: 'biografia', fn: (q) => this.buscarWikipedia(q, 'es') },
             { nombre: 'Wikipedia (EN)', categoria: 'biografia', fn: (q) => this.buscarWikipedia(q, 'en') },
             { nombre: 'Wikidata', categoria: 'biografia', fn: (q) => this.buscarWikidata(q) },
             { nombre: 'DBpedia', categoria: 'biografia', fn: (q) => this.buscarDBpedia(q) },
-            // ===== REDES SOCIALES =====
             { nombre: 'GitHub Users', categoria: 'redes', fn: (q) => this.buscarGitHubUser(q) },
             { nombre: 'Reddit Users', categoria: 'redes', fn: (q) => this.buscarRedditUser(q) },
             { nombre: 'Hacker News', categoria: 'redes', fn: (q) => this.buscarHackerNewsUser(q) },
             { nombre: 'Dev.to', categoria: 'redes', fn: (q) => this.buscarDevToUser(q) },
             { nombre: 'Stack Overflow', categoria: 'redes', fn: (q) => this.buscarStackOverflowUser(q) },
-            // ===== ACADÉMICAS =====
             { nombre: 'Semantic Scholar', categoria: 'academico', fn: (q) => this.buscarSemanticScholarAuthor(q) },
             { nombre: 'OpenAlex', categoria: 'academico', fn: (q) => this.buscarOpenAlexAuthor(q) },
             { nombre: 'Crossref', categoria: 'academico', fn: (q) => this.buscarCrossrefAuthor(q) },
             { nombre: 'ORCID', categoria: 'academico', fn: (q) => this.buscarORCID(q) },
             { nombre: 'arXiv', categoria: 'academico', fn: (q) => this.buscarArxivAuthor(q) },
             { nombre: 'PubMed', categoria: 'academico', fn: (q) => this.buscarPubMedAuthor(q) },
-            // ===== GOBIERNO Y SANCIONES =====
             { nombre: 'OpenSanctions', categoria: 'gobierno', fn: (q) => this.buscarOpenSanctions(q) },
             { nombre: 'OpenCorporates', categoria: 'gobierno', fn: (q) => this.buscarOpenCorporates(q) },
-            // ===== DOMINIOS Y EMAILS =====
             { nombre: 'DNS Records', categoria: 'dominios', fn: (q) => this.buscarDNS(q) },
             { nombre: 'SSL Certificate', categoria: 'dominios', fn: (q) => this.buscarSSL(q) },
             { nombre: 'Email Validator', categoria: 'dominios', fn: (q) => this.buscarEmailValidator(q) },
-            // ===== MEDIA =====
             { nombre: 'Wikimedia Commons', categoria: 'media', fn: (q) => this.buscarWikimediaCommons(q) },
             { nombre: 'Openverse', categoria: 'media', fn: (q) => this.buscarOpenverse(q) },
-            // ===== NOTICIAS =====
             { nombre: 'Hacker News (búsqueda)', categoria: 'noticias', fn: (q) => this.buscarHackerNews(q) },
             { nombre: 'Reddit (búsqueda)', categoria: 'noticias', fn: (q) => this.buscarRedditSearch(q) },
             { nombre: 'GDELT', categoria: 'noticias', fn: (q) => this.buscarGDELT(q) },
-            // ===== PÚBLICOS =====
             { nombre: 'OpenStreetMap', categoria: 'publico', fn: (q) => this.buscarOSM(q) }
         ];
     }
     
-    // --- BIOGRÁFICAS ---
     async buscarWikipedia(q, lang) {
         try { 
             const r = await fetch(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(q.replace(/\s+/g, '_'))}`); 
@@ -637,7 +626,6 @@ class OsintPersonSearch {
             return { tipo: 'biografia', items: d.results.bindings.map(b => ({ nombre: b.name?.value, abstract: b.abstract?.value?.substring(0, 500), nacimiento: b.birthDate?.value, lugarNacimiento: b.birthPlace?.value })), fuente: 'DBpedia' };
         } catch(e) { return null; }
     }
-    // --- REDES SOCIALES ---
     async buscarGitHubUser(q) {
         try {
             const r = await fetch(`https://api.github.com/search/users?q=${encodeURIComponent(q)}&per_page=3`);
@@ -684,7 +672,6 @@ class OsintPersonSearch {
             return { tipo: 'redes', items: d.items.slice(0, 3).map(u => ({ nombre: u.display_name, reputacion: u.reputation, url: u.link })), fuente: 'Stack Overflow' };
         } catch(e) { return null; }
     }
-    // --- ACADÉMICAS ---
     async buscarSemanticScholarAuthor(q) {
         try {
             const r = await fetch(`https://api.semanticscholar.org/graph/v1/author/search?query=${encodeURIComponent(q)}&limit=3&fields=name,affiliations,paperCount,citationCount,hIndex,url`);
@@ -734,7 +721,6 @@ class OsintPersonSearch {
             return { tipo: 'academico', items: (d.esearchresult?.idlist || []).map(id => ({ pubmedId: id, url: `https://pubmed.ncbi.nlm.nih.gov/${id}/` })), fuente: 'PubMed' };
         } catch(e) { return null; }
     }
-    // --- GOBIERNO ---
     async buscarOpenSanctions(q) {
         try {
             const r = await fetch(`https://api.opensanctions.org/search/default?q=${encodeURIComponent(q)}&limit=3`, { headers: { 'Accept': 'application/json' } });
@@ -751,7 +737,6 @@ class OsintPersonSearch {
             return { tipo: 'gobierno', items: d.results.companies.slice(0, 3).map(c => ({ nombre: c.company.name, jurisdiccion: c.company.jurisdiction_code, numero: c.company.company_number, estado: c.company.current_status, url: c.company.opencorporates_url })), fuente: 'OpenCorporates' };
         } catch(e) { return null; }
     }
-    // --- DOMINIOS ---
     async buscarDNS(q) {
         try {
             const r = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(q)}&type=A`);
@@ -777,7 +762,6 @@ class OsintPersonSearch {
             return { tipo: 'dominios', items: [{ email: q, valido: d.Answer?.length > 0, mx: d.Answer?.map(a => a.data) }], fuente: 'DNS MX' };
         } catch(e) { return null; }
     }
-    // --- MEDIA ---
     async buscarWikimediaCommons(q) {
         try {
             const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(q)}&format=json&origin=*&srlimit=3`);
@@ -792,7 +776,6 @@ class OsintPersonSearch {
             return { tipo: 'media', items: (d.results || []).map(i => ({ titulo: i.title, url: i.url, licencia: i.license })), fuente: 'Openverse' };
         } catch(e) { return null; }
     }
-    // --- NOTICIAS ---
     async buscarHackerNews(q) {
         try {
             const r = await fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(q)}&hitsPerPage=5`);
@@ -814,7 +797,6 @@ class OsintPersonSearch {
             return { tipo: 'noticias', items: (d.articles || []).map(a => ({ titulo: a.title, fuente: a.domain, url: a.url, fecha: a.seendate })), fuente: 'GDELT' };
         } catch(e) { return null; }
     }
-    // --- PÚBLICOS ---
     async buscarOSM(q) {
         try {
             const r = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3`, { headers: { 'User-Agent': 'Presidencial-OSINT/1.0' } });
@@ -823,21 +805,13 @@ class OsintPersonSearch {
         } catch(e) { return null; }
     }
     
-    // ===== BUSCAR EN TODAS LAS APIs =====
     async investigarPersona(query) {
         if (!query || query.trim().length < 2) return null;
-        
         console.log(`🕵️ OSINT: Investigando "${query}" en ${this.totalApis} APIs...`);
-        
         const resultados = await Promise.allSettled(this.apis.map(api => api.fn(query)));
-        
-        const agrupados = {
-            biografia: [], redes: [], academico: [], gobierno: [], dominios: [], media: [], noticias: [], publico: []
-        };
-        
+        const agrupados = { biografia: [], redes: [], academico: [], gobierno: [], dominios: [], media: [], noticias: [], publico: [] };
         let exitosas = 0;
         let totalResultados = 0;
-        
         resultados.forEach((r, i) => {
             const api = this.apis[i];
             if (r.status === 'fulfilled' && r.value) {
@@ -850,42 +824,20 @@ class OsintPersonSearch {
                 }
             }
         });
-        
         agentReach.stats.osint += totalResultados;
         agentReach.actualizarUI();
         document.getElementById('ultraFuentes').textContent = totalResultados;
-        
-        return {
-            query,
-            totalApis: this.totalApis,
-            apisExitosas: exitosas,
-            totalResultados,
-            agrupados,
-            timestamp: new Date().toISOString()
-        };
+        return { query, totalApis: this.totalApis, apisExitosas: exitosas, totalResultados, agrupados, timestamp: new Date().toISOString() };
     }
     
-    // ===== FORMATEAR PARA LA IA =====
     formatearParaIA(resultados) {
         if (!resultados || resultados.totalResultados === 0) {
             return `\n⚠️ No se encontraron datos públicos OSINT para "${resultados?.query || ''}".`;
         }
-        
         let texto = `\n\n═══════════════════════════════════════\n🕵️ INFORME OSINT COMPLETO: ${resultados.query}\n═══════════════════════════════════════\n`;
         texto += `✅ ${resultados.apisExitosas}/${resultados.totalApis} APIs respondieron · ${resultados.totalResultados} resultados encontrados\n`;
         texto += `📅 ${resultados.timestamp}\n\n`;
-        
-        const categorias = {
-            biografia: { icono: '📚', nombre: 'BIOGRAFÍA' },
-            redes: { icono: '🌐', nombre: 'REDES SOCIALES' },
-            academico: { icono: '🎓', nombre: 'ACADÉMICO / INVESTIGACIONES' },
-            gobierno: { icono: '🏛️', nombre: 'GOBIERNO / SANCIONES / CASOS LEGALES' },
-            dominios: { icono: '🔗', nombre: 'DOMINIOS / EMAILS' },
-            media: { icono: '🖼️', nombre: 'MEDIA' },
-            noticias: { icono: '📰', nombre: 'NOTICIAS / CASOS PÚBLICOS' },
-            publico: { icono: '📍', nombre: 'DATOS PÚBLICOS' }
-        };
-        
+        const categorias = { biografia: { icono: '📚', nombre: 'BIOGRAFÍA' }, redes: { icono: '🌐', nombre: 'REDES SOCIALES' }, academico: { icono: '🎓', nombre: 'ACADÉMICO / INVESTIGACIONES' }, gobierno: { icono: '🏛️', nombre: 'GOBIERNO / SANCIONES / CASOS LEGALES' }, dominios: { icono: '🔗', nombre: 'DOMINIOS / EMAILS' }, media: { icono: '🖼️', nombre: 'MEDIA' }, noticias: { icono: '📰', nombre: 'NOTICIAS / CASOS PÚBLICOS' }, publico: { icono: '📍', nombre: 'DATOS PÚBLICOS' } };
         Object.entries(resultados.agrupados).forEach(([cat, items]) => {
             if (items.length === 0) return;
             const c = categorias[cat];
@@ -910,36 +862,21 @@ class OsintPersonSearch {
                 }
             });
         });
-        
         texto += `\n═══════════════════════════════════════\n`;
         texto += `⚖️ AVISO: Información de fuentes públicas. Su uso debe cumplir GDPR y leyes locales.\n`;
         texto += `═══════════════════════════════════════\n`;
-        
         return texto;
     }
     
-    // ===== FORMATEAR PARA MOSTRAR EN EL CHAT =====
     formatearParaChat(resultados) {
         if (!resultados || resultados.totalResultados === 0) {
             return `No se encontraron datos públicos para "<strong>${resultados?.query || ''}</strong>". Prueba con nombre completo, @usuario o email.`;
         }
-        
         let html = `<div style="margin-bottom:10px;padding:10px;background:linear-gradient(135deg,#14b8a6,#0891b2);color:white;border-radius:10px;">`;
         html += `<div style="font-size:1rem;font-weight:800;">🕵️ Informe OSINT: ${resultados.query}</div>`;
         html += `<div style="font-size:0.7rem;opacity:0.9;margin-top:4px;">✅ ${resultados.apisExitosas}/${resultados.totalApis} APIs · ${resultados.totalResultados} resultados</div>`;
         html += `</div>`;
-        
-        const categorias = {
-            biografia: { icono: '📚', nombre: 'Biografía' },
-            redes: { icono: '🌐', nombre: 'Redes Sociales' },
-            academico: { icono: '🎓', nombre: 'Académico' },
-            gobierno: { icono: '🏛️', nombre: 'Gobierno/Sanciones' },
-            dominios: { icono: '🔗', nombre: 'Dominios' },
-            media: { icono: '🖼️', nombre: 'Media' },
-            noticias: { icono: '📰', nombre: 'Noticias' },
-            publico: { icono: '📍', nombre: 'Datos Públicos' }
-        };
-        
+        const categorias = { biografia: { icono: '📚', nombre: 'Biografía' }, redes: { icono: '🌐', nombre: 'Redes Sociales' }, academico: { icono: '🎓', nombre: 'Académico' }, gobierno: { icono: '🏛️', nombre: 'Gobierno/Sanciones' }, dominios: { icono: '🔗', nombre: 'Dominios' }, media: { icono: '🖼️', nombre: 'Media' }, noticias: { icono: '📰', nombre: 'Noticias' }, publico: { icono: '📍', nombre: 'Datos Públicos' } };
         Object.entries(resultados.agrupados).forEach(([cat, items]) => {
             if (items.length === 0) return;
             const c = categorias[cat];
@@ -969,76 +906,265 @@ class OsintPersonSearch {
             });
             html += `</div>`;
         });
-        
         html += `<div style="margin-top:10px;padding:8px;background:rgba(15,118,110,0.1);border-radius:6px;font-size:0.65rem;color:#0f766e;">`;
         html += `<strong>⚖️ Aviso:</strong> Fuentes públicas. Cumple GDPR. Solo para investigación legítima.`;
         html += `</div>`;
-        
         return html;
     }
 }
 const osint = new OsintPersonSearch();
 
 // ============================================
-// 🔄 MULTI-IA CON FALLBACK — 9 PROVEEDORES
+// 🔄 MULTI-IA — 9 PROVEEDORES + MODELOS FREE
 // ============================================
 const IA_PROVEEDORES = [
-    { nombre: 'Google', url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AQ.Ab8RN6Ly5QrNa2RWh65DS_PRM_AMDE7E_52VaHe1FcdJcurvgw', key: 'AQ.Ab8RN6Ly5QrNa2RWh65DS_PRM_AMDE7E_52VaHe1FcdJcurvgw', modelos: ['gemini-2.0-flash', 'gemini-2.5-flash-preview-04-17'], color: '#4285F4', tipo: 'google' },
-    { nombre: 'Cerebras', url: 'https://api.cerebras.ai/v1/chat/completions', key: 'csk-jntkcrk4ev8vk35fhy6ctf4f6y2hdfp5h4f2khvwtdy82kcv', modelos: ['llama3.1-8b', 'llama-3.3-70b', 'qwen-2.5-32b'], color: '#FF6B35' },
-    { nombre: 'Z.ai', url: 'https://api.z.ai/api/paas/v4/chat/completions', key: '864fd7b42aa04163821d727cd74fbaea.GaPaxOmiAJUpm2TP', modelos: ['glm-4-flash', 'glm-4.5-flash'], color: '#7C3AED' },
-    { nombre: 'Mistral AI', url: 'https://api.mistral.ai/v1/chat/completions', key: '5qjCySPcH6ltO3ACeYcv8peh8iz252uW', modelos: ['mistral-small-latest', 'mistral-large-latest'], color: '#f97316' },
-    { nombre: 'GitHub', url: 'https://models.inference.ai.azure.com/chat/completions', key: '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', modelos: ['gpt-4o-mini', 'Phi-3.5-mini-instruct'], color: '#24292E' },
-    { nombre: 'Ollama Cloud', url: 'https://api.ollama.cloud/v1/chat/completions', key: '0edce97e3d3f405fb5e528efef2757f8.v6Xv_n50E_J9aSpdYQJMvaS3', modelos: ['llama3.2', 'mistral', 'gemma2'], color: '#333333' },
-    { nombre: 'Kiro', url: 'https://api.kiro.ai/v1/chat/completions', key: 'sk-xt-41b2aae5f67cc4105f017e26f6f5fe48f21d3e2207977139', modelos: ['kiro-chat', 'kiro-pro'], color: '#00A3FF' },
-    { nombre: 'Orca Router', url: 'https://api.orcarouter.ai/v1/chat/completions', key: 'sk-orca-cCg3Kbg7IUyeXhXdzZ41MRPe5kuQShyEiQ7tvlILHuk', modelos: ['orca-mini', 'orca-2-7b'], color: '#8B5CF6' },
-    { nombre: 'OpenRouter', url: 'https://openrouter.ai/api/v1/chat/completions', key: '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', modelos: ['mistralai/mistral-7b-instruct:free', 'meta-llama/llama-3.1-8b-instruct:free'], color: '#10b981', extraHeaders: { 'HTTP-Referer': 'https://presidencial.local', 'X-Title': 'Perfil Presidencial' } }
+    {
+        nombre: 'Google',
+        url: 'https://generativelanguage.googleapis.com/v1beta/models',
+        key: 'AQ.Ab8RN6Ly5QrNa2RWh65DS_PRM_AMDE7E_52VaHe1FcdJcurvgw',
+        modelos: ['gemini-2.0-flash', 'gemini-2.5-flash-preview-04-17'],
+        color: '#4285F4',
+        tipo: 'google'
+    },
+    {
+        nombre: 'Cerebras',
+        url: 'https://api.cerebras.ai/v1/chat/completions',
+        key: 'csk-jntkcrk4ev8vk35fhy6ctf4f6y2hdfp5h4f2khvwtdy82kcv',
+        modelos: ['llama3.1-8b', 'llama-3.3-70b', 'qwen-2.5-32b'],
+        color: '#FF6B35'
+    },
+    {
+        nombre: 'Z.ai',
+        url: 'https://api.z.ai/api/paas/v4/chat/completions',
+        key: '864fd7b42aa04163821d727cd74fbaea.GaPaxOmiAJUpm2TP',
+        modelos: ['glm-4-flash', 'glm-4.5-flash'],
+        color: '#7C3AED'
+    },
+    {
+        nombre: 'Mistral AI',
+        url: 'https://api.mistral.ai/v1/chat/completions',
+        key: '5qjCySPcH6ltO3ACeYcv8peh8iz252uW',
+        modelos: ['mistral-small-latest', 'open-mistral-7b', 'mistral-tiny', 'open-mistral-nemo'],
+        color: '#f97316'
+    },
+    {
+        nombre: 'GitHub',
+        url: 'https://models.inference.ai.azure.com/chat/completions',
+        key: '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',
+        modelos: ['gpt-4o-mini', 'Phi-3.5-mini-instruct', 'Meta-Llama-3.1-8B-Instruct'],
+        color: '#24292E'
+    },
+    {
+        nombre: 'Ollama Cloud',
+        url: 'https://api.ollama.cloud/v1/chat/completions',
+        key: '0edce97e3d3f405fb5e528efef2757f8.v6Xv_n50E_J9aSpdYQJMvaS3',
+        modelos: ['llama3.2', 'mistral', 'gemma2'],
+        color: '#333333'
+    },
+    {
+        nombre: 'Kiro',
+        url: 'https://api.kiro.ai/v1/chat/completions',
+        key: 'sk-xt-41b2aae5f67cc4105f017e26f6f5fe48f21d3e2207977139',
+        modelos: ['kiro-chat'],
+        color: '#00A3FF'
+    },
+    {
+        nombre: 'Orca Router',
+        url: 'https://api.orcarouter.ai/v1/chat/completions',
+        key: 'sk-orca-cCg3Kbg7IUyeXhXdzZ41MRPe5kuQShyEiQ7tvlILHuk',
+        modelos: ['orca-mini', 'orca-2-7b'],
+        color: '#8B5CF6'
+    },
+    {
+        nombre: 'OpenRouter',
+        url: 'https://openrouter.ai/api/v1/chat/completions',
+        key: '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',
+        modelos: [
+            'mistralai/mistral-7b-instruct:free',
+            'meta-llama/llama-3.1-8b-instruct:free',
+            'google/gemma-2-9b-it:free',
+            'qwen/qwen-2.5-7b-instruct:free'
+        ],
+        color: '#10b981',
+        extraHeaders: { 'HTTP-Referer': 'https://presidencial.local', 'X-Title': 'Perfil Presidencial' }
+    }
 ];
+
+const TIMEOUT_IA = 25000;
+const TIMEOUT_TOTAL_ANALISIS = 60000;
+
 const PAIS_FIJO = 'china';
 let ocupado = false, modoActual = 'experto', idiomaDetectado = 'es', proveedorActual = null;
 let ultimoAnalisis = '', procesando = false;
+let iaOkCount = 0, iaFailsCount = 0;
 
 const nombreIdioma = { 'es': 'Español', 'en': 'Inglés', 'de': 'Alemán', 'fr': 'Francés', 'pt': 'Portugués', 'it': 'Italiano' };
 const banderaIdioma = { 'es': '🇪🇸', 'en': '🇬🇧', 'de': '🇩🇪', 'fr': '🇫🇷', 'pt': '🇵🇹', 'it': '🇮🇹' };
 
+// ============================================
+// 🔍 DIAGNÓSTICO
+// ============================================
+const Diagnostico = {
+    contador: 0,
+    log(mensaje, tipo = 'info') {
+        this.contador++;
+        const icono = tipo === 'ok' ? '✅' : tipo === 'warn' ? '⚠️' : tipo === 'error' ? '❌' : 'ℹ️';
+        console.log(`[${tipo.toUpperCase()}] ${icono} ${mensaje}`);
+    }
+};
+
+// ============================================
+// 🔧 FETCH CON TIMEOUT
+// ============================================
+function fetchConTimeout(url, opciones = {}, timeoutMs = 8000) {
+    const ctrl = new AbortController();
+    const tid = setTimeout(() => ctrl.abort(), timeoutMs);
+    return fetch(url, { ...opciones, signal: ctrl.signal }).finally(() => clearTimeout(tid));
+}
+
+// ============================================
+// 🔄 ACTUALIZAR PROVEEDOR
+// ============================================
 function actualizarProveedor(nombre) {
     proveedorActual = nombre;
     const prov = document.getElementById('cfStatus');
     if (prov) { prov.textContent = `✅ ${nombre}`; prov.style.color = '#10b981'; }
     const ultra = document.getElementById('ultraProveedor');
     if (ultra) ultra.textContent = nombre;
+    const ok = document.getElementById('iaOkCount');
+    const fail = document.getElementById('iaFailsCount');
+    if (ok) ok.textContent = iaOkCount;
+    if (fail) fail.textContent = iaFailsCount;
 }
 
+// ============================================
+// 🔄 MULTI-IA EN PARALELO (Promise.any)
+// ============================================
 async function llamarIA(messages, maxTokens = 3000) {
-    let ultimoError = null;
+    Diagnostico.log(`Lanzando ${IA_PROVEEDORES.length} proveedores · ${IA_PROVEEDORES.reduce((a, p) => a + p.modelos.length, 0)} modelos en paralelo…`, 'info');
+
+    const promesas = [];
     for (const prov of IA_PROVEEDORES) {
         for (const modelo of prov.modelos) {
-            try {
-                console.log(`🔄 Probando ${prov.nombre} (${modelo})...`);
-                const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${prov.key}` };
-                if (prov.extraHeaders) Object.assign(headers, prov.extraHeaders);
-                let body, url = prov.url;
-                if (prov.tipo === 'google') {
-                    url = `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent?key=${prov.key}`;
-                    body = { contents: messages.map(m => ({ role: m.role === 'assistant' ? 'model' : m.role, parts: [{ text: m.content }] })), generationConfig: { maxOutputTokens: maxTokens, temperature: 0.7 } };
-                } else {
-                    body = { model: modelo, messages, temperature: 0.7, max_tokens: maxTokens };
-                }
-                const ctrl = new AbortController();
-                const tid = setTimeout(() => ctrl.abort(), 90000);
-                const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body), signal: ctrl.signal });
-                clearTimeout(tid);
-                if ([401, 403, 429].includes(resp.status)) { console.warn(`⚠️ ${prov.nombre}/${modelo} → ${resp.status}`); ultimoError = `${resp.status} en ${prov.nombre}`; continue; }
-                if (!resp.ok) { const err = await resp.json().catch(() => ({})); ultimoError = err.error?.message || `Error ${resp.status}`; continue; }
-                const data = await resp.json();
-                let texto = prov.tipo === 'google' ? (data.candidates?.[0]?.content?.parts?.[0]?.text || '') : (data.choices?.[0]?.message?.content || '');
-                if (texto.length < 50) { ultimoError = 'Respuesta muy corta'; continue; }
-                console.log(`✅ ${prov.nombre} (${modelo}): ${texto.length} chars`);
-                actualizarProveedor(prov.nombre);
-                return { texto, proveedor: prov.nombre, modelo };
-            } catch(e) { console.warn(`⚠️ ${prov.nombre}/${modelo}:`, e.message); ultimoError = e.name === 'AbortError' ? 'Timeout' : e.message; }
+            promesas.push(
+                (async () => {
+                    const t0 = Date.now();
+                    try {
+                        const headers = {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${prov.key}`
+                        };
+                        if (prov.extraHeaders) Object.assign(headers, prov.extraHeaders);
+
+                        let url = prov.url;
+                        let body;
+
+                        if (prov.tipo === 'google') {
+                            url = `${prov.url}/${modelo}:generateContent?key=${prov.key}`;
+                            delete headers['Authorization'];
+                            body = {
+                                contents: messages.map(m => ({
+                                    role: m.role === 'assistant' ? 'model' : m.role,
+                                    parts: [{ text: m.content }]
+                                })),
+                                generationConfig: { maxOutputTokens: maxTokens, temperature: 0.7 }
+                            };
+                        } else {
+                            body = {
+                                model: modelo,
+                                messages,
+                                temperature: 0.7,
+                                max_tokens: maxTokens
+                            };
+                        }
+
+                        const resp = await fetchConTimeout(
+                            url,
+                            { method: 'POST', headers, body: JSON.stringify(body) },
+                            TIMEOUT_IA
+                        );
+                        const dur = ((Date.now() - t0) / 1000).toFixed(1);
+
+                        if ([401, 403, 429].includes(resp.status)) {
+                            const errTxt = resp.status === 429 ? 'rate limit' : resp.status === 401 ? 'key inválida' : `HTTP ${resp.status}`;
+                            Diagnostico.log(`${prov.nombre}/${modelo}: ${errTxt} (${dur}s)`, 'error');
+                            iaFailsCount++;
+                            throw new Error(`${prov.nombre}/${modelo}: ${errTxt}`);
+                        }
+                        if (!resp.ok) {
+                            Diagnostico.log(`${prov.nombre}/${modelo}: HTTP ${resp.status} (${dur}s)`, 'error');
+                            iaFailsCount++;
+                            throw new Error(`${prov.nombre}/${modelo}: HTTP ${resp.status}`);
+                        }
+
+                        const data = await resp.json();
+                        let texto = '';
+                        if (prov.tipo === 'google') {
+                            texto = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+                        } else {
+                            texto = data.choices?.[0]?.message?.content || '';
+                        }
+
+                        if (texto.length < 50) {
+                            Diagnostico.log(`${prov.nombre}/${modelo}: respuesta corta (${texto.length})`, 'warn');
+                            iaFailsCount++;
+                            throw new Error(`${prov.nombre}/${modelo}: respuesta corta`);
+                        }
+
+                        Diagnostico.log(`${prov.nombre}/${modelo}: ${texto.length} chars en ${dur}s`, 'ok');
+                        iaOkCount++;
+                        return { texto, proveedor: prov.nombre, modelo };
+                    } catch (e) {
+                        if (e.name === 'AbortError') {
+                            Diagnostico.log(`${prov.nombre}/${modelo}: Timeout ${TIMEOUT_IA / 1000}s`, 'error');
+                            iaFailsCount++;
+                        }
+                        throw e;
+                    }
+                })()
+            );
         }
     }
-    throw new Error(`Todos los proveedores fallaron. Último: ${ultimoError}`);
+
+    try {
+        const resultado = await Promise.any(promesas);
+        actualizarProveedor(resultado.proveedor);
+        Diagnostico.log(`🏆 GANADOR: ${resultado.proveedor} (${resultado.modelo})`, 'ok');
+        return resultado;
+    } catch (e) {
+        Diagnostico.log('❌ Todos los proveedores IA fallaron', 'error');
+        actualizarProveedor('Fallback');
+        throw new Error('Todos los proveedores IA fallaron');
+    }
+}
+
+// ============================================
+// 🧠 FALLBACK OSINT (si toda IA falla)
+// ============================================
+function generarFallbackOSINT(pregunta, entidad, resultadosOSINT) {
+    let texto = `PERFIL OSINT: ${entidad || pregunta}\n\n`;
+    texto += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+    texto += `⚠️ MODO FALLBACK ACTIVADO\n`;
+    texto += `Los ${IA_PROVEEDORES.length} proveedores de IA no respondieron en el tiempo límite.\n`;
+    texto += `Se muestra el informe OSINT crudo recopilado de las APIs públicas.\n`;
+    texto += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    
+    if (resultadosOSINT && resultadosOSINT.totalResultados > 0) {
+        texto += `📊 DATOS RECOPILADOS:\n`;
+        texto += `✅ ${resultadosOSINT.apisExitosas}/${resultadosOSINT.totalApis} APIs respondieron\n`;
+        texto += `📈 ${resultadosOSINT.totalResultados} resultados encontrados\n\n`;
+        texto += osint.formatearParaIA(resultadosOSINT);
+        texto += `\n\nCONCLUSIÓN INTEGRAL:\n`;
+        texto += `Se encontraron datos públicos en ${resultadosOSINT.apisExitosas} fuentes. `;
+        texto += `Revisa el informe arriba para ver detalles específicos. `;
+        texto += `Reintenta la consulta para obtener un análisis completo generado por IA.`;
+    } else {
+        texto += `No se encontraron datos públicos en las APIs consultadas para "${entidad}".\n\n`;
+        texto += `CONCLUSIÓN INTEGRAL:\n`;
+        texto += `Sin datos públicos disponibles. Prueba con nombre completo, @usuario o email.`;
+    }
+    
+    return texto;
 }
 
 // ============================================
@@ -1053,8 +1179,6 @@ function actualizarProgress(porcentaje) { document.getElementById('progressBar')
 // ============================================
 function detectarIntencionOSINT(pregunta) {
     const q = pregunta.toLowerCase().trim();
-    
-    // Palabras clave que activan búsqueda OSINT
     const keywordsOSINT = [
         'investiga', 'investigar', 'investigación', 'antecedentes', 'historial',
         'quién es', 'quien es', 'quién fue', 'quien fue', 'sobre', 'dime todo',
@@ -1065,37 +1189,22 @@ function detectarIntencionOSINT(pregunta) {
         'qué ha hecho', 'que ha hecho', 'qué investigaciones', 'que investigaciones',
         'publicaciones', 'papers', 'estudios', 'artículos', 'articulos'
     ];
-    
     const tieneKeyword = keywordsOSINT.some(k => q.includes(k));
-    
-    // Detectar nombre propio (heurística: 2+ palabras capitalizadas)
     const palabras = pregunta.split(/\s+/);
     const palabrasCapitalizadas = palabras.filter(p => /^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+$/.test(p));
     const tieneNombrePropio = palabrasCapitalizadas.length >= 2;
-    
-    // Detectar @usuario o email o dominio
     const tieneUsuario = /@[a-zA-Z0-9_]+/.test(pregunta);
     const tieneEmail = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(pregunta);
     const tieneDominio = /\b[a-zA-Z0-9-]+\.(com|org|net|io|gov|edu|es|mx|ar|co)\b/.test(pregunta);
-    
-    // Extraer el nombre/entidad a investigar
     let entidad = pregunta;
-    // Si empieza con "investiga a X" o similar, limpiar
     const limpiadores = [
         /^(investiga|investigar|busca|buscar|dime todo sobre|dime sobre|háblame de|hablame de|información de|informacion de|datos de|perfil de|antecedentes de|historial de|quién es|quien es|qué es|que es)\s+/i,
         /^(a|el|la|los|las)\s+/i
     ];
     limpiadores.forEach(re => { entidad = entidad.replace(re, ''); });
     entidad = entidad.replace(/[¿?¡!]/g, '').trim();
-    
-    // Si la pregunta es corta y tiene nombre propio, probablemente es OSINT
     const esCortoConNombre = palabras.length <= 5 && tieneNombrePropio;
-    
-    const activar = (tieneKeyword && (tieneNombrePropio || tieneUsuario || tieneEmail || tieneDominio)) 
-                 || tieneEmail 
-                 || tieneUsuario 
-                 || esCortoConNombre;
-    
+    const activar = (tieneKeyword && (tieneNombrePropio || tieneUsuario || tieneEmail || tieneDominio)) || tieneEmail || tieneUsuario || esCortoConNombre;
     return { activar, entidad };
 }
 
@@ -1158,28 +1267,26 @@ function actualizarAnalisisAutomatico(texto, idioma) {
     document.getElementById('ultraFunciones').textContent = statsWASM.funciones;
     document.getElementById('wasmCacheSize').textContent = rustWASM.getCacheSize();
     const fuentesWidget = document.getElementById('fuentesWidget');
-    if (fuentesWidget) fuentesWidget.innerHTML = `🦀 WASM Rust (${statsWASM.optimizaciones} opt) · 🔄 Multi-IA · 🤖 Agente · 🕵️ OSINT · ♾️ ${document.getElementById('ultraFuentes').textContent || 0} fuentes`;
+    if (fuentesWidget) fuentesWidget.innerHTML = `🦀 WASM Rust (${statsWASM.optimizaciones} opt) · 🔄 Multi-IA paralelo · 🤖 Agente · 🕵️ OSINT · ♾️ ${document.getElementById('ultraFuentes').textContent || 0} fuentes`;
 }
 
 // ============================================
-// 🕵️ CHAT UNIFICADO: OSINT + CONVERSACIÓN
+// 🕵️ CHAT UNIFICADO: OSINT + CONVERSACIÓN CON RACE
 // ============================================
 async function procesarPregunta(pregunta) {
-    // 1. Detectar intención OSINT
     const intencion = detectarIntencionOSINT(pregunta);
     console.log(`🧠 Detección OSINT: ${intencion.activar ? 'ACTIVADA' : 'NO'} · Entidad: "${intencion.entidad}"`);
     
     let contextoOSINT = '';
     let htmlOSINT = '';
     let entidadDetectada = intencion.entidad;
+    let resultadosOSINT = null;
     
-    // 2. Si es OSINT, buscar en las 30+ APIs
     if (intencion.activar && entidadDetectada.length >= 2) {
         actualizarProgress(15);
         console.log(`🕵️ Ejecutando OSINT para: ${entidadDetectada}`);
-        
         try {
-            const resultadosOSINT = await osint.investigarPersona(entidadDetectada);
+            resultadosOSINT = await osint.investigarPersona(entidadDetectada);
             if (resultadosOSINT && resultadosOSINT.totalResultados > 0) {
                 contextoOSINT = osint.formatearParaIA(resultadosOSINT);
                 htmlOSINT = osint.formatearParaChat(resultadosOSINT);
@@ -1194,10 +1301,8 @@ async function procesarPregunta(pregunta) {
         actualizarProgress(40);
     }
     
-    // 3. Construir prompt enriquecido
     let promptCompleto;
     if (intencion.activar && contextoOSINT) {
-        // Prompt especializado para análisis OSINT
         promptCompleto = `Actúa como un analista OSINT profesional y consultor político senior.
 
 PREGUNTA DEL USUARIO: ${pregunta}
@@ -1257,7 +1362,6 @@ REGLAS CRÍTICAS:
 
 Empieza con "PERFIL OSINT:" y termina con "CONCLUSIÓN INTEGRAL:".`;
     } else {
-        // Prompt normal de consultor político
         if (modoActual === 'experto') {
             promptCompleto = `Actúa como un consultor político senior con experiencia en gobierno y reformas.
 
@@ -1282,14 +1386,27 @@ Empieza con "Diagnóstico:" y termina con "Conclusión:".`;
     
     const maxTokens = intencion.activar ? 5000 : (modoActual === 'experto' ? 4000 : 1500);
     
-    // 4. Llamar a Multi-IA
     actualizarProgress(50);
-    console.log(`⚡ [1 LLAMADA] Enviando a Multi-IA (${intencion.activar ? 'OSINT MODE' : 'NORMAL'})`);
+    console.log(`⚡ [PARALELO] Enviando a Multi-IA (${intencion.activar ? 'OSINT MODE' : 'NORMAL'})`);
     
-    const resultado = await llamarIA([
+    // --- RACE: IA vs timeout global ---
+    const timeoutGlobal = new Promise((_, reject) => setTimeout(() => reject(new Error('TIMEOUT_GLOBAL')), TIMEOUT_TOTAL_ANALISIS));
+    const tareaIA = llamarIA([
         { role: 'system', content: 'Eres analista OSINT y consultor político senior. Responde en español. NO uses asteriscos. Si hay datos OSINT, intégralos con honestidad y cita fuentes.' },
         { role: 'user', content: promptCompleto }
     ], maxTokens);
+    
+    let resultado;
+    try {
+        resultado = await Promise.race([tareaIA, timeoutGlobal]);
+        document.getElementById('llamadaStatus').textContent = '✅ 1 Llamada';
+    } catch (iaError) {
+        Diagnostico.log(`IA falló: ${iaError.message}`, 'error');
+        Diagnostico.log('🧠 Activando FALLBACK OSINT…', 'warn');
+        const fallback = generarFallbackOSINT(pregunta, entidadDetectada, resultadosOSINT);
+        resultado = { texto: fallback, proveedor: 'Fallback OSINT', modelo: 'datos-reales' };
+        showToast('🧠 Fallback · datos OSINT crudos', true);
+    }
     
     actualizarProgress(90);
     const textoLimpio = rustWASM.cleanText(resultado.texto);
@@ -1328,7 +1445,7 @@ function addMessage(text, isUser, opciones = {}) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-function showTyping(mensaje = '🦀 WASM Rust (50x) · 🔄 Multi-IA · 🕵️ OSINT recopilando información...') {
+function showTyping(mensaje = '🦀 WASM Rust (50x) · 🔄 Multi-IA paralelo · 🕵️ OSINT recopilando información...') {
     const d = document.createElement('div');
     d.className = 'message ai-message';
     d.id = '_typing';
@@ -1348,12 +1465,11 @@ async function handleSend() {
     procesando = true;
     chatSendBtn.disabled = true;
     
-    // Detectar si es OSINT para mostrar typing apropiado
     const intencion = detectarIntencionOSINT(q);
     if (intencion.activar) {
         showTyping(`🕵️ OSINT activado para "${intencion.entidad}" · Buscando en 30+ APIs...`);
     } else {
-        showTyping('🦀 WASM Rust (50x) · 🔄 Multi-IA · 🤖 Agente procesando...');
+        showTyping('🦀 WASM Rust (50x) · 🔄 Multi-IA paralelo · 🤖 Agente procesando...');
     }
     
     actualizarProgress(5);
@@ -1363,12 +1479,10 @@ async function handleSend() {
         actualizarProgress(95);
         removeTyping();
         
-        // Si fue OSINT, mostrar primero el informe OSINT formateado
         if (resultado.fueOSINT && resultado.htmlOSINT) {
             addMessage(resultado.htmlOSINT, false, { osint: true, html: true });
         }
         
-        // Luego mostrar el análisis integrado de la IA
         addMessage(resultado.respuesta, false);
         
         ultimoAnalisis = resultado.respuesta;
@@ -1402,7 +1516,7 @@ chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(
 document.getElementById('btnRustStatus').onclick = () => {
     const mod = rustWASM.wasm;
     const funcs = mod ? ['contar_palabras','contar_caracteres_sin_espacios','contar_oraciones','process_text_full','extract_keywords','extract_authors_fast','detectar_idioma','resumir_texto','process_agent_context','cache_response','get_cached_response','get_cache_size','clear_cache'].filter(f => typeof mod[f] === 'function') : [];
-    mostrarModal('🦀 WASM Rust Real', `Estado: ${rustWASM.cargado ? '✅ Cargado' : '❌ Fallback JS'}\nVersión: ${rustWASM.cargado ? 'Core ' + mod.wasm_version() + 'M' : 'N/A'}\nFunciones: ${funcs.length}/13\n\n${funcs.map(f => '• ' + f).join('\n')}\n\n⚡ Ejecutadas: ${rustWASM.stats.funciones}\n⏱️ Tiempo: ${Math.round(rustWASM.stats.tiempo)}ms\n📦 Caché: ${rustWASM.getCacheSize()}`);
+    mostrarModal('🦀 WASM Rust Real', `Estado: ${rustWASM.cargado ? '✅ Cargado' : '❌ Fallback JS'}\nVersión: ${rustWASM.cargado && mod.wasm_version ? 'Core ' + mod.wasm_version() + 'M' : 'N/A'}\nFunciones: ${funcs.length}/13\n\n${funcs.map(f => '• ' + f).join('\n')}\n\n⚡ Ejecutadas: ${rustWASM.stats.funciones}\n⏱️ Tiempo: ${Math.round(rustWASM.stats.tiempo)}ms\n📦 Caché: ${rustWASM.getCacheSize()}`);
 };
 document.getElementById('btnRustTest').onclick = () => {
     const texto = 'El liderazgo político transformador requiere visión estratégica. Según García (2023) es fundamental.';
@@ -1414,12 +1528,14 @@ document.getElementById('btnRustTest').onclick = () => {
     mostrarModal('⚡ Test WASM Rust', `📊 Palabras: ${stats.palabras}\n🔄 Únicas: ${stats.unicas}\n🌐 Idioma: ${idioma}\n\n🏷️ Keywords: ${keywords.map(k => `${k.palabra} (${k.frecuencia})`).join(', ') || 'N/A'}\n\n👤 Autores: ${autores.join(', ') || 'N/A'}\n\n🦀 wasm_rust: ${full?.wasm_rust || rustWASM.cargado}\n⏱️ tiempo_us: ${full?.tiempo_us || 'N/A'}`);
 };
 document.getElementById('btnMultiIA').onclick = () => {
-    let info = '🔄 Multi-IA con fallback automático\n\n';
+    let info = '🔄 Multi-IA — 9 proveedores en paralelo con Promise.any\n\n';
     IA_PROVEEDORES.forEach((p, i) => {
         const emoji = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣'][i] || '🔹';
         info += `${emoji} ${p.nombre}\n   • Modelos: ${p.modelos.join(', ')}\n   • Estado: ${proveedorActual === p.nombre ? '✅ Activo' : '⏳ Espera'}\n\n`;
     });
-    info += `🔧 Fallback automático si falla el anterior.`;
+    info += `📊 Estadísticas:\n✅ OK: ${iaOkCount}\n❌ Fallos: ${iaFailsCount}\n\n`;
+    info += `🔧 Timeout: ${TIMEOUT_IA / 1000}s por proveedor · ${TIMEOUT_TOTAL_ANALISIS / 1000}s global\n`;
+    info += `🏆 Gana el proveedor que responde primero.`;
     mostrarModal('🔄 Multi-IA — 9 proveedores', info);
 };
 document.getElementById('btnCoreStatus').onclick = () => {
@@ -1472,18 +1588,18 @@ document.getElementById('btnAnalisisCompleto').onclick = () => {
     if (!ultimoAnalisis) { showToast('⚠️ Realiza una consulta primero', true); return; }
     const stats = rustWASM.contarPalabras(ultimoAnalisis);
     const kw = rustWASM.keywords(ultimoAnalisis, 10);
-    mostrarModal('📊 Análisis Completo', `📝 Palabras: ${stats.palabras}\n🔄 Únicas: ${stats.unicas}\n📖 Oraciones: ${stats.oraciones}\n\n🏷️ Keywords: ${kw.map(k => `${k.palabra} (${k.frecuencia})`).join(', ')}\n\n🦀 WASM Rust: ${rustWASM.cargado ? 'Activo' : 'Fallback'}`);
+    mostrarModal('📊 Análisis Completo', `📝 Palabras: ${stats.palabras}\n🔄 Únicas: ${stats.unicas}\n📖 Oraciones: ${stats.oraciones}\n\n🏷️ Keywords: ${kw.map(k => `${k.palabra} (${k.frecuencia})`).join(', ')}\n\n🦀 WASM Rust: ${rustWASM.cargado ? 'Activo' : 'Fallback'}\n🔄 Multi-IA: ${iaOkCount} OK · ${iaFailsCount} fallos`);
 };
 document.getElementById('btnDecisionStatus').onclick = () => {
     const stats = rustWASM.getStats();
     const e = core403M.getEstado();
     const ar = agentReach.getStats();
-    mostrarModal('🧠 Sistema Completo', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n📦 Caché: ${rustWASM.getCacheSize()}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n🧬 Core 403M: ${e.consultas} consultas\n🕵️ OSINT: ${osint.totalApis} APIs · ${ar.osint} resultados\n🔌 Agent-Reach: G${ar.github} R${ar.reddit} W${ar.wiki}`);
+    mostrarModal('🧠 Sistema Completo', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n📦 Caché: ${rustWASM.getCacheSize()}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n✅ OK: ${iaOkCount} · ❌ Fallos: ${iaFailsCount}\n\n🧬 Core 403M: ${e.consultas} consultas\n🕵️ OSINT: ${osint.totalApis} APIs · ${ar.osint} resultados\n🔌 Agent-Reach: G${ar.github} R${ar.reddit} W${ar.wiki}`);
 };
 document.getElementById('btnTermuxStatus').onclick = () => {
     const stats = rustWASM.getStats();
     const e = core403M.getEstado();
-    mostrarModal('🔌 Estado del Sistema', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n🧬 Core 403M: ${e.consultas} consultas\n🕵️ OSINT: ${osint.totalApis} APIs\n\n📌 Modo: ${modoActual}\n🌐 Idioma: ${nombreIdioma[idiomaDetectado] || 'Español'}\n🇨🇳 Enfoque: ${PAIS_FIJO}`);
+    mostrarModal('🔌 Estado del Sistema', `🦀 WASM Rust: ${rustWASM.cargado ? '✅' : '⚠️'}\n📊 Funciones: ${stats.funciones}\n\n🔄 Multi-IA: ${proveedorActual || 'En espera'}\n✅ OK: ${iaOkCount} · ❌ Fallos: ${iaFailsCount}\n⏱️ Timeout: ${TIMEOUT_IA / 1000}s por proveedor · ${TIMEOUT_TOTAL_ANALISIS / 1000}s global\n\n🧬 Core 403M: ${e.consultas} consultas\n🕵️ OSINT: ${osint.totalApis} APIs\n\n📌 Modo: ${modoActual}\n🌐 Idioma: ${nombreIdioma[idiomaDetectado] || 'Español'}\n🇨🇳 Enfoque: ${PAIS_FIJO}`);
 };
 
 // ============================================
@@ -1530,15 +1646,20 @@ document.querySelectorAll('.modo-btn').forEach(btn => {
 // INICIALIZACIÓN
 // ============================================
 async function init() {
-    console.log('🚀 Perfil Presidencial · OSINT Chat · WASM Rust + Multi-IA + Core 403M + Agent-Reach');
+    console.log('🚀 Perfil Presidencial · OSINT Chat · WASM Rust + Multi-IA paralelo + Core 403M + Agent-Reach');
+    Diagnostico.log(`🚀 Perfil Presidencial iniciando…`, 'info');
+    Diagnostico.log(`📊 ${IA_PROVEEDORES.length} proveedores · ${IA_PROVEEDORES.reduce((a, p) => a + p.modelos.length, 0)} modelos free`, 'info');
+    Diagnostico.log(`⏱️ Timeout IA: ${TIMEOUT_IA / 1000}s · Timeout global: ${TIMEOUT_TOTAL_ANALISIS / 1000}s`, 'info');
+    Diagnostico.log('🔄 Estrategia: Promise.any (paralelo) + fallback OSINT', 'info');
     console.log(`🕵️ OSINT: ${osint.totalApis} APIs integradas en el chat`);
     console.log(`🇨🇳 Enfoque: ${PAIS_FIJO}`);
     await rustWASM.cargar();
     if (rustWASM.cargado) {
-        showToast(`🦀 WASM Rust · 🔄 Multi-IA · 🧬 Core 403M · 🕵️ ${osint.totalApis} APIs OSINT`);
+        showToast(`🦀 WASM Rust · 🔄 Multi-IA paralelo · 🧬 Core 403M · 🕵️ ${osint.totalApis} APIs OSINT`);
     } else {
         showToast('⚠️ WASM Rust no disponible · Fallback JS', true);
     }
+    actualizarProveedor(null);
     console.log('✅ Sistema listo. Pregunta en el chat por cualquier persona.');
 }
 init();
